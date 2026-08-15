@@ -1,69 +1,130 @@
 ---
 name: visual-qa
-description: Independent visual quality assurance, hard-gate auditor, and targeted revision router. This skill should be used when reviewing rendered images or designs, scoring category floors, testing against AI-slop anti-patterns, issuing approval verdicts, or routing targeted RevisionRequests to specialist skills.
+description: Independent visual quality assurance, hard-gate auditor, and targeted revision router. This skill should be used when reviewing generated or edited visuals, testing hierarchy/craft/brand fidelity, detecting AI slop, checking bounded-edit collateral drift, issuing approval verdicts, or routing targeted RevisionRequests.
 ---
 
 # Visual QA
 
-Visual QA provides rigorous, independent critique of generated or edited visual outputs. It scores across 6 distinct dimensions, enforces strict category floors to prevent high-average score masking, triggers hard-gate vetoes for AI-slop anti-patterns, and routes repairs exclusively to the single failing specialist.
+Review the actual visual independently. Do not defend upstream decisions and do not approve an uninspected hypothetical output
 
----
+## Core review
 
-## 1. Core Workflow
+Evaluate applicable categories including
 
-1. **Independent Evaluation (Weighted Threshold >= 92)**:
-   - Evaluates the visual across weighted categories:
-     - **Hierarchy (Floor: 85)**: Eye path, focal clarity, 1 hero anchor.
-     - **Composition (Floor: 90)**: Balance, grid stability, negative space.
-     - **Typography (Floor: 88, if applicable)**: Contrast, measure, line breaks, exact copy.
-     - **Brand Fidelity (Floor: 95, if applicable)**: Logo clearspace, color formulas.
-     - **Product Fidelity (Floor: 98, if applicable)**: Physical packaging accuracy.
-     - **Physical Believability (Floor: 90, if applicable)**: Plausible contact shadows, lighting consistency.
-   - **Category Floor Rule**: If ANY applicable category falls below its floor, the entire visual fails, regardless of whether the overall average is >= 92.
+- brief accuracy and primary message
+- concept strength
+- hierarchy and composition
+- grouping, spacing and crop
+- typography and exact copy
+- color/contrast
+- brand fidelity
+- product fidelity
+- physical believability
+- cultural/platform fit
+- overall craft
+- AI slop
 
-2. **Hard Gate Checks**:
-   - **Arabic Copy Gate**: If Arabic text has broken glyphs, reversed letters, or incorrect connections: FAIL.
-   - **Accessibility Contrast Gate**: Text contrast must meet >= 4.5:1 against background.
-   - **Protected Region Gate**: In edit mode, non-target regions must remain 100% untouched.
+Weighted score must meet the configured threshold and every applicable category floor must pass
 
-3. **AI-Slop Hard Veto Policy**:
-   - Critical Slop finding (e.g. effect stack replaces concept): 0 allowed (immediate FAIL).
-   - Major Slop findings (e.g. equal emphasis across 3 subjects): max 1 allowed (>= 2 FAILS).
-   - Minor Slop findings: max 3 allowed (>= 4 FAILS).
-   - Cumulative Slop Pressure: >= 6 FAILS.
+## Hard gates
 
-4. **Targeted Revision Routing**:
-   - If the review fails, do NOT restart the entire pipeline.
-   - Produce a structured `RevisionRequest` specifying the single target specialist:
-     - Hierarchy / Grid defect ➔ `composition-director`
-     - Text / Readability defect ➔ `typography-director`
-     - Arabic glyph / RTL defect ➔ `arabic-rtl-director`
-     - Brand / Packaging defect ➔ `brand-intelligence`
-     - Physics / Shadow defect ➔ `manipulation-director`
-     - Concept / Message defect ➔ `creative-strategy`
-     - Model execution defect ➔ `prompt-compiler`
+Fail regardless of average when applicable
 
-5. **Output Contract**:
-   - Return structured `qa_state`, `VisualReview` JSON, and `RevisionRequest` inside `DesignSignalPacket`.
+- required copy is wrong
+- Arabic glyphs/connections or RTL behavior are malformed
+- official logo/mark is malformed
+- supplied product identity/proportions materially drift
+- focal anatomy or physical interaction has a critical defect
+- protected edit content changes materially outside what boundary blending requires
+- local edit changes crop, canvas, camera, layout, lighting, text, identity or style that the EditContract locked
+- annotation was applied to the wrong semantic target
+- AI-slop veto triggers
 
----
+## Bounded-edit review
 
-## 2. Tools & Scripts
+When `edit_state` exists, compare output to the approved `source_checkpoint`, not to a previous failed edit
 
-- Score a Visual Review and evaluate all gates:
-  ```bash
-  python3 scripts/score_review.py assets/visual-review.template.json
-  ```
-- Run gate regression tests:
-  ```bash
-  python3 scripts/test_gates.py
-  ```
+Evaluate three separate dimensions
 
----
+### Target accuracy
 
-## 3. Schemas & References
+Did the intended target receive exactly the requested mutation
 
-- Local Schema: [Visual Review Schema](schemas/visual-review.schema.json)
-- Shared Contract: [Revision Request Schema](../../shared/contracts/revision-request.schema.json)
-- Shared Reference: [Visual QA & Revisions Guide](../../shared/references/visual-qa-and-revisions.md)
-- Shared Reference: [AI Slop Taxonomy](../../shared/references/ai-slop-taxonomy.md)
+### Edit-scope accuracy
+
+Did any unrequested object, text, crop, layout, camera, lighting, brand, product, or style property change materially
+
+### Collateral change
+
+Allow minimal transition/blending immediately around the edited boundary when needed for believable integration. Do not call that a failure by itself
+
+Fail when drift is material, unrelated to target integration, or violates an identity/geometry/style lock
+
+Do not claim generative editing guarantees literal pixel identity. If the host provides deterministic masks/pixel-preservation guarantees, use those stronger checks explicitly
+
+## Perception checks
+
+Use the smallest relevant set
+
+- one-second hierarchy test
+- thumbnail test
+- squint/blur value-mass test
+- grayscale hierarchy test
+- edge/tangency/crop test
+- brand-off specificity test
+- effect-subtraction test
+- physics pass
+- character-by-character copy pass
+- source-vs-output edit-scope pass
+
+## AI slop veto
+
+Block on
+
+- any critical finding
+- 2+ major findings
+- 4+ minor findings
+- cumulative pressure >= 6, minor=1 and major=3
+
+## Revision routing
+
+Return one `RevisionRequest` to the smallest responsible node
+
+- concept/message -> `creative-strategy`
+- hierarchy/composition -> `composition-director`
+- typography -> `typography-director`
+- Arabic -> `arabic-rtl-director`
+- brand/product identity -> `brand-intelligence`
+- physical integration -> `manipulation-director`
+- wrong annotation target -> `edit-sanitizer` with `annotation_mapping`
+- over-broad edit scope -> `edit-sanitizer` with `edit_scope`
+- collateral drift -> `edit-sanitizer` with `collateral_change`
+- provider instruction mismatch after a valid contract -> `prompt-compiler`
+
+For failed bounded edits, require retry from the approved source checkpoint. Never repair a drifted failure by chaining another edit onto it
+
+## Output
+
+Return
+
+- `qa_state`
+- scores and applicable floors
+- hard-gate verdicts
+- slop findings
+- for edits: target accuracy, edit-scope accuracy, collateral-change evidence
+- `RevisionRequest` only when failed
+
+## Tools
+
+```bash
+python3 scripts/score_review.py assets/visual-review.template.json
+python3 scripts/test_gates.py
+```
+
+## References
+
+- [Visual Review Schema](schemas/visual-review.schema.json)
+- [Revision Request](../../shared/contracts/revision-request.schema.json)
+- [Edit Contract](../../shared/contracts/edit-contract.schema.json)
+- [Visual QA & Revisions](../../shared/references/visual-qa-and-revisions.md)
+- [AI Slop Taxonomy](../../shared/references/ai-slop-taxonomy.md)
