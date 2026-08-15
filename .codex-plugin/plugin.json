@@ -1,43 +1,49 @@
 {
   "name": "designly",
-  "version": "3.2.1",
-  "description": "Designly is a senior commercial art-direction skill with Taste Engine, Reference Memory, design preflight, anti-slop gates, brand and product fidelity, Arabic RTL direction, manipulation physics, and visual QA.",
+  "version": "4.0.0",
+  "description": "Designly is a commercial Art Direction & Design Neural Mesh plugin featuring 13 specialized Skills, 8 custom Codex agents, Taste Engine, Reference Memory, typography & Arabic RTL direction, and targeted Visual QA.",
   "author": {
     "name": "Mamdouh Abo Ammar"
   },
   "keywords": [
     "art-direction",
+    "design-neural-mesh",
     "image-generation",
     "image-editing",
     "reference-memory",
     "taste-engine",
     "brand-design",
-    "advertising",
-    "campaign-design",
+    "typography",
     "arabic-rtl",
+    "campaign-dna",
     "visual-qa"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Designly",
-    "shortDescription": "Taste-led art direction",
-    "longDescription": "Designly acts as a senior commercial Art Director. It turns references into evidence-backed taste rules, remembers them with stable REF IDs, assigns each reference a specific design job, resolves the marketing brief, preflights hierarchy and composition before generation, and reviews outputs with hard gates, category floors, originality controls, and an AI-slop veto.",
+    "shortDescription": "Design Neural Mesh",
+    "longDescription": "Designly v4.0.0 transforms commercial art direction into a Design Neural Mesh of 13 modular Skills and 8 custom Codex agents led by Designly Director. It enforces typed signal contracts (DesignContext, DesignSignalPacket, DesignLock, RevisionRequest), resolves conflicting constraints across brand rules and taste preferences via strict 11-level Signal Priority, provides local-first Reference Memory with stable REF IDs, preflights typography and native Arabic RTL visual architecture, and executes targeted revision loops via independent Visual QA.",
     "developerName": "Mamdouh Abo Ammar",
     "category": "Creativity",
     "capabilities": [
-      "Art direction",
-      "Taste extraction",
-      "Reference memory",
-      "Campaign consistency",
-      "Image generation guidance",
-      "Image editing review",
-      "Arabic RTL design",
-      "Visual QA"
+      "Art Direction Orchestration",
+      "Creative Brief Strategy",
+      "Brand Rule & Logo Audit",
+      "Transferable Taste Extraction",
+      "Stable Reference Memory",
+      "Composition & Grid Preflight",
+      "Typography & Measure Control",
+      "Photography Optics & Lighting",
+      "Manipulation & Compositing Physics",
+      "Native Arabic RTL Direction",
+      "Multi-Asset Campaign DNA",
+      "Model Prompt Compilation",
+      "Visual QA & Targeted Revision"
     ],
     "defaultPrompt": [
-      "Art-direct this brief using my saved references, then preflight and execute the visual.",
-      "Analyze these references into reusable taste rules and remember them with REF IDs.",
-      "Review this visual for design quality and AI slop, then fix the smallest failing layer."
+      "Art-direct this campaign brief end-to-end with specialist agents and lock enforcement.",
+      "Extract evidence-backed transferable taste rules and save with a stable REF ID.",
+      "Review this visual with category floors and route targeted revisions to the failing node."
     ],
     "brandColor": "#111111",
     "brandColorDark": "#F2F2F2",

@@ -1,71 +1,134 @@
 {
-  "version": "1.0",
-  "target": "designly",
-  "scenarios": [
+  "benchmark_name": "Designly Neural Mesh v4.0.0 Evaluation Suite",
+  "version": "4.0.0",
+  "groups": [
     {
-      "id": "implicit-art-direction",
-      "prompt": "Create a launch key visual for this product and make it feel premium without generic AI effects.",
-      "expected": [
-        "art-director skill selected",
-        "marketing lock",
-        "design preflight",
-        "anti-slop review"
+      "id": "GRP-01",
+      "name": "Skill Discovery & Manifest Catalog",
+      "cases": [
+        {
+          "prompt": "Show me all available Designly skills and capabilities",
+          "expected_skills_count": 13,
+          "expected_primary_orchestrator": "designly-director"
+        }
       ]
     },
     {
-      "id": "remember-reference",
-      "prompt": "Remember these two references. Use the first for hierarchy and the second for lighting.",
-      "expected": [
-        "stable REF IDs",
-        "Taste Profiles",
-        "job-based memory",
-        "no whole-style averaging"
+      "id": "GRP-02",
+      "name": "Orchestrator Routing & Intake Locking",
+      "cases": [
+        {
+          "prompt": "Art-direct a multi-format launch campaign for premium electric vehicles with fixed headline 'Driven by Silence'",
+          "expected_route": "designly-director",
+          "expected_locks": ["primary_message", "task_type"],
+          "expected_parallel_delegates": ["strategy-planner", "brand-guardian", "taste-analyst"]
+        }
       ]
     },
     {
-      "id": "recall-reference",
-      "prompt": "Use REF-0003 for crop on this new campaign but keep the current brand typography.",
-      "expected": [
-        "reference recall",
-        "brand override",
-        "crop-only transfer",
-        "similarity guard"
+      "id": "GRP-03",
+      "name": "Parallel Specialist Delegation",
+      "cases": [
+        {
+          "prompt": "Analyze market positioning, brand identity guidelines, and reference imagery concurrently",
+          "expected_agents": ["strategy_planner", "brand_guardian", "taste_analyst"],
+          "max_concurrency": 6,
+          "expected_packets": 3
+        }
       ]
     },
     {
-      "id": "feedback-learning",
-      "prompt": "I like the crop, but the glossy material treatment is wrong. Remember that correction for this project.",
-      "expected": [
-        "feedback ledger",
-        "scoped preference",
-        "no claim of retraining"
+      "id": "GRP-04",
+      "name": "Signal Priority & Conflict Resolution",
+      "cases": [
+        {
+          "prompt": "User specifies red brand accent lock, but inferred taste profile suggests blue",
+          "conflict_type": "brand_lock_vs_inferred_taste",
+          "expected_winner_priority": 1,
+          "lock_violation_allowed": false
+        }
       ]
     },
     {
-      "id": "slop-adversarial",
-      "prompt": "Make it luxury with neon, chrome, particles, glass panels, lens flare, and floating 3D objects.",
-      "expected": [
-        "effect-job test",
-        "subtraction",
-        "reject unsupported effects"
+      "id": "GRP-05",
+      "name": "Context & Token Isolation Benefit",
+      "cases": [
+        {
+          "metric": "specialist_context_isolation",
+          "description": "Specialists receive bounded context slices rather than raw monolithic prompt history",
+          "target_token_reduction_pct": 60
+        }
       ]
     },
     {
-      "id": "arabic-rtl",
-      "prompt": "Design an Arabic-first Saudi event poster with exact supplied copy.",
-      "expected": [
-        "RTL composition",
-        "exact-copy gate",
-        "Arabic glyph QA"
+      "id": "GRP-06",
+      "name": "Targeted Revision Loop Accuracy",
+      "cases": [
+        {
+          "defect_dimension": "typography",
+          "defect_description": "Headline text line breaks awkwardly across semantic phrase",
+          "expected_target_node": "typography-director",
+          "unnecessary_nodes_rerun": 0
+        },
+        {
+          "defect_dimension": "physical_believability",
+          "defect_description": "Cast shadow missing beneath product container",
+          "expected_target_node": "manipulation-director",
+          "unnecessary_nodes_rerun": 0
+        }
       ]
     },
     {
-      "id": "local-edit",
-      "prompt": "Change only the product cap and preserve every other visual decision.",
-      "expected": [
-        "edit route",
-        "protected region",
-        "smallest revision"
+      "id": "GRP-07",
+      "name": "Reference Memory CRUD & Scoped Feedback",
+      "cases": [
+        {
+          "operation": "feedback_scoping",
+          "input": "Dislike typography in REF-1002 but like lighting",
+          "expected_taste_state": {
+            "likes": ["lighting"],
+            "dislikes": ["typography"]
+          },
+          "cross_dimension_pollution": false
+        }
+      ]
+    },
+    {
+      "id": "GRP-08",
+      "name": "Arabic RTL & Glyph Hard Gates",
+      "cases": [
+        {
+          "input": "Arabic headline with reversed letter connections",
+          "expected_gate_verdict": "FAIL",
+          "remediation_node": "arabic-rtl-director"
+        }
+      ]
+    },
+    {
+      "id": "GRP-09",
+      "name": "Anti-Slop Veto & Category Floors",
+      "cases": [
+        {
+          "input": "Average score 93, but hierarchy score 80 (below floor 85)",
+          "expected_verdict": "FAIL",
+          "reason": "category_floor_breach"
+        },
+        {
+          "input": "1 critical slop finding (effect stack replaces concept)",
+          "expected_verdict": "FAIL",
+          "reason": "critical_slop_veto"
+        }
+      ]
+    },
+    {
+      "id": "GRP-10",
+      "name": "Graceful Sequential Fallback",
+      "cases": [
+        {
+          "condition": "subagents_disabled_in_host",
+          "expected_execution": "sequential_skills_execution",
+          "contract_schema_maintained": true
+        }
       ]
     }
   ]

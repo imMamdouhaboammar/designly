@@ -5,245 +5,207 @@
 <h1 align="center">Designly</h1>
 
 <p align="center">
-  <strong>A senior commercial Art Director — as a ChatGPT / Codex skill.</strong><br/>
-  Taste Engine · Reference Memory · Design Preflight · Anti-Slop Gates · Visual QA
+  <strong>Design Neural Mesh & Commercial Art Director — for ChatGPT & Codex.</strong><br/>
+  13 Focused Skills · 8 Custom Codex Agents · Typed Contracts · Signal Priority · Visual QA Loops
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-3.2.1-111111?style=flat-square" alt="version" />
-  <img src="https://img.shields.io/badge/platform-ChatGPT%20%2F%20Codex-10a37f?style=flat-square" alt="platform" />
-  <img src="https://img.shields.io/badge/type-skills--only-111111?style=flat-square" alt="type" />
-  <img src="https://img.shields.io/badge/Arabic%20RTL-supported-111111?style=flat-square" alt="arabic" />
+  <img src="https://img.shields.io/badge/version-4.0.0-111111?style=flat-square" alt="version" />
+  <img src="https://img.shields.io/badge/architecture-Design%20Neural%20Mesh-10a37f?style=flat-square" alt="architecture" />
+  <img src="https://img.shields.io/badge/skills-13%20modular%20skills-111111?style=flat-square" alt="skills" />
+  <img src="https://img.shields.io/badge/agents-8%20custom%20codex%20agents-111111?style=flat-square" alt="agents" />
+  <img src="https://img.shields.io/badge/Arabic%20RTL-native%20support-111111?style=flat-square" alt="arabic" />
   <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="license" />
 </p>
 
 ---
 
-## What it does
+## What is Designly v4.0.0?
 
-Designly installs as a single **skills-only** plugin — no remote server, no MCP endpoint. It turns ChatGPT or Codex into a working creative partner that can:
+Designly v4 transforms commercial art direction from a single monolithic skill into a **Design Neural Mesh**: a high-precision network of **13 discoverable Skills** and **8 custom Codex agents** coordinated by **Designly Director**.
 
-| Capability | Description |
-|---|---|
-| **Art Direction** | Brief → concept → structure → craft spec → generation prompt |
-| **Taste Engine** | Evidence → observation → transferable rule → constraint (not adjective soup) |
-| **Reference Memory** | Stable `REF-####` IDs, job-tagged recall, similarity guard, feedback ledger |
-| **Design Preflight** | Structural lint before generation; blocks broken hierarchy from reaching the model |
-| **Anti-Slop Gates** | Effect-job, effect-subtraction, category-camouflage, object-census, style-entropy, synthetic-detail tests |
-| **Image Editing** | Surgical local edits with locked regions and preservation constraints |
-| **Visual QA** | 10-point perception review; approval requires score ≥ 92 + category floors + hard gates |
-| **Arabic RTL** | Native RTL/bidi direction, correct glyph handling, no Latin mirroring |
-| **Campaign DNA** | Multi-asset continuity: palette roles, type behavior, crop logic, recurring motif |
+The system operates via typed, schema-validated signal packets (`DesignContext`, `DesignSignalPacket`, `DesignLock`, `RevisionRequest`), resolves conflicting requirements through a deterministic **11-level Signal Priority table**, and re-routes QA defects exclusively to the single responsible specialist rather than regenerating the full pipeline.
+
+```text
+USER BRIEF
+    │
+    ▼
+[designly-director] ── locks constraints (P1 user, P2 brand)
+    │
+    ├─► [creative-strategy] (Audience, Message Hierarchy, Concept Territory)
+    ├─► [brand-intelligence] (Brand Rules, Logo Clearspace, Product Fidelity)
+    └─► [taste-engine] <──► [reference-memory] (Transferable Taste Rules, Stable REF IDs)
+    │
+    ▼ (merge signal packets & enforce locks)
+[composition-director] (Grid, Hierarchy, Focal Anchor, Negative Space)
+    │
+    ├─► [typography-director] ──► [arabic-rtl-director] (if Arabic copy)
+    ├─► [photography-director] (Camera Optics, 3-Point Light, Materials)
+    ├─► [manipulation-director] (Compositing Physics, Contact Shadows)
+    └─► [campaign-dna] (Multi-asset continuity across formats)
+    │
+    ▼
+[prompt-compiler] (Model-specific execution syntax for Flux, Midjourney, DALL-E)
+    │
+    ▼
+[visual-qa] ──► PASS: Final Signoff (Score ≥ 92 + Category Floors)
+    │
+    └─► FAIL: RevisionRequest ──► routes ONLY to failing specialist node
+```
 
 ---
 
-## Repo structure
+## 13 Modular Skills
 
-```
-designly/
+Every capability is exposed as an independent, discoverable Skill with its own `agents/openai.yaml` interface metadata:
+
+| Skill | Slug | Primary Role |
+| :--- | :--- | :--- |
+| **Designly Director** | `designly-director` | Lead orchestrator, brief intake, lock enforcement, conflict resolution, final approval. |
+| **Creative Strategy** | `creative-strategy` | Marketing brief deconstruction, audience psychology, message hierarchy, concept territories. |
+| **Brand Intelligence** | `brand-intelligence` | Brand manuals, logo clearspace, color formulas, product packaging fidelity, Brand-Off test. |
+| **Taste Engine** | `taste-engine` | Evidence-backed transferable taste extraction, reference job allocation, originality guard. |
+| **Reference Memory** | `reference-memory` | Local-first persistence, stable `REF-####` IDs, scoped feedback ledger, preference recall. |
+| **Composition Director** | `composition-director` | Spatial grids, focal hierarchy (1 hero anchor), negative space balance, preflight checks. |
+| **Typography Director** | `typography-director` | Typographic scale, headline measure, semantic line breaks, legibility contrast ratios. |
+| **Photography Director** | `photography-director` | Camera focal lengths, aperture/shutter physics, 3-point studio lighting, material finishes. |
+| **Manipulation Director** | `manipulation-director` | Compositing physics, contact shadows, directional reflections, scale/perspective integration. |
+| **Arabic RTL Director** | `arabic-rtl-director` | Arabic-first visual architecture, native RTL eye path, calligraphy glyph fidelity, bidi balance. |
+| **Campaign DNA** | `campaign-dna` | Multi-asset continuity across 1:1, 9:16, 16:9 formats with deliberate creative variation. |
+| **Prompt Compiler** | `prompt-compiler` | Translates approved specs into model syntax (Flux, Midjourney, DALL-E) and inpainting masks. |
+| **Visual QA** | `visual-qa` | 10-point critique, category floors, AI-slop hard veto, targeted `RevisionRequest` routing. |
+
+---
+
+## 8 Custom Codex Agents
+
+Configured in `.codex/agents/*.toml` with bounded tool permissions and strict concurrency controls:
+
+| Agent | Config | Execution Mode | Responsibilities |
+| :--- | :--- | :--- | :--- |
+| `designly_director` | `designly-director.toml` | Orchestration | Owns `DesignContext`, spawns subagents, merges signals, enforces locks. |
+| `strategy_planner` | `strategy-planner.toml` | Read-only | Audience insight, primary message capture, concept territories. |
+| `brand_guardian` | `brand-guardian.toml` | Read-only / Veto | Brand guideline compliance, logo protection, product fidelity vetoes. |
+| `taste_analyst` | `taste-analyst.toml` | Read-only | Reference deconstruction into transferable rules, taste profile synthesis. |
+| `structure_critic` | `structure-critic.toml` | Read-only | Preflight of grid, visual weight, negative space, and typographic measure. |
+| `craft_director` | `craft-director.toml` | Read-only | Camera optics, 3-point lighting setups, compositing physics. |
+| `arabic_visual_director` | `arabic-visual-director.toml` | Read-only / Veto | RTL layout flow, exact Arabic copy protection, glyph connection audits. |
+| `visual_reviewer` | `visual-reviewer.toml` | Read-only / Gate | Independent scoring, category floors, AI-slop vetoes, revision routing. |
+
+---
+
+## Signal Priority & Conflict Resolution
+
+When signals or recommendations conflict, the Director resolves them using strict priority ranking:
+
+1. **User Exact Constraints** (Priority 1 — Immutable)
+2. **Documented Brand Rules** (Priority 2 — Immutable brand guidelines & logo formulas)
+3. **Safety & Cultural Hard Gates** (Priority 3 — Arabic glyph connections, RTL flow, legal)
+4. **Primary Communication Job** (Priority 4 — 3-second message capture)
+5. **Hierarchy & Composition** (Priority 5 — 1 primary focal anchor, grid alignment)
+6. **Accessibility & Legibility** (Priority 6 — Contrast ratio ≥ 4.5:1, readable measure)
+7. **Campaign Continuity** (Priority 7 — Visual DNA consistency across formats)
+8. **Craft Realism** (Priority 8 — Contact shadows, lighting consistency, camera physics)
+9. **Explicit User Taste Preference** (Priority 9 — Scoped likes/dislikes in Reference Memory)
+10. **Inferred Taste Preference** (Priority 10 — Extracted reference tendencies)
+11. **Decorative Finish** (Priority 11 — Ambient particles, subtle flares)
+
+---
+
+## Repository Structure
+
+```text
+Designly/
 ├── .codex-plugin/
-│   └── plugin.json              # Marketplace install metadata
-├── assets/
-│   ├── logo.svg                 # Square plugin logo (512×512)
-│   ├── icon.svg                 # Composer icon
-│   └── wordmark.svg             # Horizontal wordmark (1200×320)
-├── skills/
-│   └── art-director/
-│       ├── SKILL.md             # Skill identity + full runtime instructions
-│       ├── agents/
-│       │   └── openai.yaml      # ChatGPT/Codex interface config
-│       ├── assets/              # JSON templates (taste-profile, art-direction, etc.)
-│       ├── evals/               # Benchmark scenarios + adversarial rubric
-│       ├── examples/            # Campaign walkthroughs (Arabic poster, FMCG, luxury…)
-│       ├── references/          # Reference knowledge modules (20+ topics)
-│       ├── schemas/             # JSON schemas for all structured outputs
-│       └── scripts/             # Python CLI tools (lint, validate, eval, memory)
-├── docs/
-│   └── OFFICIAL-CONTRACT-CHECK.md
+│   └── plugin.json                    # Marketplace manifest (v4.0.0)
+├── .codex/
+│   ├── config.toml                    # Multi-agent concurrency & runtime config
+│   └── agents/                        # 8 Custom Codex Agent definitions (.toml)
+├── shared/
+│   ├── contracts/                     # Typed JSON Schemas (Draft 2020-12) & Routing Graph
+│   │   ├── design-context.schema.json
+│   │   ├── signal-packet.schema.json
+│   │   ├── design-lock.schema.json
+│   │   ├── revision-request.schema.json
+│   │   └── routing-graph.json
+│   ├── references/                    # Shared design principles & knowledge modules
+│   └── scripts/                       # Mesh validators, router, interface & agent validators
+├── skills/                            # 13 Independent Discoverable Skills
+│   ├── designly-director/
+│   ├── creative-strategy/
+│   ├── brand-intelligence/
+│   ├── taste-engine/
+│   ├── reference-memory/
+│   ├── composition-director/
+│   ├── typography-director/
+│   ├── photography-director/
+│   ├── manipulation-director/
+│   ├── arabic-rtl-director/
+│   ├── campaign-dna/
+│   ├── prompt-compiler/
+│   └── visual-qa/
 ├── evals/
-│   └── plugin-benchmark.json    # Plugin-wide benchmark scenarios
-├── tools/
-│   ├── validate_public_plugin.py
-│   └── package_plugin.py
-├── PLUGIN-EVAL.md
-├── PUBLIC-SAFETY.md
-└── VERIFICATION.md
+│   ├── baseline/                      # v3.2.1 parity regression baseline
+│   ├── conflicts/                     # 11 Cross-skill conflict & adversarial fixtures
+│   ├── handoffs/                      # Typed contract & agent tests
+│   ├── routing/                       # Skill catalog trigger classification tests
+│   ├── visual/                        # Visual QA category floor & revision tests
+│   └── plugin-benchmark.json          # 10-group Plugin Eval benchmark
+├── assets/                            # Plugin logo, composer icon, and wordmark SVGs
+└── tools/                             # Public plugin validator & deterministic packager
 ```
 
 ---
 
-## Installing
-
-### ChatGPT / Codex (local marketplace)
+## Verification & Validation Suite
 
 ```bash
-# 1. Clone
-git clone https://github.com/imMamdouhaboammar/designly.git
+# 1. Validate shared contracts and routing mesh
+python3 shared/scripts/validate_mesh.py
 
-# 2. Register as a local marketplace source
-codex plugin marketplace add /path/to/designly
+# 2. Validate all 13 Skill interfaces and SKILL.md frontmatter
+python3 shared/scripts/validate_skill_interfaces.py
 
-# 3. Restart the ChatGPT desktop app → install Designly from the marketplace
-```
+# 3. Validate Codex multi-agent TOML configs
+python3 shared/scripts/validate_agent_configs.py
 
-The plugin is **skills-only** — it does not require a running server or internet connection beyond the AI model itself.
+# 4. Run baseline parity test
+python3 evals/baseline/test_monolith_parity.py
 
----
+# 5. Run Skill catalog trigger tests
+python3 evals/routing/test_skill_catalog.py
 
-## Taste Engine
+# 6. Run typed contract handoff tests
+python3 evals/handoffs/test_contracts.py
+python3 evals/handoffs/test_agents.py
 
-References are not compressed into words like `premium`, `cinematic`, or `minimal`.
+# 7. Run Visual QA and revision routing tests
+python3 evals/visual/test_revision_router.py
 
-Every reference becomes a **Taste Profile** built from observable evidence:
+# 8. Run 11 cross-skill conflict & adversarial evaluations
+python3 evals/run_mesh_evals.py
 
-```
-evidence → observation → transferable rule → constraint
-```
-
-When multiple references are active, each is assigned a **design job**:
-
-```
-REF-0007 → hierarchy
-REF-0012 → lighting
-REF-0021 → typography
-```
-
-Brand rules and the current brief always override saved taste. Source-specific content is quarantined inside a `SIMILARITY GUARD` and never treated as reusable grammar.
-
----
-
-## Reference Memory
-
-A local persistent store of structured visual analysis — not image copies.
-
-```bash
-# Initialize
-python3 skills/art-director/scripts/reference_memory.py init
-
-# Add a taste profile
-python3 skills/art-director/scripts/reference_memory.py add \
-  skills/art-director/assets/taste-profile.template.json
-
-# Recall by job
-python3 skills/art-director/scripts/reference_memory.py list --job hierarchy
-
-# Semantic search
-python3 skills/art-director/scripts/reference_memory.py search editorial restrained
-
-# Build a job-based Taste Contract from multiple refs
-python3 skills/art-director/scripts/taste_merge.py
-```
-
----
-
-## Design Preflight
-
-Before any generation, the direction is linted against structural blockers:
-
-- No single primary message
-- Adjective-only concept
-- No dominant focal event
-- Equal emphasis across all elements
-- Missing alignment logic
-- Decorative effects without jobs
-- Text zone fighting the hero
-- Contradictory light or perspective plan
-
-```bash
-python3 skills/art-director/scripts/design_lint.py
-```
-
-Generation is blocked until all critical and major preflight defects are resolved.
-
----
-
-## Validation & Packaging
-
-```bash
-# Validate the plugin package structure
-python3 skills/art-director/scripts/validate_package.py
+# 9. Validate public plugin compliance
 python3 tools/validate_public_plugin.py .
-
-# Build a deterministic ZIP for release
-python3 tools/package_plugin.py . /tmp/designly.zip
-
-# Build twice and compare SHA256 before shipping
-shasum -a 256 /tmp/designly.zip
 ```
 
 ---
 
-## Running evals
+## Deterministic Packaging
 
 ```bash
-# Full benchmark suite
-python3 skills/art-director/scripts/run_evals.py
+# Build deterministic ZIP package A
+python3 tools/package_plugin.py . /tmp/designly-v4-a.zip
 
-# Design-specific evals (good vs bad structural decisions)
-python3 skills/art-director/scripts/run_design_evals.py
+# Build deterministic ZIP package B
+python3 tools/package_plugin.py . /tmp/designly-v4-b.zip
 
-# Score a visual review output
-python3 skills/art-director/scripts/score_review.py
-
-# Gate checks
-python3 skills/art-director/scripts/test_gates.py
+# Verify byte-identical SHA256 checksums
+shasum -a 256 /tmp/designly-v4-a.zip /tmp/designly-v4-b.zip
 ```
-
-Eval fixtures live in `skills/art-director/evals/fixtures/` and cover both well-structured directions and known failure modes (adjective-only concept, four focal points, effect stack, style entropy, etc.).
-
----
-
-## Reference knowledge
-
-The skill loads focused reference modules on demand rather than keeping everything in context:
-
-| Module | Topic |
-|---|---|
-| `art-direction.md` | Core direction framework |
-| `design-principles.md` | Hierarchy, alignment, contrast, rhythm |
-| `composition-and-photography.md` | Crop, eye path, rule of thirds, depth |
-| `layout-grid-and-spacing.md` | Grid systems, spacing rhythm |
-| `gestalt-and-perception.md` | Figure-ground, proximity, continuity |
-| `typography.md` | Type roles, scale, tracking, legibility |
-| `arabic-rtl-and-cultural.md` | Bidi, glyph fidelity, RTL composition |
-| `color-and-contrast.md` | Value hierarchy, WCAG AA, palette roles |
-| `taste-engine.md` | Evidence → rule → constraint pipeline |
-| `reference-analysis.md` | Deconstruct visual grammar from references |
-| `reference-memory.md` | REF-IDs, CRUD, feedback ledger |
-| `ai-slop-taxonomy.md` | Slop family classification by severity |
-| `design-preflight.md` | Structural lint checklist |
-| `advertising-manipulation.md` | Coherent local physics for composites |
-| `visual-qa-and-revisions.md` | 10-point review + scoring rubric |
-| `brand-intelligence.md` | Rules vs patterns vs inferences |
-| `campaign-visual-dna.md` | Multi-asset continuity contract |
-| `prompt-compiler.md` | Direction → model instructions |
-| `model-guides.md` | Per-model generation behavior |
-| `image-editing.md` | Surgical edit regions and preservation |
-| `marketing-brief.md` | Message hierarchy, audience, objective |
-| `platform-and-format.md` | Placement, viewing distance, safe zones |
-| `routing-and-state.md` | Task classification and mode selection |
-
----
-
-## Examples
-
-| Example | Description |
-|---|---|
-| [`arabic-poster.md`](skills/art-director/examples/arabic-poster.md) | RTL poster with correct bidi and cultural direction |
-| [`egypt-fmcg.md`](skills/art-director/examples/egypt-fmcg.md) | Egyptian FMCG campaign with product fidelity |
-| [`saudi-luxury-event.md`](skills/art-director/examples/saudi-luxury-event.md) | Luxury event visual with brand-off test |
-| [`campaign-series.md`](skills/art-director/examples/campaign-series.md) | Multi-asset campaign with Visual DNA lock |
-| [`cosmetics-manipulation.md`](skills/art-director/examples/cosmetics-manipulation.md) | Product composite with coherent local physics |
-| [`local-edit.md`](skills/art-director/examples/local-edit.md) | Surgical region edit with locked areas |
 
 ---
 
 ## Author
 
 **Mamdouh Abo Ammar** — [github.com/imMamdouhaboammar](https://github.com/imMamdouhaboammar)
-
----
-
-<p align="center">
-  <img src="assets/wordmark.svg" width="320" alt="Designly wordmark" />
-</p>
