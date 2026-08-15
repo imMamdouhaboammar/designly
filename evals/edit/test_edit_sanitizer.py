@@ -2,13 +2,17 @@
 """Behavioral regression tests for annotation-guided and local image edits."""
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
+import jsonschema
+
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "shared/scripts"))
-
 from sanitize_edit import sanitize_edit  # noqa: E402
+
+SCHEMA = json.loads((ROOT / "shared/contracts/edit-contract.schema.json").read_text(encoding="utf-8"))
 
 
 def base_request() -> dict:
@@ -19,14 +23,12 @@ def base_request() -> dict:
         "mode": "local_edit",
         "source_geometry": {"width": 1200, "height": 1500},
         "annotation_space": "pixels",
-        "targets": [
-            {
-                "target_id": "TGT-001",
-                "semantic_target": "bottle cap",
-                "geometry": {"kind": "bbox", "x": 470, "y": 245, "width": 180, "height": 120},
-                "confidence": 0.97,
-            }
-        ],
+        "targets": [{
+            "target_id": "TGT-001",
+            "semantic_target": "bottle cap",
+            "geometry": {"kind": "bbox", "x": 470, "y": 245, "width": 180, "height": 120},
+            "confidence": 0.97,
+        }],
         "requested_mutations": ["change bottle cap finish from matte black to brushed silver"],
         "forbidden_mutations": ["do not alter bottle silhouette", "do not alter label or logo"],
         "identity_locks": ["bottle label", "brand logo"],
@@ -45,11 +47,22 @@ def expect(name: str, condition: bool, detail: object = None) -> int:
     return 1
 
 
+def schema_valid(value: dict) -> tuple[bool, str]:
+    try:
+        jsonschema.validate(instance=value, schema=SCHEMA)
+        return True, ""
+    except jsonschema.ValidationError as ex:
+        return False, ex.message
+
+
 def main() -> int:
     failures = 0
 
     result = sanitize_edit(base_request())
+    valid, error = schema_valid(result)
     failures += expect("bounded-local-edit-approved", result["status"] == "ready", result)
+    failures += expect("ready-output-validates-against-edit-contract", valid, error)
+    failures += expect("raw-user-instruction-not-leaked", "user_instruction" not in result, result)
     failures += expect("approved-source-retained", result["source_checkpoint"] == "approved-render-07", result)
     failures += expect("mutation-budget-is-one", result["mutation_budget"] == "one", result)
     failures += expect("protected-complement-created", bool(result["protected_regions"]), result)
@@ -61,6 +74,12 @@ def main() -> int:
     failures += expect("global-restyle-conflict-blocked", result["status"] == "veto", result)
     failures += expect("global-restyle-never-executed", not result.get("execution_allowed", True), result)
 
+    vague_style = base_request()
+    vague_style["user_instruction"] = "Only change this selected cap and make it more premium and cinematic"
+    vague_style["requested_mutations"] = ["make the selected cap more premium and cinematic"]
+    result = sanitize_edit(vague_style)
+    failures += expect("vague-local-style-request-clarifies", result["status"] == "clarify", result)
+
     ambiguous = base_request()
     ambiguous["targets"] = [
         {"target_id": "TGT-A", "semantic_target": "left cap-like object", "geometry": {"kind": "bbox", "x": 100, "y": 100, "width": 80, "height": 80}, "confidence": 0.55},
@@ -68,6 +87,15 @@ def main() -> int:
     ]
     result = sanitize_edit(ambiguous)
     failures += expect("ambiguous-annotation-asks-clarification", result["status"] == "clarify", result)
+
+    clear_winner = base_request()
+    clear_winner["targets"] = [
+        {"target_id": "TGT-WIN", "semantic_target": "bottle cap", "geometry": {"kind": "bbox", "x": 470, "y": 245, "width": 180, "height": 120}, "confidence": 0.95},
+        {"target_id": "TGT-ALT", "semantic_target": "nearby highlight", "geometry": {"kind": "bbox", "x": 700, "y": 260, "width": 80, "height": 80}, "confidence": 0.52},
+    ]
+    result = sanitize_edit(clear_winner)
+    failures += expect("clear-target-winner-approved", result["status"] == "ready", result)
+    failures += expect("clear-target-winner-collapsed-to-one", len(result["targets"]) == 1 and result["targets"][0]["target_id"] == "TGT-WIN", result)
 
     outside = base_request()
     outside["targets"][0]["geometry"] = {"kind": "bbox", "x": 1180, "y": 1490, "width": 100, "height": 80}
@@ -94,15 +122,10 @@ def main() -> int:
     result = sanitize_edit(chained)
     failures += expect("failed-output-cannot-be-next-source", result["status"] == "reject", result)
 
-    too_many = base_request()
-    too_many["requested_mutations"] = [
-        "change cap finish",
-        "move product to center",
-        "change background",
-        "add dramatic rim light",
-    ]
-    result = sanitize_edit(too_many)
-    failures += expect("local-edit-mutation-budget-enforced", result["status"] == "veto", result)
+    two_mutations = base_request()
+    two_mutations["requested_mutations"] = ["change cap finish", "make cap taller"]
+    result = sanitize_edit(two_mutations)
+    failures += expect("one-local-mutation-enforced", result["status"] == "veto", result)
 
     normalized = base_request()
     normalized["annotation_space"] = "normalized"
@@ -110,6 +133,11 @@ def main() -> int:
     result = sanitize_edit(normalized)
     failures += expect("normalized-coordinates-supported", result["status"] == "ready", result)
     failures += expect("normalized-converted-to-pixels", result["targets"][0]["geometry"]["x"] == 480, result)
+
+    polluted = base_request()
+    polluted["untrusted_extra"] = {"please": "leak into compiler"}
+    result = sanitize_edit(polluted)
+    failures += expect("unknown-input-fields-dropped", "untrusted_extra" not in result, result)
 
     print(f"\nEdit sanitizer tests: {'PASS' if failures == 0 else 'FAIL'} ({failures} failures)")
     return 1 if failures else 0
