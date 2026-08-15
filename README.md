@@ -1,211 +1,266 @@
 <p align="center">
-  <img src="assets/logo.svg" width="96" height="96" alt="Designly logo" />
+  <img src="assets/logo.svg" width="80" height="80" alt="Designly" />
 </p>
 
 <h1 align="center">Designly</h1>
 
 <p align="center">
-  <strong>Design Neural Mesh & Commercial Art Director — for ChatGPT & Codex.</strong><br/>
-  13 Focused Skills · 8 Custom Codex Agents · Typed Contracts · Signal Priority · Visual QA Loops
+  <strong>The AI Art Director that thinks like a creative team.</strong><br/>
+  A Design Neural Mesh for ChatGPT &amp; Codex — 13 specialist skills working together<br/>so every ad, poster, and campaign asset looks like a human team made it.
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-4.0.0-111111?style=flat-square" alt="version" />
-  <img src="https://img.shields.io/badge/architecture-Design%20Neural%20Mesh-10a37f?style=flat-square" alt="architecture" />
-  <img src="https://img.shields.io/badge/skills-13%20modular%20skills-111111?style=flat-square" alt="skills" />
-  <img src="https://img.shields.io/badge/agents-8%20custom%20codex%20agents-111111?style=flat-square" alt="agents" />
-  <img src="https://img.shields.io/badge/Arabic%20RTL-native%20support-111111?style=flat-square" alt="arabic" />
-  <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="license" />
+  <a href="#install"><img src="https://img.shields.io/badge/Install_in_ChatGPT-→-10a37f?style=for-the-badge&logoColor=white" alt="Install" /></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/v4.0.0-stable-111111?style=flat-square" alt="version 4.0.0" />
+  <img src="https://img.shields.io/badge/13_Skills-modular-111111?style=flat-square" alt="13 skills" />
+  <img src="https://img.shields.io/badge/8_Agents-coordinated-111111?style=flat-square" alt="8 agents" />
+  <img src="https://img.shields.io/badge/Arabic_RTL-native-111111?style=flat-square" alt="Arabic RTL" />
+  <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license" />
 </p>
 
 ---
 
-## What is Designly v4.0.0?
+## The Problem
 
-Designly v4 transforms commercial art direction from a single monolithic skill into a **Design Neural Mesh**: a high-precision network of **13 discoverable Skills** and **8 custom Codex agents** coordinated by **Designly Director**.
+AI image generation gives you one shot. You type a prompt, cross your fingers, and hope the composition, typography, brand colors, lighting, and shadows all land at once. When they don't — and they usually don't — you start over from scratch.
 
-The system operates via typed, schema-validated signal packets (`DesignContext`, `DesignSignalPacket`, `DesignLock`, `RevisionRequest`), resolves conflicting requirements through a deterministic **11-level Signal Priority table**, and re-routes QA defects exclusively to the single responsible specialist rather than regenerating the full pipeline.
+Real creative teams don't work this way. A strategist defines the message. A brand guardian protects the identity. A compositor builds the layout. A retoucher checks the physics. They each own one thing, and they get it right.
 
-```text
-USER BRIEF
-    │
-    ▼
-[designly-director] ── locks constraints (P1 user, P2 brand)
-    │
-    ├─► [creative-strategy] (Audience, Message Hierarchy, Concept Territory)
-    ├─► [brand-intelligence] (Brand Rules, Logo Clearspace, Product Fidelity)
-    └─► [taste-engine] <──► [reference-memory] (Transferable Taste Rules, Stable REF IDs)
-    │
-    ▼ (merge signal packets & enforce locks)
-[composition-director] (Grid, Hierarchy, Focal Anchor, Negative Space)
-    │
-    ├─► [typography-director] ──► [arabic-rtl-director] (if Arabic copy)
-    ├─► [photography-director] (Camera Optics, 3-Point Light, Materials)
-    ├─► [manipulation-director] (Compositing Physics, Contact Shadows)
-    └─► [campaign-dna] (Multi-asset continuity across formats)
-    │
-    ▼
-[prompt-compiler] (Model-specific execution syntax for Flux, Midjourney, DALL-E)
-    │
-    ▼
-[visual-qa] ──► PASS: Final Signoff (Score ≥ 92 + Category Floors)
-    │
-    └─► FAIL: RevisionRequest ──► routes ONLY to failing specialist node
-```
+**Designly brings that team structure to AI.**
 
 ---
 
-## 13 Modular Skills
+## How It Works
 
-Every capability is exposed as an independent, discoverable Skill with its own `agents/openai.yaml` interface metadata:
+Instead of one prompt doing everything, Designly splits art direction into **13 focused specialists** coordinated by a single director. Each specialist owns one domain, produces typed outputs, and hands off to the next — exactly like a production pipeline at an agency.
 
-| Skill | Slug | Primary Role |
+```
+Your Brief
+    │
+    ▼
+ Designly Director ─── locks your constraints so nothing overrides them
+    │
+    ├──► Creative Strategy ── audience, message hierarchy, concept territory
+    ├──► Brand Intelligence ── logo clearspace, color formulas, product fidelity
+    └──► Taste Engine ◄──► Reference Memory ── learns what you like across sessions
+    │
+    ▼
+ Composition Director ── grid, focal anchor, negative space
+    │
+    ├──► Typography Director ──► Arabic RTL Director (when needed)
+    ├──► Photography Director ── lens physics, 3-point lighting, materials
+    ├──► Manipulation Director ── compositing, contact shadows, reflections
+    └──► Campaign DNA ── consistency across every format (1:1, 9:16, 16:9)
+    │
+    ▼
+ Prompt Compiler ── translates approved spec → Midjourney / Flux / DALL-E syntax
+    │
+    ▼
+ Visual QA ─── PASS → ship it
+    │
+    └──── FAIL → sends a targeted fix request to the one specialist that dropped the ball
+```
+
+When Visual QA catches a shadow angle that doesn't match the light source, it doesn't regenerate the entire design. It sends a `RevisionRequest` to the **Manipulation Director** alone. The brand, composition, and typography stay locked.
+
+---
+
+## What Makes Designly Different
+
+### 🔒 Your constraints are protected
+Every decision is ranked on an 11-level priority system. User constraints sit at Priority 1 and brand rules at Priority 2 — no downstream specialist can override them, no matter how confident its recommendation.
+
+### 🧠 It remembers what you like
+The **Taste Engine** extracts transferable rules from references you share — not "make it like this," but *why* it works: the color temperature, the negative space ratio, the typographic scale. **Reference Memory** stores these with stable `REF-####` IDs so you can recall them months later.
+
+### 🎯 Fixes are surgical, not nuclear
+When something fails QA, only the responsible specialist reruns. A typography problem doesn't touch your composition. A shadow error doesn't regenerate your layout. This saves tokens, time, and sanity.
+
+### 🌍 Arabic is a first-class citizen
+The **Arabic RTL Director** doesn't just flip layouts. It redesigns the visual flow for native right-to-left reading, protects Arabic calligraphy glyph connections, and balances bilingual compositions where Arabic leads and English supports.
+
+### 📐 Physics-grounded realism
+Photography Director enforces real camera optics — focal length, aperture, depth-of-field. Manipulation Director enforces contact shadows, directional reflections, and scale consistency. The result: composites that look photographed, not pasted.
+
+### 🧬 Campaign consistency across formats
+Campaign DNA ensures your Instagram story, LinkedIn banner, and billboard all look like they came from the same shoot — with deliberate creative variation, not lazy cropping.
+
+---
+
+## The 13 Skills
+
+| Skill | What it owns |
+| :--- | :--- |
+| **Designly Director** | Orchestration, brief intake, constraint locking, conflict resolution, final signoff |
+| **Creative Strategy** | Marketing brief deconstruction, audience psychology, message hierarchy |
+| **Brand Intelligence** | Brand manuals, logo clearspace, color formulas, product fidelity, Brand-Off test |
+| **Taste Engine** | Evidence-backed taste extraction, reference job allocation, originality guard |
+| **Reference Memory** | Local-first persistence, stable `REF-####` IDs, scoped feedback ledger |
+| **Composition Director** | Spatial grids, focal hierarchy (one hero anchor), negative space, preflight |
+| **Typography Director** | Typographic scale, headline measure, semantic line breaks, contrast ratios |
+| **Photography Director** | Camera focal lengths, aperture physics, 3-point studio lighting, material finishes |
+| **Manipulation Director** | Compositing physics, contact shadows, directional reflections, perspective |
+| **Arabic RTL Director** | Arabic-first visual flow, calligraphy glyph fidelity, bilingual balance |
+| **Campaign DNA** | Multi-asset continuity across 1:1, 9:16, 16:9 with deliberate variation |
+| **Prompt Compiler** | Translates approved specs into Flux, Midjourney, and DALL-E syntax |
+| **Visual QA** | 10-point critique, category floor scores, AI-slop hard veto, targeted revision routing |
+
+Each skill is independently discoverable in ChatGPT and has its own interface configuration in `agents/openai.yaml`.
+
+---
+
+## The 8 Codex Agents
+
+For Codex users, Designly ships 8 custom agents in `.codex/agents/` with strict tool boundaries:
+
+| Agent | Mode | What it does |
 | :--- | :--- | :--- |
-| **Designly Director** | `designly-director` | Lead orchestrator, brief intake, lock enforcement, conflict resolution, final approval. |
-| **Creative Strategy** | `creative-strategy` | Marketing brief deconstruction, audience psychology, message hierarchy, concept territories. |
-| **Brand Intelligence** | `brand-intelligence` | Brand manuals, logo clearspace, color formulas, product packaging fidelity, Brand-Off test. |
-| **Taste Engine** | `taste-engine` | Evidence-backed transferable taste extraction, reference job allocation, originality guard. |
-| **Reference Memory** | `reference-memory` | Local-first persistence, stable `REF-####` IDs, scoped feedback ledger, preference recall. |
-| **Composition Director** | `composition-director` | Spatial grids, focal hierarchy (1 hero anchor), negative space balance, preflight checks. |
-| **Typography Director** | `typography-director` | Typographic scale, headline measure, semantic line breaks, legibility contrast ratios. |
-| **Photography Director** | `photography-director` | Camera focal lengths, aperture/shutter physics, 3-point studio lighting, material finishes. |
-| **Manipulation Director** | `manipulation-director` | Compositing physics, contact shadows, directional reflections, scale/perspective integration. |
-| **Arabic RTL Director** | `arabic-rtl-director` | Arabic-first visual architecture, native RTL eye path, calligraphy glyph fidelity, bidi balance. |
-| **Campaign DNA** | `campaign-dna` | Multi-asset continuity across 1:1, 9:16, 16:9 formats with deliberate creative variation. |
-| **Prompt Compiler** | `prompt-compiler` | Translates approved specs into model syntax (Flux, Midjourney, DALL-E) and inpainting masks. |
-| **Visual QA** | `visual-qa` | 10-point critique, category floors, AI-slop hard veto, targeted `RevisionRequest` routing. |
+| **Designly Director** | Orchestration | Owns state, spawns subagents, merges signals, enforces locks |
+| **Strategy Planner** | Read-only | Audience insight, primary message, concept territories |
+| **Brand Guardian** | Read-only / Veto | Brand compliance, logo protection, product fidelity |
+| **Taste Analyst** | Read-only | Reference deconstruction, taste profile synthesis |
+| **Structure Critic** | Read-only | Grid preflight, visual weight, negative space, typographic measure |
+| **Craft Director** | Read-only | Camera optics, 3-point lighting, compositing physics |
+| **Arabic Visual Director** | Read-only / Veto | RTL layout, exact Arabic copy protection, glyph audits |
+| **Visual Reviewer** | Read-only / Gate | Independent scoring, category floors, AI-slop veto, revision routing |
+
+Only the Director can write. Every other agent is read-only — they analyze and recommend, but cannot alter state. Brand Guardian, Arabic Visual Director, and Visual Reviewer hold veto power: they can block a design from shipping.
 
 ---
 
-## 8 Custom Codex Agents
+## Install
 
-Configured in `.codex/agents/*.toml` with bounded tool permissions and strict concurrency controls:
+### ChatGPT Plugin Marketplace
 
-| Agent | Config | Execution Mode | Responsibilities |
-| :--- | :--- | :--- | :--- |
-| `designly_director` | `designly-director.toml` | Orchestration | Owns `DesignContext`, spawns subagents, merges signals, enforces locks. |
-| `strategy_planner` | `strategy-planner.toml` | Read-only | Audience insight, primary message capture, concept territories. |
-| `brand_guardian` | `brand-guardian.toml` | Read-only / Veto | Brand guideline compliance, logo protection, product fidelity vetoes. |
-| `taste_analyst` | `taste-analyst.toml` | Read-only | Reference deconstruction into transferable rules, taste profile synthesis. |
-| `structure_critic` | `structure-critic.toml` | Read-only | Preflight of grid, visual weight, negative space, and typographic measure. |
-| `craft_director` | `craft-director.toml` | Read-only | Camera optics, 3-point lighting setups, compositing physics. |
-| `arabic_visual_director` | `arabic-visual-director.toml` | Read-only / Veto | RTL layout flow, exact Arabic copy protection, glyph connection audits. |
-| `visual_reviewer` | `visual-reviewer.toml` | Read-only / Gate | Independent scoring, category floors, AI-slop vetoes, revision routing. |
+Search **"Designly"** in the ChatGPT plugin store, or install directly from the `.codex-plugin/plugin.json` manifest.
 
----
-
-## Signal Priority & Conflict Resolution
-
-When signals or recommendations conflict, the Director resolves them using strict priority ranking:
-
-1. **User Exact Constraints** (Priority 1 — Immutable)
-2. **Documented Brand Rules** (Priority 2 — Immutable brand guidelines & logo formulas)
-3. **Safety & Cultural Hard Gates** (Priority 3 — Arabic glyph connections, RTL flow, legal)
-4. **Primary Communication Job** (Priority 4 — 3-second message capture)
-5. **Hierarchy & Composition** (Priority 5 — 1 primary focal anchor, grid alignment)
-6. **Accessibility & Legibility** (Priority 6 — Contrast ratio ≥ 4.5:1, readable measure)
-7. **Campaign Continuity** (Priority 7 — Visual DNA consistency across formats)
-8. **Craft Realism** (Priority 8 — Contact shadows, lighting consistency, camera physics)
-9. **Explicit User Taste Preference** (Priority 9 — Scoped likes/dislikes in Reference Memory)
-10. **Inferred Taste Preference** (Priority 10 — Extracted reference tendencies)
-11. **Decorative Finish** (Priority 11 — Ambient particles, subtle flares)
-
----
-
-## Repository Structure
-
-```text
-Designly/
-├── .codex-plugin/
-│   └── plugin.json                    # Marketplace manifest (v4.0.0)
-├── .codex/
-│   ├── config.toml                    # Multi-agent concurrency & runtime config
-│   └── agents/                        # 8 Custom Codex Agent definitions (.toml)
-├── shared/
-│   ├── contracts/                     # Typed JSON Schemas (Draft 2020-12) & Routing Graph
-│   │   ├── design-context.schema.json
-│   │   ├── signal-packet.schema.json
-│   │   ├── design-lock.schema.json
-│   │   ├── revision-request.schema.json
-│   │   └── routing-graph.json
-│   ├── references/                    # Shared design principles & knowledge modules
-│   └── scripts/                       # Mesh validators, router, interface & agent validators
-├── skills/                            # 13 Independent Discoverable Skills
-│   ├── designly-director/
-│   ├── creative-strategy/
-│   ├── brand-intelligence/
-│   ├── taste-engine/
-│   ├── reference-memory/
-│   ├── composition-director/
-│   ├── typography-director/
-│   ├── photography-director/
-│   ├── manipulation-director/
-│   ├── arabic-rtl-director/
-│   ├── campaign-dna/
-│   ├── prompt-compiler/
-│   └── visual-qa/
-├── evals/
-│   ├── baseline/                      # v3.2.1 parity regression baseline
-│   ├── conflicts/                     # 11 Cross-skill conflict & adversarial fixtures
-│   ├── handoffs/                      # Typed contract & agent tests
-│   ├── routing/                       # Skill catalog trigger classification tests
-│   ├── visual/                        # Visual QA category floor & revision tests
-│   └── plugin-benchmark.json          # 10-group Plugin Eval benchmark
-├── assets/                            # Plugin logo, composer icon, and wordmark SVGs
-└── tools/                             # Public plugin validator & deterministic packager
-```
-
----
-
-## Verification & Validation Suite
+### Manual / Codex CLI
 
 ```bash
-# 1. Validate shared contracts and routing mesh
+# Clone the repository
+git clone https://github.com/imMamdouhaboammar/designly.git
+cd designly
+
+# Verify the mesh is intact (all tests should pass)
 python3 shared/scripts/validate_mesh.py
-
-# 2. Validate all 13 Skill interfaces and SKILL.md frontmatter
 python3 shared/scripts/validate_skill_interfaces.py
-
-# 3. Validate Codex multi-agent TOML configs
 python3 shared/scripts/validate_agent_configs.py
+```
 
-# 4. Run baseline parity test
+### Verify your installation
+
+```bash
+# Run the full test suite
 python3 evals/baseline/test_monolith_parity.py
-
-# 5. Run Skill catalog trigger tests
 python3 evals/routing/test_skill_catalog.py
-
-# 6. Run typed contract handoff tests
 python3 evals/handoffs/test_contracts.py
 python3 evals/handoffs/test_agents.py
-
-# 7. Run Visual QA and revision routing tests
 python3 evals/visual/test_revision_router.py
-
-# 8. Run 11 cross-skill conflict & adversarial evaluations
 python3 evals/run_mesh_evals.py
-
-# 9. Validate public plugin compliance
 python3 tools/validate_public_plugin.py .
 ```
 
+All commands exit with code 0 and print `PASS` for every check.
+
 ---
 
-## Deterministic Packaging
+## Quick Start
 
-```bash
-# Build deterministic ZIP package A
-python3 tools/package_plugin.py . /tmp/designly-v4-a.zip
+### 1. Full campaign art direction
 
-# Build deterministic ZIP package B
-python3 tools/package_plugin.py . /tmp/designly-v4-b.zip
+> *"Art-direct this launch campaign end-to-end with specialist agents and lock enforcement."*
 
-# Verify byte-identical SHA256 checksums
-shasum -a 256 /tmp/designly-v4-a.zip /tmp/designly-v4-b.zip
+Designly Director takes the brief, spawns strategy and brand analysis in parallel, locks your constraints, builds the composition, and runs Visual QA before delivering the final prompt.
+
+### 2. Learn from a reference
+
+> *"Extract evidence-backed transferable taste rules and save with a stable REF ID."*
+
+The Taste Engine analyzes your reference into portable rules (color temperature, spatial ratios, lighting mood) and Reference Memory stores them as `REF-1042` for future sessions.
+
+### 3. QA an existing design
+
+> *"Review this visual with category floors and route targeted revisions to the failing node."*
+
+Visual QA scores across 10 categories. If brand fidelity drops below 95 or hierarchy below 85, it routes a `RevisionRequest` exclusively to the responsible specialist — not the entire pipeline.
+
+---
+
+## Architecture
+
+### Typed Contracts
+
+All communication between skills flows through JSON Schema (Draft 2020-12) validated contracts:
+
+| Contract | Purpose |
+| :--- | :--- |
+| `DesignContext` | The canonical state object — brief, constraints, active locks, specialist outputs |
+| `DesignSignalPacket` | Typed recommendation from any specialist, with confidence score and evidence |
+| `DesignLock` | Immutable constraint with priority level (1–11) and the locking authority |
+| `RevisionRequest` | Targeted fix order routed to exactly one specialist, with defect category and evidence |
+
+### Signal Priority (Conflict Resolution)
+
+When two specialists disagree, the Director resolves it deterministically:
+
+| Priority | Signal | Mutability |
+| :---: | :--- | :--- |
+| 1 | User exact constraints | Immutable |
+| 2 | Documented brand rules | Immutable |
+| 3 | Safety & cultural hard gates | Immutable |
+| 4 | Primary communication job | Director override only |
+| 5 | Hierarchy & composition | Director override only |
+| 6 | Accessibility & legibility | Director override only |
+| 7 | Campaign continuity | Negotiable |
+| 8 | Craft realism | Negotiable |
+| 9 | Explicit user taste | Negotiable |
+| 10 | Inferred taste | Negotiable |
+| 11 | Decorative finish | Negotiable |
+
+### Test Coverage
+
+The `evals/` directory contains 11 adversarial conflict scenarios, category floor isolation tests, AI-slop veto threshold tests, targeted revision routing tests, and a 10-group plugin benchmark — all verified green.
+
+---
+
+## Repository Layout
+
+```
+designly/
+├── .codex-plugin/plugin.json         Marketplace manifest (v4.0.0)
+├── .codex/
+│   ├── config.toml                   Multi-agent runtime config
+│   └── agents/                       8 custom Codex agent definitions
+├── shared/
+│   ├── contracts/                    5 typed JSON Schemas + routing graph
+│   ├── references/                   25 design knowledge modules
+│   └── scripts/                      Mesh, skill, and agent validators
+├── skills/                           13 independent discoverable skills
+├── evals/                            Conflict, routing, handoff, and QA tests
+├── assets/                           Logo, icon, and wordmark SVGs
+└── tools/                            Plugin validator + deterministic packager
 ```
 
 ---
 
-## Author
+## Build & Package
 
-**Mamdouh Abo Ammar** — [github.com/imMamdouhaboammar](https://github.com/imMamdouhaboammar)
+```bash
+# Build a deterministic release ZIP
+python3 tools/package_plugin.py . dist/designly-v4.0.0.zip
+
+# Verify reproducibility — two builds produce identical SHA256
+python3 tools/package_plugin.py . /tmp/a.zip
+python3 tools/package_plugin.py . /tmp/b.zip
+shasum -a 256 /tmp/a.zip /tmp/b.zip
+# Both hashes will match exactly
+```
+
+---
+
+## License
+
+MIT © [Mamdouh Abo Ammar](https://github.com/imMamdouhaboammar)
