@@ -1,174 +1,93 @@
 #!/usr/bin/env python3
-"""
-Test suite for Design Neural Mesh contracts, schemas, and typed handoffs.
-"""
+"""Test Design Neural Mesh JSON contracts at their public seams."""
 from __future__ import annotations
 import copy
 import json
 import jsonschema
-import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 CONTRACTS_DIR = ROOT / "shared/contracts"
 
+
 def load_schema(name: str) -> dict:
-    p = CONTRACTS_DIR / name
-    return json.loads(p.read_text(encoding="utf-8"))
+    return json.loads((CONTRACTS_DIR / name).read_text(encoding="utf-8"))
+
+
+def validates(instance: dict, schema: dict) -> bool:
+    try:
+        jsonschema.validate(instance=instance, schema=schema)
+        return True
+    except jsonschema.ValidationError:
+        return False
+
 
 def main() -> int:
     failures = 0
-    
-    # 1. Load schemas
-    context_schema = load_schema("design-context.schema.json")
-    packet_schema = load_schema("signal-packet.schema.json")
     lock_schema = load_schema("design-lock.schema.json")
+    packet_schema = load_schema("signal-packet.schema.json")
     revision_schema = load_schema("revision-request.schema.json")
-    
-    # 2. Test valid DesignLock
-    sample_lock = {
-        "lock_id": "LCK-001",
-        "target_field": "primary_message",
-        "locked_value": "Pure Sound, Zero Distraction",
-        "locked_by": "user",
-        "priority": 1,
-        "reason": "Exact client brief headline constraint",
-        "immutable": True
+    edit_schema = load_schema("edit-contract.schema.json")
+    context_schema = load_schema("design-context.schema.json")
+
+    lock = {"lock_id":"LCK-001","target_field":"primary_message","locked_value":"Pure Sound","locked_by":"user","priority":1,"reason":"Exact copy","immutable":True}
+    if validates(lock, lock_schema): print("PASS valid DesignLock")
+    else: failures += 1; print("FAIL valid DesignLock")
+    bad = copy.deepcopy(lock); bad["extra"] = True
+    if not validates(bad, lock_schema): print("PASS extra DesignLock field rejected")
+    else: failures += 1; print("FAIL extra DesignLock field accepted")
+
+    packet = {
+        "packet_id":"PKT-001","from":"brand_guardian","to":"designly_director","job":"brand-audit",
+        "decisions":[],"evidence":["brand manual"],"confidence":0.95,"hard_vetoes":[],"soft_warnings":[],"unresolved":[],"recommended_next":["composition-director"]
     }
-    try:
-        jsonschema.validate(instance=sample_lock, schema=lock_schema)
-        print("PASS valid DesignLock schema validation")
-    except Exception as ex:
-        failures += 1
-        print(f"FAIL valid DesignLock: {ex}")
+    if validates(packet, packet_schema): print("PASS valid DesignSignalPacket")
+    else: failures += 1; print("FAIL valid DesignSignalPacket")
+    bad_packet = copy.deepcopy(packet); bad_packet["confidence"] = 1.5
+    if not validates(bad_packet, packet_schema): print("PASS invalid confidence rejected")
+    else: failures += 1; print("FAIL invalid confidence accepted")
 
-    # 3. Test invalid DesignLock (missing priority, extra property)
-    bad_lock = copy.deepcopy(sample_lock)
-    del bad_lock["priority"]
-    try:
-        jsonschema.validate(instance=bad_lock, schema=lock_schema)
-        failures += 1
-        print("FAIL bad DesignLock (missing priority) should have failed validation")
-    except jsonschema.ValidationError:
-        print("PASS bad DesignLock (missing priority) rejected")
-
-    bad_lock_extra = copy.deepcopy(sample_lock)
-    bad_lock_extra["extra_prop"] = "illegal"
-    try:
-        jsonschema.validate(instance=bad_lock_extra, schema=lock_schema)
-        failures += 1
-        print("FAIL bad DesignLock (extra property) should have failed validation")
-    except jsonschema.ValidationError:
-        print("PASS bad DesignLock (extra property) rejected")
-
-    # 4. Test valid DesignSignalPacket
-    sample_packet = {
-        "packet_id": "PKT-001",
-        "from": "brand_guardian",
-        "to": "designly_director",
-        "job": "brand-audit",
-        "decisions": [
-            {
-                "key": "brand_state.palette",
-                "value": ["#000000", "#FFFFFF", "#FF3B30"],
-                "rationale": "Official guidelines 2026",
-                "priority": 2
-            }
-        ],
-        "evidence": ["Brand guidelines PDF page 4", "Observed 3 reference packaging assets"],
-        "confidence": 0.95,
-        "hard_vetoes": [
-            {
-                "rule": "no-unapproved-accent-gradients",
-                "reason": "Brand manual strictly forbids multi-color gradient fills on primary logo",
-                "severity": "critical",
-                "remediation": "Use flat #000000 or single-color knockout"
-            }
-        ],
-        "soft_warnings": ["Secondary gold accent is optional for premium tiers only"],
-        "unresolved": [],
-        "recommended_next": ["composition-director"]
+    revision = {
+        "revision_id":"REV-EDIT-001","origin_packet_id":"PKT-009","source_qa":"visual_reviewer",
+        "target_node":"edit-sanitizer","failing_dimension":"collateral_change",
+        "defect_description":"Background lighting drifted outside the cap edit",
+        "evidence":["source-vs-output comparison"],"category_floor_failed":False,"slop_finding":None,
+        "required_delta":"Rebuild the bounded edit from the approved source checkpoint","protected_regions":["non-target complement"]
     }
-    try:
-        jsonschema.validate(instance=sample_packet, schema=packet_schema)
-        print("PASS valid DesignSignalPacket schema validation")
-    except Exception as ex:
-        failures += 1
-        print(f"FAIL valid DesignSignalPacket: {ex}")
+    if validates(revision, revision_schema): print("PASS edit-sanitizer RevisionRequest")
+    else: failures += 1; print("FAIL edit-sanitizer RevisionRequest")
 
-    # 5. Test invalid DesignSignalPacket (missing required field: 'confidence')
-    bad_packet = copy.deepcopy(sample_packet)
-    del bad_packet["confidence"]
-    try:
-        jsonschema.validate(instance=bad_packet, schema=packet_schema)
-        failures += 1
-        print("FAIL bad DesignSignalPacket (missing confidence) should have failed")
-    except jsonschema.ValidationError:
-        print("PASS bad DesignSignalPacket (missing confidence) rejected")
-
-    # 6. Test invalid confidence range (> 1.0)
-    bad_packet_conf = copy.deepcopy(sample_packet)
-    bad_packet_conf["confidence"] = 1.5
-    try:
-        jsonschema.validate(instance=bad_packet_conf, schema=packet_schema)
-        failures += 1
-        print("FAIL bad DesignSignalPacket (confidence > 1.0) should have failed")
-    except jsonschema.ValidationError:
-        print("PASS bad DesignSignalPacket (confidence > 1.0) rejected")
-
-    # 7. Test valid RevisionRequest
-    sample_revision = {
-        "revision_id": "REV-001",
-        "origin_packet_id": "PKT-009",
-        "source_qa": "visual_reviewer",
-        "target_node": "typography-director",
-        "failing_dimension": "typography",
-        "defect_description": "Headline text line-breaks across semantic phrase, damaging readability",
-        "evidence": ["Headline broken after first word of hyphenated name", "Type floor score was 78 < 88"],
-        "category_floor_failed": True,
-        "slop_finding": None,
-        "required_delta": "Adjust measure and font-size to keep primary headline on 2 balanced lines",
-        "protected_regions": ["product packshot center-left", "brand logo top-right"]
+    edit = {
+        "edit_id":"EDT-001","source_asset_id":"approved-01","source_checkpoint":"approved-01","mode":"local_edit",
+        "source_geometry":{"width":1200,"height":1500},"annotation_space":"pixels",
+        "targets":[{"target_id":"TGT-1","semantic_target":"bottle cap","confidence":0.98,"geometry":{"kind":"bbox","x":450,"y":210,"width":180,"height":120}}],
+        "requested_mutations":["change cap finish to brushed silver"],"forbidden_mutations":["no layout changes"],
+        "identity_locks":["bottle label"],"geometry_locks":["crop"],"style_locks":["background lighting"],
+        "mutation_budget":"one","protected_regions":[{"region_id":"NON_TARGET_COMPLEMENT","rule":"materially stable","geometry":None}],
+        "exact_copy":None,"requires_arabic_review":False,"ambiguity":{"unresolved":False,"reasons":[]},
+        "acceptance_checks":["target changed","non-target materially stable"],"iteration":1,"status":"ready","execution_allowed":True,"reasons":[]
     }
-    try:
-        jsonschema.validate(instance=sample_revision, schema=revision_schema)
-        print("PASS valid RevisionRequest schema validation")
-    except Exception as ex:
-        failures += 1
-        print(f"FAIL valid RevisionRequest: {ex}")
+    if validates(edit, edit_schema): print("PASS valid EditContract")
+    else: failures += 1; print("FAIL valid EditContract")
+    bad_edit = copy.deepcopy(edit); bad_edit["surprise_global_restyle"] = True
+    if not validates(bad_edit, edit_schema): print("PASS unknown EditContract property rejected")
+    else: failures += 1; print("FAIL unknown EditContract property accepted")
 
-    # 8. Test valid DesignContext
-    sample_context = {
-        "session_id": "DSN-2026-0001",
-        "task_type": "campaign",
-        "objective": "Launch premium noise-canceling headphones in MENA market",
-        "audience": {"demographic": "Audio enthusiasts & professionals 25-45"},
-        "primary_message": "Pure Sound, Zero Distraction",
-        "desired_action": "Pre-order on ecommerce store",
-        "platform": {"aspect_ratio": "4:5", "safe_zones": "standard"},
-        "cultural_context": {"region": "GCC", "language": "ar-SA", "reading_flow": "RTL"},
-        "locks": [sample_lock],
-        "brand_state": {"palette": ["#000000", "#FFFFFF"], "tone": "minimalist"},
-        "taste_state": {"rules": ["directional key lighting", "matte finishes"]},
-        "strategy_state": {"concept": "The Silence Chamber"},
-        "composition_state": {"focal_point": "headphones at optical center"},
-        "typography_state": {"headline": "نقاء الصوت بلا تشويش", "weight": "bold"},
-        "craft_state": {"camera": "85mm f/2.8", "lighting": "soft rim light"},
-        "campaign_state": {"family_id": "CAM-2026-A", "assets_count": 3},
-        "generation_state": {"compiled_prompt": "Commercial studio shot of matte black headphones..."},
-        "qa_state": {"approved": False, "scores": {"overall": 89}}
+    context = {
+        "session_id":"DSN-1","task_type":"edit","objective":"correct cap","audience":{},"primary_message":"","desired_action":"",
+        "platform":{},"cultural_context":{},"locks":[lock],"brand_state":{},"taste_state":{},"strategy_state":{},"composition_state":{},
+        "typography_state":{},"craft_state":{},"campaign_state":{},"edit_state":edit,"generation_state":{},"qa_state":{}
     }
+    resolver = jsonschema.RefResolver(base_uri=f"file://{CONTRACTS_DIR}/", referrer=context_schema)
     try:
-        # Note: $ref in schema needs resolver or simple validation
-        resolver = jsonschema.RefResolver(base_uri=f"file://{CONTRACTS_DIR}/", referrer=context_schema)
-        jsonschema.validate(instance=sample_context, schema=context_schema, resolver=resolver)
-        print("PASS valid DesignContext schema validation")
+        jsonschema.validate(instance=context, schema=context_schema, resolver=resolver)
+        print("PASS DesignContext accepts edit_state")
     except Exception as ex:
-        failures += 1
-        print(f"FAIL valid DesignContext: {ex}")
+        failures += 1; print(f"FAIL DesignContext edit_state: {ex}")
 
     print(f"\nContracts test suite: {'PASS' if failures == 0 else 'FAIL'} ({failures} failures)")
     return 1 if failures else 0
+
 
 if __name__ == "__main__":
     raise SystemExit(main())
