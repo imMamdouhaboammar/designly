@@ -1,0 +1,55 @@
+{
+  "version": "3.2.1",
+  "capabilities": {
+    "total_routing_scenarios": 21,
+    "total_design_preflight_cases": 7,
+    "total_release_gate_cases": 15,
+    "total_prompt_lint_cases": 4,
+    "taste_engine_supported": true,
+    "reference_memory_supported": true,
+    "arabic_rtl_supported": true,
+    "local_edit_supported": true
+  },
+  "required_v4_skill_slugs": [
+    "designly-director",
+    "creative-strategy",
+    "brand-intelligence",
+    "taste-engine",
+    "reference-memory",
+    "composition-director",
+    "typography-director",
+    "photography-director",
+    "manipulation-director",
+    "arabic-rtl-director",
+    "campaign-dna",
+    "prompt-compiler",
+    "visual-qa"
+  ],
+  "required_v4_agent_slugs": [
+    "designly-director",
+    "strategy-planner",
+    "brand-guardian",
+    "taste-analyst",
+    "structure-critic",
+    "craft-director",
+    "arabic-visual-director",
+    "visual-reviewer"
+  ],
+  "hard_gates": {
+    "weighted_score_floor": 92,
+    "category_floors": {
+      "hierarchy": 85,
+      "composition": 90,
+      "typography": 88,
+      "brand_fidelity": 95,
+      "product_fidelity": 98,
+      "physical_believability": 90
+    },
+    "slop_severities": {
+      "critical_max": 0,
+      "major_max": 1,
+      "minor_max": 3,
+      "pressure_max": 5
+    }
+  }
+}
