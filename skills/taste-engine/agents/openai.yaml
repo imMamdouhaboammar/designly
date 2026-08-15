@@ -4,8 +4,6 @@ interface:
   icon_small: "./assets/small-logo.svg"
   icon_large: "./assets/large-logo.svg"
   brand_color: "#111111"
-  default_prompt:
-    - "Extract evidence-backed transferable taste rules from these reference images."
-    - "Mix lighting from reference A and composition from reference B into a Taste Profile."
+  default_prompt: "Extract evidence-backed transferable taste rules, or mix specified jobs from multiple references without copying content."
 policy:
   allow_implicit_invocation: true

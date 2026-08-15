@@ -4,9 +4,6 @@ interface:
   icon_small: "./assets/small-logo.svg"
   icon_large: "./assets/large-logo.svg"
   brand_color: "#111111"
-  default_prompt:
-    - "Compile this approved Art Direction Spec for the image tool available in this ChatGPT or Codex session."
-    - "Compile this ready EditContract into one bounded image-edit instruction without broadening its scope."
-    - "Lint this image instruction for vague style filler, effect stacking, and unsupported provider assumptions."
+  default_prompt: "Compile this approved Art Direction Spec or ready EditContract for the active image tool without broadening scope."
 policy:
   allow_implicit_invocation: true

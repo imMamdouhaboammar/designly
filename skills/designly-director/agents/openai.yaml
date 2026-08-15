@@ -4,9 +4,6 @@ interface:
   icon_small: "./assets/small-logo.svg"
   icon_large: "./assets/large-logo.svg"
   brand_color: "#111111"
-  default_prompt:
-    - "Orchestrate this visual campaign brief end-to-end with specialist subagents."
-    - "Resolve conflicting signals across brand, taste, and composition."
-    - "Review this visual and route targeted revisions only to the failing dimension."
+  default_prompt: "Art-direct this brief end-to-end, coordinate specialists, enforce locks, and route only targeted revisions."
 policy:
   allow_implicit_invocation: true
