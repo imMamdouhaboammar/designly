@@ -1,0 +1,11 @@
+interface:
+  display_name: "Visual QA"
+  short_description: "Hard gates, category floors & targeted revisions"
+  icon_small: "./assets/small-logo.svg"
+  icon_large: "./assets/large-logo.svg"
+  brand_color: "#111111"
+  default_prompt:
+    - "Audit this visual output against weighted category floors and AI-slop anti-patterns."
+    - "Generate a RevisionRequest routing the defect to the responsible specialist node."
+policy:
+  allow_implicit_invocation: true

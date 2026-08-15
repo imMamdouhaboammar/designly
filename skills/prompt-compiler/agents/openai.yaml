@@ -1,0 +1,11 @@
+interface:
+  display_name: "Prompt Compiler"
+  short_description: "Provider prompt compilation & local edit syntax"
+  icon_small: "./assets/small-logo.svg"
+  icon_large: "./assets/large-logo.svg"
+  brand_color: "#111111"
+  default_prompt:
+    - "Compile approved Art Direction Spec into Midjourney v6 / Flux prompt syntax."
+    - "Generate targeted inpainting/edit prompt with strict protected region isolation."
+policy:
+  allow_implicit_invocation: true

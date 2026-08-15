@@ -1,0 +1,11 @@
+interface:
+  display_name: "Arabic RTL Director"
+  short_description: "Arabic-first design, RTL flow & glyph fidelity"
+  icon_small: "./assets/small-logo.svg"
+  icon_large: "./assets/large-logo.svg"
+  brand_color: "#111111"
+  default_prompt:
+    - "Direct Arabic-first visual hierarchy, natural RTL eye path, and calligraphy balance."
+    - "Audit Arabic copy for exact letter connection fidelity and cultural resonance."
+policy:
+  allow_implicit_invocation: true

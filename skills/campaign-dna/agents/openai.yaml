@@ -1,0 +1,11 @@
+interface:
+  display_name: "Campaign DNA"
+  short_description: "Multi-asset continuity & visual-family rules"
+  icon_small: "./assets/small-logo.svg"
+  icon_large: "./assets/large-logo.svg"
+  brand_color: "#111111"
+  default_prompt:
+    - "Generate a Campaign Visual DNA contract for a 4-asset multi-format campaign."
+    - "Ensure visual-family continuity across 1:1 square, 9:16 story, and 16:9 banner formats."
+policy:
+  allow_implicit_invocation: true

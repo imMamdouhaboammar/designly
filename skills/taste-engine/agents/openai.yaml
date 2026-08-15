@@ -1,0 +1,11 @@
+interface:
+  display_name: "Taste Engine"
+  short_description: "Transferable taste extraction & mixing"
+  icon_small: "./assets/small-logo.svg"
+  icon_large: "./assets/large-logo.svg"
+  brand_color: "#111111"
+  default_prompt:
+    - "Extract evidence-backed transferable taste rules from these reference images."
+    - "Mix lighting from reference A and composition from reference B into a Taste Profile."
+policy:
+  allow_implicit_invocation: true

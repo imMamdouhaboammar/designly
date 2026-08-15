@@ -1,0 +1,11 @@
+interface:
+  display_name: "Photography Director"
+  short_description: "Camera logic, 3-point lighting & surface physics"
+  icon_small: "./assets/small-logo.svg"
+  icon_large: "./assets/large-logo.svg"
+  brand_color: "#111111"
+  default_prompt:
+    - "Direct camera focal length, depth of field, and 3-point lighting setup."
+    - "Specify physical material surface properties and shadow softness."
+policy:
+  allow_implicit_invocation: true

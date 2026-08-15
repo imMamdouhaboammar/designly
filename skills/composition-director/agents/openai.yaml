@@ -1,0 +1,11 @@
+interface:
+  display_name: "Composition Director"
+  short_description: "Grid, hierarchy, eye path & negative space"
+  icon_small: "./assets/small-logo.svg"
+  icon_large: "./assets/large-logo.svg"
+  brand_color: "#111111"
+  default_prompt:
+    - "Establish the grid system, focal anchors, and spatial hierarchy for this format."
+    - "Preflight this composition layout to eliminate dead space and equal emphasis."
+policy:
+  allow_implicit_invocation: true

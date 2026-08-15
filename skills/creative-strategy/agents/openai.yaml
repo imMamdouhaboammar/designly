@@ -1,0 +1,11 @@
+interface:
+  display_name: "Creative Strategy"
+  short_description: "Marketing brief deconstruction & message hierarchy"
+  icon_small: "./assets/small-logo.svg"
+  icon_large: "./assets/large-logo.svg"
+  brand_color: "#111111"
+  default_prompt:
+    - "Deconstruct this marketing brief into audience insights and core message hierarchy."
+    - "Define three genuinely distinct visual concept territories for this launch."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,11 @@
+interface:
+  display_name: "Manipulation Director"
+  short_description: "Compositing physics, contact shadows & reflections"
+  icon_small: "./assets/small-logo.svg"
+  icon_large: "./assets/large-logo.svg"
+  brand_color: "#111111"
+  default_prompt:
+    - "Plan compositing perspective lines, contact shadows, and environment relighting."
+    - "Verify physical plausibility and scale consistency for this composite image."
+policy:
+  allow_implicit_invocation: true
