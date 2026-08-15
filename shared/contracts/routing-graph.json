@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "name": "Design Neural Mesh Routing Graph",
   "primary_orchestrator": "designly-director",
   "nodes": {
@@ -81,18 +81,25 @@
       "reads": ["strategy_state", "brand_state", "composition_state"],
       "writes": ["campaign_state"]
     },
+    "edit-sanitizer": {
+      "type": "specialist",
+      "agent": "edit-sanitizer",
+      "description": "Normalizes annotation-guided edits into a bounded EditContract and blocks ambiguous, over-broad, or drift-prone revisions before image execution.",
+      "reads": ["edit_request", "generation_state.approved_checkpoint", "locks", "brand_state", "typography_state"],
+      "writes": ["edit_state"]
+    },
     "prompt-compiler": {
       "type": "specialist",
       "agent": "designly-director",
-      "description": "Compiles approved Art Direction Spec into provider/model-ready generation or edit instructions.",
-      "reads": ["strategy_state", "brand_state", "taste_state", "composition_state", "typography_state", "craft_state", "campaign_state"],
+      "description": "Compiles approved Art Direction Spec or sanitized EditContract into provider/model-ready generation or edit instructions.",
+      "reads": ["strategy_state", "brand_state", "taste_state", "composition_state", "typography_state", "craft_state", "campaign_state", "edit_state"],
       "writes": ["generation_state"]
     },
     "visual-qa": {
       "type": "specialist",
       "agent": "visual-reviewer",
-      "description": "Post-generation critique, hard gates, category floors, and anti-slop veto.",
-      "reads": ["generation_state", "locks", "brand_state", "composition_state", "typography_state", "craft_state"],
+      "description": "Post-generation critique, hard gates, category floors, anti-slop veto, and collateral-change review for bounded edits.",
+      "reads": ["generation_state", "edit_state", "locks", "brand_state", "composition_state", "typography_state", "craft_state"],
       "writes": ["qa_state"]
     }
   },
@@ -118,6 +125,9 @@
     "brand_fidelity": "brand-intelligence",
     "product_fidelity": "brand-intelligence",
     "physical_believability": "manipulation-director",
+    "edit_scope": "edit-sanitizer",
+    "annotation_mapping": "edit-sanitizer",
+    "collateral_change": "edit-sanitizer",
     "prompt_execution": "prompt-compiler",
     "ai_slop": "composition-director"
   }
