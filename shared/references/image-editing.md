@@ -2,64 +2,122 @@
 
 Use edit mode when the source image itself is an asset to preserve
 
-## Edit contract
+## Mandatory pre-execution boundary
+
+Raw user feedback, arrows, scribbles, selections, masks, bounding boxes, or phrases such as `fix this` are not executable image instructions by themselves
+
+Route bounded edits through `edit-sanitizer` first and require a `ready` EditContract before `prompt-compiler`
+
+## Edit Contract
 
 Define
 
-- source image
-- target region or object
-- allowed changes
-- locked objects
-- locked text
+- approved source checkpoint
+- source dimensions
+- annotation coordinate space
+- one semantic target or an explicitly approved multi-target edit
+- target geometry or mask reference
+- atomic allowed mutations
+- forbidden mutations
+- identity locks
+- geometry locks
+- style locks
 - protected regions
-- output dimensions
-- acceptance criteria
+- exact replacement copy when applicable
+- mutation budget
+- acceptance checks
+- retry/rollback rule
+
+## Annotation semantics
+
+Separate where the user pointed from what the user means
+
+A red circle around two nearby objects does not prove which one is the target
+
+A scribble may indicate remove, replace, repair, recolor, or simply draw attention
+
+Therefore
+
+1. resolve annotation coordinates against the correct source dimensions
+2. normalize coordinates before execution
+3. map geometry to a semantic target
+4. estimate confidence
+5. if multiple plausible targets remain, ask one precise clarification rather than guessing
+
+Reject
+
+- zero-area targets
+- out-of-bounds geometry
+- mismatched coordinate systems
+- missing mask references
+- low-confidence ambiguous targets
 
 ## Preservation hierarchy
 
-1. exact brand/product identity
-2. exact required copy
-3. geometry and composition
-4. lighting and color continuity
-5. background and secondary details
+1. exact user instruction and edit scope
+2. exact brand/product identity
+3. exact required copy
+4. canvas, crop, camera and composition
+5. lighting, color and material continuity
+6. background and secondary details
 
 ## Local edit
 
 When one small element is wrong
 
-- describe only the target change
-- explicitly freeze surrounding elements
+- express one atomic delta
 - avoid global restyling language
-- keep the original crop and dimensions
-- inspect for collateral changes after execution
+- lock crop, dimensions, perspective and unaffected composition
+- protect identities and text not being edited
+- permit only minimal boundary blending needed for believable integration
+- compare the output to the approved source checkpoint after execution
+
+Do not add unrelated improvements while fixing a local defect
+
+## Source lineage and drift prevention
+
+Every corrective retry starts from the last approved source checkpoint
+
+Never use a failed or visibly drifted edit as the input to the next retry
+
+This prevents cumulative changes to faces, logos, product proportions, text, crop, lighting and background details
+
+Use at most three bounded attempts for the same defect. If the same failure persists or collateral changes worsen, stop and report the persistent failure instead of continuing edits
 
 ## Brand correction
 
-Use when the generated output altered logo, packshot, color, or official typography behavior
+Correct the smallest brand defect without redesigning surrounding art
 
-Correct the brand element without redesigning the image
+Lock official mark geometry, color, clearspace and supplied product identity unless the user explicitly targets one of those properties
 
 ## Copy correction
 
-Use when text alone is wrong
+Replacement text must be supplied exactly
 
-Protect every non-text element
+Do not ask an image model to invent or paraphrase copy during correction
 
-For Arabic, re-check glyph construction and letter joining after the repair
+For Arabic
+
+- route exact replacement copy through `arabic-rtl-director`
+- verify glyph construction, joins, direction and punctuation after execution
+
+If reliable text rendering cannot be achieved with the image editor, preserve/generate the visual foundation and use a deterministic text workflow where the host provides one
 
 ## Honest preservation language
 
-Image generators may alter pixels outside a selected region
+Generative image editors may alter content outside a selected region
 
-Describe unaffected areas as protected and use visual QA to detect collateral changes
+Describe unaffected areas as protected and require material stability plus post-edit QA
 
-Do not claim mathematical pixel identity unless a deterministic editor actually enforces it
+Do not claim mathematical pixel identity unless the available editor actually guarantees it
 
 ## Regenerate threshold
 
-Regenerate the whole image only when
+Regenerate globally only when
 
 - the concept is wrong
 - composition is structurally unsalvageable
-- the source cannot support the requested manipulation
-- local repairs have introduced compounding artifacts
+- the requested change is genuinely global
+- the source cannot support the manipulation
+
+Do not choose global regeneration merely because local editing is difficult
