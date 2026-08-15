@@ -4,8 +4,6 @@ interface:
   icon_small: "./assets/small-logo.svg"
   icon_large: "./assets/large-logo.svg"
   brand_color: "#111111"
-  default_prompt:
-    - "Set typographic hierarchy, scale, measure, and semantic line breaks for this headline."
-    - "Lock exact user copy and define dedicated text zones with legibility contrast."
+  default_prompt: "Set type hierarchy, scale, measure, line breaks, exact-copy locks, text zones, and legibility constraints."
 policy:
   allow_implicit_invocation: true

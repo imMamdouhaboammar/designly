@@ -4,8 +4,6 @@ interface:
   icon_small: "./assets/small-logo.svg"
   icon_large: "./assets/large-logo.svg"
   brand_color: "#111111"
-  default_prompt:
-    - "Audit this visual output against weighted category floors and AI-slop anti-patterns."
-    - "Generate a RevisionRequest routing the defect to the responsible specialist node."
+  default_prompt: "Audit this visual against category floors and hard gates, then route the smallest necessary revision."
 policy:
   allow_implicit_invocation: true

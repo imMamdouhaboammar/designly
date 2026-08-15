@@ -80,11 +80,10 @@ def validate_skill(slug: str, errors: list[str]):
                 icon = iface.get(field, "")
                 if icon:
                     check((skill_dir / icon).resolve().is_file(), f"{field} exists for {slug}: {icon}", errors)
-            prompt = iface.get("default_prompt", "")
-            prompts = prompt if isinstance(prompt, list) else [prompt]
-            check(len(prompts) <= 3, f"default_prompt count <= 3 in {slug}", errors)
-            for p in prompts:
-                check(isinstance(p, str) and 0 < len(p) <= 128 and "\n" not in p, f"default_prompt valid string in {slug}", errors)
+            prompt = iface.get("default_prompt")
+            check(isinstance(prompt, str), f"default_prompt is a string in {slug}", errors)
+            if isinstance(prompt, str):
+                check(0 < len(prompt) <= 128 and "\n" not in prompt, f"default_prompt single line <= 128 chars in {slug}", errors)
         except Exception as ex:
             check(False, f"agents/openai.yaml YAML error in {slug}: {ex}", errors)
 
