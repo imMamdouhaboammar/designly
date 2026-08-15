@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "4.0.0",
+  "name": "Design Neural Mesh Routing Graph",
+  "primary_orchestrator": "designly-director",
+  "nodes": {
+    "designly-director": {
+      "type": "orchestrator",
+      "agent": "designly-director",
+      "description": "Brief intake, routing, conflict resolution, lock enforcement, and final approval.",
+      "reads": ["brief", "all_packets"],
+      "writes": ["session_id", "task_type", "objective", "locks", "qa_state.final_approval"]
+    },
+    "creative-strategy": {
+      "type": "specialist",
+      "agent": "strategy-planner",
+      "description": "Objective, audience, message hierarchy, and visual concept territory.",
+      "reads": ["objective", "audience", "cultural_context"],
+      "writes": ["strategy_state", "primary_message", "desired_action"]
+    },
+    "brand-intelligence": {
+      "type": "specialist",
+      "agent": "brand-guardian",
+      "description": "Brand rules, observed patterns, brand-off test, and product/logo fidelity.",
+      "reads": ["brand_assets", "product_specs"],
+      "writes": ["brand_state"]
+    },
+    "taste-engine": {
+      "type": "specialist",
+      "agent": "taste-analyst",
+      "description": "Reference deconstruction, evidence-backed transferable rules, anti-rules, and taste mixing.",
+      "reads": ["references", "taste_state"],
+      "writes": ["taste_state"]
+    },
+    "reference-memory": {
+      "type": "specialist",
+      "agent": "taste-analyst",
+      "description": "Stable REF IDs, scoped likes/dislikes ledger, and preference recall.",
+      "reads": ["reference_records", "user_feedback"],
+      "writes": ["taste_state.reference_memory"]
+    },
+    "composition-director": {
+      "type": "specialist",
+      "agent": "structure-critic",
+      "description": "Grid, hierarchy, focal structure, grouping, negative space, crop, and eye path.",
+      "reads": ["strategy_state", "brand_state", "taste_state"],
+      "writes": ["composition_state"]
+    },
+    "typography-director": {
+      "type": "specialist",
+      "agent": "structure-critic",
+      "description": "Type hierarchy, text zones, line breaks, measure, spacing, and exact-copy strategy.",
+      "reads": ["composition_state", "primary_message"],
+      "writes": ["typography_state"]
+    },
+    "photography-director": {
+      "type": "specialist",
+      "agent": "craft-director",
+      "description": "Camera logic, lighting, lens behavior, materials, realism, and subject treatment.",
+      "reads": ["composition_state", "strategy_state"],
+      "writes": ["craft_state.photography"]
+    },
+    "manipulation-director": {
+      "type": "specialist",
+      "agent": "craft-director",
+      "description": "Compositing, perspective, scale, contact, reflections, relighting, and occlusion.",
+      "reads": ["composition_state", "craft_state"],
+      "writes": ["craft_state.manipulation"]
+    },
+    "arabic-rtl-director": {
+      "type": "specialist",
+      "agent": "arabic-visual-director",
+      "description": "Arabic-first composition, RTL reading flow, glyph correctness, and mixed Arabic/English behavior.",
+      "reads": ["typography_state", "composition_state", "cultural_context"],
+      "writes": ["typography_state.arabic_rtl", "composition_state.rtl_flow"]
+    },
+    "campaign-dna": {
+      "type": "specialist",
+      "agent": "strategy-planner",
+      "description": "Multi-asset continuity, visual-family rules, and deliberate variation.",
+      "reads": ["strategy_state", "brand_state", "composition_state"],
+      "writes": ["campaign_state"]
+    },
+    "prompt-compiler": {
+      "type": "specialist",
+      "agent": "designly-director",
+      "description": "Compiles approved Art Direction Spec into provider/model-ready generation or edit instructions.",
+      "reads": ["strategy_state", "brand_state", "taste_state", "composition_state", "typography_state", "craft_state", "campaign_state"],
+      "writes": ["generation_state"]
+    },
+    "visual-qa": {
+      "type": "specialist",
+      "agent": "visual-reviewer",
+      "description": "Post-generation critique, hard gates, category floors, and anti-slop veto.",
+      "reads": ["generation_state", "locks", "brand_state", "composition_state", "typography_state", "craft_state"],
+      "writes": ["qa_state"]
+    }
+  },
+  "signal_priorities": [
+    {"level": 1, "name": "user_exact_constraints", "can_override": []},
+    {"level": 2, "name": "documented_brand_rules", "can_override": [3,4,5,6,7,8,9,10,11]},
+    {"level": 3, "name": "safety_legal_cultural_gates", "can_override": [4,5,6,7,8,9,10,11]},
+    {"level": 4, "name": "primary_communication_job", "can_override": [5,6,7,8,9,10,11]},
+    {"level": 5, "name": "hierarchy_and_composition", "can_override": [6,7,8,9,10,11]},
+    {"level": 6, "name": "accessibility_and_legibility", "can_override": [7,8,9,10,11]},
+    {"level": 7, "name": "campaign_continuity", "can_override": [8,9,10,11]},
+    {"level": 8, "name": "craft_realism", "can_override": [9,10,11]},
+    {"level": 9, "name": "explicit_user_taste_preference", "can_override": [10,11]},
+    {"level": 10, "name": "inferred_taste_preference", "can_override": [11]},
+    {"level": 11, "name": "decorative_finish", "can_override": []}
+  ],
+  "revision_routes": {
+    "strategy": "creative-strategy",
+    "hierarchy": "composition-director",
+    "composition": "composition-director",
+    "typography": "typography-director",
+    "arabic_rtl": "arabic-rtl-director",
+    "brand_fidelity": "brand-intelligence",
+    "product_fidelity": "brand-intelligence",
+    "physical_believability": "manipulation-director",
+    "prompt_execution": "prompt-compiler",
+    "ai_slop": "composition-director"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DesignLock",
+  "type": "object",
+  "required": [
+    "lock_id",
+    "target_field",
+    "locked_value",
+    "locked_by",
+    "priority",
+    "reason",
+    "immutable"
+  ],
+  "properties": {
+    "lock_id": {
+      "type": "string",
+      "pattern": "^LCK-[0-9A-Za-z_-]+$"
+    },
+    "target_field": {
+      "type": "string"
+    },
+    "locked_value": {},
+    "locked_by": {
+      "type": "string",
+      "enum": [
+        "user",
+        "brand_rule",
+        "safety_gate",
+        "director",
+        "strategic_brief"
+      ]
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 11,
+      "description": "1: user constraints, 2: brand/product rules, 3: safety/legal/cultural, 4: primary communication, 5: hierarchy/composition, 6: accessibility/legibility, 7: campaign continuity, 8: craft realism, 9: explicit taste, 10: inferred taste, 11: decorative finish"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "immutable": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

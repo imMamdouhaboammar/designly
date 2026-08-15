@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RevisionRequest",
+  "type": "object",
+  "required": [
+    "revision_id",
+    "origin_packet_id",
+    "source_qa",
+    "target_node",
+    "failing_dimension",
+    "defect_description",
+    "evidence",
+    "category_floor_failed",
+    "required_delta",
+    "protected_regions"
+  ],
+  "properties": {
+    "revision_id": {
+      "type": "string",
+      "pattern": "^REV-[0-9A-Za-z_-]+$"
+    },
+    "origin_packet_id": {
+      "type": "string"
+    },
+    "source_qa": {
+      "type": "string",
+      "enum": [
+        "visual_reviewer",
+        "visual-qa",
+        "designly_director",
+        "designly-director"
+      ]
+    },
+    "target_node": {
+      "type": "string",
+      "enum": [
+        "creative-strategy",
+        "brand-intelligence",
+        "taste-engine",
+        "composition-director",
+        "typography-director",
+        "arabic-rtl-director",
+        "photography-director",
+        "manipulation-director",
+        "campaign-dna",
+        "prompt-compiler"
+      ]
+    },
+    "failing_dimension": {
+      "type": "string",
+      "enum": [
+        "strategy",
+        "hierarchy",
+        "composition",
+        "typography",
+        "arabic_rtl",
+        "brand_fidelity",
+        "product_fidelity",
+        "physical_believability",
+        "prompt_execution",
+        "ai_slop"
+      ]
+    },
+    "defect_description": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "category_floor_failed": {
+      "type": "boolean"
+    },
+    "slop_finding": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "family": {
+          "type": "string"
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "critical",
+            "major",
+            "minor"
+          ]
+        },
+        "evidence": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "required_delta": {
+      "type": "string"
+    },
+    "protected_regions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
