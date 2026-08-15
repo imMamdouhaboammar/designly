@@ -1,0 +1,29 @@
+{
+  "scenario_id": "CNF-001",
+  "name": "brand_rule_vs_inferred_taste",
+  "description": "Documented brand guideline specifies flat #000000 primary logo, but inferred taste profile recommends gold foil gradient fill.",
+  "existing_locks": [
+    {
+      "lock_id": "LCK-002",
+      "target_field": "brand_state.logo_finish",
+      "locked_value": "flat #000000 knockout",
+      "locked_by": "brand_rule",
+      "priority": 2,
+      "reason": "Brand manual 2026 rule 3.1",
+      "immutable": true
+    }
+  ],
+  "incoming_decisions": [
+    {
+      "key": "brand_state.logo_finish",
+      "value": "gold foil metallic gradient",
+      "rationale": "Inferred from luxury reference REF-1099",
+      "priority": 10
+    }
+  ],
+  "expected_outcome": {
+    "decision_applied": false,
+    "winning_lock_priority": 2,
+    "lock_preserved": "flat #000000 knockout"
+  }
+}

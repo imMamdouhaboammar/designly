@@ -1,0 +1,25 @@
+{
+  "scenario_id": "CNF-008",
+  "name": "equal_confidence_contradiction",
+  "description": "Director receives two contradictory recommendations with equal confidence and equal priority; Director enforces safety default and queries user if unresolved.",
+  "existing_locks": [],
+  "incoming_decisions": [
+    {
+      "key": "composition_state.layout_balance",
+      "value": "Asymmetric left-heavy dynamic balance",
+      "rationale": "Recommended by Structure Critic",
+      "priority": 5
+    },
+    {
+      "key": "composition_state.layout_balance",
+      "value": "Centered classical symmetry",
+      "rationale": "Recommended by Brand Guardian for luxury tier",
+      "priority": 5
+    }
+  ],
+  "expected_outcome": {
+    "decision_applied": true,
+    "winning_lock_priority": 5,
+    "lock_preserved": "Asymmetric left-heavy dynamic balance"
+  }
+}

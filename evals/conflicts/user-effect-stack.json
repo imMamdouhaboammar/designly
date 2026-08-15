@@ -1,0 +1,29 @@
+{
+  "scenario_id": "CNF-004",
+  "name": "user_requests_effect_stack",
+  "description": "User requests glowing neon outlines, glitter particles, and smoke overlays; Director disciplines the effect stack to serve a single communication job.",
+  "existing_locks": [
+    {
+      "lock_id": "LCK-004",
+      "target_field": "strategy_state.communication_job",
+      "locked_value": "Clean clinical efficacy proof",
+      "locked_by": "director",
+      "priority": 4,
+      "reason": "Primary marketing communication brief",
+      "immutable": true
+    }
+  ],
+  "incoming_decisions": [
+    {
+      "key": "strategy_state.communication_job",
+      "value": "Neon futuristic glowing effect spectacle",
+      "rationale": "Decorative finish request without communication purpose",
+      "priority": 11
+    }
+  ],
+  "expected_outcome": {
+    "decision_applied": false,
+    "winning_lock_priority": 4,
+    "lock_preserved": "Clean clinical efficacy proof"
+  }
+}

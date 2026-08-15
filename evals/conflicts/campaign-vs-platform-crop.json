@@ -1,0 +1,29 @@
+{
+  "scenario_id": "CNF-003",
+  "name": "campaign_continuity_vs_platform_crop",
+  "description": "9:16 vertical crop cuts into campaign DNA secondary accent zone; layout is reflowed natively rather than naive vertical stretching.",
+  "existing_locks": [
+    {
+      "lock_id": "LCK-007",
+      "target_field": "campaign_state.accent_placement",
+      "locked_value": "bottom-right corner badge",
+      "locked_by": "director",
+      "priority": 7,
+      "reason": "Campaign visual DNA contract",
+      "immutable": false
+    }
+  ],
+  "incoming_decisions": [
+    {
+      "key": "campaign_state.accent_placement",
+      "value": "top-center floating anchor",
+      "rationale": "9:16 story bottom UI obstruction safe zone clearance",
+      "priority": 5
+    }
+  ],
+  "expected_outcome": {
+    "decision_applied": true,
+    "winning_lock_priority": 5,
+    "lock_preserved": "top-center floating anchor"
+  }
+}

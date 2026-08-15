@@ -1,0 +1,19 @@
+{
+  "scenario_id": "CNF-010",
+  "name": "subagents_unavailable_sequential_fallback",
+  "description": "Host environment does not support subagent concurrency. Director falls back to sequential execution of local Skills with zero contract alterations.",
+  "runtime_mode": "sequential_fallback",
+  "skills_sequence": [
+    "creative-strategy",
+    "brand-intelligence",
+    "taste-engine",
+    "composition-director",
+    "typography-director",
+    "prompt-compiler",
+    "visual-qa"
+  ],
+  "expected_outcome": {
+    "all_nodes_executed": true,
+    "contracts_preserved": true
+  }
+}

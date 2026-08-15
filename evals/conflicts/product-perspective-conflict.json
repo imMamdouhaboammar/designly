@@ -1,0 +1,29 @@
+{
+  "scenario_id": "CNF-006",
+  "name": "product_packshot_vs_generated_perspective",
+  "description": "Generated background uses extreme worm-eye perspective, but physical product packaging requires eye-level frontal view for label legibility.",
+  "existing_locks": [
+    {
+      "lock_id": "LCK-002",
+      "target_field": "craft_state.camera_angle",
+      "locked_value": "Frontal 5° slight downward tilt for label visibility",
+      "locked_by": "brand_rule",
+      "priority": 2,
+      "reason": "Mandatory product packaging readability guideline",
+      "immutable": true
+    }
+  ],
+  "incoming_decisions": [
+    {
+      "key": "craft_state.camera_angle",
+      "value": "Dramatic 60° upward worm-eye angle",
+      "rationale": "Stylistic dynamic perspective idea",
+      "priority": 8
+    }
+  ],
+  "expected_outcome": {
+    "decision_applied": false,
+    "winning_lock_priority": 2,
+    "lock_preserved": "Frontal 5° slight downward tilt for label visibility"
+  }
+}

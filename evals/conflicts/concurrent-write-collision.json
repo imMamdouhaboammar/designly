@@ -1,0 +1,27 @@
+{
+  "scenario_id": "CNF-011",
+  "name": "concurrent_write_collision",
+  "description": "Two specialist agents concurrently attempt to write to 'typography_state.color'. Director serializes and applies the higher priority decision.",
+  "existing_locks": [],
+  "incoming_decisions": [
+    {
+      "agent": "brand_guardian",
+      "key": "typography_state.color",
+      "value": "#111111",
+      "priority": 2,
+      "rationale": "Brand guidelines mandatory text color"
+    },
+    {
+      "agent": "taste_analyst",
+      "key": "typography_state.color",
+      "value": "#FFD700",
+      "priority": 10,
+      "rationale": "Inferred reference color accent"
+    }
+  ],
+  "expected_outcome": {
+    "winning_agent": "brand_guardian",
+    "winning_value": "#111111",
+    "winning_priority": 2
+  }
+}

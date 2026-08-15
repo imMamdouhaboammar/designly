@@ -1,0 +1,15 @@
+{
+  "scenario_id": "CNF-009",
+  "name": "malformed_packet_rejection",
+  "description": "An agent returns a packet missing required 'confidence' and 'decisions' keys. Mesh rejects the packet without partial state pollution.",
+  "raw_packet": {
+    "packet_id": "PKT-BAD-999",
+    "from": "craft_director",
+    "to": "designly_director"
+  },
+  "expected_outcome": {
+    "is_valid_schema": false,
+    "packet_rejected": true,
+    "state_polluted": false
+  }
+}

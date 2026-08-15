@@ -1,0 +1,29 @@
+{
+  "scenario_id": "CNF-005",
+  "name": "conflicting_references_lighting",
+  "description": "Reference A uses hard high-noon sun, Reference B uses warm sunset backlight; Taste Engine resolves by job allocation (Ref A for spatial geometry, Ref B for lighting).",
+  "existing_locks": [
+    {
+      "lock_id": "LCK-009",
+      "target_field": "taste_state.lighting_rule",
+      "locked_value": "Warm 3200K low-angle backlight with rim separation",
+      "locked_by": "user",
+      "priority": 9,
+      "reason": "Explicit reference job assignment for lighting",
+      "immutable": true
+    }
+  ],
+  "incoming_decisions": [
+    {
+      "key": "taste_state.lighting_rule",
+      "value": "High noon harsh 6500K direct top light",
+      "rationale": "Secondary reference composition source",
+      "priority": 10
+    }
+  ],
+  "expected_outcome": {
+    "decision_applied": false,
+    "winning_lock_priority": 9,
+    "lock_preserved": "Warm 3200K low-angle backlight with rim separation"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "CNF-007",
+  "name": "local_edit_vs_redesign_pressure",
+  "description": "User requests changing a small button color; downstream generator tries to re-render entire poster background. Lock protects non-target regions.",
+  "existing_locks": [
+    {
+      "lock_id": "LCK-001",
+      "target_field": "generation_state.protected_regions",
+      "locked_value": ["background environment", "hero product", "headline typography"],
+      "locked_by": "user",
+      "priority": 1,
+      "reason": "Local inpainting edit mode boundary lock",
+      "immutable": true
+    }
+  ],
+  "incoming_decisions": [
+    {
+      "key": "generation_state.protected_regions",
+      "value": [],
+      "rationale": "Full canvas regeneration proposal",
+      "priority": 11
+    }
+  ],
+  "expected_outcome": {
+    "decision_applied": false,
+    "winning_lock_priority": 1,
+    "lock_preserved": ["background environment", "hero product", "headline typography"]
+  }
+}

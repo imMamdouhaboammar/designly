@@ -1,0 +1,29 @@
+{
+  "scenario_id": "CNF-002",
+  "name": "exact_arabic_copy_vs_line_break",
+  "description": "Aesthetic grid layout attempts to split a connected Arabic compound noun across lines, but Arabic RTL Director issues a hard gate lock.",
+  "existing_locks": [
+    {
+      "lock_id": "LCK-001",
+      "target_field": "typography_state.exact_arabic_copy",
+      "locked_value": "عطر الفخامة الملكية",
+      "locked_by": "user",
+      "priority": 1,
+      "reason": "Exact trademarked campaign headline",
+      "immutable": true
+    }
+  ],
+  "incoming_decisions": [
+    {
+      "key": "typography_state.exact_arabic_copy",
+      "value": "عطر الفخامة\nالملكية الأنيقة",
+      "rationale": "Stylistic line balancing",
+      "priority": 5
+    }
+  ],
+  "expected_outcome": {
+    "decision_applied": false,
+    "winning_lock_priority": 1,
+    "lock_preserved": "عطر الفخامة الملكية"
+  }
+}
