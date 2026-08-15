@@ -1,0 +1,9 @@
+interface:
+  display_name: "Designly"
+  short_description: "Taste-led art direction"
+  icon_small: "./assets/small-logo.svg"
+  icon_large: "./assets/large-logo.svg"
+  brand_color: "#111111"
+  default_prompt: "Use Designly to art-direct this visual with taste-aware references, design preflight, and anti-slop review."
+policy:
+  allow_implicit_invocation: true

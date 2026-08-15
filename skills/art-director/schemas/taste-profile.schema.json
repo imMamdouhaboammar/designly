@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/art-director/taste-profile.schema.json",
+  "title": "Designly Taste Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profile_version",
+    "source",
+    "jobs",
+    "observations",
+    "signature",
+    "rules",
+    "anti_rules",
+    "similarity_guard",
+    "confidence"
+  ],
+  "properties": {
+    "profile_version": {
+      "const": "1.0"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "ownership"
+      ],
+      "properties": {
+        "ref_id": {
+          "type": "string",
+          "pattern": "^REF-[0-9]{4,}$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "image",
+            "campaign",
+            "design",
+            "video-frame",
+            "brand-guideline",
+            "other"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "fingerprint": {
+          "type": "string"
+        },
+        "ownership": {
+          "type": "string",
+          "enum": [
+            "owned",
+            "licensed",
+            "public-reference",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "jobs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "concept",
+          "hierarchy",
+          "composition",
+          "grid",
+          "crop",
+          "spacing",
+          "typography",
+          "color",
+          "lighting",
+          "camera",
+          "material",
+          "manipulation",
+          "texture",
+          "brand-behavior",
+          "restraint",
+          "cultural-direction"
+        ]
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "observations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "dimension",
+          "evidence",
+          "interpretation",
+          "confidence"
+        ],
+        "properties": {
+          "dimension": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 3
+          },
+          "interpretation": {
+            "type": "string",
+            "minLength": 3
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    },
+    "signature": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "job",
+          "rule",
+          "evidence",
+          "strength",
+          "transferable"
+        ],
+        "properties": {
+          "job": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rule": {
+            "type": "string",
+            "minLength": 5
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 3
+          },
+          "strength": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "transferable": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "anti_rules": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "similarity_guard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "copy_risk",
+        "protected_elements",
+        "must_transform"
+      ],
+      "properties": {
+        "copy_risk": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "protected_elements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "must_transform": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  }
+}

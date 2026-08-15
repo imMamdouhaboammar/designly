@@ -1,0 +1,37 @@
+[
+  {
+    "id": "good-structured-direction",
+    "file": "fixtures/good-structured-direction.json",
+    "expect_major_or_critical": false
+  },
+  {
+    "id": "bad-adjective-only-concept",
+    "file": "fixtures/bad-adjective-only-concept.json",
+    "expect_major_or_critical": true
+  },
+  {
+    "id": "bad-four-focal-points",
+    "file": "fixtures/bad-four-focal-points.json",
+    "expect_major_or_critical": true
+  },
+  {
+    "id": "bad-freeform-one-anchor",
+    "file": "fixtures/bad-freeform-one-anchor.json",
+    "expect_major_or_critical": true
+  },
+  {
+    "id": "bad-unlocked-type-heavy-copy",
+    "file": "fixtures/bad-unlocked-type-heavy-copy.json",
+    "expect_major_or_critical": true
+  },
+  {
+    "id": "bad-style-entropy",
+    "file": "fixtures/bad-style-entropy.json",
+    "expect_major_or_critical": true
+  },
+  {
+    "id": "bad-effect-stack",
+    "file": "fixtures/bad-effect-stack.json",
+    "expect_major_or_critical": true
+  }
+]

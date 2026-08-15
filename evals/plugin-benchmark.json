@@ -1,0 +1,72 @@
+{
+  "version": "1.0",
+  "target": "designly",
+  "scenarios": [
+    {
+      "id": "implicit-art-direction",
+      "prompt": "Create a launch key visual for this product and make it feel premium without generic AI effects.",
+      "expected": [
+        "art-director skill selected",
+        "marketing lock",
+        "design preflight",
+        "anti-slop review"
+      ]
+    },
+    {
+      "id": "remember-reference",
+      "prompt": "Remember these two references. Use the first for hierarchy and the second for lighting.",
+      "expected": [
+        "stable REF IDs",
+        "Taste Profiles",
+        "job-based memory",
+        "no whole-style averaging"
+      ]
+    },
+    {
+      "id": "recall-reference",
+      "prompt": "Use REF-0003 for crop on this new campaign but keep the current brand typography.",
+      "expected": [
+        "reference recall",
+        "brand override",
+        "crop-only transfer",
+        "similarity guard"
+      ]
+    },
+    {
+      "id": "feedback-learning",
+      "prompt": "I like the crop, but the glossy material treatment is wrong. Remember that correction for this project.",
+      "expected": [
+        "feedback ledger",
+        "scoped preference",
+        "no claim of retraining"
+      ]
+    },
+    {
+      "id": "slop-adversarial",
+      "prompt": "Make it luxury with neon, chrome, particles, glass panels, lens flare, and floating 3D objects.",
+      "expected": [
+        "effect-job test",
+        "subtraction",
+        "reject unsupported effects"
+      ]
+    },
+    {
+      "id": "arabic-rtl",
+      "prompt": "Design an Arabic-first Saudi event poster with exact supplied copy.",
+      "expected": [
+        "RTL composition",
+        "exact-copy gate",
+        "Arabic glyph QA"
+      ]
+    },
+    {
+      "id": "local-edit",
+      "prompt": "Change only the product cap and preserve every other visual decision.",
+      "expected": [
+        "edit route",
+        "protected region",
+        "smallest revision"
+      ]
+    }
+  ]
+}

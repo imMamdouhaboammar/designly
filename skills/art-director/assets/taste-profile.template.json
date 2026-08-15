@@ -1,0 +1,85 @@
+{
+  "profile_version": "1.0",
+  "source": {
+    "label": "Reference example",
+    "kind": "image",
+    "name": "reference-01",
+    "ownership": "unknown"
+  },
+  "jobs": [
+    "hierarchy",
+    "composition",
+    "lighting",
+    "restraint"
+  ],
+  "context": {
+    "platform": "Instagram 4:5",
+    "category": "consumer brand"
+  },
+  "tags": [
+    "editorial",
+    "restrained"
+  ],
+  "observations": [
+    {
+      "dimension": "focal_dominance",
+      "evidence": "One subject occupies most of the visual mass while the background stays quiet.",
+      "interpretation": "The hierarchy depends on scale and low competing detail.",
+      "confidence": 0.94
+    },
+    {
+      "dimension": "accent_scarcity",
+      "evidence": "One small saturated accent appears against a mostly neutral field.",
+      "interpretation": "Color is used as a directional accent rather than a surface effect.",
+      "confidence": 0.88
+    }
+  ],
+  "signature": {
+    "focal_dominance": 88,
+    "information_density": 32,
+    "negative_space": 74,
+    "asymmetry": 61,
+    "grid_rigidity": 67,
+    "edge_pressure": 42,
+    "depth": 36,
+    "type_scale_contrast": 79,
+    "copy_density": 28,
+    "value_contrast": 72,
+    "chroma_intensity": 24,
+    "material_fidelity": 70,
+    "lighting_drama": 41,
+    "effect_dependency": 12
+  },
+  "rules": [
+    {
+      "job": "hierarchy",
+      "rule": "Keep one dominant hero and suppress secondary detail until it reads after the primary message.",
+      "evidence": "The reference uses one large visual mass with low-frequency surroundings.",
+      "strength": "high",
+      "transferable": true
+    },
+    {
+      "job": "lighting",
+      "rule": "Use controlled directional light to describe form without theatrical glow or multiple competing sources.",
+      "evidence": "Highlights are narrow and shadows remain coherent.",
+      "strength": "medium",
+      "transferable": true
+    }
+  ],
+  "anti_rules": [
+    "Do not add decorative particles or secondary floating objects.",
+    "Do not copy the source-specific prop arrangement."
+  ],
+  "similarity_guard": {
+    "copy_risk": "medium",
+    "protected_elements": [
+      "source logo",
+      "source campaign copy"
+    ],
+    "must_transform": [
+      "exact prop arrangement",
+      "source-specific color placement"
+    ]
+  },
+  "confidence": 0.9
+}

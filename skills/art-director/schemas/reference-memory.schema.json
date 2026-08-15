@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/art-director/reference-memory.schema.json",
+  "title": "Designly Reference Memory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "next_ref",
+    "references",
+    "mixes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "next_ref": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "label",
+          "status",
+          "created_at",
+          "updated_at",
+          "profile",
+          "feedback"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^REF-[0-9]{4,}$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "canonical",
+              "archived"
+            ]
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "profile": {
+            "$ref": "taste-profile.schema.json"
+          },
+          "feedback": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "signal",
+                "note",
+                "created_at"
+              ],
+              "properties": {
+                "signal": {
+                  "type": "string",
+                  "enum": [
+                    "like",
+                    "dislike",
+                    "correction",
+                    "neutral"
+                  ]
+                },
+                "note": {
+                  "type": "string"
+                },
+                "scope": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "mixes": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

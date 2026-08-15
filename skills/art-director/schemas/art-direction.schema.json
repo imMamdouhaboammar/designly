@@ -1,0 +1,372 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/art-director/art-direction.schema.json",
+  "title": "Art Direction Spec v2",
+  "type": "object",
+  "required": [
+    "intent",
+    "concept",
+    "hierarchy",
+    "composition",
+    "typography",
+    "color",
+    "lighting",
+    "restraints"
+  ],
+  "properties": {
+    "intent": {
+      "type": "object",
+      "required": [
+        "objective",
+        "primary_message",
+        "audience"
+      ],
+      "properties": {
+        "objective": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primary_message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "supporting_information": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "desired_action": {
+          "type": "string"
+        },
+        "audience": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "concept": {
+      "type": "object",
+      "required": [
+        "creative_territory",
+        "visual_proposition",
+        "visual_proof"
+      ],
+      "properties": {
+        "creative_territory": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visual_proposition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visual_proof": {
+          "type": "string",
+          "minLength": 1
+        },
+        "brand_specific_angle": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "hierarchy": {
+      "type": "object",
+      "required": [
+        "primary",
+        "secondary",
+        "one_second_read"
+      ],
+      "properties": {
+        "primary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "secondary": {
+          "type": "string"
+        },
+        "tertiary": {
+          "type": "string"
+        },
+        "one_second_read": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "composition": {
+      "type": "object",
+      "required": [
+        "aspect_ratio",
+        "grid_type",
+        "alignment_anchors",
+        "hero",
+        "negative_space",
+        "reading_direction",
+        "eye_path",
+        "crop_logic"
+      ],
+      "properties": {
+        "aspect_ratio": {
+          "type": "string",
+          "minLength": 1
+        },
+        "grid_type": {
+          "enum": [
+            "single-axis",
+            "split-field",
+            "modular",
+            "radial-centered",
+            "freeform-anchors",
+            "custom"
+          ]
+        },
+        "alignment_anchors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 6
+        },
+        "hero": {
+          "type": "string",
+          "minLength": 1
+        },
+        "secondary_mass": {
+          "type": "string"
+        },
+        "negative_space": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reading_direction": {
+          "enum": [
+            "ltr",
+            "rtl",
+            "mixed",
+            "none"
+          ]
+        },
+        "eye_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "crop_logic": {
+          "type": "string",
+          "minLength": 1
+        },
+        "foreground": {
+          "type": "string"
+        },
+        "middle_ground": {
+          "type": "string"
+        },
+        "background": {
+          "type": "string"
+        },
+        "typography_zone": {
+          "type": "string"
+        },
+        "focal_points": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        }
+      },
+      "additionalProperties": true
+    },
+    "typography": {
+      "type": "object",
+      "required": [
+        "class",
+        "roles",
+        "alignment",
+        "exact_copy_locked"
+      ],
+      "properties": {
+        "class": {
+          "enum": [
+            "image-only",
+            "small-text",
+            "typography-heavy",
+            "poster-ad-layout"
+          ]
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 7
+        },
+        "alignment": {
+          "type": "string"
+        },
+        "line_break_logic": {
+          "type": "string"
+        },
+        "language_direction": {
+          "enum": [
+            "ltr",
+            "rtl",
+            "mixed",
+            "none"
+          ]
+        },
+        "exact_copy_locked": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "color": {
+      "type": "object",
+      "required": [
+        "roles",
+        "value_structure",
+        "accent_strategy"
+      ],
+      "properties": {
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "value_structure": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accent_strategy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contrast_target": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "lighting": {
+      "type": "object",
+      "required": [
+        "key_direction",
+        "softness",
+        "shadow_behavior"
+      ],
+      "properties": {
+        "key_direction": {
+          "type": "string",
+          "minLength": 1
+        },
+        "softness": {
+          "type": "string",
+          "minLength": 1
+        },
+        "shadow_behavior": {
+          "type": "string",
+          "minLength": 1
+        },
+        "temperature": {
+          "type": "string"
+        },
+        "motivation": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "effects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "purpose"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      },
+      "maxItems": 10
+    },
+    "style_families": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 6
+    },
+    "brand_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "observed_patterns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "inferred_choices": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "restraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "heuristic_exceptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "heuristic",
+          "reason",
+          "benefit"
+        ],
+        "properties": {
+          "heuristic": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "benefit": {
+            "type": "string"
+          },
+          "verification": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

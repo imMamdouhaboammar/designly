@@ -1,0 +1,80 @@
+{
+  "intent": {
+    "objective": "awareness",
+    "primary_message": "The product is the clearest proof of the offer",
+    "supporting_information": [],
+    "desired_action": "",
+    "audience": "category-aware social audience"
+  },
+  "concept": {
+    "creative_territory": "product-as-hero",
+    "visual_proposition": "Place one exact product as the dominant hero in a quiet field with one evidence-bearing environmental interaction",
+    "visual_proof": "The environment reacts to the product while the pack remains unobstructed and immediately recognizable",
+    "brand_specific_angle": ""
+  },
+  "hierarchy": {
+    "primary": "product hero",
+    "secondary": "headline or value proposition",
+    "tertiary": "logo or CTA when needed",
+    "one_second_read": "one product, one proposition"
+  },
+  "composition": {
+    "aspect_ratio": "4:5",
+    "grid_type": "single-axis",
+    "alignment_anchors": [
+      "product axis",
+      "headline edge"
+    ],
+    "hero": "large product occupying the dominant visual mass without touching the text field",
+    "secondary_mass": "",
+    "negative_space": "quiet field reserved for copy and breathing room",
+    "reading_direction": "none",
+    "eye_path": "hero to message to brand/action",
+    "crop_logic": "preserve complete product silhouette and label",
+    "foreground": "",
+    "middle_ground": "",
+    "background": "low-frequency background",
+    "typography_zone": "clear field separated from the product silhouette",
+    "focal_points": 4
+  },
+  "typography": {
+    "class": "small-text",
+    "roles": [
+      "headline"
+    ],
+    "alignment": "aligned to the primary text anchor",
+    "line_break_logic": "break by meaning, not by arbitrary box width",
+    "language_direction": "none",
+    "exact_copy_locked": false
+  },
+  "color": {
+    "roles": [
+      "background",
+      "product",
+      "primary-text",
+      "accent"
+    ],
+    "value_structure": "hero and primary text remain distinct from the background in grayscale",
+    "accent_strategy": "one controlled accent family",
+    "contrast_target": "verify final text contrast when rendered digitally"
+  },
+  "lighting": {
+    "key_direction": "upper-left",
+    "softness": "controlled soft key",
+    "shadow_behavior": "grounded contact and coherent cast shadow",
+    "temperature": "neutral",
+    "motivation": "single broad studio source"
+  },
+  "materials": [],
+  "effects": [],
+  "style_families": [
+    "commercial-product-photography"
+  ],
+  "brand_rules": [],
+  "observed_patterns": [],
+  "inferred_choices": [],
+  "restraints": [
+    "no decorative effects without a communication, hierarchy, depth, material, or brand job"
+  ],
+  "heuristic_exceptions": []
+}

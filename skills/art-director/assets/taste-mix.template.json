@@ -1,0 +1,19 @@
+{
+  "name": "Editorial product mix",
+  "jobs": {
+    "hierarchy": {
+      "ref": "REF-0001",
+      "weight": 1.0
+    },
+    "lighting": {
+      "ref": "REF-0002",
+      "weight": 1.0
+    }
+  },
+  "constraints": [
+    "Keep exact supplied product geometry"
+  ],
+  "brand_overrides": [
+    "Use documented brand palette before reference palette"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "scores": {
+    "brief_accuracy": 96,
+    "concept_strength": 95,
+    "marketing_clarity": 95,
+    "hierarchy": 96,
+    "composition": 95,
+    "grouping_alignment": 95,
+    "spacing_density": 94,
+    "typography": 95,
+    "color_contrast": 95,
+    "brand_fidelity": 98,
+    "product_fidelity": 100,
+    "physical_believability": 95,
+    "lighting_materials": 95,
+    "cultural_fit": 95,
+    "platform_fit": 95,
+    "craft": 95
+  },
+  "applicability": {
+    "typography": true,
+    "color_contrast": true,
+    "brand": true,
+    "product": true,
+    "physical_believability": true
+  },
+  "hard_gates": {
+    "copy": "pass",
+    "arabic": "pass",
+    "brand": "pass",
+    "product": "pass",
+    "critical_physics": "pass",
+    "protected_regions": "pass",
+    "accessibility_plan": "pass",
+    "originality": "pass"
+  },
+  "slop_findings": [],
+  "defects": [],
+  "revision_mode": "none"
+}

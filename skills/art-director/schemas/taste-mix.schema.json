@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Taste Mix Spec",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "jobs"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "jobs": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ref"
+        ],
+        "properties": {
+          "ref": {
+            "type": "string",
+            "pattern": "^REF-[0-9]{4,}$"
+          },
+          "weight": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 1
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "brand_overrides": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

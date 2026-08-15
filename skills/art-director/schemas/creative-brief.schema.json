@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/art-director/creative-brief.schema.json",
+  "title": "Creative Brief",
+  "type": "object",
+  "required": [
+    "objective",
+    "primary_message",
+    "platform",
+    "task_type"
+  ],
+  "properties": {
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audience": {
+      "type": "string"
+    },
+    "awareness": {
+      "type": "string"
+    },
+    "primary_message": {
+      "type": "string",
+      "minLength": 1
+    },
+    "supporting_information": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "desired_action": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "string",
+      "minLength": 1
+    },
+    "market": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "task_type": {
+      "enum": [
+        "generate",
+        "edit",
+        "manipulation",
+        "reference",
+        "campaign",
+        "typography-heavy",
+        "review"
+      ]
+    },
+    "exact_copy": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "locked_assets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "placement": {
+      "type": "string"
+    },
+    "viewing_context": {
+      "type": "string"
+    },
+    "obstacle_or_objection": {
+      "type": "string"
+    },
+    "proof": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "offer": {
+      "type": "string"
+    },
+    "cultural_constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "non_goals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

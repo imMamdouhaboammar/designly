@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Secrets & credentials
+.env
+*.env.local
+*.env.*.local
+secrets/
+*.secret
+*.key
+*.pem
+*.p12
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V7
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cursor/
+
+# Build artifacts / dist
+/tmp/
+*.zip
+*.tar.gz
+
+# Reference Memory local data (user-specific, not tracked)
+skills/art-director/data/
+*.reference-memory.json

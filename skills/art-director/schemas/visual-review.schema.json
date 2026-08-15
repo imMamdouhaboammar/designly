@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/art-director/visual-review.schema.json",
+  "title": "Visual Review v2",
+  "type": "object",
+  "required": [
+    "scores",
+    "applicability",
+    "hard_gates",
+    "slop_findings",
+    "defects"
+  ],
+  "properties": {
+    "scores": {
+      "type": "object",
+      "required": [
+        "brief_accuracy",
+        "concept_strength",
+        "marketing_clarity",
+        "hierarchy",
+        "composition",
+        "grouping_alignment",
+        "spacing_density",
+        "typography",
+        "color_contrast",
+        "brand_fidelity",
+        "product_fidelity",
+        "physical_believability",
+        "lighting_materials",
+        "cultural_fit",
+        "platform_fit",
+        "craft"
+      ],
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 100
+      }
+    },
+    "applicability": {
+      "type": "object",
+      "required": [
+        "typography",
+        "color_contrast",
+        "brand",
+        "product",
+        "physical_believability"
+      ],
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "hard_gates": {
+      "type": "object",
+      "required": [
+        "copy",
+        "arabic",
+        "brand",
+        "product",
+        "critical_physics",
+        "protected_regions",
+        "accessibility_plan",
+        "originality"
+      ],
+      "additionalProperties": {
+        "enum": [
+          "pass",
+          "fail",
+          "na"
+        ]
+      }
+    },
+    "slop_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "family",
+          "severity",
+          "evidence"
+        ],
+        "properties": {
+          "family": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "minor",
+              "major",
+              "critical"
+            ]
+          },
+          "evidence": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "defects": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "revision_mode": {
+      "enum": [
+        "none",
+        "concept-revision",
+        "composition-revision",
+        "type-color-revision",
+        "visual-polish",
+        "local-edit",
+        "brand-correction",
+        "copy-correction"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

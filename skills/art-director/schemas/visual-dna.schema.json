@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/art-director/visual-dna.schema.json",
+  "title": "Campaign Visual DNA v2",
+  "type": "object",
+  "required": [
+    "palette_roles",
+    "typography_roles",
+    "spacing_rhythm",
+    "lighting_family",
+    "image_treatment",
+    "crop_rules",
+    "visual_density",
+    "locked_invariants",
+    "controlled_variables"
+  ],
+  "properties": {
+    "palette_roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "typography_roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "spacing_rhythm": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lighting_family": {
+      "type": "string"
+    },
+    "camera_family": {
+      "type": "string"
+    },
+    "image_treatment": {
+      "type": "string"
+    },
+    "subject_treatment": {
+      "type": "string"
+    },
+    "crop_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "whitespace_behavior": {
+      "type": "string"
+    },
+    "recurring_motif": {
+      "type": "string"
+    },
+    "product_scale_range": {
+      "type": "string"
+    },
+    "background_character": {
+      "type": "string"
+    },
+    "texture_behavior": {
+      "type": "string"
+    },
+    "visual_density": {
+      "type": "string"
+    },
+    "logo_behavior": {
+      "type": "string"
+    },
+    "locked_invariants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "controlled_variables": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": true
+}

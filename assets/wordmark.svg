@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" fill="none">
+  <rect width="1200" height="320" fill="#FFFFFF"/>
+  <g transform="translate(24 24) scale(.53125)">
+    <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
+    <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
+  </g>
+  <text x="330" y="206" font-family="Arial, Helvetica, sans-serif" font-size="132" font-weight="600" letter-spacing="-5" fill="#111111">Designly</text>
+</svg>

@@ -1,0 +1,47 @@
+{
+  "name": "designly",
+  "version": "3.2.1",
+  "description": "Designly is a senior commercial art-direction skill with Taste Engine, Reference Memory, design preflight, anti-slop gates, brand and product fidelity, Arabic RTL direction, manipulation physics, and visual QA.",
+  "author": {
+    "name": "Mamdouh Abo Ammar"
+  },
+  "keywords": [
+    "art-direction",
+    "image-generation",
+    "image-editing",
+    "reference-memory",
+    "taste-engine",
+    "brand-design",
+    "advertising",
+    "campaign-design",
+    "arabic-rtl",
+    "visual-qa"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Designly",
+    "shortDescription": "Taste-led art direction",
+    "longDescription": "Designly acts as a senior commercial Art Director. It turns references into evidence-backed taste rules, remembers them with stable REF IDs, assigns each reference a specific design job, resolves the marketing brief, preflights hierarchy and composition before generation, and reviews outputs with hard gates, category floors, originality controls, and an AI-slop veto.",
+    "developerName": "Mamdouh Abo Ammar",
+    "category": "Creativity",
+    "capabilities": [
+      "Art direction",
+      "Taste extraction",
+      "Reference memory",
+      "Campaign consistency",
+      "Image generation guidance",
+      "Image editing review",
+      "Arabic RTL design",
+      "Visual QA"
+    ],
+    "defaultPrompt": [
+      "Art-direct this brief using my saved references, then preflight and execute the visual.",
+      "Analyze these references into reusable taste rules and remember them with REF IDs.",
+      "Review this visual for design quality and AI slop, then fix the smallest failing layer."
+    ],
+    "brandColor": "#111111",
+    "brandColorDark": "#F2F2F2",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.svg"
+  }
+}
