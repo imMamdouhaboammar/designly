@@ -2,10 +2,6 @@
 """Normalize and fail-close annotation-guided image edits before prompt compilation.
 
 Public seam: sanitize_edit(request: dict) -> dict
-
-The sanitizer does not edit pixels. It converts raw user/annotation intent into a
-bounded EditContract or blocks execution when scope, geometry, source lineage, or
-mutations are unsafe or ambiguous.
 """
 from __future__ import annotations
 
@@ -39,8 +35,6 @@ LOCAL_MODES = {"local_edit", "inpaint", "annotation_guided", "copy_correction", 
 
 
 def _base_result(request: dict[str, Any]) -> dict[str, Any]:
-    # Whitelist the executable contract. Raw notes and arbitrary caller properties never
-    # flow into prompt compilation through the sanitized result.
     result = {key: copy.deepcopy(request[key]) for key in CONTRACT_INPUT_FIELDS if key in request}
     result.setdefault("forbidden_mutations", [])
     result.setdefault("identity_locks", [])
@@ -71,8 +65,7 @@ def _fail(result: dict[str, Any], status: str, reason: str) -> dict[str, Any]:
 
 def _normalize_bbox(g: dict[str, Any], space: str, width: int, height: int) -> dict[str, Any] | None:
     try:
-        x, y = float(g["x"]), float(g["y"])
-        w, h = float(g["width"]), float(g["height"])
+        x, y, w, h = float(g["x"]), float(g["y"]), float(g["width"]), float(g["height"])
     except (KeyError, TypeError, ValueError):
         return None
     if space == "normalized":
@@ -82,6 +75,34 @@ def _normalize_bbox(g: dict[str, Any], space: str, width: int, height: int) -> d
     if w <= 0 or h <= 0 or x < 0 or y < 0 or x + w > width or y + h > height:
         return None
     return {"kind": "bbox", "x": int(round(x)), "y": int(round(y)), "width": int(round(w)), "height": int(round(h))}
+
+
+def _normalize_polygon(points: Any, space: str, width: int, height: int) -> list[list[int]] | None:
+    if not isinstance(points, list) or len(points) < 3:
+        return None
+    converted: list[list[int]] = []
+    for point in points:
+        if not isinstance(point, list) or len(point) != 2:
+            return None
+        try:
+            x, y = float(point[0]), float(point[1])
+        except (TypeError, ValueError):
+            return None
+        if space == "normalized":
+            if not (0 <= x <= 1 and 0 <= y <= 1):
+                return None
+            x, y = x * width, y * height
+        if x < 0 or y < 0 or x > width or y > height:
+            return None
+        converted.append([int(round(x)), int(round(y))])
+    # Reject degenerate polygons by requiring a non-zero shoelace area.
+    area2 = 0
+    for idx, (x1, y1) in enumerate(converted):
+        x2, y2 = converted[(idx + 1) % len(converted)]
+        area2 += x1 * y2 - x2 * y1
+    if area2 == 0:
+        return None
+    return converted
 
 
 def _normalize_targets(result: dict[str, Any]) -> str | None:
@@ -113,22 +134,17 @@ def _normalize_targets(result: dict[str, Any]) -> str | None:
             return "each target requires target_id and semantic_target"
         g = target.get("geometry") or {}
         kind = g.get("kind")
-        normalized_target = {
-            "target_id": target_id,
-            "semantic_target": semantic_target,
-            "confidence": float(confidence),
-            "geometry": {},
-        }
+        normalized_target = {"target_id": target_id, "semantic_target": semantic_target, "confidence": float(confidence), "geometry": {}}
         if kind == "bbox":
             bbox = _normalize_bbox(g, space, source_w, source_h)
             if bbox is None:
                 return f"target {target_id} has invalid or out-of-bounds bbox"
             normalized_target["geometry"] = bbox
         elif kind == "polygon":
-            points = g.get("points")
-            if not isinstance(points, list) or len(points) < 3:
-                return "polygon target requires at least three points"
-            normalized_target["geometry"] = {"kind": "polygon", "points": copy.deepcopy(points)}
+            polygon = _normalize_polygon(g.get("points"), space, source_w, source_h)
+            if polygon is None:
+                return f"target {target_id} has invalid, degenerate, or out-of-bounds polygon"
+            normalized_target["geometry"] = {"kind": "polygon", "points": polygon}
         elif kind == "mask_ref":
             mask_ref = str(g.get("mask_ref") or "").strip()
             if not mask_ref:
@@ -151,12 +167,10 @@ def _resolve_target(result: dict[str, Any]) -> str | None:
         if float(targets[0]["confidence"]) < 0.60:
             return "annotation-to-target mapping confidence is too low to edit safely"
         return None
-
     ranked = sorted(targets, key=lambda t: float(t["confidence"]), reverse=True)
     top, second = float(ranked[0]["confidence"]), float(ranked[1]["confidence"])
     if top < 0.70 or top - second < 0.15:
         return "annotation maps to multiple plausible targets; choose the intended target before execution"
-    # A bounded edit executes against one resolved target, not a list of alternatives.
     result["targets"] = [ranked[0]]
     return None
 
@@ -165,7 +179,6 @@ def _mutation_conflict(result: dict[str, Any], raw_instruction: str) -> tuple[st
     mutations = result.get("requested_mutations")
     if not isinstance(mutations, list) or not mutations or any(not str(x).strip() for x in mutations):
         return "reject", "at least one atomic requested mutation is required"
-
     mutation_text = " ".join(str(x) for x in mutations)
     full_text = f"{mutation_text} {raw_instruction}"
     if result.get("mode") in LOCAL_MODES:
@@ -176,7 +189,6 @@ def _mutation_conflict(result: dict[str, Any], raw_instruction: str) -> tuple[st
         if BROAD_CHANGE.search(mutation_text) and not any(str(t["semantic_target"]).lower() in mutation_text.lower() for t in result["targets"]):
             return "clarify", "scene-level change language is not clearly bound to the sanitized target"
         if BOUNDING_LANGUAGE.search(raw_instruction) and VAGUE_STYLE.search(full_text):
-            # Style adjectives are not an executable local delta. Ask for the visible property.
             concrete_terms = re.compile(r"\b(?:color|finish|texture|roughness|gloss|metal|silver|black|white|red|blue|size|shape|remove|replace|text|copy)\b", re.I)
             if not concrete_terms.search(mutation_text):
                 return "clarify", "bounded edit uses vague style language; specify the visible target property to change"
@@ -209,8 +221,11 @@ def sanitize_edit(request: dict[str, Any]) -> dict[str, Any]:
         return _fail(result, "reject", f"missing required edit fields: {', '.join(missing)}")
     if result["iteration"] < 1 or result["iteration"] > 3:
         return _fail(result, "reject", "edit iteration must be between 1 and 3")
-    if result["iteration"] > 1 and result["source_asset_id"] != result["source_checkpoint"]:
-        return _fail(result, "reject", "retry source is not the approved checkpoint; restart the edit from the last approved source")
+    # Every bounded edit executes from an approved checkpoint. This is enforced on the
+    # first attempt too, not just on retries, so unapproved intermediate renders cannot
+    # enter the edit chain.
+    if result["source_asset_id"] != result["source_checkpoint"]:
+        return _fail(result, "reject", "edit source is not the approved checkpoint; restart from the last approved source")
 
     geometry_error = _normalize_targets(result)
     if geometry_error:
