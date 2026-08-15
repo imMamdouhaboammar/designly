@@ -1,52 +1,90 @@
 # Plugin Eval Report
 
-Target: Designly 3.2.1
+Target: Designly 4.1.0
 
-Evaluation mode: static local plugin audit following the Plugin Eval `evaluate-plugin` workflow
+Evaluation mode: static plugin-wide audit plus repository CI evidence, following the Plugin Eval `evaluate-plugin` workflow
 
-The `plugin-eval` CLI is not installed in this runtime, so this report does not claim measured harness token usage or a live Codex benchmark score
+The `plugin-eval` CLI is not available in this execution environment, so this report does not claim measured token usage, live Skill-selection latency, or a measured ChatGPT/Codex benchmark score
 
 ## At a Glance
 
-- Classification: skills-only ChatGPT/Codex plugin
-- Public plugin structure: PASS
-- Skill package validation: PASS
-- Trigger/routing evals: 21/21 PASS
-- Design-preflight evals: 7/7 PASS
-- Release-gate regressions: 15/15 PASS
-- Prompt-lint regressions: 4/4 PASS
-- Taste Engine lint: PASS
-- Reference Memory CRUD: PASS
-- Taste Mix routing/conflict guard: PASS
-- Taste lint regression: PASS
-- Marketplace metadata: PASS
-- Core SKILL.md: 410 lines, 2253 words, 17358 bytes
-- Reference corpus: 10720 words loaded on demand
-- Plugin files before packaging: 85
+- Architecture: skills-only public plugin package
+- Discoverable Skills: 14
+- Codex custom agent configs: 9
+- Primary orchestrator: `designly-director`
+- Typed mesh contracts: DesignContext, DesignSignalPacket, DesignLock, RevisionRequest, EditContract, routing graph
+- Taste Engine: present
+- Reference Memory: local-first
+- Arabic RTL review: present
+- Edit Sanitizer: present and mandatory for bounded existing-image edits
+- Independent Visual QA: present
+- GitHub Actions quality gate: present
+- Public plugin preflight: included in CI
+- Deterministic package A/B byte comparison: included in CI
 
-## Why It Matters
+## What v4.1 fixes
 
-The plugin keeps one user-facing Art Director entry point while moving specialized visual craft, Taste Engine, and Reference Memory detail into on-demand references. This reduces routing competition and keeps saved reference logic subordinate to the current brief, brand rules, exact copy, accessibility, and product truth
+The main hardening target was annotation-guided editing and inpainting
 
-The memory layer is deterministic local storage rather than a claim of hidden model learning. Reference mixing is job-based, so hierarchy can come from one REF and lighting from another without averaging entire references into generic visual mush
+Previously, preservation behavior was expressed mainly through instructions and post-output QA. v4.1 adds an explicit pre-execution boundary
 
-## Strongest Areas
+`raw feedback -> edit-sanitizer -> ready EditContract -> prompt-compiler -> image editor -> visual-qa`
 
-1. Design quality gates run before and after image execution
-2. AI-slop detection is behavior-based rather than a keyword blacklist
-3. Taste extraction requires evidence and confidence before a rule can become reusable
-4. Similarity guards separate transferable design logic from source-specific content and trade dress
-5. Reference Memory supports stable IDs, search, feedback, promotion, deletion, and export
-6. Public manifest uses the current Codex plugin shape, square assets, supported Creativity category, and concise install-surface copy
-7. Local marketplace layout follows the current `.agents/plugins/marketplace.json` convention
+A ready EditContract contains an approved source checkpoint, normalized target geometry, one bounded mutation for local edits, exact copy where applicable, protected regions, locks, acceptance checks, and execution verdict
 
-## Fix First
+Raw user notes and unknown caller fields are deliberately not passed through the sanitized executable contract
 
-1. Run a live `plugin-eval benchmark` in an environment where the Plugin Eval CLI and Codex/ChatGPT plugin surfaces are installed. Static checks cannot measure actual skill-selection latency or tool-context cost
-2. Add stable website, privacy, terms, and support URLs before a serious public-directory submission if those pages exist. They are not invented in this package
-3. Capture real plugin screenshots after installing the local marketplace build if screenshots are desired for public listing
-4. If cross-device or team-shared Reference Memory becomes a requirement, add a deliberately scoped MCP-backed memory service rather than pretending local JSON is synchronized
+## Strong areas
 
-## Recommended Next Step
+1. Skill boundaries are narrower than the old monolith and independently discoverable
+2. Codex specialists are bounded; only the Director owns state mutation
+3. Signal priority prevents inferred taste from overwriting user or documented brand locks
+4. Taste extraction separates evidence, observations, transferable rules, and source-specific content
+5. Reference Memory is deterministic local metadata rather than a claim of hidden training
+6. Visual QA uses category floors plus hard gates so a high average cannot conceal a broken core dimension
+7. Anti-slop review tests structural and decorative failure patterns rather than relying only on banned words
+8. Bounded edit retries restart from the approved source checkpoint to reduce cumulative drift
+9. Annotation geometry is normalized and checked for ambiguity, zero area, bounds, and target confidence
+10. CI validates contracts, 14 Skill interfaces, 9 agents, routing, sanitizer behavior, revision routing, adversarial mesh cases, prompt lint, visual gates, public-plugin preflight, and deterministic packaging
 
-Install the marketplace bundle locally, run the seven benchmark scenarios in `evals/plugin-benchmark.json`, then run Plugin Eval's measured benchmark flow on the installed plugin. Compare any failures against the static gates before changing the core Skill
+## Strict limitations
+
+1. Static/CI evaluation does not prove that every image model will honor a local edit perfectly. The sanitizer reduces bad instructions and drift risk; it does not create deterministic pixel guarantees in a generative editor
+2. Actual target/collateral quality still requires inspection of the generated image
+3. `plugin-eval` measured benchmark has not been run in this environment
+4. Public Plugin Directory approval has not been verified and is not claimed
+5. Reference Memory is not cross-device or team synchronized
+6. There is currently no explicit repository license file
+7. Stable public website/privacy/terms/support URLs are not fabricated when real maintained pages are unavailable
+
+## Benchmark suite
+
+`evals/plugin-benchmark.json` now covers
+
+- Skill discovery
+- orchestrator routing
+- parallel specialist delegation
+- signal conflict resolution
+- targeted revision routing
+- Reference Memory feedback scoping
+- Arabic/exact-copy gates
+- anti-slop/category-floor behavior
+- annotation/inpainting sanitization
+- source-checkpoint drift prevention
+- graceful sequential fallback
+
+## Recommended measured follow-up
+
+In an environment with the Plugin Eval CLI and installed ChatGPT/Codex plugin surfaces, run the benchmark suite and measure
+
+- selected Skill
+- specialists invoked
+- unnecessary specialist rate
+- packet validity
+- wrong-node revision rate
+- lock violations
+- sanitizer false positive/false negative rate
+- final hard-gate pass
+- token usage and latency where measurable
+
+Do not weaken deterministic gates to improve a benchmark score. Treat measured failures as evidence for the next scoped change

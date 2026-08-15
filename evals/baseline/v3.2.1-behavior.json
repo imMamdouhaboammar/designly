@@ -1,5 +1,5 @@
 {
-  "version": "3.2.1",
+  "version": "3.2.1+v4.1-hardening",
   "capabilities": {
     "total_routing_scenarios": 21,
     "total_design_preflight_cases": 7,
@@ -8,32 +8,17 @@
     "taste_engine_supported": true,
     "reference_memory_supported": true,
     "arabic_rtl_supported": true,
-    "local_edit_supported": true
+    "local_edit_supported": true,
+    "local_edit_sanitizer_required": true
   },
   "required_v4_skill_slugs": [
-    "designly-director",
-    "creative-strategy",
-    "brand-intelligence",
-    "taste-engine",
-    "reference-memory",
-    "composition-director",
-    "typography-director",
-    "photography-director",
-    "manipulation-director",
-    "arabic-rtl-director",
-    "campaign-dna",
-    "prompt-compiler",
-    "visual-qa"
+    "designly-director", "creative-strategy", "brand-intelligence", "taste-engine", "reference-memory",
+    "composition-director", "typography-director", "photography-director", "manipulation-director",
+    "arabic-rtl-director", "campaign-dna", "edit-sanitizer", "prompt-compiler", "visual-qa"
   ],
   "required_v4_agent_slugs": [
-    "designly-director",
-    "strategy-planner",
-    "brand-guardian",
-    "taste-analyst",
-    "structure-critic",
-    "craft-director",
-    "arabic-visual-director",
-    "visual-reviewer"
+    "designly-director", "strategy-planner", "brand-guardian", "taste-analyst", "structure-critic",
+    "craft-director", "arabic-visual-director", "edit-sanitizer", "visual-reviewer"
   ],
   "hard_gates": {
     "weighted_score_floor": 92,
@@ -45,11 +30,7 @@
       "product_fidelity": 98,
       "physical_believability": 90
     },
-    "slop_severities": {
-      "critical_max": 0,
-      "major_max": 1,
-      "minor_max": 3,
-      "pressure_max": 5
-    }
+    "slop_severities": {"critical_max": 0, "major_max": 1, "minor_max": 3, "pressure_max": 5},
+    "edit_gates": ["annotation_mapping", "edit_scope", "collateral_change", "source_checkpoint"]
   }
 }

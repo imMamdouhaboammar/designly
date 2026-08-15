@@ -55,5 +55,5 @@ Thumbs.db
 *.tar.gz
 
 # Reference Memory local data (user-specific, not tracked)
-skills/art-director/data/
+skills/reference-memory/data/
 *.reference-memory.json

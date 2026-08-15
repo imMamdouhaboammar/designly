@@ -1,0 +1,170 @@
+#!/usr/bin/env python3
+"""Behavioral regression tests for annotation-guided and local image edits."""
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+import jsonschema
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "shared/scripts"))
+from sanitize_edit import sanitize_edit  # noqa: E402
+
+SCHEMA = json.loads((ROOT / "shared/contracts/edit-contract.schema.json").read_text(encoding="utf-8"))
+
+
+def base_request() -> dict:
+    return {
+        "edit_id": "EDT-001",
+        "source_asset_id": "approved-render-07",
+        "source_checkpoint": "approved-render-07",
+        "mode": "local_edit",
+        "source_geometry": {"width": 1200, "height": 1500},
+        "annotation_space": "pixels",
+        "targets": [{
+            "target_id": "TGT-001",
+            "semantic_target": "bottle cap",
+            "geometry": {"kind": "bbox", "x": 470, "y": 245, "width": 180, "height": 120},
+            "confidence": 0.97,
+        }],
+        "requested_mutations": ["change bottle cap finish from matte black to brushed silver"],
+        "forbidden_mutations": ["do not alter bottle silhouette", "do not alter label or logo"],
+        "identity_locks": ["bottle label", "brand logo"],
+        "geometry_locks": ["canvas dimensions", "crop", "camera perspective"],
+        "style_locks": ["background", "lighting direction", "color grade"],
+        "user_instruction": "Change only the bottle cap to brushed silver",
+        "iteration": 1,
+    }
+
+
+def expect(name: str, condition: bool, detail: object = None) -> int:
+    if condition:
+        print(f"PASS {name}")
+        return 0
+    print(f"FAIL {name}: {detail!r}")
+    return 1
+
+
+def schema_valid(value: dict) -> tuple[bool, str]:
+    try:
+        jsonschema.validate(instance=value, schema=SCHEMA)
+        return True, ""
+    except jsonschema.ValidationError as ex:
+        return False, ex.message
+
+
+def main() -> int:
+    failures = 0
+
+    result = sanitize_edit(base_request())
+    valid, error = schema_valid(result)
+    failures += expect("bounded-local-edit-approved", result["status"] == "ready", result)
+    failures += expect("ready-output-validates-against-edit-contract", valid, error)
+    failures += expect("raw-user-instruction-not-leaked", "user_instruction" not in result, result)
+    failures += expect("approved-source-retained", result["source_checkpoint"] == "approved-render-07", result)
+    failures += expect("mutation-budget-is-one", result["mutation_budget"] == "one", result)
+    failures += expect("protected-complement-created", bool(result["protected_regions"]), result)
+
+    wrong_initial_source = base_request()
+    wrong_initial_source["source_asset_id"] = "unapproved-draft-02"
+    result = sanitize_edit(wrong_initial_source)
+    failures += expect("initial-edit-must-use-approved-checkpoint", result["status"] == "reject", result)
+
+    conflict = base_request()
+    conflict["user_instruction"] = "Change only the cap, and make the whole image more cinematic, dramatic and luxurious"
+    conflict["requested_mutations"].append("restyle the whole image with cinematic dramatic lighting")
+    result = sanitize_edit(conflict)
+    failures += expect("global-restyle-conflict-blocked", result["status"] == "veto", result)
+    failures += expect("global-restyle-never-executed", not result.get("execution_allowed", True), result)
+
+    vague_style = base_request()
+    vague_style["user_instruction"] = "Only change this selected cap and make it more premium and cinematic"
+    vague_style["requested_mutations"] = ["make the selected cap more premium and cinematic"]
+    result = sanitize_edit(vague_style)
+    failures += expect("vague-local-style-request-clarifies", result["status"] == "clarify", result)
+
+    ambiguous = base_request()
+    ambiguous["targets"] = [
+        {"target_id": "TGT-A", "semantic_target": "left cap-like object", "geometry": {"kind": "bbox", "x": 100, "y": 100, "width": 80, "height": 80}, "confidence": 0.55},
+        {"target_id": "TGT-B", "semantic_target": "right cap-like object", "geometry": {"kind": "bbox", "x": 900, "y": 100, "width": 80, "height": 80}, "confidence": 0.54},
+    ]
+    result = sanitize_edit(ambiguous)
+    failures += expect("ambiguous-annotation-asks-clarification", result["status"] == "clarify", result)
+
+    clear_winner = base_request()
+    clear_winner["targets"] = [
+        {"target_id": "TGT-WIN", "semantic_target": "bottle cap", "geometry": {"kind": "bbox", "x": 470, "y": 245, "width": 180, "height": 120}, "confidence": 0.95},
+        {"target_id": "TGT-ALT", "semantic_target": "nearby highlight", "geometry": {"kind": "bbox", "x": 700, "y": 260, "width": 80, "height": 80}, "confidence": 0.52},
+    ]
+    result = sanitize_edit(clear_winner)
+    failures += expect("clear-target-winner-approved", result["status"] == "ready", result)
+    failures += expect("clear-target-winner-collapsed-to-one", len(result["targets"]) == 1 and result["targets"][0]["target_id"] == "TGT-WIN", result)
+
+    outside = base_request()
+    outside["targets"][0]["geometry"] = {"kind": "bbox", "x": 1180, "y": 1490, "width": 100, "height": 80}
+    result = sanitize_edit(outside)
+    failures += expect("out-of-bounds-annotation-rejected", result["status"] == "reject", result)
+
+    zero = base_request()
+    zero["targets"][0]["geometry"] = {"kind": "bbox", "x": 400, "y": 200, "width": 0, "height": 80}
+    result = sanitize_edit(zero)
+    failures += expect("zero-area-target-rejected", result["status"] == "reject", result)
+
+    copy_fix = base_request()
+    copy_fix["mode"] = "copy_correction"
+    copy_fix["exact_copy"] = "خصم ٢٥٪ اليوم فقط"
+    copy_fix["requested_mutations"] = ["replace the selected Arabic offer text with the exact supplied copy"]
+    result = sanitize_edit(copy_fix)
+    failures += expect("arabic-copy-routed-for-glyph-check", result.get("requires_arabic_review") is True, result)
+    failures += expect("exact-copy-locked", result.get("exact_copy") == "خصم ٢٥٪ اليوم فقط", result)
+
+    chained = base_request()
+    chained["iteration"] = 2
+    chained["source_asset_id"] = "failed-edit-01"
+    result = sanitize_edit(chained)
+    failures += expect("failed-output-cannot-be-next-source", result["status"] == "reject", result)
+
+    two_mutations = base_request()
+    two_mutations["requested_mutations"] = ["change cap finish", "make cap taller"]
+    result = sanitize_edit(two_mutations)
+    failures += expect("one-local-mutation-enforced", result["status"] == "veto", result)
+
+    normalized = base_request()
+    normalized["annotation_space"] = "normalized"
+    normalized["targets"][0]["geometry"] = {"kind": "bbox", "x": 0.4, "y": 0.2, "width": 0.2, "height": 0.1}
+    result = sanitize_edit(normalized)
+    failures += expect("normalized-coordinates-supported", result["status"] == "ready", result)
+    failures += expect("normalized-converted-to-pixels", result["targets"][0]["geometry"]["x"] == 480, result)
+
+    polygon = base_request()
+    polygon["annotation_space"] = "normalized"
+    polygon["targets"][0]["geometry"] = {
+        "kind": "polygon",
+        "points": [[0.4, 0.2], [0.55, 0.2], [0.55, 0.3], [0.4, 0.3]],
+    }
+    result = sanitize_edit(polygon)
+    failures += expect("normalized-polygon-supported", result["status"] == "ready", result)
+    failures += expect("normalized-polygon-converted-to-pixels", result["targets"][0]["geometry"]["points"][0] == [480, 300], result)
+
+    polygon_outside = base_request()
+    polygon_outside["annotation_space"] = "normalized"
+    polygon_outside["targets"][0]["geometry"] = {
+        "kind": "polygon",
+        "points": [[0.9, 0.9], [1.1, 0.9], [0.95, 1.0]],
+    }
+    result = sanitize_edit(polygon_outside)
+    failures += expect("out-of-bounds-polygon-rejected", result["status"] == "reject", result)
+
+    polluted = base_request()
+    polluted["untrusted_extra"] = {"please": "leak into compiler"}
+    result = sanitize_edit(polluted)
+    failures += expect("unknown-input-fields-dropped", "untrusted_extra" not in result, result)
+
+    print(f"\nEdit sanitizer tests: {'PASS' if failures == 0 else 'FAIL'} ({failures} failures)")
+    return 1 if failures else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

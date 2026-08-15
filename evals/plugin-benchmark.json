@@ -1,135 +1,80 @@
 {
-  "benchmark_name": "Designly Neural Mesh v4.0.0 Evaluation Suite",
-  "version": "4.0.0",
+  "benchmark_name": "Designly Neural Mesh v4.1.0 Evaluation Suite",
+  "version": "4.1.0",
   "groups": [
     {
       "id": "GRP-01",
       "name": "Skill Discovery & Manifest Catalog",
-      "cases": [
-        {
-          "prompt": "Show me all available Designly skills and capabilities",
-          "expected_skills_count": 13,
-          "expected_primary_orchestrator": "designly-director"
-        }
-      ]
+      "cases": [{"prompt": "Show me all available Designly skills and capabilities", "expected_skills_count": 14, "expected_primary_orchestrator": "designly-director"}]
     },
     {
       "id": "GRP-02",
       "name": "Orchestrator Routing & Intake Locking",
-      "cases": [
-        {
-          "prompt": "Art-direct a multi-format launch campaign for premium electric vehicles with fixed headline 'Driven by Silence'",
-          "expected_route": "designly-director",
-          "expected_locks": ["primary_message", "task_type"],
-          "expected_parallel_delegates": ["strategy-planner", "brand-guardian", "taste-analyst"]
-        }
-      ]
+      "cases": [{"prompt": "Art-direct a multi-format launch campaign with fixed headline 'Driven by Silence'", "expected_route": "designly-director", "expected_locks": ["primary_message", "task_type"], "expected_parallel_delegates": ["strategy-planner", "brand-guardian", "taste-analyst"]}]
     },
     {
       "id": "GRP-03",
       "name": "Parallel Specialist Delegation",
-      "cases": [
-        {
-          "prompt": "Analyze market positioning, brand identity guidelines, and reference imagery concurrently",
-          "expected_agents": ["strategy_planner", "brand_guardian", "taste_analyst"],
-          "max_concurrency": 6,
-          "expected_packets": 3
-        }
-      ]
+      "cases": [{"prompt": "Analyze positioning, brand rules, and references concurrently", "expected_agents": ["strategy-planner", "brand-guardian", "taste-analyst"], "max_concurrency": 6, "expected_packets": 3}]
     },
     {
       "id": "GRP-04",
       "name": "Signal Priority & Conflict Resolution",
-      "cases": [
-        {
-          "prompt": "User specifies red brand accent lock, but inferred taste profile suggests blue",
-          "conflict_type": "brand_lock_vs_inferred_taste",
-          "expected_winner_priority": 1,
-          "lock_violation_allowed": false
-        }
-      ]
+      "cases": [{"prompt": "User locks red accent while inferred taste suggests blue", "conflict_type": "brand_lock_vs_inferred_taste", "expected_winner_priority": 1, "lock_violation_allowed": false}]
     },
     {
       "id": "GRP-05",
-      "name": "Context & Token Isolation Benefit",
+      "name": "Targeted Revision Loop Accuracy",
       "cases": [
-        {
-          "metric": "specialist_context_isolation",
-          "description": "Specialists receive bounded context slices rather than raw monolithic prompt history",
-          "target_token_reduction_pct": 60
-        }
+        {"defect_dimension": "typography", "expected_target_node": "typography-director", "unnecessary_nodes_rerun": 0},
+        {"defect_dimension": "physical_believability", "expected_target_node": "manipulation-director", "unnecessary_nodes_rerun": 0},
+        {"defect_dimension": "collateral_change", "expected_target_node": "edit-sanitizer", "unnecessary_nodes_rerun": 0}
       ]
     },
     {
       "id": "GRP-06",
-      "name": "Targeted Revision Loop Accuracy",
-      "cases": [
-        {
-          "defect_dimension": "typography",
-          "defect_description": "Headline text line breaks awkwardly across semantic phrase",
-          "expected_target_node": "typography-director",
-          "unnecessary_nodes_rerun": 0
-        },
-        {
-          "defect_dimension": "physical_believability",
-          "defect_description": "Cast shadow missing beneath product container",
-          "expected_target_node": "manipulation-director",
-          "unnecessary_nodes_rerun": 0
-        }
-      ]
+      "name": "Reference Memory CRUD & Scoped Feedback",
+      "cases": [{"operation": "feedback_scoping", "input": "Dislike typography in REF-1002 but like lighting", "expected_taste_state": {"likes": ["lighting"], "dislikes": ["typography"]}, "cross_dimension_pollution": false}]
     },
     {
       "id": "GRP-07",
-      "name": "Reference Memory CRUD & Scoped Feedback",
+      "name": "Arabic RTL & Exact Copy Gates",
       "cases": [
-        {
-          "operation": "feedback_scoping",
-          "input": "Dislike typography in REF-1002 but like lighting",
-          "expected_taste_state": {
-            "likes": ["lighting"],
-            "dislikes": ["typography"]
-          },
-          "cross_dimension_pollution": false
-        }
+        {"input": "Arabic headline with reversed letter connections", "expected_gate_verdict": "FAIL", "remediation_node": "arabic-rtl-director"},
+        {"input": "Arabic local copy correction", "expected_pre_execution_nodes": ["edit-sanitizer", "arabic-rtl-director"], "copy_invention_allowed": false}
       ]
     },
     {
       "id": "GRP-08",
-      "name": "Arabic RTL & Glyph Hard Gates",
+      "name": "Anti-Slop Veto & Category Floors",
       "cases": [
-        {
-          "input": "Arabic headline with reversed letter connections",
-          "expected_gate_verdict": "FAIL",
-          "remediation_node": "arabic-rtl-director"
-        }
+        {"input": "Average score 93, hierarchy 80", "expected_verdict": "FAIL", "reason": "category_floor_breach"},
+        {"input": "1 critical slop finding", "expected_verdict": "FAIL", "reason": "critical_slop_veto"}
       ]
     },
     {
       "id": "GRP-09",
-      "name": "Anti-Slop Veto & Category Floors",
+      "name": "Annotation & Inpainting Sanitization",
       "cases": [
-        {
-          "input": "Average score 93, but hierarchy score 80 (below floor 85)",
-          "expected_verdict": "FAIL",
-          "reason": "category_floor_breach"
-        },
-        {
-          "input": "1 critical slop finding (effect stack replaces concept)",
-          "expected_verdict": "FAIL",
-          "reason": "critical_slop_veto"
-        }
+        {"input": "Circle overlaps two similar products and note says fix this", "expected_status": "clarify", "image_execution_allowed": false},
+        {"input": "Selected cap plus make the whole image cinematic", "expected_status": "veto", "image_execution_allowed": false},
+        {"input": "Selected cap, exact brushed-silver finish, valid bbox", "expected_status": "ready", "expected_mutation_budget": "one"},
+        {"input": "bbox outside native source dimensions", "expected_status": "reject", "image_execution_allowed": false}
       ]
     },
     {
       "id": "GRP-10",
-      "name": "Graceful Sequential Fallback",
+      "name": "Edit Drift & Source Checkpoint",
       "cases": [
-        {
-          "condition": "subagents_disabled_in_host",
-          "expected_execution": "sequential_skills_execution",
-          "contract_schema_maintained": true
-        }
+        {"condition": "second edit uses failed first edit as source", "expected_status": "reject"},
+        {"condition": "collateral drift after local edit", "expected_revision_node": "edit-sanitizer", "retry_source": "last_approved_checkpoint"},
+        {"condition": "same bounded defect fails 3 attempts", "expected_behavior": "stop_and_report"}
       ]
+    },
+    {
+      "id": "GRP-11",
+      "name": "Graceful Sequential Fallback",
+      "cases": [{"condition": "subagents_disabled_in_host", "expected_execution": "sequential_skills_execution", "contract_schema_maintained": true}]
     }
   ]
 }

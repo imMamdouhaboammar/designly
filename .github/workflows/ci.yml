@@ -1,0 +1,73 @@
+name: Designly CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install test dependencies
+        run: python -m pip install --disable-pip-version-check pyyaml jsonschema
+
+      - name: Compile Python
+        run: python -m compileall -q shared skills evals tools
+
+      - name: Validate Design Neural Mesh
+        run: python shared/scripts/validate_mesh.py
+
+      - name: Validate Skill interfaces
+        run: python shared/scripts/validate_skill_interfaces.py
+
+      - name: Validate Codex agents
+        run: python shared/scripts/validate_agent_configs.py
+
+      - name: Regression baseline
+        run: python evals/baseline/test_monolith_parity.py
+
+      - name: Skill routing
+        run: python evals/routing/test_skill_catalog.py
+
+      - name: Typed handoff contracts
+        run: python evals/handoffs/test_contracts.py
+
+      - name: Agent boundaries
+        run: python evals/handoffs/test_agents.py
+
+      - name: Edit sanitizer regression suite
+        run: python evals/edit/test_edit_sanitizer.py
+
+      - name: Revision routing
+        run: python evals/visual/test_revision_router.py
+
+      - name: Mesh adversarial evals
+        run: python evals/run_mesh_evals.py
+
+      - name: Prompt anti-slop regressions
+        run: python skills/prompt-compiler/scripts/test_prompt_lint.py
+
+      - name: Visual release gates
+        run: python skills/visual-qa/scripts/test_gates.py
+
+      - name: Public plugin preflight
+        run: python tools/validate_public_plugin.py .
+
+      - name: Deterministic package build
+        run: |
+          mkdir -p /tmp/designly-pack
+          python tools/package_plugin.py . /tmp/designly-pack/a.zip
+          python tools/package_plugin.py . /tmp/designly-pack/b.zip
+          cmp /tmp/designly-pack/a.zip /tmp/designly-pack/b.zip
+          unzip -l /tmp/designly-pack/a.zip | head -40

@@ -1,24 +1,28 @@
 # Prompt Compiler
 
-Compile the Art Direction Spec into model-ready language only after preflight passes
+Compile model-ready language only after the upstream design or edit preflight passes
 
 ## Principle
 
-A strong image prompt expresses relationships and constraints
+A strong image instruction expresses relationships, invariants and a bounded job
 
-It does not substitute a list of style keywords for design direction
+Do not substitute a list of style keywords for art direction
 
-## Translate decisions, not adjectives
+## Generate vs edit
 
-Prefer
+Generation and bounded editing are different execution contracts
 
-`One bottle occupies the lower-left visual mass, leaving a broad quiet field for the headline; a soft upper-left key creates one grounded cast shadow and a controlled highlight along the glass edge`
+### Generation
 
-Over
+Compile an approved Art Direction Spec
 
-`premium cinematic stunning luxury product shot`
+### Existing-image edit
 
-## Prompt order
+Compile only a `ready` EditContract produced by `edit-sanitizer`
+
+Never translate raw annotation feedback directly into an image-edit prompt
+
+## Generation prompt order
 
 Use the smallest useful subset of
 
@@ -32,58 +36,55 @@ Use the smallest useful subset of
 8. material/environment interaction
 9. color/value behavior
 10. brand locks
-11. edit/protected-region constraints
-12. likely failure exclusions
-13. output ratio/format
+11. likely failure exclusions
+12. output ratio/format
 
-## Relationship language
+## Edit instruction order
 
-Describe
+1. approved source checkpoint
+2. exact semantic target and region/mask when the host accepts it
+3. one atomic requested mutation
+4. identity locks
+5. geometry locks
+6. text locks/exact replacement copy
+7. style locks
+8. non-target protection
+9. minimal boundary-blending allowance
+10. acceptance checks
+11. rollback/retry rule
 
-- what dominates
-- what supports
-- what overlaps
-- what stays separate
-- where the eye moves
-- where negative space is preserved
-- what light source explains shadows and reflections
-- what must remain exact
+Example
 
-This usually guides image models better than disconnected nouns
+`Edit only the selected bottle-cap region. Change the cap finish from matte black to brushed silver. Keep the bottle silhouette, label, logo, crop, camera perspective, background, lighting direction, and color grade materially stable. Do not add, remove, move, restyle, or rewrite any non-target content. Allow only the minimal edge blending needed to integrate the cap finish. If protected content drifts, reject this attempt and retry from the approved source checkpoint.`
+
+Do not write `preserve 100% of pixels` unless the actual editor guarantees that behavior
+
+## Annotation discipline
+
+A pointer or mask indicates location, not necessarily intent
+
+If `edit-sanitizer` has not resolved one target and one mutation, do not compile
+
+## Exact copy
+
+Use only supplied exact replacement text
+
+Never ask the image model to invent copy during a correction
+
+Require Arabic review for Arabic replacement text before execution
 
 ## Negative-instruction discipline
 
-Do not dump twenty banned effects into every prompt
-
 Include exclusions only for likely failure modes in the current task
 
-A direction with strong positive structure usually needs fewer negative instructions
-
-## Edit prompt contract
-
-Use
-
-1. target
-2. allowed change
-3. locked content
-4. acceptance criteria
-
-Example
-
-`Change only the bottle cap from black to brushed silver. Preserve bottle silhouette, label, logo, reflections, hand, background, crop, and lighting. Treat everything outside the cap as protected. Reject any visible change to label geometry or surrounding composition.`
+A strong positive structure usually needs fewer negative instructions
 
 ## Reference prompting
 
-State which visual grammar is borrowed from which reference
-
-Do not say only `match the style`
-
-Example
-
-`Use REF-01 for the large lower-frame crop and quiet upper field; use REF-02 only for the soft side-light character; keep the current brand palette and create original props and arrangement.`
+State which visual grammar comes from which reference. Do not say only `match the style`
 
 ## Prompt disclosure
 
-When the host can generate directly, keep the compiled prompt internal unless the user asks for it
+When the host can execute directly, keep compiled implementation instructions internal unless the user asks to see them
 
-When the user asks for a prompt, return the final compiled prompt without scratch reasoning
+When the user asks for a prompt, return the approved compiled prompt without scratch reasoning

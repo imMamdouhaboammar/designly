@@ -2,95 +2,27 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "DesignContext",
   "type": "object",
-  "required": [
-    "session_id",
-    "task_type",
-    "objective",
-    "audience",
-    "primary_message",
-    "desired_action",
-    "platform",
-    "cultural_context",
-    "locks",
-    "brand_state",
-    "taste_state",
-    "strategy_state",
-    "composition_state",
-    "typography_state",
-    "craft_state",
-    "campaign_state",
-    "generation_state",
-    "qa_state"
-  ],
+  "required": ["session_id", "task_type", "objective", "audience", "primary_message", "desired_action", "platform", "cultural_context", "locks", "brand_state", "taste_state", "strategy_state", "composition_state", "typography_state", "craft_state", "campaign_state", "generation_state", "qa_state"],
   "properties": {
-    "session_id": {
-      "type": "string"
-    },
-    "task_type": {
-      "type": "string",
-      "enum": [
-        "campaign",
-        "single_asset",
-        "edit",
-        "review",
-        "taste_extraction",
-        "reference_replication",
-        "typography_heavy",
-        "exploration",
-        "quick"
-      ]
-    },
-    "objective": {
-      "type": "string"
-    },
-    "audience": {
-      "type": "object"
-    },
-    "primary_message": {
-      "type": "string"
-    },
-    "desired_action": {
-      "type": "string"
-    },
-    "platform": {
-      "type": "object"
-    },
-    "cultural_context": {
-      "type": "object"
-    },
-    "locks": {
-      "type": "array",
-      "items": {
-        "$ref": "design-lock.schema.json"
-      }
-    },
-    "brand_state": {
-      "type": "object"
-    },
-    "taste_state": {
-      "type": "object"
-    },
-    "strategy_state": {
-      "type": "object"
-    },
-    "composition_state": {
-      "type": "object"
-    },
-    "typography_state": {
-      "type": "object"
-    },
-    "craft_state": {
-      "type": "object"
-    },
-    "campaign_state": {
-      "type": "object"
-    },
-    "generation_state": {
-      "type": "object"
-    },
-    "qa_state": {
-      "type": "object"
-    }
+    "session_id": {"type": "string"},
+    "task_type": {"type": "string", "enum": ["campaign", "single_asset", "edit", "review", "taste_extraction", "reference_replication", "typography_heavy", "exploration", "quick"]},
+    "objective": {"type": "string"},
+    "audience": {"type": "object"},
+    "primary_message": {"type": "string"},
+    "desired_action": {"type": "string"},
+    "platform": {"type": "object"},
+    "cultural_context": {"type": "object"},
+    "locks": {"type": "array", "items": {"$ref": "design-lock.schema.json"}},
+    "brand_state": {"type": "object"},
+    "taste_state": {"type": "object"},
+    "strategy_state": {"type": "object"},
+    "composition_state": {"type": "object"},
+    "typography_state": {"type": "object"},
+    "craft_state": {"type": "object"},
+    "campaign_state": {"type": "object"},
+    "edit_state": {"type": "object"},
+    "generation_state": {"type": "object"},
+    "qa_state": {"type": "object"}
   },
   "additionalProperties": false
 }
