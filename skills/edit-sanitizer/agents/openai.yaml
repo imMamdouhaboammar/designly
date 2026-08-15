@@ -1,0 +1,12 @@
+interface:
+  display_name: "Edit Sanitizer"
+  short_description: "Safe inpainting, annotations & bounded revisions"
+  icon_small: "./assets/small-logo.svg"
+  icon_large: "./assets/large-logo.svg"
+  brand_color: "#111111"
+  default_prompt:
+    - "Sanitize this annotation-guided edit before changing the image."
+    - "Turn this correction note into one bounded edit with protected regions."
+    - "Check this inpainting request for scope drift, ambiguity, and collateral-change risk."
+policy:
+  allow_implicit_invocation: true
