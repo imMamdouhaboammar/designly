@@ -4,8 +4,6 @@ interface:
   icon_small: "./assets/small-logo.svg"
   icon_large: "./assets/large-logo.svg"
   brand_color: "#111111"
-  default_prompt:
-    - "Plan compositing perspective lines, contact shadows, and environment relighting."
-    - "Verify physical plausibility and scale consistency for this composite image."
+  default_prompt: "Plan this composite's perspective, scale, contact shadows, reflections, relighting, and physical plausibility."
 policy:
   allow_implicit_invocation: true
