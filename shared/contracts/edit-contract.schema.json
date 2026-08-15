@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EditContract",
+  "type": "object",
+  "required": [
+    "edit_id",
+    "source_asset_id",
+    "source_checkpoint",
+    "mode",
+    "source_geometry",
+    "annotation_space",
+    "targets",
+    "requested_mutations",
+    "forbidden_mutations",
+    "identity_locks",
+    "geometry_locks",
+    "style_locks",
+    "mutation_budget",
+    "protected_regions",
+    "acceptance_checks",
+    "iteration",
+    "status",
+    "execution_allowed"
+  ],
+  "properties": {
+    "edit_id": {"type": "string", "pattern": "^EDT-[0-9A-Za-z_-]+$"},
+    "source_asset_id": {"type": "string", "minLength": 1},
+    "source_checkpoint": {"type": "string", "minLength": 1},
+    "mode": {
+      "type": "string",
+      "enum": ["local_edit", "inpaint", "annotation_guided", "copy_correction", "brand_correction", "object_replace", "background_extend"]
+    },
+    "source_geometry": {
+      "type": "object",
+      "required": ["width", "height"],
+      "properties": {
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "annotation_space": {"type": "string", "enum": ["pixels", "normalized", "semantic", "mask"]},
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["target_id", "semantic_target", "geometry", "confidence"],
+        "properties": {
+          "target_id": {"type": "string", "minLength": 1},
+          "semantic_target": {"type": "string", "minLength": 1},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "geometry": {
+            "type": "object",
+            "required": ["kind"],
+            "properties": {
+              "kind": {"type": "string", "enum": ["bbox", "polygon", "mask_ref", "semantic"]},
+              "x": {"type": "number"},
+              "y": {"type": "number"},
+              "width": {"type": "number"},
+              "height": {"type": "number"},
+              "points": {"type": "array", "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}}},
+              "mask_ref": {"type": "string"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "requested_mutations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "forbidden_mutations": {"type": "array", "items": {"type": "string"}},
+    "identity_locks": {"type": "array", "items": {"type": "string"}},
+    "geometry_locks": {"type": "array", "items": {"type": "string"}},
+    "style_locks": {"type": "array", "items": {"type": "string"}},
+    "mutation_budget": {"type": "string", "enum": ["one", "low", "medium"]},
+    "protected_regions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["region_id", "rule"],
+        "properties": {
+          "region_id": {"type": "string"},
+          "rule": {"type": "string"},
+          "geometry": {"type": ["object", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "exact_copy": {"type": ["string", "null"]},
+    "requires_arabic_review": {"type": "boolean"},
+    "ambiguity": {
+      "type": "object",
+      "required": ["unresolved", "reasons"],
+      "properties": {
+        "unresolved": {"type": "boolean"},
+        "reasons": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "acceptance_checks": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "iteration": {"type": "integer", "minimum": 1, "maximum": 3},
+    "status": {"type": "string", "enum": ["ready", "clarify", "reject", "veto"]},
+    "execution_allowed": {"type": "boolean"},
+    "reasons": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
