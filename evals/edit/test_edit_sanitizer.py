@@ -67,6 +67,11 @@ def main() -> int:
     failures += expect("mutation-budget-is-one", result["mutation_budget"] == "one", result)
     failures += expect("protected-complement-created", bool(result["protected_regions"]), result)
 
+    wrong_initial_source = base_request()
+    wrong_initial_source["source_asset_id"] = "unapproved-draft-02"
+    result = sanitize_edit(wrong_initial_source)
+    failures += expect("initial-edit-must-use-approved-checkpoint", result["status"] == "reject", result)
+
     conflict = base_request()
     conflict["user_instruction"] = "Change only the cap, and make the whole image more cinematic, dramatic and luxurious"
     conflict["requested_mutations"].append("restyle the whole image with cinematic dramatic lighting")
@@ -118,7 +123,6 @@ def main() -> int:
     chained = base_request()
     chained["iteration"] = 2
     chained["source_asset_id"] = "failed-edit-01"
-    chained["source_checkpoint"] = "approved-render-07"
     result = sanitize_edit(chained)
     failures += expect("failed-output-cannot-be-next-source", result["status"] == "reject", result)
 
@@ -133,6 +137,25 @@ def main() -> int:
     result = sanitize_edit(normalized)
     failures += expect("normalized-coordinates-supported", result["status"] == "ready", result)
     failures += expect("normalized-converted-to-pixels", result["targets"][0]["geometry"]["x"] == 480, result)
+
+    polygon = base_request()
+    polygon["annotation_space"] = "normalized"
+    polygon["targets"][0]["geometry"] = {
+        "kind": "polygon",
+        "points": [[0.4, 0.2], [0.55, 0.2], [0.55, 0.3], [0.4, 0.3]],
+    }
+    result = sanitize_edit(polygon)
+    failures += expect("normalized-polygon-supported", result["status"] == "ready", result)
+    failures += expect("normalized-polygon-converted-to-pixels", result["targets"][0]["geometry"]["points"][0] == [480, 300], result)
+
+    polygon_outside = base_request()
+    polygon_outside["annotation_space"] = "normalized"
+    polygon_outside["targets"][0]["geometry"] = {
+        "kind": "polygon",
+        "points": [[0.9, 0.9], [1.1, 0.9], [0.95, 1.0]],
+    }
+    result = sanitize_edit(polygon_outside)
+    failures += expect("out-of-bounds-polygon-rejected", result["status"] == "reject", result)
 
     polluted = base_request()
     polluted["untrusted_extra"] = {"please": "leak into compiler"}
