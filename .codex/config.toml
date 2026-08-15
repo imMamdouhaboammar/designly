@@ -1,0 +1,6 @@
+[agents]
+max_concurrent_agents = 6
+default_agent = "designly-director"
+allow_subagents = true
+enforce_typed_contracts = true
+contract_schema_dir = "shared/contracts"
