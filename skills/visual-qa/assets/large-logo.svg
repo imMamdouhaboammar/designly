@@ -2,4 +2,8 @@
   <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
   <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
+  <g stroke="#111111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="272" cy="256" r="32"/>
+    <path d="M250 258L266 274L296 238" stroke-width="12"/>
+  </g>
 </svg>
