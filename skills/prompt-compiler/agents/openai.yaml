@@ -1,11 +1,12 @@
 interface:
   display_name: "Prompt Compiler"
-  short_description: "Provider prompt compilation & local edit syntax"
+  short_description: "Compile approved visual direction for the active image tool"
   icon_small: "./assets/small-logo.svg"
   icon_large: "./assets/large-logo.svg"
   brand_color: "#111111"
   default_prompt:
-    - "Compile approved Art Direction Spec into Midjourney v6 / Flux prompt syntax."
-    - "Generate targeted inpainting/edit prompt with strict protected region isolation."
+    - "Compile this approved Art Direction Spec for the image tool available in this ChatGPT or Codex session."
+    - "Compile this ready EditContract into one bounded image-edit instruction without broadening its scope."
+    - "Lint this image instruction for vague style filler, effect stacking, and unsupported provider assumptions."
 policy:
   allow_implicit_invocation: true
