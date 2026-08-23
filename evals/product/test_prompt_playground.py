@@ -134,7 +134,7 @@ def main() -> int:
     check("assets/badges/prompt-playground.svg" in readme, "README surfaces the clickable Playground badge", failures)
 
     print(f"\nWorkflow Prompt Playground tests: {'PASS' if not failures else 'FAIL'} ({len(failures)} failures)")
-    return 1 if not failures else 1
+    return 1 if failures else 0
 
 
 if __name__ == "__main__":
