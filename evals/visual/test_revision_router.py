@@ -68,6 +68,12 @@ def test_targeted_revision_routing() -> int:
         ("annotation_mapping", "edit-sanitizer"),
         ("collateral_change", "edit-sanitizer"),
         ("prompt_execution", "prompt-compiler"),
+        ("video_dramaturgy", "video-director"),
+        ("motion_rhythm", "video-director"),
+        ("shot_card_continuity", "video-director"),
+        ("model_physics", "image-director"),
+        ("multi_panel_grid", "image-director"),
+        ("character_continuity", "image-director"),
     ]
     for dim, expected in cases:
         routed = router.route_revision({"failing_dimension": dim, "defect_description": "fixture"})

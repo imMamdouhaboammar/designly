@@ -5,74 +5,75 @@
 <h1 align="center">Designly</h1>
 
 <p align="center">
-  <strong>Art direction for image-generation workflows that need judgment, not prompt decoration</strong><br/>
-  19 focused Skills, 14 bounded Codex agents, Cannes-calibrated Creative Direction, 571 Legendary Campaign Canon, Insight Mining, Brand Activation, Visual Storytelling, typed handoffs, preflight, edit sanitization, and independent visual QA
+  <strong>Commercial Art Direction & Design Neural Mesh Plugin</strong><br/>
+  21 focused Skills, 16 bounded Codex agents, Cannes-calibrated Creative Direction, 571 Legendary Campaign Canon, dramaturgy-first AI Video Direction (Seedance 2.5, Kling 3.0, Veo), model-physics Image Direction (Nano Banana, GPT Image 2), Insight Mining, Brand Activation, Visual Storytelling, typed handoffs, preflight, bounded edit sanitization, and independent visual QA
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/v4.4.0-production-111111?style=flat-square" alt="version 4.4.0" />
-  <img src="https://img.shields.io/badge/19_Skills-modular-111111?style=flat-square" alt="19 skills" />
-  <img src="https://img.shields.io/badge/14_Agents-bounded-111111?style=flat-square" alt="14 agents" />
+  <img src="https://img.shields.io/badge/v5.0.0-production-111111?style=flat-square" alt="version 5.0.0" />
+  <img src="https://img.shields.io/badge/21_Skills-modular-111111?style=flat-square" alt="21 skills" />
+  <img src="https://img.shields.io/badge/16_Agents-bounded-111111?style=flat-square" alt="16 agents" />
   <img src="https://img.shields.io/badge/571_Campaigns-canonical-111111?style=flat-square" alt="571 campaigns" />
+  <img src="https://img.shields.io/badge/Dramaturgy-Walter_Murch-111111?style=flat-square" alt="Dramaturgy" />
   <img src="https://img.shields.io/badge/Arabic_RTL-native-111111?style=flat-square" alt="Arabic RTL" />
 </p>
 
 ## What Designly is
 
-Designly is a skills-only ChatGPT/Codex plugin for commercial art direction, creative ideation, consumer insight mining, brand activation, campaign narrative design, brand visual work, product advertising, image manipulation, Arabic-first design, and visual review.
+Designly is a skills-only ChatGPT and Codex plugin for commercial art direction, creative ideation, consumer insight mining, brand activation, narrative design, AI video directing, model-physics image prompting, brand visual systems, product advertising, bounded image manipulation, Arabic-first design, and rigorous visual QA.
 
-It does not treat image generation as a single-prompt task.
+It does not treat visual creation as a single-prompt guessing game.
 
-The Director locks the brief, delegates bounded specialist jobs (including Cannes-calibrated ideation, consumer tension mining, non-advertising activation diagnostics, and anti-derivative checks against 571 legendary campaigns), merges typed recommendations, compiles approved visual direction, and submits the actual output to independent QA.
+The Director locks the brief, delegates bounded specialist jobs (including Cannes-calibrated ideation, consumer tension mining, non-advertising activation diagnostics, 571 legendary campaigns, dramaturgy-first video directing with Walter Murch's Rule of Six, and model-physics prompt synthesis for Nano Banana, GPT Image 2, Seedance 2.5, and Kling 3.0), merges typed recommendations, compiles approved visual direction, and submits the output to independent QA.
 
-For existing-image corrections, Designly has a dedicated Edit Sanitizer so annotation notes and inpainting requests cannot flow directly into execution without scope checks.
+For existing-image corrections, Designly enforces a dedicated Edit Sanitizer so annotation notes and inpainting requests cannot flow directly into execution without strict scope and preservation checks.
 
-## Pipeline
+## Neural Mesh Architecture
 
 ```text
 Brief
-  |
-  v
-Designly Director
-  |
-  +--> Creative Director (Cannes/D&AD scoring, SIT/TRIZ structural methods)
-  +--> Insight Mining (Tension spotting, JTBD & Mark Pollard 4-points)
-  +--> Campaign Canon (571 canonical campaigns & P01-P18 pattern benchmark)
-  +--> Brand Activation (PR stunts, brand utility, experiential diagnostics)
-  +--> Visual Storytelling (Narrative arcs, Story Spine, Sparkline, Pixar rules)
-  +--> Creative Strategy (Brief deconstruction, message hierarchy)
-  +--> Brand Intelligence (Brand rules, product identity, logo behavior)
-  +--> Taste Engine <--> Reference Memory (Transferable rules & REF IDs)
-  |
-  v
-Composition Director
-  |
-  +--> Typography Director --> Arabic RTL Director when needed
-  +--> Photography Director
-  +--> Manipulation Director
-  +--> Campaign DNA
-  |
-  +--> existing-image correction
-  |      Edit Sanitizer
-  |        - annotation mapping
-  |        - source checkpoint
-  |        - mutation budget
-  |        - protected regions
-  |        - ambiguity / scope veto
-  |
-  v
-Prompt Compiler
-  |
-  v
-Host image generator/editor
-  |
-  v
-Visual QA
-  +--> PASS: final signoff
-  +--> FAIL: RevisionRequest to the smallest responsible specialist
+  │
+  ▼
+Designly Director (Orchestrator & State Owner)
+  │
+  ├──► Creative Director (Cannes/D&AD scoring, SIT/TRIZ structural methods)
+  ├──► Insight Mining (Consumer tension spotting, JTBD & Mark Pollard 4-points)
+  ├──► Campaign Canon (571 canonical campaigns & P01-P18 pattern benchmark)
+  ├──► Brand Activation (PR stunts, brand utility, experiential diagnostics)
+  ├──► Visual Storytelling (Narrative arcs, Story Spine, Sparkline, Pixar rules)
+  ├──► Creative Strategy (Brief deconstruction, message hierarchy)
+  ├──► Brand Intelligence (Brand rules, product identity, logo behavior)
+  ├──► Taste Engine <──► Reference Memory (Transferable rules & REF IDs)
+  │
+  ▼
+Composition & Spatial Preflight
+  ├──► Composition Director (Grids, visual hierarchy, focal anchors, negative space)
+  ├──► Typography Director ──► Arabic RTL Director (when Arabic copy/layout needed)
+  ├──► Photography Director (Camera optics, 3-point lighting geometry, materials)
+  ├──► Manipulation Director (Compositing physics, contact shadows, reflections)
+  ├──► Campaign DNA (Multi-asset continuity & visual-family rules)
+  │
+  ▼
+Generative Direction & Model Physics
+  ├──► Image Director (Nano Banana 2/Pro, GPT Image 2 5-slot templates, multi-panel grids)
+  ├──► Video Director (Seedance 2.5, Kling 3.0, Veo 3/3.1, 14-field shot cards, Murch montage)
+  │
+  ├──► Existing-Image Bounded Correction
+  │      Edit Sanitizer (Annotation mapping, source checkpoint, protected regions)
+  │
+  ▼
+Prompt Compiler (Assembly into provider-native parameters)
+  │
+  ▼
+Host Image / Video Generator
+  │
+  ▼
+Visual QA (Independent Reviewer & Release Gates)
+  ├──► PASS: final signoff
+  └──► FAIL: RevisionRequest routed to the single responsible specialist
 ```
 
-## 19 Skills
+## 21 Modular Skills
 
 | Skill | Responsibility |
 |---|---|
@@ -82,6 +83,8 @@ Visual QA
 | `campaign-canon` | 571 canonical campaigns, P01-P18 pattern map, anti-derivative benchmarking |
 | `brand-activation` | Experiential stunts, brand utility, ambient media, non-advertising diagnostics |
 | `visual-storytelling` | 6 narrative frameworks (Story Spine, Sparkline, Freytag, Monroe), emotional tiers |
+| `video-director` | AI film director, dramaturgy, Murch Rule of Six, 14-field shot cards, Seedance 2.5 / Kling 3.0 / Veo |
+| `image-director` | AI art director, model physics, 5-slot templates, multi-panel grids, Nano Banana 2/Pro & GPT Image 2 |
 | `creative-strategy` | Objective, audience, primary message, concept territory |
 | `brand-intelligence` | Brand rules, product identity, logo behavior, brand-off test |
 | `taste-engine` | Evidence-backed transferable rules from references |
@@ -96,9 +99,9 @@ Visual QA
 | `prompt-compiler` | Approved direction or EditContract to host/model instructions |
 | `visual-qa` | Independent scoring, hard gates, slop veto, revision routing |
 
-Every Skill has its own `agents/openai.yaml` interface configuration and specialized SVG logo.
+Every Skill has its own `agents/openai.yaml` interface configuration and dedicated SVG logo.
 
-## 14 Codex agents
+## 16 Codex Custom Agents
 
 | Agent | Boundary |
 |---|---|
@@ -108,6 +111,8 @@ Every Skill has its own `agents/openai.yaml` interface configuration and special
 | `canon-analyst` | Read-only 571 campaign canon & pattern saturation analysis |
 | `activation-strategist` | Read-only experiential activations & non-advertising diagnostics |
 | `story-architect` | Read-only narrative arcs & storytelling frameworks |
+| `video-director` | Read-only AI video directing, dramaturgy & shot lists |
+| `image-director` | Read-only model physics, prompt templates & multi-panel structures |
 | `strategy-planner` | Read-only strategy analysis |
 | `brand-guardian` | Read-only brand/product audit and vetoes |
 | `taste-analyst` | Read-only reference/taste analysis |
@@ -117,11 +122,9 @@ Every Skill has its own `agents/openai.yaml` interface configuration and special
 | `edit-sanitizer` | Read-only bounded-edit normalization and vetoes |
 | `visual-reviewer` | Read-only independent release gate |
 
-Only the Director owns state mutation. Specialists return typed decisions and evidence rather than silently rewriting shared state.
+## Design Quality Gates
 
-## Design quality gates
-
-Designly deliberately rejects attractive-looking output when the communication or craft is wrong.
+Designly deliberately rejects attractive-looking output when the communication, dramaturgy, or craft is flawed.
 
 Applicable gates include:
 - brief and primary-message accuracy
@@ -129,29 +132,29 @@ Applicable gates include:
 - pattern saturation threshold enforcement (caps on P09, P11, P16)
 - non-advertising intrinsic utility validation
 - narrative coherence and emotional tier specificity
+- dramaturgy scene formula and three-detail audit on every shot
+- model-physics syntax compliance (GPT Image 5-slot vs Nano Banana prose)
 - hierarchy and composition floors
 - typography and exact-copy checks
 - Arabic glyph and RTL checks
 - brand and product fidelity
 - physical believability for composites
 - AI-slop vetoes
-- source-specific originality constraints
 - bounded-edit target/scope/collateral checks
 
-The Visual Reviewer must inspect the actual output before final approval.
-
-## Install and test
-
-This repository contains the plugin source and uploader-ready manifest at `.codex-plugin/plugin.json`.
+## Install and Test
 
 ```bash
 git clone https://github.com/imMamdouhaboammar/designly.git
 cd designly
 python3 -m pip install pyyaml jsonschema
 
+# Core validation scripts
 python3 shared/scripts/validate_mesh.py
 python3 shared/scripts/validate_skill_interfaces.py
 python3 shared/scripts/validate_agent_configs.py
+
+# Evals and unit test suites
 python3 evals/baseline/test_monolith_parity.py
 python3 evals/routing/test_skill_catalog.py
 python3 evals/handoffs/test_contracts.py
@@ -159,6 +162,8 @@ python3 evals/handoffs/test_agents.py
 python3 evals/edit/test_edit_sanitizer.py
 python3 evals/visual/test_revision_router.py
 python3 evals/run_mesh_evals.py
+
+# Skill-specific tests
 python3 skills/prompt-compiler/scripts/test_prompt_lint.py
 python3 skills/visual-qa/scripts/test_gates.py
 python3 skills/creative-director/scripts/test_creative_director.py
@@ -166,47 +171,14 @@ python3 skills/insight-mining/scripts/test_insight_mining.py
 python3 skills/campaign-canon/scripts/test_campaign_canon.py
 python3 skills/brand-activation/scripts/test_brand_activation.py
 python3 skills/visual-storytelling/scripts/test_visual_storytelling.py
+python3 skills/video-director/scripts/test_video_director.py
+python3 skills/image-director/scripts/test_image_director.py
+
+# Public plugin validation
 python3 tools/validate_public_plugin.py .
 ```
 
-GitHub Actions runs these gates on pull requests and pushes to `main`.
-
-## Typed contracts
-
-The shared contract boundary includes:
-- `DesignContext`
-- `DesignSignalPacket`
-- `DesignLock`
-- `RevisionRequest`
-- `EditContract`
-- routing graph
-
-## Repository layout
-
-```text
-designly/
-├── .codex-plugin/plugin.json
-├── .codex/
-│   ├── config.toml
-│   └── agents/                  14 custom Codex agents
-├── .github/workflows/ci.yml
-├── shared/
-│   ├── contracts/
-│   ├── references/
-│   └── scripts/
-├── skills/                      19 discoverable Skills
-│   ├── creative-director/       SIT/TRIZ + Cannes scoring
-│   ├── insight-mining/          Tension spotting & JTBD
-│   ├── campaign-canon/          571-case campaign canon + MOCs
-│   ├── brand-activation/        PR stunts & brand utility
-│   ├── visual-storytelling/     Narrative frameworks & storyboards
-│   └── ...
-├── evals/
-├── assets/
-└── tools/
-```
-
-## Deterministic packaging
+## Deterministic Packaging
 
 ```bash
 python3 tools/package_plugin.py . /tmp/designly-a.zip
@@ -216,4 +188,5 @@ cmp /tmp/designly-a.zip /tmp/designly-b.zip
 
 ## Third-Party Attribution
 
-The Creative Director ideation methodologies, Cannes-calibrated scoring, and 571-case canonical campaign reference library are based on the Creative Director Skill by Serge Shima ([smixs/creative-director-skill](https://github.com/smixs/creative-director-skill)), licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+- **Creative Director Skill Module**: Ideation methodologies, Cannes-calibrated scoring, and 571-case canonical campaign reference library are based on the Creative Director Skill by Serge Shima ([smixs/creative-director-skill](https://github.com/smixs/creative-director-skill)), licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+- **Visual Skills Module**: AI film director video dramaturgy, Walter Murch Rule of Six, 14-field shot cards, model-physics image prompting, multi-panel grids, and pattern libraries are based on Visual Skills by Serge Shima ([smixs/visual-skills](https://github.com/smixs/visual-skills)), licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).

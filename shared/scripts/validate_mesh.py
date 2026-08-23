@@ -44,9 +44,12 @@ def validate_routing_graph(errors: list[str]):
     try:
         graph = json.loads(ROUTING_GRAPH.read_text(encoding="utf-8"))
         nodes = graph.get("nodes", {})
-        check(len(nodes) == 19, f"routing graph defines exactly 19 nodes (found {len(nodes)})", errors)
+        check(len(nodes) == 21, f"routing graph defines exactly 21 nodes (found {len(nodes)})", errors)
         check(graph.get("primary_orchestrator") == "designly-director", "primary_orchestrator is designly-director", errors)
-        for expected_node in ("edit-sanitizer", "creative-director", "insight-mining", "campaign-canon", "brand-activation", "visual-storytelling"):
+        for expected_node in (
+            "edit-sanitizer", "creative-director", "insight-mining", "campaign-canon",
+            "brand-activation", "visual-storytelling", "video-director", "image-director"
+        ):
             check(expected_node in nodes, f"{expected_node} node exists", errors)
         
         # Validate Architecture Layers
@@ -55,7 +58,7 @@ def validate_routing_graph(errors: list[str]):
         
         # Validate Role-Aware Pipelines
         pipelines = graph.get("role_aware_pipelines", {})
-        check(len(pipelines) >= 5, f"at least 5 role-aware pipelines defined (found {len(pipelines)})", errors)
+        check(len(pipelines) >= 7, f"at least 7 role-aware pipelines defined (found {len(pipelines)})", errors)
         for pipe_name, steps in pipelines.items():
             check(isinstance(steps, list) and len(steps) > 0, f"pipeline '{pipe_name}' has valid step sequence", errors)
             for step in steps:
@@ -63,7 +66,7 @@ def validate_routing_graph(errors: list[str]):
                 
         # Validate Feedback Loops
         loops = graph.get("feedback_loops", [])
-        check(len(loops) >= 5, f"at least 5 recursive feedback loops defined (found {len(loops)})", errors)
+        check(len(loops) >= 7, f"at least 7 recursive feedback loops defined (found {len(loops)})", errors)
         for loop in loops:
             check(loop.get("source") in nodes, f"feedback loop source '{loop.get('source')}' valid", errors)
             check(loop.get("target") in nodes, f"feedback loop target '{loop.get('target')}' valid", errors)
@@ -95,6 +98,12 @@ def validate_routing_graph(errors: list[str]):
         check(routes.get("pattern_saturation") == "campaign-canon", "pattern_saturation routes to campaign-canon", errors)
         check(routes.get("activation_mechanic") == "brand-activation", "activation_mechanic routes to brand-activation", errors)
         check(routes.get("narrative_arc") == "visual-storytelling", "narrative_arc routes to visual-storytelling", errors)
+        check(routes.get("video_dramaturgy") == "video-director", "video_dramaturgy routes to video-director", errors)
+        check(routes.get("motion_rhythm") == "video-director", "motion_rhythm routes to video-director", errors)
+        check(routes.get("shot_card_continuity") == "video-director", "shot_card_continuity routes to video-director", errors)
+        check(routes.get("model_physics") == "image-director", "model_physics routes to image-director", errors)
+        check(routes.get("multi_panel_grid") == "image-director", "multi_panel_grid routes to image-director", errors)
+        check(routes.get("character_continuity") == "image-director", "character_continuity routes to image-director", errors)
         
         priorities = graph.get("signal_priorities", [])
         check(len(priorities) == 11, f"signal priorities count is 11 (found {len(priorities)})", errors)

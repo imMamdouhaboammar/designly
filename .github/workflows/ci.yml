@@ -76,6 +76,12 @@ jobs:
       - name: Visual Storytelling unit tests
         run: python skills/visual-storytelling/scripts/test_visual_storytelling.py
 
+      - name: Video Director unit tests
+        run: python skills/video-director/scripts/test_video_director.py
+
+      - name: Image Director unit tests
+        run: python skills/image-director/scripts/test_image_director.py
+
       - name: Reference Memory CRUD tests
         run: python skills/reference-memory/scripts/test_taste_memory.py
 

@@ -16,7 +16,8 @@ CONFIG_FILE = ROOT / ".codex/config.toml"
 READ_ONLY_AGENTS = [
     "strategy-planner", "creative-director", "insight-miner", "canon-analyst", "activation-strategist",
     "story-architect", "brand-guardian", "taste-analyst", "structure-critic",
-    "craft-director", "arabic-visual-director", "edit-sanitizer", "visual-reviewer"
+    "craft-director", "arabic-visual-director", "video-director", "image-director",
+    "edit-sanitizer", "visual-reviewer"
 ]
 
 
@@ -32,11 +33,11 @@ def main() -> int:
         print("PASS max_concurrent_agents is 6")
 
     present = [p.stem for p in AGENTS_DIR.glob("*.toml")]
-    if len(present) != 14:
+    if len(present) != 16:
         failures += 1
-        print(f"FAIL expected 14 agents, found {len(present)}")
+        print(f"FAIL expected 16 agents, found {len(present)}")
     else:
-        print("PASS exactly 14 agents present")
+        print("PASS exactly 16 agents present")
 
     for name in READ_ONLY_AGENTS:
         p = AGENTS_DIR / f"{name}.toml"

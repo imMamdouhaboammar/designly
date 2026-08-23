@@ -1,107 +1,6 @@
 {
   "communities": {
     "0": [
-      "ref_annotation_guided",
-      "ref_applicability",
-      "ref_background_extend",
-      "ref_composition_revision",
-      "ref_concept_revision",
-      "ref_defects",
-      "ref_fail",
-      "ref_family",
-      "ref_hard_gates",
-      "ref_inpaint",
-      "ref_na",
-      "ref_object_replace",
-      "ref_pass",
-      "ref_scores",
-      "ref_slop_findings",
-      "ref_type_color_revision",
-      "ref_visual_polish",
-      "shared_contracts_edit_contract_schema_json_ref_brand_correction",
-      "shared_contracts_edit_contract_schema_json_ref_copy_correction",
-      "shared_contracts_edit_contract_schema_json_ref_local_edit",
-      "shared_contracts_edit_contract_schema_mode_enum",
-      "shared_contracts_edit_contract_schema_mode_type",
-      "shared_contracts_edit_contract_schema_properties_mode",
-      "shared_contracts_signal_packet_schema_json_ref_severity",
-      "skills_visual_qa_schemas_visual_review_schema",
-      "skills_visual_qa_schemas_visual_review_schema_additionalproperties",
-      "skills_visual_qa_schemas_visual_review_schema_additionalproperties_enum",
-      "skills_visual_qa_schemas_visual_review_schema_defects_items",
-      "skills_visual_qa_schemas_visual_review_schema_defects_type",
-      "skills_visual_qa_schemas_visual_review_schema_hard_gates_additionalproperties",
-      "skills_visual_qa_schemas_visual_review_schema_hard_gates_type",
-      "skills_visual_qa_schemas_visual_review_schema_id",
-      "skills_visual_qa_schemas_visual_review_schema_items_additionalproperties",
-      "skills_visual_qa_schemas_visual_review_schema_items_required",
-      "skills_visual_qa_schemas_visual_review_schema_items_type",
-      "skills_visual_qa_schemas_visual_review_schema_json_ref_evidence",
-      "skills_visual_qa_schemas_visual_review_schema_json_ref_none",
-      "skills_visual_qa_schemas_visual_review_schema_properties",
-      "skills_visual_qa_schemas_visual_review_schema_properties_defects",
-      "skills_visual_qa_schemas_visual_review_schema_properties_hard_gates",
-      "skills_visual_qa_schemas_visual_review_schema_properties_revision_mode",
-      "skills_visual_qa_schemas_visual_review_schema_properties_slop_findings",
-      "skills_visual_qa_schemas_visual_review_schema_required",
-      "skills_visual_qa_schemas_visual_review_schema_revision_mode_enum",
-      "skills_visual_qa_schemas_visual_review_schema_schema",
-      "skills_visual_qa_schemas_visual_review_schema_slop_findings_items",
-      "skills_visual_qa_schemas_visual_review_schema_slop_findings_type",
-      "skills_visual_qa_schemas_visual_review_schema_title",
-      "skills_visual_qa_schemas_visual_review_schema_type"
-    ],
-    "1": [
-      "ref_category_floor_failed",
-      "ref_defect_description",
-      "ref_failing_dimension",
-      "ref_origin_packet_id",
-      "ref_required_delta",
-      "ref_revision_id",
-      "ref_source_qa",
-      "ref_target_node",
-      "shared_contracts_edit_contract_schema_json_ref_object",
-      "shared_contracts_revision_request_schema",
-      "shared_contracts_revision_request_schema_additionalproperties",
-      "shared_contracts_revision_request_schema_category_floor_failed_type",
-      "shared_contracts_revision_request_schema_defect_description_type",
-      "shared_contracts_revision_request_schema_evidence_items",
-      "shared_contracts_revision_request_schema_evidence_type",
-      "shared_contracts_revision_request_schema_failing_dimension_type",
-      "shared_contracts_revision_request_schema_family_type",
-      "shared_contracts_revision_request_schema_items_type",
-      "shared_contracts_revision_request_schema_json_ref_evidence",
-      "shared_contracts_revision_request_schema_json_ref_null",
-      "shared_contracts_revision_request_schema_origin_packet_id_type",
-      "shared_contracts_revision_request_schema_properties",
-      "shared_contracts_revision_request_schema_properties_category_floor_failed",
-      "shared_contracts_revision_request_schema_properties_defect_description",
-      "shared_contracts_revision_request_schema_properties_evidence",
-      "shared_contracts_revision_request_schema_properties_failing_dimension",
-      "shared_contracts_revision_request_schema_properties_family",
-      "shared_contracts_revision_request_schema_properties_origin_packet_id",
-      "shared_contracts_revision_request_schema_properties_protected_regions",
-      "shared_contracts_revision_request_schema_properties_required_delta",
-      "shared_contracts_revision_request_schema_properties_revision_id",
-      "shared_contracts_revision_request_schema_properties_slop_finding",
-      "shared_contracts_revision_request_schema_properties_source_qa",
-      "shared_contracts_revision_request_schema_properties_target_node",
-      "shared_contracts_revision_request_schema_protected_regions_items",
-      "shared_contracts_revision_request_schema_protected_regions_type",
-      "shared_contracts_revision_request_schema_required",
-      "shared_contracts_revision_request_schema_required_delta_type",
-      "shared_contracts_revision_request_schema_revision_id_pattern",
-      "shared_contracts_revision_request_schema_revision_id_type",
-      "shared_contracts_revision_request_schema_schema",
-      "shared_contracts_revision_request_schema_slop_finding_additionalproperties",
-      "shared_contracts_revision_request_schema_slop_finding_properties",
-      "shared_contracts_revision_request_schema_slop_finding_type",
-      "shared_contracts_revision_request_schema_source_qa_type",
-      "shared_contracts_revision_request_schema_target_node_type",
-      "shared_contracts_revision_request_schema_title",
-      "shared_contracts_revision_request_schema_type"
-    ],
-    "2": [
       "ref_accent_strategy",
       "ref_alignment",
       "ref_class",
@@ -131,7 +30,6 @@
       "skills_composition_director_schemas_art_direction_schema_properties_exact_copy_locked",
       "skills_composition_director_schemas_art_direction_schema_properties_language_direction",
       "skills_composition_director_schemas_art_direction_schema_properties_line_break_logic",
-      "skills_composition_director_schemas_art_direction_schema_properties_reading_direction",
       "skills_composition_director_schemas_art_direction_schema_properties_roles",
       "skills_composition_director_schemas_art_direction_schema_properties_typography",
       "skills_composition_director_schemas_art_direction_schema_properties_value_structure",
@@ -146,6 +44,88 @@
       "skills_composition_director_schemas_art_direction_schema_typography_type",
       "skills_composition_director_schemas_art_direction_schema_value_structure_minlength",
       "skills_composition_director_schemas_art_direction_schema_value_structure_type"
+    ],
+    "1": [
+      "ref_arabic_rtl_director",
+      "ref_arabic_visual_director",
+      "ref_brand_activation",
+      "ref_brand_guardian",
+      "ref_brand_intelligence",
+      "ref_campaign_canon",
+      "ref_campaign_dna",
+      "ref_composition_director",
+      "ref_craft_director",
+      "ref_creative_director",
+      "ref_creative_strategy",
+      "ref_designly_director",
+      "ref_edit_sanitizer",
+      "ref_image_director",
+      "ref_insight_mining",
+      "ref_manipulation_director",
+      "ref_photography_director",
+      "ref_prompt_compiler",
+      "ref_reference_memory",
+      "ref_strategy_planner",
+      "ref_structure_critic",
+      "ref_taste_analyst",
+      "ref_taste_engine",
+      "ref_typography_director",
+      "ref_video_director",
+      "ref_visual_qa",
+      "ref_visual_storytelling",
+      "shared_contracts_revision_request_schema_source_qa_enum",
+      "shared_contracts_revision_request_schema_target_node_enum",
+      "shared_contracts_routing_graph_role_aware_pipelines",
+      "shared_contracts_routing_graph_role_aware_pipelines_arabic_first_poster",
+      "shared_contracts_routing_graph_role_aware_pipelines_bounded_image_edit",
+      "shared_contracts_routing_graph_role_aware_pipelines_brand_activation_stunt",
+      "shared_contracts_routing_graph_role_aware_pipelines_cinematic_video_spot",
+      "shared_contracts_routing_graph_role_aware_pipelines_multi_panel_visual_campaign",
+      "shared_contracts_routing_graph_role_aware_pipelines_narrative_storyboard",
+      "shared_contracts_routing_graph_role_aware_pipelines_new_commercial_campaign",
+      "shared_contracts_signal_packet_schema_from_enum",
+      "shared_contracts_signal_packet_schema_json_ref_visual_reviewer",
+      "shared_contracts_signal_packet_schema_to_enum"
+    ],
+    "2": [
+      "ref_height",
+      "ref_kind",
+      "ref_width",
+      "shared_contracts_edit_contract_schema_confidence_maximum",
+      "shared_contracts_edit_contract_schema_confidence_minimum",
+      "shared_contracts_edit_contract_schema_confidence_type",
+      "shared_contracts_edit_contract_schema_geometry_additionalproperties",
+      "shared_contracts_edit_contract_schema_geometry_properties",
+      "shared_contracts_edit_contract_schema_geometry_required",
+      "shared_contracts_edit_contract_schema_height_minimum",
+      "shared_contracts_edit_contract_schema_height_type",
+      "shared_contracts_edit_contract_schema_items_properties",
+      "shared_contracts_edit_contract_schema_properties_confidence",
+      "shared_contracts_edit_contract_schema_properties_geometry",
+      "shared_contracts_edit_contract_schema_properties_height",
+      "shared_contracts_edit_contract_schema_properties_kind",
+      "shared_contracts_edit_contract_schema_properties_mask_ref",
+      "shared_contracts_edit_contract_schema_properties_points",
+      "shared_contracts_edit_contract_schema_properties_region_id",
+      "shared_contracts_edit_contract_schema_properties_rule",
+      "shared_contracts_edit_contract_schema_properties_semantic_target",
+      "shared_contracts_edit_contract_schema_properties_source_geometry",
+      "shared_contracts_edit_contract_schema_properties_target_id",
+      "shared_contracts_edit_contract_schema_properties_width",
+      "shared_contracts_edit_contract_schema_properties_x",
+      "shared_contracts_edit_contract_schema_properties_y",
+      "shared_contracts_edit_contract_schema_region_id_type",
+      "shared_contracts_edit_contract_schema_rule_type",
+      "shared_contracts_edit_contract_schema_semantic_target_minlength",
+      "shared_contracts_edit_contract_schema_semantic_target_type",
+      "shared_contracts_edit_contract_schema_source_geometry_additionalproperties",
+      "shared_contracts_edit_contract_schema_source_geometry_properties",
+      "shared_contracts_edit_contract_schema_source_geometry_required",
+      "shared_contracts_edit_contract_schema_source_geometry_type",
+      "shared_contracts_edit_contract_schema_target_id_minlength",
+      "shared_contracts_edit_contract_schema_target_id_type",
+      "shared_contracts_edit_contract_schema_width_minimum",
+      "shared_contracts_edit_contract_schema_width_type"
     ],
     "3": [
       "ref_ref",
@@ -187,44 +167,6 @@
       "skills_taste_engine_schemas_taste_mix_schema_weight_type"
     ],
     "4": [
-      "ref_arabic_rtl_director",
-      "ref_arabic_visual_director",
-      "ref_brand_activation",
-      "ref_brand_guardian",
-      "ref_brand_intelligence",
-      "ref_campaign_canon",
-      "ref_campaign_dna",
-      "ref_composition_director",
-      "ref_craft_director",
-      "ref_creative_director",
-      "ref_creative_strategy",
-      "ref_designly_director",
-      "ref_edit_sanitizer",
-      "ref_insight_mining",
-      "ref_manipulation_director",
-      "ref_photography_director",
-      "ref_prompt_compiler",
-      "ref_reference_memory",
-      "ref_strategy_planner",
-      "ref_structure_critic",
-      "ref_taste_analyst",
-      "ref_taste_engine",
-      "ref_typography_director",
-      "ref_visual_qa",
-      "ref_visual_storytelling",
-      "shared_contracts_revision_request_schema_source_qa_enum",
-      "shared_contracts_revision_request_schema_target_node_enum",
-      "shared_contracts_routing_graph_role_aware_pipelines",
-      "shared_contracts_routing_graph_role_aware_pipelines_arabic_first_poster",
-      "shared_contracts_routing_graph_role_aware_pipelines_bounded_image_edit",
-      "shared_contracts_routing_graph_role_aware_pipelines_brand_activation_stunt",
-      "shared_contracts_routing_graph_role_aware_pipelines_narrative_storyboard",
-      "shared_contracts_routing_graph_role_aware_pipelines_new_commercial_campaign",
-      "shared_contracts_signal_packet_schema_from_enum",
-      "shared_contracts_signal_packet_schema_json_ref_visual_reviewer",
-      "shared_contracts_signal_packet_schema_to_enum"
-    ],
-    "5": [
       "ref_brand_rule",
       "ref_director",
       "ref_immutable",
@@ -262,7 +204,7 @@
       "shared_contracts_design_lock_schema_title",
       "shared_contracts_design_lock_schema_type"
     ],
-    "6": [
+    "5": [
       "shared_contracts_routing_graph",
       "shared_contracts_routing_graph_architecture_layers",
       "shared_contracts_routing_graph_feedback_loops",
@@ -274,6 +216,7 @@
       "shared_contracts_routing_graph_revision_routes_annotation_mapping",
       "shared_contracts_routing_graph_revision_routes_arabic_rtl",
       "shared_contracts_routing_graph_revision_routes_brand_fidelity",
+      "shared_contracts_routing_graph_revision_routes_character_continuity",
       "shared_contracts_routing_graph_revision_routes_collateral_change",
       "shared_contracts_routing_graph_revision_routes_composition",
       "shared_contracts_routing_graph_revision_routes_concept_originality",
@@ -281,49 +224,24 @@
       "shared_contracts_routing_graph_revision_routes_edit_scope",
       "shared_contracts_routing_graph_revision_routes_hierarchy",
       "shared_contracts_routing_graph_revision_routes_insight_depth",
+      "shared_contracts_routing_graph_revision_routes_model_physics",
+      "shared_contracts_routing_graph_revision_routes_motion_rhythm",
+      "shared_contracts_routing_graph_revision_routes_multi_panel_grid",
       "shared_contracts_routing_graph_revision_routes_narrative_arc",
       "shared_contracts_routing_graph_revision_routes_pattern_saturation",
       "shared_contracts_routing_graph_revision_routes_physical_believability",
       "shared_contracts_routing_graph_revision_routes_product_fidelity",
       "shared_contracts_routing_graph_revision_routes_prompt_execution",
+      "shared_contracts_routing_graph_revision_routes_shot_card_continuity",
       "shared_contracts_routing_graph_revision_routes_strategy",
       "shared_contracts_routing_graph_revision_routes_typography",
+      "shared_contracts_routing_graph_revision_routes_video_dramaturgy",
       "shared_contracts_routing_graph_schema",
       "shared_contracts_routing_graph_signal_priorities",
       "shared_contracts_routing_graph_verification_gates",
       "shared_contracts_routing_graph_version"
     ],
-    "7": [
-      "ref_height",
-      "ref_kind",
-      "ref_string",
-      "ref_width",
-      "shared_contracts_edit_contract_schema_exact_copy_type",
-      "shared_contracts_edit_contract_schema_geometry_additionalproperties",
-      "shared_contracts_edit_contract_schema_geometry_properties",
-      "shared_contracts_edit_contract_schema_geometry_required",
-      "shared_contracts_edit_contract_schema_geometry_type",
-      "shared_contracts_edit_contract_schema_height_minimum",
-      "shared_contracts_edit_contract_schema_height_type",
-      "shared_contracts_edit_contract_schema_json_ref_null",
-      "shared_contracts_edit_contract_schema_properties_exact_copy",
-      "shared_contracts_edit_contract_schema_properties_geometry",
-      "shared_contracts_edit_contract_schema_properties_height",
-      "shared_contracts_edit_contract_schema_properties_kind",
-      "shared_contracts_edit_contract_schema_properties_mask_ref",
-      "shared_contracts_edit_contract_schema_properties_points",
-      "shared_contracts_edit_contract_schema_properties_source_geometry",
-      "shared_contracts_edit_contract_schema_properties_width",
-      "shared_contracts_edit_contract_schema_properties_x",
-      "shared_contracts_edit_contract_schema_properties_y",
-      "shared_contracts_edit_contract_schema_source_geometry_additionalproperties",
-      "shared_contracts_edit_contract_schema_source_geometry_properties",
-      "shared_contracts_edit_contract_schema_source_geometry_required",
-      "shared_contracts_edit_contract_schema_source_geometry_type",
-      "shared_contracts_edit_contract_schema_width_minimum",
-      "shared_contracts_edit_contract_schema_width_type"
-    ],
-    "8": [
+    "6": [
       "skills_campaign_canon_scripts_generate_mocs",
       "skills_campaign_canon_scripts_generate_mocs_format_card_line",
       "skills_campaign_canon_scripts_generate_mocs_generate_moc_budget",
@@ -353,7 +271,7 @@
       "skills_campaign_canon_scripts_generate_mocs_rationale_92",
       "skills_campaign_canon_scripts_generate_mocs_write_moc"
     ],
-    "9": [
+    "7": [
       "skills_creative_director_scripts_generate_mocs",
       "skills_creative_director_scripts_generate_mocs_format_card_line",
       "skills_creative_director_scripts_generate_mocs_generate_moc_budget",
@@ -383,7 +301,7 @@
       "skills_creative_director_scripts_generate_mocs_rationale_92",
       "skills_creative_director_scripts_generate_mocs_write_moc"
     ],
-    "10": [
+    "8": [
       "any",
       "evals_run_mesh_evals",
       "evals_run_mesh_evals_check",
@@ -411,19 +329,33 @@
       "skills_visual_qa_scripts_score_review_evaluate",
       "skills_visual_qa_scripts_score_review_main"
     ],
-    "11": [
+    "9": [
       "ref_audience",
       "ref_cultural_context",
+      "ref_desired_action",
       "ref_objective",
+      "ref_primary_message",
+      "ref_strategy_state_insight",
       "shared_contracts_routing_graph_creative_director_agent",
       "shared_contracts_routing_graph_creative_director_description",
       "shared_contracts_routing_graph_creative_director_reads",
       "shared_contracts_routing_graph_creative_director_type",
+      "shared_contracts_routing_graph_creative_director_writes",
+      "shared_contracts_routing_graph_creative_strategy_agent",
+      "shared_contracts_routing_graph_creative_strategy_description",
       "shared_contracts_routing_graph_creative_strategy_reads",
+      "shared_contracts_routing_graph_creative_strategy_type",
+      "shared_contracts_routing_graph_creative_strategy_writes",
+      "shared_contracts_routing_graph_insight_mining_agent",
+      "shared_contracts_routing_graph_insight_mining_description",
       "shared_contracts_routing_graph_insight_mining_reads",
-      "shared_contracts_routing_graph_nodes_creative_director"
+      "shared_contracts_routing_graph_insight_mining_type",
+      "shared_contracts_routing_graph_insight_mining_writes",
+      "shared_contracts_routing_graph_nodes_creative_director",
+      "shared_contracts_routing_graph_nodes_creative_strategy",
+      "shared_contracts_routing_graph_nodes_insight_mining"
     ],
-    "12": [
+    "10": [
       "ref_acceptance_checks",
       "ref_annotation_space",
       "ref_edit_id",
@@ -448,7 +380,7 @@
       "shared_contracts_edit_contract_schema_title",
       "shared_contracts_edit_contract_schema_type"
     ],
-    "13": [
+    "11": [
       "ref_key_direction",
       "ref_shadow_behavior",
       "ref_softness",
@@ -471,24 +403,7 @@
       "skills_composition_director_schemas_art_direction_schema_softness_type",
       "skills_composition_director_schemas_art_direction_schema_temperature_type"
     ],
-    "14": [
-      "ref_composition_state_rtl_flow",
-      "ref_typography_state",
-      "ref_typography_state_arabic_rtl",
-      "shared_contracts_routing_graph_arabic_rtl_director_agent",
-      "shared_contracts_routing_graph_arabic_rtl_director_description",
-      "shared_contracts_routing_graph_arabic_rtl_director_reads",
-      "shared_contracts_routing_graph_arabic_rtl_director_type",
-      "shared_contracts_routing_graph_arabic_rtl_director_writes",
-      "shared_contracts_routing_graph_nodes_arabic_rtl_director",
-      "shared_contracts_routing_graph_nodes_typography_director",
-      "shared_contracts_routing_graph_typography_director_agent",
-      "shared_contracts_routing_graph_typography_director_description",
-      "shared_contracts_routing_graph_typography_director_reads",
-      "shared_contracts_routing_graph_typography_director_type",
-      "shared_contracts_routing_graph_typography_director_writes"
-    ],
-    "15": [
+    "12": [
       "skills_reference_memory_scripts_reference_memory",
       "skills_reference_memory_scripts_reference_memory_blank",
       "skills_reference_memory_scripts_reference_memory_cmd_add",
@@ -510,7 +425,7 @@
       "skills_reference_memory_scripts_reference_memory_parser",
       "skills_reference_memory_scripts_reference_memory_save"
     ],
-    "16": [
+    "13": [
       "ref_brand_behavior",
       "ref_camera",
       "ref_crop",
@@ -531,7 +446,7 @@
       "skills_taste_engine_schemas_taste_profile_schema_json_ref_concept",
       "skills_taste_engine_schemas_taste_profile_schema_json_ref_lighting"
     ],
-    "17": [
+    "14": [
       "ref_creative_territory",
       "ref_visual_proof",
       "ref_visual_proposition",
@@ -552,49 +467,7 @@
       "skills_composition_director_schemas_art_direction_schema_visual_proposition_minlength",
       "skills_composition_director_schemas_art_direction_schema_visual_proposition_type"
     ],
-    "18": [
-      "ref_hard_gate",
-      "shared_contracts_revision_request_schema_json_ref_major",
-      "shared_contracts_revision_request_schema_json_ref_minor",
-      "shared_contracts_revision_request_schema_properties_severity",
-      "shared_contracts_revision_request_schema_severity_enum",
-      "shared_contracts_revision_request_schema_severity_type",
-      "shared_contracts_signal_packet_schema_json_ref_critical",
-      "shared_contracts_signal_packet_schema_properties_severity",
-      "shared_contracts_signal_packet_schema_severity_enum",
-      "shared_contracts_signal_packet_schema_severity_type",
-      "skills_visual_qa_schemas_visual_review_schema_evidence_type",
-      "skills_visual_qa_schemas_visual_review_schema_family_type",
-      "skills_visual_qa_schemas_visual_review_schema_items_properties",
-      "skills_visual_qa_schemas_visual_review_schema_json_ref_major",
-      "skills_visual_qa_schemas_visual_review_schema_json_ref_minor",
-      "skills_visual_qa_schemas_visual_review_schema_properties_evidence",
-      "skills_visual_qa_schemas_visual_review_schema_properties_family",
-      "skills_visual_qa_schemas_visual_review_schema_properties_severity",
-      "skills_visual_qa_schemas_visual_review_schema_severity_enum"
-    ],
-    "19": [
-      "shared_contracts_edit_contract_schema_acceptance_checks_items",
-      "shared_contracts_edit_contract_schema_acceptance_checks_minitems",
-      "shared_contracts_edit_contract_schema_acceptance_checks_type",
-      "shared_contracts_edit_contract_schema_forbidden_mutations_items",
-      "shared_contracts_edit_contract_schema_forbidden_mutations_type",
-      "shared_contracts_edit_contract_schema_geometry_locks_items",
-      "shared_contracts_edit_contract_schema_geometry_locks_type",
-      "shared_contracts_edit_contract_schema_items_minlength",
-      "shared_contracts_edit_contract_schema_items_type",
-      "shared_contracts_edit_contract_schema_properties_acceptance_checks",
-      "shared_contracts_edit_contract_schema_properties_forbidden_mutations",
-      "shared_contracts_edit_contract_schema_properties_geometry_locks",
-      "shared_contracts_edit_contract_schema_properties_requested_mutations",
-      "shared_contracts_edit_contract_schema_properties_style_locks",
-      "shared_contracts_edit_contract_schema_requested_mutations_items",
-      "shared_contracts_edit_contract_schema_requested_mutations_minitems",
-      "shared_contracts_edit_contract_schema_requested_mutations_type",
-      "shared_contracts_edit_contract_schema_style_locks_items",
-      "shared_contracts_edit_contract_schema_style_locks_type"
-    ],
-    "20": [
+    "15": [
       "skills_campaign_dna_schemas_visual_dna_schema_camera_family_type",
       "skills_campaign_dna_schemas_visual_dna_schema_image_treatment_type",
       "skills_campaign_dna_schemas_visual_dna_schema_lighting_family_type",
@@ -615,7 +488,7 @@
       "skills_campaign_dna_schemas_visual_dna_schema_visual_density_type",
       "skills_campaign_dna_schemas_visual_dna_schema_whitespace_behavior_type"
     ],
-    "21": [
+    "16": [
       "ref_one_second_read",
       "ref_primary",
       "ref_secondary",
@@ -635,7 +508,27 @@
       "skills_composition_director_schemas_art_direction_schema_secondary_type",
       "skills_composition_director_schemas_art_direction_schema_tertiary_type"
     ],
-    "22": [
+    "17": [
+      "skills_composition_director_schemas_art_direction_schema_brand_rules_items",
+      "skills_composition_director_schemas_art_direction_schema_brand_rules_type",
+      "skills_composition_director_schemas_art_direction_schema_inferred_choices_items",
+      "skills_composition_director_schemas_art_direction_schema_inferred_choices_type",
+      "skills_composition_director_schemas_art_direction_schema_items_type",
+      "skills_composition_director_schemas_art_direction_schema_materials_items",
+      "skills_composition_director_schemas_art_direction_schema_materials_type",
+      "skills_composition_director_schemas_art_direction_schema_observed_patterns_items",
+      "skills_composition_director_schemas_art_direction_schema_observed_patterns_type",
+      "skills_composition_director_schemas_art_direction_schema_properties",
+      "skills_composition_director_schemas_art_direction_schema_properties_brand_rules",
+      "skills_composition_director_schemas_art_direction_schema_properties_inferred_choices",
+      "skills_composition_director_schemas_art_direction_schema_properties_materials",
+      "skills_composition_director_schemas_art_direction_schema_properties_observed_patterns",
+      "skills_composition_director_schemas_art_direction_schema_properties_restraints",
+      "skills_composition_director_schemas_art_direction_schema_restraints_items",
+      "skills_composition_director_schemas_art_direction_schema_restraints_minitems",
+      "skills_composition_director_schemas_art_direction_schema_restraints_type"
+    ],
+    "18": [
       "skills_taste_engine_schemas_taste_profile_schema_dimension_minlength",
       "skills_taste_engine_schemas_taste_profile_schema_dimension_type",
       "skills_taste_engine_schemas_taste_profile_schema_evidence_minlength",
@@ -655,7 +548,7 @@
       "skills_taste_engine_schemas_taste_profile_schema_rule_type",
       "skills_taste_engine_schemas_taste_profile_schema_transferable_type"
     ],
-    "23": [
+    "19": [
       "evals_edit_test_edit_sanitizer",
       "evals_edit_test_edit_sanitizer_base_request",
       "evals_edit_test_edit_sanitizer_expect",
@@ -674,19 +567,91 @@
       "shared_scripts_sanitize_edit_resolve_target",
       "shared_scripts_sanitize_edit_sanitize_edit"
     ],
+    "20": [
+      "ref_geometry",
+      "ref_region_id",
+      "ref_semantic_target",
+      "ref_target_id",
+      "shared_contracts_edit_contract_schema_items_additionalproperties",
+      "shared_contracts_edit_contract_schema_items_required",
+      "shared_contracts_edit_contract_schema_items_type",
+      "shared_contracts_edit_contract_schema_json_ref_confidence",
+      "shared_contracts_edit_contract_schema_json_ref_rule",
+      "shared_contracts_edit_contract_schema_properties_style_locks",
+      "shared_contracts_edit_contract_schema_properties_targets",
+      "shared_contracts_edit_contract_schema_protected_regions_items",
+      "shared_contracts_edit_contract_schema_style_locks_items",
+      "shared_contracts_edit_contract_schema_style_locks_type",
+      "shared_contracts_edit_contract_schema_targets_items",
+      "shared_contracts_edit_contract_schema_targets_minitems",
+      "shared_contracts_edit_contract_schema_targets_type"
+    ],
+    "21": [
+      "ref_annotation_guided",
+      "ref_background_extend",
+      "ref_composition_revision",
+      "ref_concept_revision",
+      "ref_inpaint",
+      "ref_object_replace",
+      "ref_type_color_revision",
+      "ref_visual_polish",
+      "shared_contracts_edit_contract_schema_json_ref_brand_correction",
+      "shared_contracts_edit_contract_schema_json_ref_copy_correction",
+      "shared_contracts_edit_contract_schema_json_ref_local_edit",
+      "shared_contracts_edit_contract_schema_mode_enum",
+      "shared_contracts_edit_contract_schema_mode_type",
+      "shared_contracts_edit_contract_schema_properties_mode",
+      "skills_visual_qa_schemas_visual_review_schema_json_ref_none",
+      "skills_visual_qa_schemas_visual_review_schema_revision_mode_enum"
+    ],
+    "22": [
+      "ref_brand_state",
+      "ref_brief",
+      "ref_composition_state",
+      "ref_craft_state",
+      "ref_edit_state",
+      "ref_narrative_arc",
+      "ref_strategy_state",
+      "shared_contracts_routing_graph_brand_activation_reads",
+      "shared_contracts_routing_graph_campaign_canon_reads",
+      "shared_contracts_routing_graph_campaign_dna_reads",
+      "shared_contracts_routing_graph_image_director_reads",
+      "shared_contracts_routing_graph_manipulation_director_reads",
+      "shared_contracts_routing_graph_prompt_compiler_reads",
+      "shared_contracts_routing_graph_video_director_reads",
+      "shared_contracts_routing_graph_visual_qa_reads",
+      "shared_contracts_routing_graph_visual_storytelling_reads"
+    ],
+    "23": [
+      "ref_composition_state_rtl_flow",
+      "ref_typography_state",
+      "ref_typography_state_arabic_rtl",
+      "shared_contracts_routing_graph_arabic_rtl_director_agent",
+      "shared_contracts_routing_graph_arabic_rtl_director_description",
+      "shared_contracts_routing_graph_arabic_rtl_director_reads",
+      "shared_contracts_routing_graph_arabic_rtl_director_type",
+      "shared_contracts_routing_graph_arabic_rtl_director_writes",
+      "shared_contracts_routing_graph_nodes",
+      "shared_contracts_routing_graph_nodes_arabic_rtl_director",
+      "shared_contracts_routing_graph_nodes_typography_director",
+      "shared_contracts_routing_graph_typography_director_agent",
+      "shared_contracts_routing_graph_typography_director_description",
+      "shared_contracts_routing_graph_typography_director_reads",
+      "shared_contracts_routing_graph_typography_director_type",
+      "shared_contracts_routing_graph_typography_director_writes"
+    ],
     "24": [
       "shared_contracts_edit_contract_schema_edit_id_pattern",
       "shared_contracts_edit_contract_schema_edit_id_type",
       "shared_contracts_edit_contract_schema_execution_allowed_type",
-      "shared_contracts_edit_contract_schema_identity_locks_items",
-      "shared_contracts_edit_contract_schema_identity_locks_type",
       "shared_contracts_edit_contract_schema_properties",
       "shared_contracts_edit_contract_schema_properties_edit_id",
       "shared_contracts_edit_contract_schema_properties_execution_allowed",
-      "shared_contracts_edit_contract_schema_properties_identity_locks",
+      "shared_contracts_edit_contract_schema_properties_protected_regions",
       "shared_contracts_edit_contract_schema_properties_requires_arabic_review",
       "shared_contracts_edit_contract_schema_properties_source_asset_id",
       "shared_contracts_edit_contract_schema_properties_source_checkpoint",
+      "shared_contracts_edit_contract_schema_protected_regions_type",
       "shared_contracts_edit_contract_schema_requires_arabic_review_type",
       "shared_contracts_edit_contract_schema_source_asset_id_minlength",
       "shared_contracts_edit_contract_schema_source_asset_id_type",
@@ -694,42 +659,6 @@
       "shared_contracts_edit_contract_schema_source_checkpoint_type"
     ],
     "25": [
-      "skills_composition_director_schemas_art_direction_schema_audience_minlength",
-      "skills_composition_director_schemas_art_direction_schema_audience_type",
-      "skills_composition_director_schemas_art_direction_schema_desired_action_type",
-      "skills_composition_director_schemas_art_direction_schema_intent_additionalproperties",
-      "skills_composition_director_schemas_art_direction_schema_intent_properties",
-      "skills_composition_director_schemas_art_direction_schema_intent_required",
-      "skills_composition_director_schemas_art_direction_schema_intent_type",
-      "skills_composition_director_schemas_art_direction_schema_objective_minlength",
-      "skills_composition_director_schemas_art_direction_schema_objective_type",
-      "skills_composition_director_schemas_art_direction_schema_primary_message_minlength",
-      "skills_composition_director_schemas_art_direction_schema_primary_message_type",
-      "skills_composition_director_schemas_art_direction_schema_properties_audience",
-      "skills_composition_director_schemas_art_direction_schema_properties_desired_action",
-      "skills_composition_director_schemas_art_direction_schema_properties_intent",
-      "skills_composition_director_schemas_art_direction_schema_properties_objective",
-      "skills_composition_director_schemas_art_direction_schema_properties_primary_message"
-    ],
-    "26": [
-      "skills_taste_engine_schemas_taste_profile_schema_additionalproperties_type",
-      "skills_taste_engine_schemas_taste_profile_schema_anti_rules_type",
-      "skills_taste_engine_schemas_taste_profile_schema_confidence_maximum",
-      "skills_taste_engine_schemas_taste_profile_schema_confidence_minimum",
-      "skills_taste_engine_schemas_taste_profile_schema_confidence_type",
-      "skills_taste_engine_schemas_taste_profile_schema_context_additionalproperties",
-      "skills_taste_engine_schemas_taste_profile_schema_context_type",
-      "skills_taste_engine_schemas_taste_profile_schema_profile_version_const",
-      "skills_taste_engine_schemas_taste_profile_schema_properties",
-      "skills_taste_engine_schemas_taste_profile_schema_properties_anti_rules",
-      "skills_taste_engine_schemas_taste_profile_schema_properties_confidence",
-      "skills_taste_engine_schemas_taste_profile_schema_properties_context",
-      "skills_taste_engine_schemas_taste_profile_schema_properties_profile_version",
-      "skills_taste_engine_schemas_taste_profile_schema_properties_rules",
-      "skills_taste_engine_schemas_taste_profile_schema_rules_minitems",
-      "skills_taste_engine_schemas_taste_profile_schema_rules_type"
-    ],
-    "27": [
       "ref_anti_rules",
       "ref_observations",
       "ref_profile_version",
@@ -746,7 +675,7 @@
       "skills_taste_engine_schemas_taste_profile_schema_title",
       "skills_taste_engine_schemas_taste_profile_schema_type"
     ],
-    "28": [
+    "26": [
       "ref_decisions",
       "ref_from",
       "ref_hard_vetoes",
@@ -763,41 +692,58 @@
       "shared_contracts_signal_packet_schema_title",
       "shared_contracts_signal_packet_schema_type"
     ],
+    "27": [
+      "shared_contracts_revision_request_schema_category_floor_failed_type",
+      "shared_contracts_revision_request_schema_defect_description_type",
+      "shared_contracts_revision_request_schema_failing_dimension_type",
+      "shared_contracts_revision_request_schema_origin_packet_id_type",
+      "shared_contracts_revision_request_schema_properties",
+      "shared_contracts_revision_request_schema_properties_category_floor_failed",
+      "shared_contracts_revision_request_schema_properties_defect_description",
+      "shared_contracts_revision_request_schema_properties_failing_dimension",
+      "shared_contracts_revision_request_schema_properties_origin_packet_id",
+      "shared_contracts_revision_request_schema_properties_required_delta",
+      "shared_contracts_revision_request_schema_properties_source_qa",
+      "shared_contracts_revision_request_schema_properties_target_node",
+      "shared_contracts_revision_request_schema_required_delta_type",
+      "shared_contracts_revision_request_schema_source_qa_type",
+      "shared_contracts_revision_request_schema_target_node_type"
+    ],
+    "28": [
+      "skills_composition_director_schemas_art_direction_schema_aspect_ratio_minlength",
+      "skills_composition_director_schemas_art_direction_schema_aspect_ratio_type",
+      "skills_composition_director_schemas_art_direction_schema_background_type",
+      "skills_composition_director_schemas_art_direction_schema_composition_properties",
+      "skills_composition_director_schemas_art_direction_schema_foreground_type",
+      "skills_composition_director_schemas_art_direction_schema_middle_ground_type",
+      "skills_composition_director_schemas_art_direction_schema_properties_aspect_ratio",
+      "skills_composition_director_schemas_art_direction_schema_properties_background",
+      "skills_composition_director_schemas_art_direction_schema_properties_foreground",
+      "skills_composition_director_schemas_art_direction_schema_properties_middle_ground",
+      "skills_composition_director_schemas_art_direction_schema_properties_reading_direction",
+      "skills_composition_director_schemas_art_direction_schema_properties_secondary_mass",
+      "skills_composition_director_schemas_art_direction_schema_properties_typography_zone",
+      "skills_composition_director_schemas_art_direction_schema_secondary_mass_type",
+      "skills_composition_director_schemas_art_direction_schema_typography_zone_type"
+    ],
     "29": [
-      "ref_geometry",
-      "ref_region_id",
-      "ref_semantic_target",
-      "ref_target_id",
-      "shared_contracts_edit_contract_schema_items_additionalproperties",
-      "shared_contracts_edit_contract_schema_items_required",
-      "shared_contracts_edit_contract_schema_json_ref_confidence",
-      "shared_contracts_edit_contract_schema_json_ref_rule",
-      "shared_contracts_edit_contract_schema_properties_protected_regions",
-      "shared_contracts_edit_contract_schema_properties_targets",
-      "shared_contracts_edit_contract_schema_protected_regions_items",
-      "shared_contracts_edit_contract_schema_protected_regions_type",
-      "shared_contracts_edit_contract_schema_targets_items",
-      "shared_contracts_edit_contract_schema_targets_minitems",
-      "shared_contracts_edit_contract_schema_targets_type"
+      "skills_composition_director_schemas_art_direction_schema_audience_minlength",
+      "skills_composition_director_schemas_art_direction_schema_audience_type",
+      "skills_composition_director_schemas_art_direction_schema_desired_action_type",
+      "skills_composition_director_schemas_art_direction_schema_intent_properties",
+      "skills_composition_director_schemas_art_direction_schema_objective_minlength",
+      "skills_composition_director_schemas_art_direction_schema_objective_type",
+      "skills_composition_director_schemas_art_direction_schema_primary_message_minlength",
+      "skills_composition_director_schemas_art_direction_schema_primary_message_type",
+      "skills_composition_director_schemas_art_direction_schema_properties_audience",
+      "skills_composition_director_schemas_art_direction_schema_properties_desired_action",
+      "skills_composition_director_schemas_art_direction_schema_properties_objective",
+      "skills_composition_director_schemas_art_direction_schema_properties_primary_message",
+      "skills_composition_director_schemas_art_direction_schema_properties_supporting_information",
+      "skills_composition_director_schemas_art_direction_schema_supporting_information_items",
+      "skills_composition_director_schemas_art_direction_schema_supporting_information_type"
     ],
     "30": [
-      "shared_contracts_edit_contract_schema_confidence_maximum",
-      "shared_contracts_edit_contract_schema_confidence_minimum",
-      "shared_contracts_edit_contract_schema_confidence_type",
-      "shared_contracts_edit_contract_schema_items_properties",
-      "shared_contracts_edit_contract_schema_properties_confidence",
-      "shared_contracts_edit_contract_schema_properties_region_id",
-      "shared_contracts_edit_contract_schema_properties_rule",
-      "shared_contracts_edit_contract_schema_properties_semantic_target",
-      "shared_contracts_edit_contract_schema_properties_target_id",
-      "shared_contracts_edit_contract_schema_region_id_type",
-      "shared_contracts_edit_contract_schema_rule_type",
-      "shared_contracts_edit_contract_schema_semantic_target_minlength",
-      "shared_contracts_edit_contract_schema_semantic_target_type",
-      "shared_contracts_edit_contract_schema_target_id_minlength",
-      "shared_contracts_edit_contract_schema_target_id_type"
-    ],
-    "31": [
       "skills_composition_director_schemas_art_direction_schema_benefit_type",
       "skills_composition_director_schemas_art_direction_schema_heuristic_type",
       "skills_composition_director_schemas_art_direction_schema_items_properties",
@@ -814,17 +760,7 @@
       "skills_composition_director_schemas_art_direction_schema_reason_type",
       "skills_composition_director_schemas_art_direction_schema_verification_type"
     ],
-    "32": [
-      "ref_brand_assets",
-      "ref_product_specs",
-      "shared_contracts_routing_graph_brand_intelligence_agent",
-      "shared_contracts_routing_graph_brand_intelligence_description",
-      "shared_contracts_routing_graph_brand_intelligence_reads",
-      "shared_contracts_routing_graph_brand_intelligence_type",
-      "shared_contracts_routing_graph_brand_intelligence_writes",
-      "shared_contracts_routing_graph_nodes_brand_intelligence"
-    ],
-    "33": [
+    "31": [
       "ref_dimension",
       "ref_interpretation",
       "ref_strength",
@@ -840,8 +776,31 @@
       "skills_taste_engine_schemas_taste_profile_schema_properties_observations",
       "skills_taste_engine_schemas_taste_profile_schema_rules_items"
     ],
-    "34": [
+    "32": [
+      "ref_family",
+      "shared_contracts_signal_packet_schema_json_ref_severity",
+      "skills_visual_qa_schemas_visual_review_schema_defects_items",
+      "skills_visual_qa_schemas_visual_review_schema_defects_type",
+      "skills_visual_qa_schemas_visual_review_schema_items_additionalproperties",
+      "skills_visual_qa_schemas_visual_review_schema_items_required",
+      "skills_visual_qa_schemas_visual_review_schema_items_type",
+      "skills_visual_qa_schemas_visual_review_schema_json_ref_evidence",
+      "skills_visual_qa_schemas_visual_review_schema_properties",
+      "skills_visual_qa_schemas_visual_review_schema_properties_defects",
+      "skills_visual_qa_schemas_visual_review_schema_properties_revision_mode",
+      "skills_visual_qa_schemas_visual_review_schema_properties_slop_findings",
+      "skills_visual_qa_schemas_visual_review_schema_slop_findings_items",
+      "skills_visual_qa_schemas_visual_review_schema_slop_findings_type"
+    ],
+    "33": [
       "ref_references",
+      "ref_taste_state",
+      "shared_contracts_routing_graph_composition_director_agent",
+      "shared_contracts_routing_graph_composition_director_description",
+      "shared_contracts_routing_graph_composition_director_reads",
+      "shared_contracts_routing_graph_composition_director_type",
+      "shared_contracts_routing_graph_composition_director_writes",
+      "shared_contracts_routing_graph_nodes_composition_director",
       "shared_contracts_routing_graph_nodes_taste_engine",
       "shared_contracts_routing_graph_taste_engine_agent",
       "shared_contracts_routing_graph_taste_engine_description",
@@ -849,7 +808,7 @@
       "shared_contracts_routing_graph_taste_engine_type",
       "shared_contracts_routing_graph_taste_engine_writes"
     ],
-    "35": [
+    "34": [
       "skills_campaign_canon_scripts_test_creative_director",
       "skills_campaign_canon_scripts_test_creative_director_calculate_weighted_score",
       "skills_campaign_canon_scripts_test_creative_director_main",
@@ -865,23 +824,7 @@
       "skills_campaign_canon_scripts_test_creative_director_test_saturated_pattern_saturation_threshold_caps_originality",
       "skills_campaign_canon_scripts_test_creative_director_test_tag_schema_parsing_yields_valid_enums"
     ],
-    "36": [
-      "skills_composition_director_schemas_art_direction_schema_brand_rules_items",
-      "skills_composition_director_schemas_art_direction_schema_brand_rules_type",
-      "skills_composition_director_schemas_art_direction_schema_inferred_choices_items",
-      "skills_composition_director_schemas_art_direction_schema_inferred_choices_type",
-      "skills_composition_director_schemas_art_direction_schema_items_type",
-      "skills_composition_director_schemas_art_direction_schema_materials_items",
-      "skills_composition_director_schemas_art_direction_schema_materials_type",
-      "skills_composition_director_schemas_art_direction_schema_observed_patterns_items",
-      "skills_composition_director_schemas_art_direction_schema_observed_patterns_type",
-      "skills_composition_director_schemas_art_direction_schema_properties",
-      "skills_composition_director_schemas_art_direction_schema_properties_brand_rules",
-      "skills_composition_director_schemas_art_direction_schema_properties_inferred_choices",
-      "skills_composition_director_schemas_art_direction_schema_properties_materials",
-      "skills_composition_director_schemas_art_direction_schema_properties_observed_patterns"
-    ],
-    "37": [
+    "35": [
       "skills_composition_director_schemas_creative_brief_schema_awareness_type",
       "skills_composition_director_schemas_creative_brief_schema_market_type",
       "skills_composition_director_schemas_creative_brief_schema_objective_minlength",
@@ -897,7 +840,7 @@
       "skills_composition_director_schemas_creative_brief_schema_properties_viewing_context",
       "skills_composition_director_schemas_creative_brief_schema_viewing_context_type"
     ],
-    "38": [
+    "36": [
       "skills_creative_director_scripts_test_creative_director",
       "skills_creative_director_scripts_test_creative_director_calculate_weighted_score",
       "skills_creative_director_scripts_test_creative_director_main",
@@ -912,6 +855,38 @@
       "skills_creative_director_scripts_test_creative_director_test_moc_index_files_exist_and_reference_cards",
       "skills_creative_director_scripts_test_creative_director_test_saturated_pattern_saturation_threshold_caps_originality",
       "skills_creative_director_scripts_test_creative_director_test_tag_schema_parsing_yields_valid_enums"
+    ],
+    "37": [
+      "skills_taste_engine_schemas_taste_profile_schema_additionalproperties_type",
+      "skills_taste_engine_schemas_taste_profile_schema_confidence_maximum",
+      "skills_taste_engine_schemas_taste_profile_schema_confidence_minimum",
+      "skills_taste_engine_schemas_taste_profile_schema_confidence_type",
+      "skills_taste_engine_schemas_taste_profile_schema_context_additionalproperties",
+      "skills_taste_engine_schemas_taste_profile_schema_context_type",
+      "skills_taste_engine_schemas_taste_profile_schema_profile_version_const",
+      "skills_taste_engine_schemas_taste_profile_schema_properties",
+      "skills_taste_engine_schemas_taste_profile_schema_properties_confidence",
+      "skills_taste_engine_schemas_taste_profile_schema_properties_context",
+      "skills_taste_engine_schemas_taste_profile_schema_properties_profile_version",
+      "skills_taste_engine_schemas_taste_profile_schema_properties_rules",
+      "skills_taste_engine_schemas_taste_profile_schema_rules_minitems",
+      "skills_taste_engine_schemas_taste_profile_schema_rules_type"
+    ],
+    "38": [
+      "skills_taste_engine_schemas_taste_profile_schema_anti_rules_items",
+      "skills_taste_engine_schemas_taste_profile_schema_anti_rules_type",
+      "skills_taste_engine_schemas_taste_profile_schema_items_minlength",
+      "skills_taste_engine_schemas_taste_profile_schema_items_type",
+      "skills_taste_engine_schemas_taste_profile_schema_jobs_items",
+      "skills_taste_engine_schemas_taste_profile_schema_jobs_minitems",
+      "skills_taste_engine_schemas_taste_profile_schema_jobs_type",
+      "skills_taste_engine_schemas_taste_profile_schema_jobs_uniqueitems",
+      "skills_taste_engine_schemas_taste_profile_schema_properties_anti_rules",
+      "skills_taste_engine_schemas_taste_profile_schema_properties_jobs",
+      "skills_taste_engine_schemas_taste_profile_schema_properties_tags",
+      "skills_taste_engine_schemas_taste_profile_schema_tags_items",
+      "skills_taste_engine_schemas_taste_profile_schema_tags_type",
+      "skills_taste_engine_schemas_taste_profile_schema_tags_uniqueitems"
     ],
     "39": [
       "ref_accessibility_plan",
@@ -946,15 +921,15 @@
     "41": [
       "shared_contracts_design_context_schema_audience_type",
       "shared_contracts_design_context_schema_brand_state_type",
-      "shared_contracts_design_context_schema_campaign_state_type",
       "shared_contracts_design_context_schema_edit_state_type",
       "shared_contracts_design_context_schema_objective_type",
+      "shared_contracts_design_context_schema_platform_type",
       "shared_contracts_design_context_schema_properties",
       "shared_contracts_design_context_schema_properties_audience",
       "shared_contracts_design_context_schema_properties_brand_state",
-      "shared_contracts_design_context_schema_properties_campaign_state",
       "shared_contracts_design_context_schema_properties_edit_state",
       "shared_contracts_design_context_schema_properties_objective",
+      "shared_contracts_design_context_schema_properties_platform",
       "shared_contracts_design_context_schema_properties_qa_state",
       "shared_contracts_design_context_schema_qa_state_type"
     ],
@@ -963,8 +938,11 @@
       "shared_contracts_signal_packet_schema_evidence_type",
       "shared_contracts_signal_packet_schema_items_type",
       "shared_contracts_signal_packet_schema_properties_evidence",
+      "shared_contracts_signal_packet_schema_properties_recommended_next",
       "shared_contracts_signal_packet_schema_properties_soft_warnings",
       "shared_contracts_signal_packet_schema_properties_unresolved",
+      "shared_contracts_signal_packet_schema_recommended_next_items",
+      "shared_contracts_signal_packet_schema_recommended_next_type",
       "shared_contracts_signal_packet_schema_soft_warnings_items",
       "shared_contracts_signal_packet_schema_soft_warnings_type",
       "shared_contracts_signal_packet_schema_unresolved_items",
@@ -1001,20 +979,6 @@
       "skills_taste_engine_schemas_taste_profile_schema_uri_type"
     ],
     "45": [
-      "ref_alignment_anchors",
-      "ref_aspect_ratio",
-      "ref_crop_logic",
-      "ref_eye_path",
-      "ref_grid_type",
-      "ref_hero",
-      "ref_negative_space",
-      "ref_reading_direction",
-      "skills_composition_director_schemas_art_direction_schema_composition_additionalproperties",
-      "skills_composition_director_schemas_art_direction_schema_composition_required",
-      "skills_composition_director_schemas_art_direction_schema_composition_type",
-      "skills_composition_director_schemas_art_direction_schema_properties_composition"
-    ],
-    "46": [
       "ref_reasons",
       "shared_contracts_edit_contract_schema_ambiguity_additionalproperties",
       "shared_contracts_edit_contract_schema_ambiguity_properties",
@@ -1028,19 +992,21 @@
       "shared_contracts_edit_contract_schema_reasons_type",
       "shared_contracts_edit_contract_schema_unresolved_type"
     ],
-    "47": [
+    "46": [
+      "shared_contracts_signal_packet_schema_decisions_type",
       "shared_contracts_signal_packet_schema_from_type",
       "shared_contracts_signal_packet_schema_job_type",
+      "shared_contracts_signal_packet_schema_packet_id_pattern",
+      "shared_contracts_signal_packet_schema_packet_id_type",
       "shared_contracts_signal_packet_schema_properties",
+      "shared_contracts_signal_packet_schema_properties_decisions",
       "shared_contracts_signal_packet_schema_properties_from",
       "shared_contracts_signal_packet_schema_properties_job",
-      "shared_contracts_signal_packet_schema_properties_recommended_next",
+      "shared_contracts_signal_packet_schema_properties_packet_id",
       "shared_contracts_signal_packet_schema_properties_to",
-      "shared_contracts_signal_packet_schema_recommended_next_items",
-      "shared_contracts_signal_packet_schema_recommended_next_type",
       "shared_contracts_signal_packet_schema_to_type"
     ],
-    "48": [
+    "47": [
       "shared_contracts_signal_packet_schema_items_properties",
       "shared_contracts_signal_packet_schema_key_type",
       "shared_contracts_signal_packet_schema_properties_key",
@@ -1054,21 +1020,7 @@
       "shared_contracts_signal_packet_schema_remediation_type",
       "shared_contracts_signal_packet_schema_rule_type"
     ],
-    "49": [
-      "skills_taste_engine_schemas_taste_profile_schema_anti_rules_items",
-      "skills_taste_engine_schemas_taste_profile_schema_items_minlength",
-      "skills_taste_engine_schemas_taste_profile_schema_items_type",
-      "skills_taste_engine_schemas_taste_profile_schema_jobs_items",
-      "skills_taste_engine_schemas_taste_profile_schema_jobs_minitems",
-      "skills_taste_engine_schemas_taste_profile_schema_jobs_type",
-      "skills_taste_engine_schemas_taste_profile_schema_jobs_uniqueitems",
-      "skills_taste_engine_schemas_taste_profile_schema_properties_jobs",
-      "skills_taste_engine_schemas_taste_profile_schema_properties_tags",
-      "skills_taste_engine_schemas_taste_profile_schema_tags_items",
-      "skills_taste_engine_schemas_taste_profile_schema_tags_type",
-      "skills_taste_engine_schemas_taste_profile_schema_tags_uniqueitems"
-    ],
-    "50": [
+    "48": [
       "ref_mixes",
       "ref_next_ref",
       "ref_schema_version",
@@ -1081,20 +1033,7 @@
       "skills_reference_memory_schemas_reference_memory_schema_title",
       "skills_reference_memory_schemas_reference_memory_schema_type"
     ],
-    "51": [
-      "skills_composition_director_schemas_art_direction_schema_background_type",
-      "skills_composition_director_schemas_art_direction_schema_composition_properties",
-      "skills_composition_director_schemas_art_direction_schema_foreground_type",
-      "skills_composition_director_schemas_art_direction_schema_middle_ground_type",
-      "skills_composition_director_schemas_art_direction_schema_properties_background",
-      "skills_composition_director_schemas_art_direction_schema_properties_foreground",
-      "skills_composition_director_schemas_art_direction_schema_properties_middle_ground",
-      "skills_composition_director_schemas_art_direction_schema_properties_secondary_mass",
-      "skills_composition_director_schemas_art_direction_schema_properties_typography_zone",
-      "skills_composition_director_schemas_art_direction_schema_secondary_mass_type",
-      "skills_composition_director_schemas_art_direction_schema_typography_zone_type"
-    ],
-    "52": [
+    "49": [
       "ref_ai_slop",
       "ref_annotation_mapping",
       "ref_arabic_rtl",
@@ -1106,7 +1045,7 @@
       "shared_contracts_revision_request_schema_json_ref_brand_fidelity",
       "shared_contracts_revision_request_schema_json_ref_product_fidelity"
     ],
-    "53": [
+    "50": [
       "ref_all_packets",
       "ref_qa_state_final_approval",
       "ref_session_id",
@@ -1118,7 +1057,7 @@
       "shared_contracts_routing_graph_designly_director_writes",
       "shared_contracts_routing_graph_nodes_designly_director"
     ],
-    "54": [
+    "51": [
       "ref_brief_accuracy",
       "ref_concept_strength",
       "ref_craft",
@@ -1130,7 +1069,19 @@
       "ref_spacing_density",
       "skills_visual_qa_schemas_visual_review_schema_scores_required"
     ],
-    "55": [
+    "52": [
+      "ref_category_floor_failed",
+      "ref_defect_description",
+      "ref_failing_dimension",
+      "ref_origin_packet_id",
+      "ref_required_delta",
+      "ref_revision_id",
+      "ref_source_qa",
+      "ref_target_node",
+      "shared_contracts_revision_request_schema_json_ref_evidence",
+      "shared_contracts_revision_request_schema_required"
+    ],
+    "53": [
       "ref_controlled_variables",
       "ref_crop_rules",
       "ref_image_treatment",
@@ -1142,7 +1093,7 @@
       "ref_visual_density",
       "skills_campaign_dna_schemas_visual_dna_schema_required"
     ],
-    "56": [
+    "54": [
       "ref_created_at",
       "ref_feedback",
       "ref_id",
@@ -1154,7 +1105,7 @@
       "skills_reference_memory_schemas_reference_memory_schema_json_ref_label",
       "skills_reference_memory_schemas_reference_memory_schema_json_ref_status"
     ],
-    "57": [
+    "55": [
       "ref_exploration",
       "ref_quick",
       "ref_reference_replication",
@@ -1166,21 +1117,31 @@
       "shared_contracts_design_context_schema_task_type_enum",
       "shared_contracts_design_context_schema_task_type_type"
     ],
-    "58": [
+    "56": [
       "ref_key",
       "ref_value",
       "shared_contracts_design_lock_schema_json_ref_reason",
       "shared_contracts_signal_packet_schema_decisions_items",
-      "shared_contracts_signal_packet_schema_decisions_type",
       "shared_contracts_signal_packet_schema_hard_vetoes_items",
       "shared_contracts_signal_packet_schema_hard_vetoes_type",
       "shared_contracts_signal_packet_schema_items_additionalproperties",
       "shared_contracts_signal_packet_schema_items_required",
       "shared_contracts_signal_packet_schema_json_ref_rule",
-      "shared_contracts_signal_packet_schema_properties_decisions",
       "shared_contracts_signal_packet_schema_properties_hard_vetoes"
     ],
-    "59": [
+    "57": [
+      "ref_string",
+      "shared_contracts_edit_contract_schema_exact_copy_type",
+      "shared_contracts_edit_contract_schema_geometry_type",
+      "shared_contracts_edit_contract_schema_json_ref_null",
+      "shared_contracts_edit_contract_schema_json_ref_object",
+      "shared_contracts_edit_contract_schema_properties_exact_copy",
+      "shared_contracts_revision_request_schema_json_ref_null",
+      "shared_contracts_revision_request_schema_properties_slop_finding",
+      "shared_contracts_revision_request_schema_slop_finding_additionalproperties",
+      "shared_contracts_revision_request_schema_slop_finding_type"
+    ],
+    "58": [
       "skills_campaign_dna_schemas_visual_dna_schema_controlled_variables_items",
       "skills_campaign_dna_schemas_visual_dna_schema_items_type",
       "skills_campaign_dna_schemas_visual_dna_schema_locked_invariants_items",
@@ -1191,6 +1152,17 @@
       "skills_campaign_dna_schemas_visual_dna_schema_palette_roles_type",
       "skills_campaign_dna_schemas_visual_dna_schema_properties_locked_invariants",
       "skills_campaign_dna_schemas_visual_dna_schema_properties_palette_roles"
+    ],
+    "59": [
+      "ref_alignment_anchors",
+      "ref_aspect_ratio",
+      "ref_crop_logic",
+      "ref_eye_path",
+      "ref_grid_type",
+      "ref_hero",
+      "ref_negative_space",
+      "ref_reading_direction",
+      "skills_composition_director_schemas_art_direction_schema_composition_required"
     ],
     "60": [
       "ref_brand_guideline",
@@ -1226,15 +1198,15 @@
       "shared_contracts_routing_graph_reference_memory_writes"
     ],
     "63": [
-      "skills_reference_memory_schemas_reference_memory_schema_feedback_items",
-      "skills_reference_memory_schemas_reference_memory_schema_feedback_type",
-      "skills_reference_memory_schemas_reference_memory_schema_items_additionalproperties",
-      "skills_reference_memory_schemas_reference_memory_schema_items_type",
       "skills_reference_memory_schemas_reference_memory_schema_mixes_items",
-      "skills_reference_memory_schemas_reference_memory_schema_properties_feedback",
-      "skills_reference_memory_schemas_reference_memory_schema_properties_references",
-      "skills_reference_memory_schemas_reference_memory_schema_references_items",
-      "skills_reference_memory_schemas_reference_memory_schema_references_type"
+      "skills_reference_memory_schemas_reference_memory_schema_mixes_type",
+      "skills_reference_memory_schemas_reference_memory_schema_next_ref_minimum",
+      "skills_reference_memory_schemas_reference_memory_schema_next_ref_type",
+      "skills_reference_memory_schemas_reference_memory_schema_properties",
+      "skills_reference_memory_schemas_reference_memory_schema_properties_mixes",
+      "skills_reference_memory_schemas_reference_memory_schema_properties_next_ref",
+      "skills_reference_memory_schemas_reference_memory_schema_properties_schema_version",
+      "skills_reference_memory_schemas_reference_memory_schema_schema_version_const"
     ],
     "64": [
       "skills_taste_engine_schemas_taste_profile_schema_copy_risk_type",
@@ -1259,22 +1231,14 @@
       "skills_visual_qa_schemas_visual_review_schema_scores_type"
     ],
     "66": [
-      "ref_brand_state",
-      "ref_brief",
-      "ref_composition_state",
-      "ref_craft_state",
-      "ref_edit_state",
-      "ref_strategy_state",
-      "ref_taste_state",
-      "shared_contracts_routing_graph_brand_activation_reads",
-      "shared_contracts_routing_graph_campaign_canon_reads",
-      "shared_contracts_routing_graph_campaign_dna_reads",
-      "shared_contracts_routing_graph_composition_director_reads",
-      "shared_contracts_routing_graph_manipulation_director_reads",
-      "shared_contracts_routing_graph_photography_director_reads",
-      "shared_contracts_routing_graph_prompt_compiler_reads",
-      "shared_contracts_routing_graph_visual_qa_reads",
-      "shared_contracts_routing_graph_visual_storytelling_reads"
+      "ref_brand_assets",
+      "ref_product_specs",
+      "shared_contracts_routing_graph_brand_intelligence_agent",
+      "shared_contracts_routing_graph_brand_intelligence_description",
+      "shared_contracts_routing_graph_brand_intelligence_reads",
+      "shared_contracts_routing_graph_brand_intelligence_type",
+      "shared_contracts_routing_graph_brand_intelligence_writes",
+      "shared_contracts_routing_graph_nodes_brand_intelligence"
     ],
     "67": [
       "ref_custom",
@@ -1287,6 +1251,16 @@
       "skills_composition_director_schemas_art_direction_schema_properties_grid_type"
     ],
     "68": [
+      "ref_hard_gate",
+      "shared_contracts_signal_packet_schema_json_ref_critical",
+      "shared_contracts_signal_packet_schema_properties_severity",
+      "shared_contracts_signal_packet_schema_severity_enum",
+      "shared_contracts_signal_packet_schema_severity_type",
+      "skills_visual_qa_schemas_visual_review_schema_json_ref_major",
+      "skills_visual_qa_schemas_visual_review_schema_json_ref_minor",
+      "skills_visual_qa_schemas_visual_review_schema_severity_enum"
+    ],
+    "69": [
       "ref_platform",
       "skills_composition_director_schemas_creative_brief_schema",
       "skills_composition_director_schemas_creative_brief_schema_additionalproperties",
@@ -1296,7 +1270,7 @@
       "skills_composition_director_schemas_creative_brief_schema_title",
       "skills_composition_director_schemas_creative_brief_schema_type"
     ],
-    "69": [
+    "70": [
       "shared_contracts_design_context_schema",
       "shared_contracts_design_context_schema_additionalproperties",
       "shared_contracts_design_context_schema_json_ref_locks",
@@ -1306,7 +1280,17 @@
       "shared_contracts_design_context_schema_title",
       "shared_contracts_design_context_schema_type"
     ],
-    "70": [
+    "71": [
+      "shared_contracts_revision_request_schema_family_type",
+      "shared_contracts_revision_request_schema_json_ref_major",
+      "shared_contracts_revision_request_schema_json_ref_minor",
+      "shared_contracts_revision_request_schema_properties_family",
+      "shared_contracts_revision_request_schema_properties_severity",
+      "shared_contracts_revision_request_schema_severity_enum",
+      "shared_contracts_revision_request_schema_severity_type",
+      "shared_contracts_revision_request_schema_slop_finding_properties"
+    ],
+    "72": [
       "skills_campaign_canon_scripts_test_campaign_canon",
       "skills_campaign_canon_scripts_test_campaign_canon_main",
       "skills_campaign_canon_scripts_test_campaign_canon_rationale_20",
@@ -1316,17 +1300,17 @@
       "skills_campaign_canon_scripts_test_campaign_canon_test_moc_index_files_are_accessible",
       "skills_campaign_canon_scripts_test_campaign_canon_test_pattern_saturation_classification"
     ],
-    "71": [
-      "skills_reference_memory_schemas_reference_memory_schema_mixes_type",
-      "skills_reference_memory_schemas_reference_memory_schema_next_ref_minimum",
-      "skills_reference_memory_schemas_reference_memory_schema_next_ref_type",
-      "skills_reference_memory_schemas_reference_memory_schema_properties",
-      "skills_reference_memory_schemas_reference_memory_schema_properties_mixes",
-      "skills_reference_memory_schemas_reference_memory_schema_properties_next_ref",
-      "skills_reference_memory_schemas_reference_memory_schema_properties_schema_version",
-      "skills_reference_memory_schemas_reference_memory_schema_schema_version_const"
+    "73": [
+      "skills_reference_memory_schemas_reference_memory_schema_feedback_items",
+      "skills_reference_memory_schemas_reference_memory_schema_feedback_type",
+      "skills_reference_memory_schemas_reference_memory_schema_items_additionalproperties",
+      "skills_reference_memory_schemas_reference_memory_schema_items_type",
+      "skills_reference_memory_schemas_reference_memory_schema_properties_feedback",
+      "skills_reference_memory_schemas_reference_memory_schema_properties_references",
+      "skills_reference_memory_schemas_reference_memory_schema_references_items",
+      "skills_reference_memory_schemas_reference_memory_schema_references_type"
     ],
-    "72": [
+    "74": [
       "ref_clarify",
       "ref_ready",
       "ref_reject",
@@ -1335,19 +1319,7 @@
       "shared_contracts_edit_contract_schema_status_enum",
       "shared_contracts_edit_contract_schema_status_type"
     ],
-    "73": [
-      "ref_desired_action",
-      "ref_primary_message",
-      "ref_strategy_state_insight",
-      "shared_contracts_routing_graph_creative_director_writes",
-      "shared_contracts_routing_graph_creative_strategy_writes",
-      "shared_contracts_routing_graph_insight_mining_agent",
-      "shared_contracts_routing_graph_insight_mining_description",
-      "shared_contracts_routing_graph_insight_mining_type",
-      "shared_contracts_routing_graph_insight_mining_writes",
-      "shared_contracts_routing_graph_nodes_insight_mining"
-    ],
-    "74": [
+    "75": [
       "ref_copy_risk",
       "ref_must_transform",
       "ref_protected_elements",
@@ -1356,15 +1328,25 @@
       "skills_taste_engine_schemas_taste_profile_schema_similarity_guard_required",
       "skills_taste_engine_schemas_taste_profile_schema_similarity_guard_type"
     ],
-    "75": [
+    "76": [
       "ref_craft_state_photography",
       "shared_contracts_routing_graph_nodes_photography_director",
       "shared_contracts_routing_graph_photography_director_agent",
       "shared_contracts_routing_graph_photography_director_description",
+      "shared_contracts_routing_graph_photography_director_reads",
       "shared_contracts_routing_graph_photography_director_type",
       "shared_contracts_routing_graph_photography_director_writes"
     ],
-    "76": [
+    "77": [
+      "ref_fail",
+      "ref_na",
+      "ref_pass",
+      "skills_visual_qa_schemas_visual_review_schema_additionalproperties_enum",
+      "skills_visual_qa_schemas_visual_review_schema_hard_gates_additionalproperties",
+      "skills_visual_qa_schemas_visual_review_schema_hard_gates_type",
+      "skills_visual_qa_schemas_visual_review_schema_properties_hard_gates"
+    ],
+    "78": [
       "ref_generate",
       "ref_reference",
       "skills_composition_director_schemas_creative_brief_schema_json_ref_edit",
@@ -1373,7 +1355,25 @@
       "skills_composition_director_schemas_creative_brief_schema_task_type_enum",
       "skills_taste_engine_schemas_taste_profile_schema_json_ref_manipulation"
     ],
-    "77": [
+    "79": [
+      "ref_generation_state_image",
+      "ref_image_state",
+      "shared_contracts_routing_graph_image_director_agent",
+      "shared_contracts_routing_graph_image_director_description",
+      "shared_contracts_routing_graph_image_director_type",
+      "shared_contracts_routing_graph_image_director_writes",
+      "shared_contracts_routing_graph_nodes_image_director"
+    ],
+    "80": [
+      "ref_generation_state_video",
+      "ref_video_state",
+      "shared_contracts_routing_graph_nodes_video_director",
+      "shared_contracts_routing_graph_video_director_agent",
+      "shared_contracts_routing_graph_video_director_description",
+      "shared_contracts_routing_graph_video_director_type",
+      "shared_contracts_routing_graph_video_director_writes"
+    ],
+    "81": [
       "ref_high",
       "skills_taste_engine_schemas_taste_profile_schema_copy_risk_enum",
       "skills_taste_engine_schemas_taste_profile_schema_json_ref_low",
@@ -1382,7 +1382,7 @@
       "skills_taste_engine_schemas_taste_profile_schema_strength_enum",
       "skills_taste_engine_schemas_taste_profile_schema_strength_type"
     ],
-    "78": [
+    "82": [
       "ref_licensed",
       "ref_owned",
       "ref_public_reference",
@@ -1391,7 +1391,7 @@
       "skills_taste_engine_schemas_taste_profile_schema_ownership_type",
       "skills_taste_engine_schemas_taste_profile_schema_properties_ownership"
     ],
-    "79": [
+    "83": [
       "ref_mask",
       "ref_normalized",
       "ref_pixels",
@@ -1400,7 +1400,16 @@
       "shared_contracts_edit_contract_schema_annotation_space_type",
       "shared_contracts_edit_contract_schema_properties_annotation_space"
     ],
-    "80": [
+    "84": [
+      "shared_contracts_revision_request_schema_evidence_items",
+      "shared_contracts_revision_request_schema_evidence_type",
+      "shared_contracts_revision_request_schema_items_type",
+      "shared_contracts_revision_request_schema_properties_evidence",
+      "shared_contracts_revision_request_schema_properties_protected_regions",
+      "shared_contracts_revision_request_schema_protected_regions_items",
+      "shared_contracts_revision_request_schema_protected_regions_type"
+    ],
+    "85": [
       "skills_campaign_canon_scripts_validate_schema",
       "skills_campaign_canon_scripts_validate_schema_main",
       "skills_campaign_canon_scripts_validate_schema_parse_schema",
@@ -1409,7 +1418,7 @@
       "skills_campaign_canon_scripts_validate_schema_rationale_54",
       "skills_campaign_canon_scripts_validate_schema_validate_card"
     ],
-    "81": [
+    "86": [
       "skills_composition_director_schemas_creative_brief_schema_constraints_items",
       "skills_composition_director_schemas_creative_brief_schema_constraints_type",
       "skills_composition_director_schemas_creative_brief_schema_items_type",
@@ -1418,7 +1427,7 @@
       "skills_composition_director_schemas_creative_brief_schema_supporting_information_items",
       "skills_composition_director_schemas_creative_brief_schema_supporting_information_type"
     ],
-    "82": [
+    "87": [
       "skills_creative_director_scripts_validate_schema",
       "skills_creative_director_scripts_validate_schema_main",
       "skills_creative_director_scripts_validate_schema_parse_schema",
@@ -1427,7 +1436,7 @@
       "skills_creative_director_scripts_validate_schema_rationale_54",
       "skills_creative_director_scripts_validate_schema_validate_card"
     ],
-    "83": [
+    "88": [
       "skills_insight_mining_scripts_test_insight_mining",
       "skills_insight_mining_scripts_test_insight_mining_main",
       "skills_insight_mining_scripts_test_insight_mining_rationale_15",
@@ -1436,7 +1445,7 @@
       "skills_insight_mining_scripts_test_insight_mining_test_insight_mining_reference_files_exist",
       "skills_insight_mining_scripts_test_insight_mining_validate_insight_formula"
     ],
-    "84": [
+    "89": [
       "ref_active",
       "ref_archived",
       "ref_canonical",
@@ -1444,7 +1453,15 @@
       "skills_reference_memory_schemas_reference_memory_schema_status_enum",
       "skills_reference_memory_schemas_reference_memory_schema_status_type"
     ],
-    "85": [
+    "90": [
+      "ref_applicability",
+      "ref_defects",
+      "ref_hard_gates",
+      "ref_scores",
+      "ref_slop_findings",
+      "skills_visual_qa_schemas_visual_review_schema_required"
+    ],
+    "91": [
       "ref_campaign_state",
       "shared_contracts_routing_graph_campaign_dna_agent",
       "shared_contracts_routing_graph_campaign_dna_description",
@@ -1452,7 +1469,7 @@
       "shared_contracts_routing_graph_campaign_dna_writes",
       "shared_contracts_routing_graph_nodes_campaign_dna"
     ],
-    "86": [
+    "92": [
       "ref_craft_state_manipulation",
       "shared_contracts_routing_graph_manipulation_director_agent",
       "shared_contracts_routing_graph_manipulation_director_description",
@@ -1460,333 +1477,7 @@
       "shared_contracts_routing_graph_manipulation_director_writes",
       "shared_contracts_routing_graph_nodes_manipulation_director"
     ],
-    "87": [
-      "ref_one",
-      "shared_contracts_edit_contract_schema_json_ref_low",
-      "shared_contracts_edit_contract_schema_json_ref_medium",
-      "shared_contracts_edit_contract_schema_mutation_budget_enum",
-      "shared_contracts_edit_contract_schema_mutation_budget_type",
-      "shared_contracts_edit_contract_schema_properties_mutation_budget"
-    ],
-    "88": [
-      "ref_ownership",
-      "skills_taste_engine_schemas_taste_profile_schema_json_ref_label",
-      "skills_taste_engine_schemas_taste_profile_schema_properties_source",
-      "skills_taste_engine_schemas_taste_profile_schema_source_additionalproperties",
-      "skills_taste_engine_schemas_taste_profile_schema_source_required",
-      "skills_taste_engine_schemas_taste_profile_schema_source_type"
-    ],
-    "89": [
-      "ref_qa_state",
-      "shared_contracts_routing_graph_nodes_visual_qa",
-      "shared_contracts_routing_graph_visual_qa_agent",
-      "shared_contracts_routing_graph_visual_qa_description",
-      "shared_contracts_routing_graph_visual_qa_type",
-      "shared_contracts_routing_graph_visual_qa_writes"
-    ],
-    "90": [
-      "ref_strategy_state_activation",
-      "shared_contracts_routing_graph_brand_activation_agent",
-      "shared_contracts_routing_graph_brand_activation_description",
-      "shared_contracts_routing_graph_brand_activation_type",
-      "shared_contracts_routing_graph_brand_activation_writes",
-      "shared_contracts_routing_graph_nodes_brand_activation"
-    ],
-    "91": [
-      "ref_strategy_state_narrative_arc",
-      "shared_contracts_routing_graph_nodes_visual_storytelling",
-      "shared_contracts_routing_graph_visual_storytelling_agent",
-      "shared_contracts_routing_graph_visual_storytelling_description",
-      "shared_contracts_routing_graph_visual_storytelling_type",
-      "shared_contracts_routing_graph_visual_storytelling_writes"
-    ],
-    "92": [
-      "shared_scripts_validate_mesh",
-      "shared_scripts_validate_mesh_check",
-      "shared_scripts_validate_mesh_main",
-      "shared_scripts_validate_mesh_validate_lock_precedence",
-      "shared_scripts_validate_mesh_validate_routing_graph",
-      "shared_scripts_validate_mesh_validate_schemas"
-    ],
     "93": [
-      "skills_brand_activation_scripts_test_brand_activation",
-      "skills_brand_activation_scripts_test_brand_activation_classify_activation_utility",
-      "skills_brand_activation_scripts_test_brand_activation_main",
-      "skills_brand_activation_scripts_test_brand_activation_rationale_14",
-      "skills_brand_activation_scripts_test_brand_activation_test_activation_toolkit_references_exist",
-      "skills_brand_activation_scripts_test_brand_activation_test_non_advertising_diagnostic_differentiates_utility_from_execution"
-    ],
-    "94": [
-      "skills_campaign_canon_scripts_generate_links",
-      "skills_campaign_canon_scripts_generate_links_build_related_section",
-      "skills_campaign_canon_scripts_generate_links_main",
-      "skills_campaign_canon_scripts_generate_links_parse_frontmatter",
-      "skills_campaign_canon_scripts_generate_links_py_path",
-      "skills_campaign_canon_scripts_generate_links_update_card"
-    ],
-    "95": [
-      "skills_campaign_dna_schemas_visual_dna_schema",
-      "skills_campaign_dna_schemas_visual_dna_schema_additionalproperties",
-      "skills_campaign_dna_schemas_visual_dna_schema_id",
-      "skills_campaign_dna_schemas_visual_dna_schema_schema",
-      "skills_campaign_dna_schemas_visual_dna_schema_title",
-      "skills_campaign_dna_schemas_visual_dna_schema_type"
-    ],
-    "96": [
-      "skills_composition_director_schemas_art_direction_schema",
-      "skills_composition_director_schemas_art_direction_schema_additionalproperties",
-      "skills_composition_director_schemas_art_direction_schema_id",
-      "skills_composition_director_schemas_art_direction_schema_schema",
-      "skills_composition_director_schemas_art_direction_schema_title",
-      "skills_composition_director_schemas_art_direction_schema_type"
-    ],
-    "97": [
-      "skills_creative_director_scripts_generate_links",
-      "skills_creative_director_scripts_generate_links_build_related_section",
-      "skills_creative_director_scripts_generate_links_main",
-      "skills_creative_director_scripts_generate_links_parse_frontmatter",
-      "skills_creative_director_scripts_generate_links_py_path",
-      "skills_creative_director_scripts_generate_links_update_card"
-    ],
-    "98": [
-      "skills_visual_storytelling_scripts_test_visual_storytelling",
-      "skills_visual_storytelling_scripts_test_visual_storytelling_get_emotion_tier_range",
-      "skills_visual_storytelling_scripts_test_visual_storytelling_main",
-      "skills_visual_storytelling_scripts_test_visual_storytelling_rationale_14",
-      "skills_visual_storytelling_scripts_test_visual_storytelling_test_emotional_tier_scoring_bounds",
-      "skills_visual_storytelling_scripts_test_visual_storytelling_test_storytelling_references_exist"
-    ],
-    "99": [
-      "tools_validate_public_plugin",
-      "tools_validate_public_plugin_check",
-      "tools_validate_public_plugin_err",
-      "tools_validate_public_plugin_main",
-      "tools_validate_public_plugin_ok",
-      "tools_validate_public_plugin_svg_size"
-    ],
-    "100": [
-      "ref_image_only",
-      "ref_poster_ad_layout",
-      "ref_small_text",
-      "shared_contracts_design_context_schema_json_ref_typography_heavy",
-      "skills_composition_director_schemas_art_direction_schema_class_enum"
-    ],
-    "101": [
-      "shared_contracts_signal_packet_schema_confidence_description",
-      "shared_contracts_signal_packet_schema_confidence_maximum",
-      "shared_contracts_signal_packet_schema_confidence_minimum",
-      "shared_contracts_signal_packet_schema_confidence_type",
-      "shared_contracts_signal_packet_schema_properties_confidence"
-    ],
-    "102": [
-      "shared_scripts_validate_agent_configs",
-      "shared_scripts_validate_agent_configs_check",
-      "shared_scripts_validate_agent_configs_main",
-      "shared_scripts_validate_agent_configs_validate_agent",
-      "shared_scripts_validate_agent_configs_validate_config"
-    ],
-    "103": [
-      "shared_scripts_validate_skill_interfaces",
-      "shared_scripts_validate_skill_interfaces_check",
-      "shared_scripts_validate_skill_interfaces_main",
-      "shared_scripts_validate_skill_interfaces_parse_frontmatter",
-      "shared_scripts_validate_skill_interfaces_validate_skill"
-    ],
-    "104": [
-      "skills_composition_director_schemas_art_direction_schema_alignment_anchors_items",
-      "skills_composition_director_schemas_art_direction_schema_alignment_anchors_maxitems",
-      "skills_composition_director_schemas_art_direction_schema_alignment_anchors_minitems",
-      "skills_composition_director_schemas_art_direction_schema_alignment_anchors_type",
-      "skills_composition_director_schemas_art_direction_schema_properties_alignment_anchors"
-    ],
-    "105": [
-      "skills_composition_director_scripts_design_lint",
-      "skills_composition_director_scripts_design_lint_has_exception",
-      "skills_composition_director_scripts_design_lint_lint",
-      "skills_composition_director_scripts_design_lint_main",
-      "skills_composition_director_scripts_design_lint_norm_words"
-    ],
-    "106": [
-      "skills_taste_engine_scripts_taste_merge",
-      "skills_taste_engine_scripts_taste_merge_build",
-      "skills_taste_engine_scripts_taste_merge_find",
-      "skills_taste_engine_scripts_taste_merge_load_json",
-      "skills_taste_engine_scripts_taste_merge_main"
-    ],
-    "107": [
-      "evals_handoffs_test_contracts",
-      "evals_handoffs_test_contracts_load_schema",
-      "evals_handoffs_test_contracts_main",
-      "evals_handoffs_test_contracts_validates"
-    ],
-    "108": [
-      "shared_contracts_design_context_schema_items_ref",
-      "shared_contracts_design_context_schema_locks_items",
-      "shared_contracts_design_context_schema_locks_type",
-      "shared_contracts_design_context_schema_properties_locks"
-    ],
-    "109": [
-      "shared_contracts_edit_contract_schema_iteration_maximum",
-      "shared_contracts_edit_contract_schema_iteration_minimum",
-      "shared_contracts_edit_contract_schema_iteration_type",
-      "shared_contracts_edit_contract_schema_properties_iteration"
-    ],
-    "110": [
-      "shared_contracts_signal_packet_schema_priority_maximum",
-      "shared_contracts_signal_packet_schema_priority_minimum",
-      "shared_contracts_signal_packet_schema_priority_type",
-      "shared_contracts_signal_packet_schema_properties_priority"
-    ],
-    "111": [
-      "skills_composition_director_schemas_art_direction_schema_focal_points_maximum",
-      "skills_composition_director_schemas_art_direction_schema_focal_points_minimum",
-      "skills_composition_director_schemas_art_direction_schema_focal_points_type",
-      "skills_composition_director_schemas_art_direction_schema_properties_focal_points"
-    ],
-    "112": [
-      "skills_composition_director_schemas_art_direction_schema_properties_restraints",
-      "skills_composition_director_schemas_art_direction_schema_restraints_items",
-      "skills_composition_director_schemas_art_direction_schema_restraints_minitems",
-      "skills_composition_director_schemas_art_direction_schema_restraints_type"
-    ],
-    "113": [
-      "skills_composition_director_schemas_art_direction_schema_properties_style_families",
-      "skills_composition_director_schemas_art_direction_schema_style_families_items",
-      "skills_composition_director_schemas_art_direction_schema_style_families_maxitems",
-      "skills_composition_director_schemas_art_direction_schema_style_families_type"
-    ],
-    "114": [
-      "skills_prompt_compiler_scripts_prompt_lint",
-      "skills_prompt_compiler_scripts_prompt_lint_active_term",
-      "skills_prompt_compiler_scripts_prompt_lint_lint",
-      "skills_prompt_compiler_scripts_prompt_lint_main"
-    ],
-    "115": [
-      "shared_contracts_routing_graph_composition_director_agent",
-      "shared_contracts_routing_graph_composition_director_description",
-      "shared_contracts_routing_graph_composition_director_type",
-      "shared_contracts_routing_graph_composition_director_writes",
-      "shared_contracts_routing_graph_creative_strategy_agent",
-      "shared_contracts_routing_graph_creative_strategy_description",
-      "shared_contracts_routing_graph_creative_strategy_type",
-      "shared_contracts_routing_graph_nodes",
-      "shared_contracts_routing_graph_nodes_composition_director",
-      "shared_contracts_routing_graph_nodes_creative_strategy"
-    ],
-    "116": [
-      "evals_routing_test_skill_catalog",
-      "evals_routing_test_skill_catalog_classify_prompt",
-      "evals_routing_test_skill_catalog_main"
-    ],
-    "117": [
-      "skills_campaign_dna_schemas_visual_dna_schema_controlled_variables_minitems",
-      "skills_campaign_dna_schemas_visual_dna_schema_controlled_variables_type",
-      "skills_campaign_dna_schemas_visual_dna_schema_properties_controlled_variables"
-    ],
-    "118": [
-      "skills_campaign_dna_schemas_visual_dna_schema_crop_rules_items",
-      "skills_campaign_dna_schemas_visual_dna_schema_crop_rules_type",
-      "skills_campaign_dna_schemas_visual_dna_schema_properties_crop_rules"
-    ],
-    "119": [
-      "skills_campaign_dna_schemas_visual_dna_schema_properties_spacing_rhythm",
-      "skills_campaign_dna_schemas_visual_dna_schema_spacing_rhythm_minlength",
-      "skills_campaign_dna_schemas_visual_dna_schema_spacing_rhythm_type"
-    ],
-    "120": [
-      "skills_campaign_dna_schemas_visual_dna_schema_properties_typography_roles",
-      "skills_campaign_dna_schemas_visual_dna_schema_typography_roles_items",
-      "skills_campaign_dna_schemas_visual_dna_schema_typography_roles_type"
-    ],
-    "121": [
-      "skills_composition_director_schemas_art_direction_schema_aspect_ratio_minlength",
-      "skills_composition_director_schemas_art_direction_schema_aspect_ratio_type",
-      "skills_composition_director_schemas_art_direction_schema_properties_aspect_ratio"
-    ],
-    "122": [
-      "skills_composition_director_schemas_art_direction_schema_crop_logic_minlength",
-      "skills_composition_director_schemas_art_direction_schema_crop_logic_type",
-      "skills_composition_director_schemas_art_direction_schema_properties_crop_logic"
-    ],
-    "123": [
-      "skills_composition_director_schemas_art_direction_schema_eye_path_minlength",
-      "skills_composition_director_schemas_art_direction_schema_eye_path_type",
-      "skills_composition_director_schemas_art_direction_schema_properties_eye_path"
-    ],
-    "124": [
-      "skills_composition_director_schemas_art_direction_schema_hero_minlength",
-      "skills_composition_director_schemas_art_direction_schema_hero_type",
-      "skills_composition_director_schemas_art_direction_schema_properties_hero"
-    ],
-    "125": [
-      "skills_composition_director_schemas_art_direction_schema_negative_space_minlength",
-      "skills_composition_director_schemas_art_direction_schema_negative_space_type",
-      "skills_composition_director_schemas_art_direction_schema_properties_negative_space"
-    ],
-    "126": [
-      "skills_composition_director_schemas_art_direction_schema_properties_supporting_information",
-      "skills_composition_director_schemas_art_direction_schema_supporting_information_items",
-      "skills_composition_director_schemas_art_direction_schema_supporting_information_type"
-    ],
-    "127": [
-      "skills_composition_director_schemas_creative_brief_schema_cultural_constraints_items",
-      "skills_composition_director_schemas_creative_brief_schema_cultural_constraints_type",
-      "skills_composition_director_schemas_creative_brief_schema_properties_cultural_constraints"
-    ],
-    "128": [
-      "skills_composition_director_schemas_creative_brief_schema_exact_copy_items",
-      "skills_composition_director_schemas_creative_brief_schema_exact_copy_type",
-      "skills_composition_director_schemas_creative_brief_schema_properties_exact_copy"
-    ],
-    "129": [
-      "skills_composition_director_schemas_creative_brief_schema_locked_assets_items",
-      "skills_composition_director_schemas_creative_brief_schema_locked_assets_type",
-      "skills_composition_director_schemas_creative_brief_schema_properties_locked_assets"
-    ],
-    "130": [
-      "skills_composition_director_schemas_creative_brief_schema_non_goals_items",
-      "skills_composition_director_schemas_creative_brief_schema_non_goals_type",
-      "skills_composition_director_schemas_creative_brief_schema_properties_non_goals"
-    ],
-    "131": [
-      "skills_composition_director_schemas_creative_brief_schema_platform_minlength",
-      "skills_composition_director_schemas_creative_brief_schema_platform_type",
-      "skills_composition_director_schemas_creative_brief_schema_properties_platform"
-    ],
-    "132": [
-      "skills_composition_director_schemas_creative_brief_schema_primary_message_minlength",
-      "skills_composition_director_schemas_creative_brief_schema_primary_message_type",
-      "skills_composition_director_schemas_creative_brief_schema_properties_primary_message"
-    ],
-    "133": [
-      "skills_composition_director_schemas_creative_brief_schema_proof_items",
-      "skills_composition_director_schemas_creative_brief_schema_proof_type",
-      "skills_composition_director_schemas_creative_brief_schema_properties_proof"
-    ],
-    "134": [
-      "skills_composition_director_schemas_creative_brief_schema_properties_references",
-      "skills_composition_director_schemas_creative_brief_schema_references_items",
-      "skills_composition_director_schemas_creative_brief_schema_references_type"
-    ],
-    "135": [
-      "skills_reference_memory_scripts_test_taste_memory",
-      "skills_reference_memory_scripts_test_taste_memory_run",
-      "skills_reference_memory_scripts_test_taste_memory_test_reference_memory_crud"
-    ],
-    "136": [
-      "skills_taste_engine_scripts_taste_lint",
-      "skills_taste_engine_scripts_taste_lint_lint",
-      "skills_taste_engine_scripts_taste_lint_main"
-    ],
-    "137": [
-      "evals_baseline_test_monolith_parity",
-      "evals_baseline_test_monolith_parity_main"
-    ],
-    "138": [
-      "evals_handoffs_test_agents",
-      "evals_handoffs_test_agents_main"
-    ],
-    "139": [
       "ref_generation_state",
       "shared_contracts_routing_graph_nodes_prompt_compiler",
       "shared_contracts_routing_graph_prompt_compiler_agent",
@@ -1794,55 +1485,39 @@
       "shared_contracts_routing_graph_prompt_compiler_type",
       "shared_contracts_routing_graph_prompt_compiler_writes"
     ],
-    "140": [
-      "shared_contracts_design_context_schema_composition_state_type",
-      "shared_contracts_design_context_schema_properties_composition_state"
+    "94": [
+      "ref_one",
+      "shared_contracts_edit_contract_schema_json_ref_low",
+      "shared_contracts_edit_contract_schema_json_ref_medium",
+      "shared_contracts_edit_contract_schema_mutation_budget_enum",
+      "shared_contracts_edit_contract_schema_mutation_budget_type",
+      "shared_contracts_edit_contract_schema_properties_mutation_budget"
     ],
-    "141": [
-      "shared_contracts_design_context_schema_craft_state_type",
-      "shared_contracts_design_context_schema_properties_craft_state"
+    "95": [
+      "ref_ownership",
+      "skills_taste_engine_schemas_taste_profile_schema_json_ref_label",
+      "skills_taste_engine_schemas_taste_profile_schema_properties_source",
+      "skills_taste_engine_schemas_taste_profile_schema_source_additionalproperties",
+      "skills_taste_engine_schemas_taste_profile_schema_source_required",
+      "skills_taste_engine_schemas_taste_profile_schema_source_type"
     ],
-    "142": [
-      "shared_contracts_design_context_schema_cultural_context_type",
-      "shared_contracts_design_context_schema_properties_cultural_context"
+    "96": [
+      "ref_qa_state",
+      "shared_contracts_routing_graph_nodes_visual_qa",
+      "shared_contracts_routing_graph_visual_qa_agent",
+      "shared_contracts_routing_graph_visual_qa_description",
+      "shared_contracts_routing_graph_visual_qa_type",
+      "shared_contracts_routing_graph_visual_qa_writes"
     ],
-    "143": [
-      "shared_contracts_design_context_schema_desired_action_type",
-      "shared_contracts_design_context_schema_properties_desired_action"
+    "97": [
+      "ref_strategy_state_activation",
+      "shared_contracts_routing_graph_brand_activation_agent",
+      "shared_contracts_routing_graph_brand_activation_description",
+      "shared_contracts_routing_graph_brand_activation_type",
+      "shared_contracts_routing_graph_brand_activation_writes",
+      "shared_contracts_routing_graph_nodes_brand_activation"
     ],
-    "144": [
-      "shared_contracts_design_context_schema_generation_state_type",
-      "shared_contracts_design_context_schema_properties_generation_state"
-    ],
-    "145": [
-      "shared_contracts_design_context_schema_platform_type",
-      "shared_contracts_design_context_schema_properties_platform"
-    ],
-    "146": [
-      "shared_contracts_design_context_schema_properties_session_id",
-      "shared_contracts_design_context_schema_session_id_type"
-    ],
-    "147": [
-      "shared_contracts_design_context_schema_properties_strategy_state",
-      "shared_contracts_design_context_schema_strategy_state_type"
-    ],
-    "148": [
-      "shared_contracts_design_context_schema_properties_taste_state",
-      "shared_contracts_design_context_schema_taste_state_type"
-    ],
-    "149": [
-      "shared_contracts_design_context_schema_properties_typography_state",
-      "shared_contracts_design_context_schema_typography_state_type"
-    ],
-    "150": [
-      "skills_campaign_dna_schemas_visual_dna_schema_background_character_type",
-      "skills_campaign_dna_schemas_visual_dna_schema_properties_background_character"
-    ],
-    "151": [
-      "skills_campaign_dna_schemas_visual_dna_schema_product_scale_range_type",
-      "skills_campaign_dna_schemas_visual_dna_schema_properties_product_scale_range"
-    ],
-    "152": [
+    "98": [
       "ref_strategy_state_canon_benchmark",
       "shared_contracts_routing_graph_campaign_canon_agent",
       "shared_contracts_routing_graph_campaign_canon_description",
@@ -1850,227 +1525,619 @@
       "shared_contracts_routing_graph_campaign_canon_writes",
       "shared_contracts_routing_graph_nodes_campaign_canon"
     ],
-    "153": [
-      "skills_composition_director_schemas_creative_brief_schema_desired_action_type",
-      "skills_composition_director_schemas_creative_brief_schema_properties_desired_action"
+    "99": [
+      "ref_strategy_state_narrative_arc",
+      "shared_contracts_routing_graph_nodes_visual_storytelling",
+      "shared_contracts_routing_graph_visual_storytelling_agent",
+      "shared_contracts_routing_graph_visual_storytelling_description",
+      "shared_contracts_routing_graph_visual_storytelling_type",
+      "shared_contracts_routing_graph_visual_storytelling_writes"
     ],
-    "154": [
-      "skills_composition_director_schemas_creative_brief_schema_language_type",
-      "skills_composition_director_schemas_creative_brief_schema_properties_language"
+    "100": [
+      "shared_scripts_validate_mesh",
+      "shared_scripts_validate_mesh_check",
+      "shared_scripts_validate_mesh_main",
+      "shared_scripts_validate_mesh_validate_lock_precedence",
+      "shared_scripts_validate_mesh_validate_routing_graph",
+      "shared_scripts_validate_mesh_validate_schemas"
     ],
-    "155": [
-      "skills_composition_director_schemas_creative_brief_schema_obstacle_or_objection_type",
-      "skills_composition_director_schemas_creative_brief_schema_properties_obstacle_or_objection"
+    "101": [
+      "skills_brand_activation_scripts_test_brand_activation",
+      "skills_brand_activation_scripts_test_brand_activation_classify_activation_utility",
+      "skills_brand_activation_scripts_test_brand_activation_main",
+      "skills_brand_activation_scripts_test_brand_activation_rationale_14",
+      "skills_brand_activation_scripts_test_brand_activation_test_activation_toolkit_references_exist",
+      "skills_brand_activation_scripts_test_brand_activation_test_non_advertising_diagnostic_differentiates_utility_from_execution"
     ],
-    "156": [
-      "skills_visual_qa_scripts_test_gates",
-      "skills_visual_qa_scripts_test_gates_case"
+    "102": [
+      "skills_campaign_canon_scripts_generate_links",
+      "skills_campaign_canon_scripts_generate_links_build_related_section",
+      "skills_campaign_canon_scripts_generate_links_main",
+      "skills_campaign_canon_scripts_generate_links_parse_frontmatter",
+      "skills_campaign_canon_scripts_generate_links_py_path",
+      "skills_campaign_canon_scripts_generate_links_update_card"
     ],
-    "157": [
-      "tools_package_plugin",
-      "tools_package_plugin_main"
+    "103": [
+      "skills_campaign_dna_schemas_visual_dna_schema",
+      "skills_campaign_dna_schemas_visual_dna_schema_additionalproperties",
+      "skills_campaign_dna_schemas_visual_dna_schema_id",
+      "skills_campaign_dna_schemas_visual_dna_schema_schema",
+      "skills_campaign_dna_schemas_visual_dna_schema_title",
+      "skills_campaign_dna_schemas_visual_dna_schema_type"
     ],
-    "158": [
-      "creative_director_skill_module_creative_director_scripts_generate_links_py_path"
+    "104": [
+      "skills_composition_director_schemas_art_direction_schema",
+      "skills_composition_director_schemas_art_direction_schema_additionalproperties",
+      "skills_composition_director_schemas_art_direction_schema_id",
+      "skills_composition_director_schemas_art_direction_schema_schema",
+      "skills_composition_director_schemas_art_direction_schema_title",
+      "skills_composition_director_schemas_art_direction_schema_type"
     ],
-    "159": [
-      "creative_director_skill_module_creative_director_scripts_generate_mocs_py_path"
+    "105": [
+      "skills_creative_director_scripts_generate_links",
+      "skills_creative_director_scripts_generate_links_build_related_section",
+      "skills_creative_director_scripts_generate_links_main",
+      "skills_creative_director_scripts_generate_links_parse_frontmatter",
+      "skills_creative_director_scripts_generate_links_py_path",
+      "skills_creative_director_scripts_generate_links_update_card"
     ],
-    "160": [
-      "creative_director_skill_module_creative_director_scripts_validate_schema_py_path"
+    "106": [
+      "skills_image_director_scripts_test_image_director",
+      "skills_image_director_scripts_test_image_director_main",
+      "skills_image_director_scripts_test_image_director_test_gpt_image_template_slots",
+      "skills_image_director_scripts_test_image_director_test_multi_panel_grids",
+      "skills_image_director_scripts_test_image_director_test_nano_banana_physics",
+      "skills_image_director_scripts_test_image_director_test_references_exist"
     ],
-    "161": [
-      "shared_scripts_route_packet_py_any"
+    "107": [
+      "skills_video_director_scripts_test_video_director",
+      "skills_video_director_scripts_test_video_director_main",
+      "skills_video_director_scripts_test_video_director_test_dramaturgy_scene_formula",
+      "skills_video_director_scripts_test_video_director_test_model_references",
+      "skills_video_director_scripts_test_video_director_test_murch_weights",
+      "skills_video_director_scripts_test_video_director_test_references_exist"
     ],
-    "162": [
-      "shared_scripts_route_packet_py_path"
+    "108": [
+      "skills_visual_qa_schemas_visual_review_schema",
+      "skills_visual_qa_schemas_visual_review_schema_additionalproperties",
+      "skills_visual_qa_schemas_visual_review_schema_id",
+      "skills_visual_qa_schemas_visual_review_schema_schema",
+      "skills_visual_qa_schemas_visual_review_schema_title",
+      "skills_visual_qa_schemas_visual_review_schema_type"
     ],
-    "163": [
-      "skills_composition_director_scripts_run_design_evals"
+    "109": [
+      "skills_visual_qa_schemas_visual_review_schema_evidence_type",
+      "skills_visual_qa_schemas_visual_review_schema_family_type",
+      "skills_visual_qa_schemas_visual_review_schema_items_properties",
+      "skills_visual_qa_schemas_visual_review_schema_properties_evidence",
+      "skills_visual_qa_schemas_visual_review_schema_properties_family",
+      "skills_visual_qa_schemas_visual_review_schema_properties_severity"
     ],
-    "164": [
-      "skills_prompt_compiler_scripts_test_prompt_lint"
+    "110": [
+      "skills_visual_storytelling_scripts_test_visual_storytelling",
+      "skills_visual_storytelling_scripts_test_visual_storytelling_get_emotion_tier_range",
+      "skills_visual_storytelling_scripts_test_visual_storytelling_main",
+      "skills_visual_storytelling_scripts_test_visual_storytelling_rationale_14",
+      "skills_visual_storytelling_scripts_test_visual_storytelling_test_emotional_tier_scoring_bounds",
+      "skills_visual_storytelling_scripts_test_visual_storytelling_test_storytelling_references_exist"
     ],
-    "165": [
-      "skills_taste_engine_scripts_test_taste_lint"
+    "111": [
+      "tools_validate_public_plugin",
+      "tools_validate_public_plugin_check",
+      "tools_validate_public_plugin_err",
+      "tools_validate_public_plugin_main",
+      "tools_validate_public_plugin_ok",
+      "tools_validate_public_plugin_svg_size"
     ],
-    "166": [
-      "skills_taste_engine_scripts_test_taste_merge"
+    "112": [
+      "ref_image_only",
+      "ref_poster_ad_layout",
+      "ref_small_text",
+      "shared_contracts_design_context_schema_json_ref_typography_heavy",
+      "skills_composition_director_schemas_art_direction_schema_class_enum"
     ],
-    "167": [
+    "113": [
+      "shared_contracts_edit_contract_schema_items_minlength",
+      "shared_contracts_edit_contract_schema_properties_requested_mutations",
+      "shared_contracts_edit_contract_schema_requested_mutations_items",
+      "shared_contracts_edit_contract_schema_requested_mutations_minitems",
+      "shared_contracts_edit_contract_schema_requested_mutations_type"
+    ],
+    "114": [
+      "shared_contracts_revision_request_schema",
+      "shared_contracts_revision_request_schema_additionalproperties",
+      "shared_contracts_revision_request_schema_schema",
+      "shared_contracts_revision_request_schema_title",
+      "shared_contracts_revision_request_schema_type"
+    ],
+    "115": [
+      "shared_contracts_signal_packet_schema_confidence_description",
+      "shared_contracts_signal_packet_schema_confidence_maximum",
+      "shared_contracts_signal_packet_schema_confidence_minimum",
+      "shared_contracts_signal_packet_schema_confidence_type",
+      "shared_contracts_signal_packet_schema_properties_confidence"
+    ],
+    "116": [
+      "shared_scripts_validate_agent_configs",
+      "shared_scripts_validate_agent_configs_check",
+      "shared_scripts_validate_agent_configs_main",
+      "shared_scripts_validate_agent_configs_validate_agent",
+      "shared_scripts_validate_agent_configs_validate_config"
+    ],
+    "117": [
+      "shared_scripts_validate_skill_interfaces",
+      "shared_scripts_validate_skill_interfaces_check",
+      "shared_scripts_validate_skill_interfaces_main",
+      "shared_scripts_validate_skill_interfaces_parse_frontmatter",
+      "shared_scripts_validate_skill_interfaces_validate_skill"
+    ],
+    "118": [
+      "skills_composition_director_schemas_art_direction_schema_alignment_anchors_items",
+      "skills_composition_director_schemas_art_direction_schema_alignment_anchors_maxitems",
+      "skills_composition_director_schemas_art_direction_schema_alignment_anchors_minitems",
+      "skills_composition_director_schemas_art_direction_schema_alignment_anchors_type",
+      "skills_composition_director_schemas_art_direction_schema_properties_alignment_anchors"
+    ],
+    "119": [
+      "skills_composition_director_scripts_design_lint",
+      "skills_composition_director_scripts_design_lint_has_exception",
+      "skills_composition_director_scripts_design_lint_lint",
+      "skills_composition_director_scripts_design_lint_main",
+      "skills_composition_director_scripts_design_lint_norm_words"
+    ],
+    "120": [
+      "skills_taste_engine_scripts_taste_merge",
+      "skills_taste_engine_scripts_taste_merge_build",
+      "skills_taste_engine_scripts_taste_merge_find",
+      "skills_taste_engine_scripts_taste_merge_load_json",
+      "skills_taste_engine_scripts_taste_merge_main"
+    ],
+    "121": [
+      "evals_handoffs_test_contracts",
+      "evals_handoffs_test_contracts_load_schema",
+      "evals_handoffs_test_contracts_main",
+      "evals_handoffs_test_contracts_validates"
+    ],
+    "122": [
+      "shared_contracts_design_context_schema_items_ref",
+      "shared_contracts_design_context_schema_locks_items",
+      "shared_contracts_design_context_schema_locks_type",
+      "shared_contracts_design_context_schema_properties_locks"
+    ],
+    "123": [
+      "shared_contracts_edit_contract_schema_acceptance_checks_items",
+      "shared_contracts_edit_contract_schema_acceptance_checks_minitems",
+      "shared_contracts_edit_contract_schema_acceptance_checks_type",
+      "shared_contracts_edit_contract_schema_properties_acceptance_checks"
+    ],
+    "124": [
+      "shared_contracts_edit_contract_schema_iteration_maximum",
+      "shared_contracts_edit_contract_schema_iteration_minimum",
+      "shared_contracts_edit_contract_schema_iteration_type",
+      "shared_contracts_edit_contract_schema_properties_iteration"
+    ],
+    "125": [
+      "shared_contracts_signal_packet_schema_priority_maximum",
+      "shared_contracts_signal_packet_schema_priority_minimum",
+      "shared_contracts_signal_packet_schema_priority_type",
+      "shared_contracts_signal_packet_schema_properties_priority"
+    ],
+    "126": [
+      "skills_composition_director_schemas_art_direction_schema_focal_points_maximum",
+      "skills_composition_director_schemas_art_direction_schema_focal_points_minimum",
+      "skills_composition_director_schemas_art_direction_schema_focal_points_type",
+      "skills_composition_director_schemas_art_direction_schema_properties_focal_points"
+    ],
+    "127": [
+      "skills_composition_director_schemas_art_direction_schema_intent_additionalproperties",
+      "skills_composition_director_schemas_art_direction_schema_intent_required",
+      "skills_composition_director_schemas_art_direction_schema_intent_type",
+      "skills_composition_director_schemas_art_direction_schema_properties_intent"
+    ],
+    "128": [
+      "skills_composition_director_schemas_art_direction_schema_properties_style_families",
+      "skills_composition_director_schemas_art_direction_schema_style_families_items",
+      "skills_composition_director_schemas_art_direction_schema_style_families_maxitems",
+      "skills_composition_director_schemas_art_direction_schema_style_families_type"
+    ],
+    "129": [
+      "skills_prompt_compiler_scripts_prompt_lint",
+      "skills_prompt_compiler_scripts_prompt_lint_active_term",
+      "skills_prompt_compiler_scripts_prompt_lint_lint",
+      "skills_prompt_compiler_scripts_prompt_lint_main"
+    ],
+    "130": [
       "skills_taste_engine_schemas_taste_profile_schema_additionalproperties_anyof",
       "skills_taste_engine_schemas_taste_profile_schema_properties_signature",
       "skills_taste_engine_schemas_taste_profile_schema_signature_additionalproperties",
       "skills_taste_engine_schemas_taste_profile_schema_signature_type"
     ],
-    "168": [
-      "shared_contracts_signal_packet_schema_packet_id_pattern",
-      "shared_contracts_signal_packet_schema_packet_id_type",
-      "shared_contracts_signal_packet_schema_properties_packet_id"
+    "131": [
+      "evals_routing_test_skill_catalog",
+      "evals_routing_test_skill_catalog_classify_prompt",
+      "evals_routing_test_skill_catalog_main"
     ],
-    "169": [
+    "132": [
+      "shared_contracts_edit_contract_schema_forbidden_mutations_items",
+      "shared_contracts_edit_contract_schema_forbidden_mutations_type",
+      "shared_contracts_edit_contract_schema_properties_forbidden_mutations"
+    ],
+    "133": [
+      "shared_contracts_edit_contract_schema_geometry_locks_items",
+      "shared_contracts_edit_contract_schema_geometry_locks_type",
+      "shared_contracts_edit_contract_schema_properties_geometry_locks"
+    ],
+    "134": [
+      "shared_contracts_edit_contract_schema_identity_locks_items",
+      "shared_contracts_edit_contract_schema_identity_locks_type",
+      "shared_contracts_edit_contract_schema_properties_identity_locks"
+    ],
+    "135": [
+      "shared_contracts_revision_request_schema_properties_revision_id",
+      "shared_contracts_revision_request_schema_revision_id_pattern",
+      "shared_contracts_revision_request_schema_revision_id_type"
+    ],
+    "136": [
+      "skills_campaign_dna_schemas_visual_dna_schema_controlled_variables_minitems",
+      "skills_campaign_dna_schemas_visual_dna_schema_controlled_variables_type",
+      "skills_campaign_dna_schemas_visual_dna_schema_properties_controlled_variables"
+    ],
+    "137": [
+      "skills_campaign_dna_schemas_visual_dna_schema_crop_rules_items",
+      "skills_campaign_dna_schemas_visual_dna_schema_crop_rules_type",
+      "skills_campaign_dna_schemas_visual_dna_schema_properties_crop_rules"
+    ],
+    "138": [
+      "skills_campaign_dna_schemas_visual_dna_schema_properties_spacing_rhythm",
+      "skills_campaign_dna_schemas_visual_dna_schema_spacing_rhythm_minlength",
+      "skills_campaign_dna_schemas_visual_dna_schema_spacing_rhythm_type"
+    ],
+    "139": [
+      "skills_campaign_dna_schemas_visual_dna_schema_properties_typography_roles",
+      "skills_campaign_dna_schemas_visual_dna_schema_typography_roles_items",
+      "skills_campaign_dna_schemas_visual_dna_schema_typography_roles_type"
+    ],
+    "140": [
+      "skills_composition_director_schemas_art_direction_schema_composition_additionalproperties",
+      "skills_composition_director_schemas_art_direction_schema_composition_type",
+      "skills_composition_director_schemas_art_direction_schema_properties_composition"
+    ],
+    "141": [
+      "skills_composition_director_schemas_art_direction_schema_crop_logic_minlength",
+      "skills_composition_director_schemas_art_direction_schema_crop_logic_type",
+      "skills_composition_director_schemas_art_direction_schema_properties_crop_logic"
+    ],
+    "142": [
+      "skills_composition_director_schemas_art_direction_schema_eye_path_minlength",
+      "skills_composition_director_schemas_art_direction_schema_eye_path_type",
+      "skills_composition_director_schemas_art_direction_schema_properties_eye_path"
+    ],
+    "143": [
+      "skills_composition_director_schemas_art_direction_schema_hero_minlength",
+      "skills_composition_director_schemas_art_direction_schema_hero_type",
+      "skills_composition_director_schemas_art_direction_schema_properties_hero"
+    ],
+    "144": [
+      "skills_composition_director_schemas_art_direction_schema_negative_space_minlength",
+      "skills_composition_director_schemas_art_direction_schema_negative_space_type",
+      "skills_composition_director_schemas_art_direction_schema_properties_negative_space"
+    ],
+    "145": [
+      "skills_composition_director_schemas_creative_brief_schema_cultural_constraints_items",
+      "skills_composition_director_schemas_creative_brief_schema_cultural_constraints_type",
+      "skills_composition_director_schemas_creative_brief_schema_properties_cultural_constraints"
+    ],
+    "146": [
+      "skills_composition_director_schemas_creative_brief_schema_exact_copy_items",
+      "skills_composition_director_schemas_creative_brief_schema_exact_copy_type",
+      "skills_composition_director_schemas_creative_brief_schema_properties_exact_copy"
+    ],
+    "147": [
+      "skills_composition_director_schemas_creative_brief_schema_locked_assets_items",
+      "skills_composition_director_schemas_creative_brief_schema_locked_assets_type",
+      "skills_composition_director_schemas_creative_brief_schema_properties_locked_assets"
+    ],
+    "148": [
+      "skills_composition_director_schemas_creative_brief_schema_non_goals_items",
+      "skills_composition_director_schemas_creative_brief_schema_non_goals_type",
+      "skills_composition_director_schemas_creative_brief_schema_properties_non_goals"
+    ],
+    "149": [
+      "skills_composition_director_schemas_creative_brief_schema_platform_minlength",
+      "skills_composition_director_schemas_creative_brief_schema_platform_type",
+      "skills_composition_director_schemas_creative_brief_schema_properties_platform"
+    ],
+    "150": [
+      "skills_composition_director_schemas_creative_brief_schema_primary_message_minlength",
+      "skills_composition_director_schemas_creative_brief_schema_primary_message_type",
+      "skills_composition_director_schemas_creative_brief_schema_properties_primary_message"
+    ],
+    "151": [
+      "skills_composition_director_schemas_creative_brief_schema_proof_items",
+      "skills_composition_director_schemas_creative_brief_schema_proof_type",
+      "skills_composition_director_schemas_creative_brief_schema_properties_proof"
+    ],
+    "152": [
+      "skills_composition_director_schemas_creative_brief_schema_properties_references",
+      "skills_composition_director_schemas_creative_brief_schema_references_items",
+      "skills_composition_director_schemas_creative_brief_schema_references_type"
+    ],
+    "153": [
+      "skills_reference_memory_scripts_test_taste_memory",
+      "skills_reference_memory_scripts_test_taste_memory_run",
+      "skills_reference_memory_scripts_test_taste_memory_test_reference_memory_crud"
+    ],
+    "154": [
+      "skills_taste_engine_scripts_taste_lint",
+      "skills_taste_engine_scripts_taste_lint_lint",
+      "skills_taste_engine_scripts_taste_lint_main"
+    ],
+    "155": [
+      "evals_baseline_test_monolith_parity",
+      "evals_baseline_test_monolith_parity_main"
+    ],
+    "156": [
+      "evals_handoffs_test_agents",
+      "evals_handoffs_test_agents_main"
+    ],
+    "157": [
+      "shared_contracts_design_context_schema_campaign_state_type",
+      "shared_contracts_design_context_schema_properties_campaign_state"
+    ],
+    "158": [
+      "shared_contracts_design_context_schema_composition_state_type",
+      "shared_contracts_design_context_schema_properties_composition_state"
+    ],
+    "159": [
+      "shared_contracts_design_context_schema_craft_state_type",
+      "shared_contracts_design_context_schema_properties_craft_state"
+    ],
+    "160": [
+      "shared_contracts_design_context_schema_cultural_context_type",
+      "shared_contracts_design_context_schema_properties_cultural_context"
+    ],
+    "161": [
+      "shared_contracts_design_context_schema_desired_action_type",
+      "shared_contracts_design_context_schema_properties_desired_action"
+    ],
+    "162": [
+      "shared_contracts_design_context_schema_generation_state_type",
+      "shared_contracts_design_context_schema_properties_generation_state"
+    ],
+    "163": [
       "shared_contracts_design_context_schema_primary_message_type",
       "shared_contracts_design_context_schema_properties_primary_message"
+    ],
+    "164": [
+      "shared_contracts_design_context_schema_properties_session_id",
+      "shared_contracts_design_context_schema_session_id_type"
+    ],
+    "165": [
+      "shared_contracts_design_context_schema_properties_strategy_state",
+      "shared_contracts_design_context_schema_strategy_state_type"
+    ],
+    "166": [
+      "shared_contracts_design_context_schema_properties_taste_state",
+      "shared_contracts_design_context_schema_taste_state_type"
+    ],
+    "167": [
+      "shared_contracts_design_context_schema_properties_typography_state",
+      "shared_contracts_design_context_schema_typography_state_type"
+    ],
+    "168": [
+      "skills_campaign_dna_schemas_visual_dna_schema_background_character_type",
+      "skills_campaign_dna_schemas_visual_dna_schema_properties_background_character"
+    ],
+    "169": [
+      "skills_campaign_dna_schemas_visual_dna_schema_product_scale_range_type",
+      "skills_campaign_dna_schemas_visual_dna_schema_properties_product_scale_range"
     ],
     "170": [
       "skills_composition_director_schemas_creative_brief_schema_audience_type",
       "skills_composition_director_schemas_creative_brief_schema_properties_audience"
+    ],
+    "171": [
+      "skills_composition_director_schemas_creative_brief_schema_desired_action_type",
+      "skills_composition_director_schemas_creative_brief_schema_properties_desired_action"
+    ],
+    "172": [
+      "skills_composition_director_schemas_creative_brief_schema_language_type",
+      "skills_composition_director_schemas_creative_brief_schema_properties_language"
+    ],
+    "173": [
+      "skills_composition_director_schemas_creative_brief_schema_obstacle_or_objection_type",
+      "skills_composition_director_schemas_creative_brief_schema_properties_obstacle_or_objection"
+    ],
+    "174": [
+      "skills_visual_qa_scripts_test_gates",
+      "skills_visual_qa_scripts_test_gates_case"
+    ],
+    "175": [
+      "tools_package_plugin",
+      "tools_package_plugin_main"
+    ],
+    "176": [
+      "creative_director_skill_module_creative_director_scripts_generate_links_py_path"
+    ],
+    "177": [
+      "creative_director_skill_module_creative_director_scripts_generate_mocs_py_path"
+    ],
+    "178": [
+      "creative_director_skill_module_creative_director_scripts_validate_schema_py_path"
+    ],
+    "179": [
+      "shared_scripts_route_packet_py_any"
+    ],
+    "180": [
+      "shared_scripts_route_packet_py_path"
+    ],
+    "181": [
+      "skills_composition_director_scripts_run_design_evals"
+    ],
+    "182": [
+      "skills_prompt_compiler_scripts_test_prompt_lint"
+    ],
+    "183": [
+      "skills_taste_engine_scripts_test_taste_lint"
+    ],
+    "184": [
+      "skills_taste_engine_scripts_test_taste_merge"
     ]
   },
   "cohesion": {
-    "0": 0.04336734693877551,
-    "1": 0.04343971631205674,
-    "2": 0.049682875264270614,
+    "0": 0.05094130675526024,
+    "1": 0.16282051282051282,
+    "2": 0.05405405405405406,
     "3": 0.05555555555555555,
-    "4": 0.16507936507936508,
-    "5": 0.05555555555555555,
-    "6": 0.06896551724137931,
-    "7": 0.07407407407407407,
-    "8": 0.14814814814814814,
-    "9": 0.14814814814814814,
-    "10": 0.11076923076923077,
-    "11": 0.26666666666666666,
-    "12": 0.08695652173913043,
-    "13": 0.09523809523809523,
-    "14": 0.13333333333333333,
-    "15": 0.3263157894736842,
-    "16": 0.12280701754385964,
-    "17": 0.10526315789473684,
-    "18": 0.10526315789473684,
-    "19": 0.10526315789473684,
-    "20": 0.10526315789473684,
-    "21": 0.1111111111111111,
-    "22": 0.1111111111111111,
-    "23": 0.27205882352941174,
-    "24": 0.11764705882352941,
-    "25": 0.125,
-    "26": 0.125,
+    "4": 0.05555555555555555,
+    "5": 0.05714285714285714,
+    "6": 0.14814814814814814,
+    "7": 0.14814814814814814,
+    "8": 0.11076923076923077,
+    "9": 0.10507246376811594,
+    "10": 0.08695652173913043,
+    "11": 0.09523809523809523,
+    "12": 0.3263157894736842,
+    "13": 0.12280701754385964,
+    "14": 0.10526315789473684,
+    "15": 0.10526315789473684,
+    "16": 0.1111111111111111,
+    "17": 0.13725490196078433,
+    "18": 0.1111111111111111,
+    "19": 0.27205882352941174,
+    "20": 0.1323529411764706,
+    "21": 0.14166666666666666,
+    "22": 0.25,
+    "23": 0.13333333333333333,
+    "24": 0.125,
+    "25": 0.13333333333333333,
+    "26": 0.13333333333333333,
     "27": 0.13333333333333333,
     "28": 0.13333333333333333,
-    "29": 0.14285714285714285,
+    "29": 0.13333333333333333,
     "30": 0.13333333333333333,
-    "31": 0.13333333333333333,
-    "32": 0.25,
+    "31": 0.15384615384615385,
+    "32": 0.15384615384615385,
     "33": 0.15384615384615385,
-    "34": 0.2857142857142857,
-    "35": 0.2087912087912088,
-    "36": 0.17582417582417584,
+    "34": 0.2087912087912088,
+    "35": 0.14285714285714285,
+    "36": 0.2087912087912088,
     "37": 0.14285714285714285,
-    "38": 0.2087912087912088,
+    "38": 0.15384615384615385,
     "39": 0.16666666666666666,
     "40": 0.16666666666666666,
     "41": 0.15384615384615385,
-    "42": 0.2,
+    "42": 0.15384615384615385,
     "43": 0.15384615384615385,
     "44": 0.15384615384615385,
     "45": 0.16666666666666666,
     "46": 0.16666666666666666,
-    "47": 0.2,
-    "48": 0.16666666666666666,
-    "49": 0.18181818181818182,
-    "50": 0.18181818181818182,
-    "51": 0.18181818181818182,
+    "47": 0.16666666666666666,
+    "48": 0.18181818181818182,
+    "49": 0.2,
+    "50": 0.2,
+    "51": 0.2,
     "52": 0.2,
     "53": 0.2,
     "54": 0.2,
     "55": 0.2,
-    "56": 0.2,
+    "56": 0.2222222222222222,
     "57": 0.2,
-    "58": 0.18181818181818182,
-    "59": 0.2,
+    "58": 0.2,
+    "59": 0.2222222222222222,
     "60": 0.2222222222222222,
     "61": 0.2222222222222222,
     "62": 0.2222222222222222,
-    "63": 0.25,
+    "63": 0.2222222222222222,
     "64": 0.2222222222222222,
     "65": 0.2222222222222222,
-    "66": 0.24166666666666667,
+    "66": 0.25,
     "67": 0.25,
     "68": 0.25,
     "69": 0.25,
-    "70": 0.35714285714285715,
+    "70": 0.25,
     "71": 0.25,
-    "72": 0.2857142857142857,
-    "73": 0.2222222222222222,
+    "72": 0.35714285714285715,
+    "73": 0.2857142857142857,
     "74": 0.2857142857142857,
-    "75": 0.3333333333333333,
+    "75": 0.2857142857142857,
     "76": 0.2857142857142857,
-    "77": 0.38095238095238093,
+    "77": 0.2857142857142857,
     "78": 0.2857142857142857,
     "79": 0.2857142857142857,
-    "80": 0.42857142857142855,
-    "81": 0.2857142857142857,
-    "82": 0.42857142857142855,
-    "83": 0.5238095238095238,
-    "84": 0.3333333333333333,
-    "85": 0.3333333333333333,
-    "86": 0.3333333333333333,
-    "87": 0.3333333333333333,
-    "88": 0.3333333333333333,
+    "80": 0.2857142857142857,
+    "81": 0.38095238095238093,
+    "82": 0.2857142857142857,
+    "83": 0.2857142857142857,
+    "84": 0.2857142857142857,
+    "85": 0.42857142857142855,
+    "86": 0.2857142857142857,
+    "87": 0.42857142857142855,
+    "88": 0.5238095238095238,
     "89": 0.3333333333333333,
     "90": 0.3333333333333333,
     "91": 0.3333333333333333,
-    "92": 0.7333333333333333,
-    "93": 0.5333333333333333,
-    "94": 0.5333333333333333,
+    "92": 0.3333333333333333,
+    "93": 0.3333333333333333,
+    "94": 0.3333333333333333,
     "95": 0.3333333333333333,
     "96": 0.3333333333333333,
-    "97": 0.5333333333333333,
-    "98": 0.5333333333333333,
-    "99": 0.6666666666666666,
-    "100": 0.4,
-    "101": 0.4,
-    "102": 0.9,
-    "103": 0.8,
-    "104": 0.4,
-    "105": 0.7,
-    "106": 0.7,
-    "107": 0.8333333333333334,
-    "108": 0.5,
-    "109": 0.5,
-    "110": 0.5,
-    "111": 0.5,
-    "112": 0.5,
-    "113": 0.5,
-    "114": 0.8333333333333334,
-    "115": 0.2,
-    "116": 1.0,
-    "117": 0.6666666666666666,
-    "118": 0.6666666666666666,
-    "119": 0.6666666666666666,
-    "120": 0.6666666666666666,
-    "121": 0.6666666666666666,
-    "122": 0.6666666666666666,
-    "123": 0.6666666666666666,
-    "124": 0.6666666666666666,
-    "125": 0.6666666666666666,
-    "126": 0.6666666666666666,
-    "127": 0.6666666666666666,
-    "128": 0.6666666666666666,
-    "129": 0.6666666666666666,
-    "130": 0.6666666666666666,
-    "131": 0.6666666666666666,
+    "97": 0.3333333333333333,
+    "98": 0.3333333333333333,
+    "99": 0.3333333333333333,
+    "100": 0.7333333333333333,
+    "101": 0.5333333333333333,
+    "102": 0.5333333333333333,
+    "103": 0.3333333333333333,
+    "104": 0.3333333333333333,
+    "105": 0.5333333333333333,
+    "106": 0.6,
+    "107": 0.6,
+    "108": 0.3333333333333333,
+    "109": 0.3333333333333333,
+    "110": 0.5333333333333333,
+    "111": 0.6666666666666666,
+    "112": 0.4,
+    "113": 0.4,
+    "114": 0.4,
+    "115": 0.4,
+    "116": 0.9,
+    "117": 0.8,
+    "118": 0.4,
+    "119": 0.7,
+    "120": 0.7,
+    "121": 0.8333333333333334,
+    "122": 0.5,
+    "123": 0.5,
+    "124": 0.5,
+    "125": 0.5,
+    "126": 0.5,
+    "127": 0.5,
+    "128": 0.5,
+    "129": 0.8333333333333334,
+    "130": 0.5,
+    "131": 1.0,
     "132": 0.6666666666666666,
     "133": 0.6666666666666666,
     "134": 0.6666666666666666,
-    "135": 1.0,
-    "136": 1.0,
-    "137": 1.0,
-    "138": 1.0,
-    "139": 0.3333333333333333,
-    "140": 1.0,
-    "141": 1.0,
-    "142": 1.0,
-    "143": 1.0,
-    "144": 1.0,
-    "145": 1.0,
-    "146": 1.0,
-    "147": 1.0,
-    "148": 1.0,
-    "149": 1.0,
-    "150": 1.0,
-    "151": 1.0,
-    "152": 0.3333333333333333,
+    "135": 0.6666666666666666,
+    "136": 0.6666666666666666,
+    "137": 0.6666666666666666,
+    "138": 0.6666666666666666,
+    "139": 0.6666666666666666,
+    "140": 0.6666666666666666,
+    "141": 0.6666666666666666,
+    "142": 0.6666666666666666,
+    "143": 0.6666666666666666,
+    "144": 0.6666666666666666,
+    "145": 0.6666666666666666,
+    "146": 0.6666666666666666,
+    "147": 0.6666666666666666,
+    "148": 0.6666666666666666,
+    "149": 0.6666666666666666,
+    "150": 0.6666666666666666,
+    "151": 0.6666666666666666,
+    "152": 0.6666666666666666,
     "153": 1.0,
     "154": 1.0,
     "155": 1.0,
@@ -2085,12 +2152,36 @@
     "164": 1.0,
     "165": 1.0,
     "166": 1.0,
-    "167": 0.5,
-    "168": 0.6666666666666666,
+    "167": 1.0,
+    "168": 1.0,
     "169": 1.0,
-    "170": 1.0
+    "170": 1.0,
+    "171": 1.0,
+    "172": 1.0,
+    "173": 1.0,
+    "174": 1.0,
+    "175": 1.0,
+    "176": 1.0,
+    "177": 1.0,
+    "178": 1.0,
+    "179": 1.0,
+    "180": 1.0,
+    "181": 1.0,
+    "182": 1.0,
+    "183": 1.0,
+    "184": 1.0
   },
   "gods": [
+    {
+      "id": "shared_contracts_routing_graph_revision_routes",
+      "label": "revision_routes",
+      "degree": 26
+    },
+    {
+      "id": "shared_contracts_routing_graph_nodes",
+      "label": "nodes",
+      "degree": 22
+    },
     {
       "id": "shared_contracts_signal_packet_schema_from_enum",
       "label": "enum",
@@ -2100,16 +2191,6 @@
       "id": "shared_contracts_signal_packet_schema_to_enum",
       "label": "enum",
       "degree": 21
-    },
-    {
-      "id": "shared_contracts_routing_graph_nodes",
-      "label": "nodes",
-      "degree": 20
-    },
-    {
-      "id": "shared_contracts_routing_graph_revision_routes",
-      "label": "revision_routes",
-      "degree": 20
     },
     {
       "id": "shared_contracts_edit_contract_schema_required",
@@ -2134,7 +2215,7 @@
     {
       "id": "shared_contracts_routing_graph_role_aware_pipelines_new_commercial_campaign",
       "label": "new_commercial_campaign",
-      "degree": 13
+      "degree": 14
     },
     {
       "id": "shared_contracts_revision_request_schema_target_node_enum",
@@ -2202,38 +2283,38 @@
   "questions": [
     {
       "type": "bridge_node",
-      "question": "Why does `properties` connect `properties` to `art-direction.schema.json`, `properties`, `required`, `required`, `properties`, `restraints`, `properties`, `style_families`, `properties`, `properties`?",
+      "question": "Why does `properties` connect `properties` to `properties`, `style_families`, `art-direction.schema.json`, `required`, `properties`, `composition`, `properties`, `properties`, `intent`?",
       "why": "High betweenness centrality (0.148) - this node is a cross-community bridge."
     },
     {
       "type": "bridge_node",
-      "question": "Why does `nodes` connect `nodes` to `brand-intelligence`, `taste-engine`, `revision_routes`, `insight-mining`, `reads`, `photography-director`, `prompt-compiler`, `arabic-rtl-director`, `campaign-dna`, `writes`, `manipulation-director`, `campaign-canon`, `visual-qa`, `brand-activation`, `visual-storytelling`, `reads`, `reference-memory`?",
-      "why": "High betweenness centrality (0.129) - this node is a cross-community bridge."
+      "question": "Why does `nodes` connect `nodes` to `visual-qa`, `brand-activation`, `brand-intelligence`, `campaign-canon`, `composition-director`, `revision_routes`, `visual-storytelling`, `reads`, `photography-director`, `image-director`, `video-director`, `writes`, `prompt-compiler`, `campaign-dna`, `manipulation-director`, `reads`, `reference-memory`?",
+      "why": "High betweenness centrality (0.145) - this node is a cross-community bridge."
     },
     {
       "type": "bridge_node",
       "question": "Why does `role_aware_pipelines` connect `enum` to `revision_routes`?",
-      "why": "High betweenness centrality (0.114) - this node is a cross-community bridge."
+      "why": "High betweenness centrality (0.132) - this node is a cross-community bridge."
     },
     {
       "type": "isolated_nodes",
       "question": "What connects `$schema`, `title`, `type` to the rest of the system?",
-      "why": "740 weakly-connected nodes found - possible documentation gaps or missing edges."
-    },
-    {
-      "type": "low_cohesion",
-      "question": "Should `enum` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.04336734693877551 - nodes in this community are weakly interconnected."
+      "why": "755 weakly-connected nodes found - possible documentation gaps or missing edges."
     },
     {
       "type": "low_cohesion",
       "question": "Should `properties` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.04343971631205674 - nodes in this community are weakly interconnected."
+      "why": "Cohesion score 0.05094130675526024 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",
       "question": "Should `properties` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.049682875264270614 - nodes in this community are weakly interconnected."
+      "why": "Cohesion score 0.05405405405405406 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `taste-mix.schema.json` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected."
     }
   ]
 }

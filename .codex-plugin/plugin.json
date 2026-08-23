@@ -2,7 +2,7 @@
   "author": {
     "name": "Mamdouh Abo Ammar"
   },
-  "description": "Designly is a commercial Art Direction and Design Neural Mesh plugin with 19 focused Skills, 14 custom Codex agents, Cannes-calibrated Creative Direction, 571 Legendary Campaign Canon, Insight Mining, Brand Activation, Visual Storytelling, Taste Engine, Reference Memory, bounded-edit sanitization, Arabic RTL direction, and independent Visual QA.",
+  "description": "Designly is a commercial Art Direction and Design Neural Mesh plugin with 21 focused Skills, 16 custom Codex agents, Cannes-calibrated Creative Direction, 571 Legendary Campaign Canon, dramaturgy-first AI Video Direction (Seedance 2.5, Kling 3.0, Veo), model-physics Image Direction (Nano Banana 2/Pro, GPT Image 2), Insight Mining, Brand Activation, Visual Storytelling, Taste Engine, Reference Memory, bounded-edit sanitization, Arabic RTL direction, and independent Visual QA.",
   "interface": {
     "brandColor": "#111111",
     "brandColorDark": "#F2F2F2",
@@ -14,6 +14,11 @@
       "Consumer Insight Mining & JTBD",
       "Brand Activation & Experiential Stunts",
       "Visual Storytelling & Narrative Arcs",
+      "AI Film Director & Video Dramaturgy",
+      "Model-Physics Image Direction",
+      "14-Field Storyboard & Shot Lists",
+      "Multi-Panel Compositions & TVC Grids",
+      "Character Consistency & Keyframes",
       "Creative Brief Strategy",
       "Brand Rule & Logo Audit",
       "Transferable Taste Extraction",
@@ -32,13 +37,13 @@
     "composerIcon": "./.codex-plugin/assets/composer-icon.svg",
     "defaultPrompt": [
       "Art-direct this campaign end-to-end, using specialist review and strict design gates.",
-      "Sanitize these annotation notes before editing the image and protect non-target content.",
-      "Review this visual critically and route only the smallest necessary correction."
+      "Direct a 15-second cinematic video sequence for Kling or Seedance with 14-field shot cards.",
+      "Sanitize these annotation notes before editing the image and protect non-target content."
     ],
     "developerName": "Mamdouh Abo Ammar",
     "displayName": "Designly",
     "logo": "./.codex-plugin/assets/logo.svg",
-    "longDescription": "Designly helps you turn a brief, idea, or reference into polished visual work for ads, social posts, campaigns, and brand content\n\nIt helps shape the concept, composition, typography, imagery, and overall art direction, then reviews the result and guides precise revisions when something feels off\n\nYou can also use Designly to improve existing images without changing everything else, follow brand guidelines, handle Arabic and RTL layouts, and keep a consistent visual style across multiple assets",
+    "longDescription": "Designly turns a brief, idea, or reference into polished visual work for ads, social campaigns, brand content, and cinematic AI films\n\nIt shapes creative concepts, dramaturgy, composition, typography, optics, and model physics (Seedance, Kling, Veo, Nano Banana, GPT Image 2), reviews every output critically, and routes targeted revisions\n\nYou can also sanitize annotation-guided inpainting, follow brand guidelines, handle Arabic and RTL layouts, and maintain visual continuity across multi-asset campaigns",
     "privacyPolicyURL": "https://app.prepilot-system-agency.space/privacy",
     "shortDescription": "Create better visual designs",
     "supportURL": "https://app.prepilot-system-agency.space/support",
@@ -48,6 +53,16 @@
   "keywords": [
     "art-direction",
     "creative-direction",
+    "video-director",
+    "ai-film-director",
+    "video-prompting",
+    "seedance",
+    "kling",
+    "veo",
+    "nano-banana",
+    "gpt-image-2",
+    "dramaturgy",
+    "multi-panel-grids",
     "insight-mining",
     "campaign-canon",
     "brand-activation",
@@ -67,5 +82,5 @@
   ],
   "name": "designly",
   "skills": "./skills/",
-  "version": "4.4.0"
+  "version": "5.0.0"
 }

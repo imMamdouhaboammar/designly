@@ -11,8 +11,8 @@ EXPECTED_SKILLS = [
     "designly-director", "creative-strategy", "creative-director", "insight-mining", "campaign-canon",
     "brand-activation", "visual-storytelling", "brand-intelligence", "taste-engine",
     "reference-memory", "composition-director", "typography-director", "photography-director",
-    "manipulation-director", "arabic-rtl-director", "campaign-dna", "edit-sanitizer",
-    "prompt-compiler", "visual-qa"
+    "manipulation-director", "arabic-rtl-director", "campaign-dna", "video-director", "image-director",
+    "edit-sanitizer", "prompt-compiler", "visual-qa"
 ]
 NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 LINK_RE = re.compile(r"\]\(([^)]+)\)")
@@ -98,7 +98,7 @@ def main() -> int:
     errors: list[str] = []
     print("Validating Skill catalog interfaces and metadata...")
     present = sorted(d.name for d in SKILLS_DIR.iterdir() if d.is_dir() and not d.name.startswith(".")) if SKILLS_DIR.is_dir() else []
-    check(set(present) == set(EXPECTED_SKILLS), f"skill directory contains exactly the 19 expected skills (found {len(present)})", errors)
+    check(set(present) == set(EXPECTED_SKILLS), f"skill directory contains exactly the {len(EXPECTED_SKILLS)} expected skills (found {len(present)})", errors)
     for slug in EXPECTED_SKILLS:
         print(f"\n--- Checking Skill: {slug} ---")
         validate_skill(slug, errors)

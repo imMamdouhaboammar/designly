@@ -1,7 +1,7 @@
 {
-  "version": "3.2.1+v4.3-expanded",
+  "version": "5.0.0",
   "capabilities": {
-    "total_routing_scenarios": 26,
+    "total_routing_scenarios": 28,
     "total_design_preflight_cases": 7,
     "total_release_gate_cases": 15,
     "total_prompt_lint_cases": 4,
@@ -14,6 +14,8 @@
     "taste_engine_supported": true,
     "reference_memory_supported": true,
     "arabic_rtl_supported": true,
+    "video_director_supported": true,
+    "image_director_supported": true,
     "local_edit_supported": true,
     "local_edit_sanitizer_required": true
   },
@@ -21,12 +23,12 @@
     "designly-director", "creative-strategy", "creative-director", "insight-mining", "campaign-canon",
     "brand-activation", "visual-storytelling", "brand-intelligence", "taste-engine", "reference-memory",
     "composition-director", "typography-director", "photography-director", "manipulation-director",
-    "arabic-rtl-director", "campaign-dna", "edit-sanitizer", "prompt-compiler", "visual-qa"
+    "arabic-rtl-director", "campaign-dna", "video-director", "image-director", "edit-sanitizer", "prompt-compiler", "visual-qa"
   ],
   "required_v4_agent_slugs": [
     "designly-director", "strategy-planner", "creative-director", "insight-miner", "canon-analyst",
     "activation-strategist", "story-architect", "brand-guardian", "taste-analyst", "structure-critic",
-    "craft-director", "arabic-visual-director", "edit-sanitizer", "visual-reviewer"
+    "craft-director", "arabic-visual-director", "video-director", "image-director", "edit-sanitizer", "visual-reviewer"
   ],
   "hard_gates": {
     "weighted_score_floor": 92,

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "4.4.0",
+  "version": "5.0.0",
   "name": "Design Neural Mesh Orchestration Graph",
   "primary_orchestrator": "designly-director",
   "architecture_layers": [
@@ -24,9 +24,9 @@
     },
     {
       "tier": 4,
-      "name": "Craft Physics & Optics",
-      "description": "Directs camera focal length, 3-point lighting systems, melanin-accurate color grading, and compositing contact physics.",
-      "skills": ["photography-director", "manipulation-director", "campaign-dna"]
+      "name": "Craft Physics, Generative Direction & Optics",
+      "description": "Directs camera focal length, 3-point lighting systems, melanin-accurate color grading, compositing physics, model physics, and cinematic dramaturgy.",
+      "skills": ["photography-director", "manipulation-director", "campaign-dna", "image-director", "video-director"]
     },
     {
       "tier": 5,
@@ -37,7 +37,7 @@
     {
       "tier": 6,
       "name": "Verification & QA Release Gates",
-      "description": "Independent release gate enforcing category floors, 7-point representation review, AI-slop vetoes, and targeted revision routing.",
+      "description": "Independent release gate enforcing category floors, 7-point representation review, AI-slop vetoes, dramaturgy checks, and targeted revision routing.",
       "skills": ["visual-qa"]
     }
   ],
@@ -53,6 +53,7 @@
       "composition-director",
       "typography-director",
       "photography-director",
+      "image-director",
       "prompt-compiler",
       "visual-qa"
     ],
@@ -87,6 +88,7 @@
       "campaign-dna",
       "composition-director",
       "photography-director",
+      "image-director",
       "prompt-compiler",
       "visual-qa"
     ],
@@ -94,6 +96,29 @@
       "designly-director",
       "edit-sanitizer",
       "arabic-rtl-director",
+      "image-director",
+      "prompt-compiler",
+      "visual-qa"
+    ],
+    "cinematic_video_spot": [
+      "designly-director",
+      "creative-strategy",
+      "insight-mining",
+      "creative-director",
+      "visual-storytelling",
+      "image-director",
+      "video-director",
+      "prompt-compiler",
+      "visual-qa"
+    ],
+    "multi_panel_visual_campaign": [
+      "designly-director",
+      "creative-strategy",
+      "brand-intelligence",
+      "taste-engine",
+      "image-director",
+      "composition-director",
+      "typography-director",
       "prompt-compiler",
       "visual-qa"
     ]
@@ -137,6 +162,22 @@
       "target": "prompt-compiler",
       "condition": "clone_faces_detected or stereotypical_trope_found",
       "action": "Inject explicit facial bone structure variance, melanin-calibrated lighting spec, and negative constraints against generic stock archetypes.",
+      "max_iterations": 2
+    },
+    {
+      "name": "video_dramaturgy_alignment_loop",
+      "source": "visual-qa",
+      "target": "video-director",
+      "condition": "dramaturgy_check_failed or three_detail_check_failed",
+      "action": "Re-anchor scene formula, verify environmental pressure, micro-actions, and sound motifs on all shots.",
+      "max_iterations": 3
+    },
+    {
+      "name": "model_physics_calibration_loop",
+      "source": "prompt-compiler",
+      "target": "image-director",
+      "condition": "model_syntax_violation_or_slot_mismatch",
+      "action": "Reformat prompt according to target generator physics (Nano Banana prose vs GPT Image 5-slot template).",
       "max_iterations": 2
     }
   ],
@@ -297,6 +338,20 @@
       "reads": ["strategy_state", "brand_state", "composition_state"],
       "writes": ["campaign_state"]
     },
+    "video-director": {
+      "type": "specialist",
+      "agent": "video-director",
+      "description": "Dramaturgy-first AI video directing, shot lists, pacing, and multi-model video prompting (Seedance, Kling, Veo).",
+      "reads": ["strategy_state", "narrative_arc", "craft_state"],
+      "writes": ["video_state", "generation_state.video"]
+    },
+    "image-director": {
+      "type": "specialist",
+      "agent": "image-director",
+      "description": "AI art direction, model-physics image prompting (Nano Banana, GPT Image 2), multi-panel grids, and character consistency.",
+      "reads": ["strategy_state", "brand_state", "taste_state", "composition_state", "craft_state"],
+      "writes": ["image_state", "generation_state.image"]
+    },
     "edit-sanitizer": {
       "type": "specialist",
       "agent": "edit-sanitizer",
@@ -308,7 +363,7 @@
       "type": "specialist",
       "agent": "designly-director",
       "description": "Compiles approved Art Direction Spec or sanitized EditContract into provider/model-ready generation or edit instructions.",
-      "reads": ["strategy_state", "brand_state", "taste_state", "composition_state", "typography_state", "craft_state", "campaign_state", "edit_state"],
+      "reads": ["strategy_state", "brand_state", "taste_state", "composition_state", "typography_state", "craft_state", "campaign_state", "edit_state", "image_state", "video_state"],
       "writes": ["generation_state"]
     },
     "visual-qa": {
@@ -351,6 +406,12 @@
     "annotation_mapping": "edit-sanitizer",
     "collateral_change": "edit-sanitizer",
     "prompt_execution": "prompt-compiler",
+    "video_dramaturgy": "video-director",
+    "motion_rhythm": "video-director",
+    "shot_card_continuity": "video-director",
+    "model_physics": "image-director",
+    "multi_panel_grid": "image-director",
+    "character_continuity": "image-director",
     "ai_slop": "composition-director"
   }
 }
