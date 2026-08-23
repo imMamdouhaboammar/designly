@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the copy-first Designly Prompt Playground product surface."""
+"""Validate the workflow-grounded Designly Prompt Playground product surface."""
 from __future__ import annotations
 
 import re
@@ -36,12 +36,22 @@ EXPECTED_SKILLS = {
     "visual-qa",
 }
 
+ROLE_AWARE_PIPELINES = {
+    "new_commercial_campaign",
+    "brand_activation_stunt",
+    "arabic_first_poster",
+    "narrative_storyboard",
+    "bounded_image_edit",
+    "cinematic_video_spot",
+    "multi_panel_visual_campaign",
+}
+
 SECTION_BADGES = {
-    "section-start.svg": "#start-here",
-    "section-learn.svg": "#learn-one-capability-by-doing-it",
-    "section-advanced.svg": "#advanced-combinations",
-    "section-chatgpt.svg": "#prompt-card-behavior-in-chatgpt",
-    "section-coverage.svg": "#coverage-map",
+    "section-start.svg": "#core-orchestration-workflows",
+    "section-learn.svg": "#image--design-execution-workflows",
+    "section-advanced.svg": "#video--narrative-workflows",
+    "section-chatgpt.svg": "#review-repair--specialist-workflows",
+    "section-coverage.svg": "#workflow-coverage-map",
 }
 
 GUIDE_PATH = "skills/designly-director/references/prompt-playground.md"
@@ -66,35 +76,65 @@ def main() -> int:
     plugin = PLUGIN.read_text(encoding="utf-8")
     readme = README.read_text(encoding="utf-8")
 
-    cards = re.findall(r"^###\s+\d+\.", text, flags=re.MULTILINE)
-    check(len(cards) >= 20, "at least 20 numbered Prompt Cards", failures)
-    check(text.count("@Designly") >= 20, "at least 20 copy-ready @Designly prompt examples", failures)
-    check(text.count("**Copy prompt**") >= 6, "starter cards expose explicit copy prompts", failures)
-    check("## Coverage map" in text, "coverage map is present", failures)
-    check("## Prompt Card behavior in ChatGPT" in text, "ChatGPT presentation behavior is defined", failures)
+    workflows = re.findall(r"^###\s+WF-\d{2}\b", text, flags=re.MULTILINE)
+    check(len(workflows) >= 16, "at least 16 production Workflow Prompts", failures)
+    check(text.count("@Designly") >= 16, "at least 16 copy-ready @Designly workflow prompts", failures)
+    check(text.count("**Route:**") >= 16, "every workflow declares its Designly route", failures)
+    check(text.count("**Use when:**") >= 16, "every workflow declares when to use it", failures)
+    check(text.count("**Required inputs:**") >= 16, "every workflow declares required inputs", failures)
+
+    for pipeline in sorted(ROLE_AWARE_PIPELINES):
+        check(pipeline in text, f"role-aware pipeline is productized: {pipeline}", failures)
 
     missing = sorted(slug for slug in EXPECTED_SKILLS if f"`{slug}`" not in text)
-    check(not missing, f"all 21 Skills are covered by the Playground{': ' + ', '.join(missing) if missing else ''}", failures)
-    check("REF-####" in text and "Reference Memory" in text, "Reference Memory is demonstrated with a stable REF workflow", failures)
-    check("right to left" in text and "Arabic glyph" in text, "Arabic-first RTL behavior is demonstrated", failures)
+    check(not missing, f"all 21 Skills appear in grounded workflow coverage{': ' + ', '.join(missing) if missing else ''}", failures)
+
+    required_contracts = ["DesignContext", "DesignSignalPacket", "EditContract", "RevisionRequest", "generation_state"]
+    for contract in required_contracts:
+        check(contract in text, f"workflow prompts use real contract: {contract}", failures)
+
+    required_operating_rules = [
+        "smallest useful route",
+        "Do not invent Skills",
+        "actual output",
+        "approved source checkpoint",
+        "host-native image",
+        "Do not expose private chain-of-thought",
+    ]
+    for phrase in required_operating_rules:
+        check(phrase in text, f"Playground enforces production rule: {phrase}", failures)
+
+    check("{{BRIEF}}" in text, "workflow prompts use editable placeholders instead of fictional briefs", failures)
+    check("{{BRAND_ASSETS}}" in text, "workflow prompts expose brand-asset input placeholders", failures)
+    check("{{TARGET_MODEL}}" in text, "workflow prompts expose target-model input placeholders", failures)
+
+    stale_examples = [
+        "premium sparkling water",
+        "fictional event company called NORTH",
+        "food-delivery apps",
+        "sunscreen brand",
+        "AFTER SIX",
+    ]
+    for stale in stale_examples:
+        check(stale not in text, f"removed arbitrary demo scenario: {stale}", failures)
+
+    check("## Workflow coverage map" in text, "workflow coverage map is present", failures)
+    check("## Prompt behavior in ChatGPT" in text, "ChatGPT workflow presentation behavior is defined", failures)
 
     for filename, anchor in SECTION_BADGES.items():
         check((BADGES / filename).is_file(), f"section badge exists: {filename}", failures)
         check(filename in text and anchor in text, f"Playground navigation links {filename} to {anchor}", failures)
 
-    check("Pathway 0: Prompt Playground" in director, "Designly Director routes discovery to Pathway 0", failures)
-    check("references/prompt-playground.md" in director, "Director points to the Playground source of truth", failures)
-    check("Prompt Playground" in plugin, "plugin marketplace interface surfaces the Playground", failures)
+    check("Pathway 0: Workflow Prompt Library" in director, "Designly Director routes discovery to Workflow Prompt Library", failures)
+    check("references/prompt-playground.md" in director, "Director points to the workflow source of truth", failures)
+    check("Workflow Prompt Library" in plugin, "plugin marketplace interface surfaces workflow prompts", failures)
 
-    check(GUIDE_PATH in readme, "README links directly to the Prompt Playground guide", failures)
-    check("Start Here: Prompt Playground" in readme, "README exposes a Start Here product entrypoint", failures)
+    check(GUIDE_PATH in readme, "README links directly to the workflow guide", failures)
+    check("Production Workflow Prompts" in readme, "README exposes the production workflow entrypoint", failures)
     check("assets/badges/prompt-playground.svg" in readme, "README surfaces the clickable Playground badge", failures)
 
-    forbidden_feature_dump = "list all 21 skills first"
-    check(forbidden_feature_dump not in text.lower(), "Playground is not framed as a feature dump", failures)
-
-    print(f"\nPrompt Playground product tests: {'PASS' if not failures else 'FAIL'} ({len(failures)} failures)")
-    return 1 if failures else 0
+    print(f"\nWorkflow Prompt Playground tests: {'PASS' if not failures else 'FAIL'} ({len(failures)} failures)")
+    return 1 if not failures else 1
 
 
 if __name__ == "__main__":
