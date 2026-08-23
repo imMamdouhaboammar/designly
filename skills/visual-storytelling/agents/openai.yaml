@@ -3,7 +3,7 @@ interface:
   short_description: "Narrative frameworks, Story Spine, Sparkline & Pixar rules"
   icon_small: "./assets/small-logo.svg"
   icon_large: "./assets/large-logo.svg"
-  brand_color: "#111111"
+  brand_color: "#EA580C"
   default_prompt: "Structure a compelling narrative arc using Story Spine, Sparkline, or Pixar storytelling rules."
 policy:
   allow_implicit_invocation: true

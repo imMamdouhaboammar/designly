@@ -1,9 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M240 220H300V250C300 266 286 280 270 280C254 280 240 266 240 250V220Z"/>
-    <path d="M270 280V304M250 304H290"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#78350F" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- Classical Trophy & Pillar Canon -->
+          <path d="M150 380H362M170 340H342M190 340V180M256 340V180M322 340V180M160 180H352M140 140H372" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+          <polygon points="256,75 272,112 312,115 281,141 291,180 256,158 221,180 231,141 200,115 240,112" fill="#FDE68A" stroke="#FFFFFF" stroke-width="6"/>
+        
 </svg>

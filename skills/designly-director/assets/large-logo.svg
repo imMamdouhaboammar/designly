@@ -1,10 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="254" y="240" width="36" height="32" rx="7"/>
-    <path d="M272 240V220M272 292V272M254 256H234M310 256H290"/>
-    <path d="M228 214H242M302 214H316M228 298H242M302 298H316"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- Central Neural Hub & Director Compass -->
+          <circle cx="256" cy="256" r="140" stroke="#F59E0B" stroke-width="8" stroke-dasharray="16 12" fill="none" opacity="0.6"/>
+          <circle cx="256" cy="256" r="90" fill="#0F172A" stroke="#F59E0B" stroke-width="12"/>
+          <path d="M256 186L276 236L326 256L276 276L256 326L236 276L186 256L236 236Z" fill="#F59E0B"/>
+          <circle cx="256" cy="116" r="16" fill="#F8FAFC"/>
+          <circle cx="396" cy="256" r="16" fill="#F8FAFC"/>
+          <circle cx="256" cy="396" r="16" fill="#F8FAFC"/>
+          <circle cx="116" cy="256" r="16" fill="#F8FAFC"/>
+          <path d="M256 132V166M380 256H346M256 380V346M132 256H166" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+        
 </svg>

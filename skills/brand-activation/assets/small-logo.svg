@@ -1,8 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M280 216L248 260H288L256 304"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#B91C1C" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- Megaphone & Stunt Signal Wave -->
+          <path d="M150 210H200L290 140V372L200 302H150C136 302 125 291 125 277V235C125 221 136 210 150 210Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="8"/>
+          <path d="M175 302V365C175 376 184 385 195 385C206 385 215 376 215 365V302" fill="#FFFFFF"/>
+          <path d="M335 190C360 210 375 235 375 256C375 277 360 302 335 322" stroke="#FEF08A" stroke-width="18" stroke-linecap="round" fill="none"/>
+          <path d="M375 145C415 180 435 215 435 256C435 297 415 332 375 367" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" fill="none"/>
+        
 </svg>

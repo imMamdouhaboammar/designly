@@ -1,11 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M238 280C250 232 274 224 308 252"/>
-    <circle cx="238" cy="280" r="7" fill="#FFFFFF"/>
-    <circle cx="270" cy="240" r="7" fill="#FFFFFF"/>
-    <circle cx="308" cy="252" r="7" fill="#FFFFFF"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#7E22CE" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- Swatch Fan & Synthesis Drop -->
+          <path d="M256 120C256 120 180 230 180 290C180 332 214 366 256 366C298 366 332 332 332 290C332 230 256 120 256 120Z" fill="#FFFFFF"/>
+          <path d="M256 210C256 210 210 270 210 300C210 325 230 345 256 345C282 345 302 325 302 300C302 270 256 210 256 210Z" fill="#F472B6"/>
+          <circle cx="160" cy="180" r="22" fill="#FDE047"/>
+          <circle cx="352" cy="180" r="22" fill="#38BDF8"/>
+        
 </svg>

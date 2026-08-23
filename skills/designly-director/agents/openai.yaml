@@ -3,7 +3,7 @@ interface:
   short_description: "Lead Art Direction & Mesh Orchestrator"
   icon_small: "./assets/small-logo.svg"
   icon_large: "./assets/large-logo.svg"
-  brand_color: "#111111"
+  brand_color: "#0F172A"
   default_prompt: "Art-direct this brief end-to-end, coordinate specialists, enforce locks, and route only targeted revisions."
 policy:
   allow_implicit_invocation: true

@@ -1,9 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="11" stroke-linejoin="round">
-    <rect x="238" y="222" width="72" height="68" rx="12"/>
-    <rect x="256" y="240" width="36" height="32" rx="6"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1E40AF" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- Brand Guardian Shield & Seal -->
+          <path d="M256 110L370 160V260C370 335 320 385 256 410C192 385 142 335 142 260V160L256 110Z" fill="#1E3A8A" stroke="#FFFFFF" stroke-width="14" stroke-linejoin="round"/>
+          <path d="M205 255L240 290L310 215" stroke="#60A5FA" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        
 </svg>

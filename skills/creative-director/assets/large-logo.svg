@@ -1,10 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M260 216L274 256L260 296"/>
-    <path d="M274 256L314 256"/>
-    <circle cx="240" cy="256" r="8" fill="#111111"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- Cannes Gold Diamond Spark -->
+          <path d="M256 110L350 210L256 390L162 210Z" fill="#FEF3C7" stroke="#FFFFFF" stroke-width="12" stroke-linejoin="round"/>
+          <path d="M162 210H350M256 110V390" stroke="#D97706" stroke-width="8" stroke-linejoin="round"/>
+          <path d="M210 210L256 390L302 210L256 110Z" fill="#FDE68A" opacity="0.7"/>
+          <path d="M380 140L392 165L417 177L392 189L380 214L368 189L343 177L368 165Z" fill="#FFFFFF"/>
+          <path d="M120 310L130 330L150 340L130 350L120 370L110 350L90 340L110 330Z" fill="#FFFFFF"/>
+        
 </svg>

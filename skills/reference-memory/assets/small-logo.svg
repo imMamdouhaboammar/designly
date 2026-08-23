@@ -1,10 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="10" stroke-linejoin="round">
-    <rect x="252" y="220" width="58" height="64" rx="10"/>
-    <rect x="234" y="238" width="58" height="64" rx="10" fill="#FFFFFF"/>
-    <path d="M250 258H276M250 278H270" stroke-linecap="round"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14B8A6" />
+      <stop offset="100%" stop-color="#0F766E" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- Memory Chip & Indexed REF Ribbon -->
+          <rect x="150" y="150" width="212" height="212" rx="28" fill="#134E4A" stroke="#FFFFFF" stroke-width="12"/>
+          <rect x="200" y="200" width="112" height="112" rx="16" fill="#5EEAD4"/>
+          <path d="M210 115V150M256 115V150M302 115V150M210 362V397M256 362V397M302 362V397M115 210H150M115 256H150M115 302H150M362 210H397M362 256H397M362 302H397" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+        
 </svg>

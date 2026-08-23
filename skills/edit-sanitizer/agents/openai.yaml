@@ -3,7 +3,7 @@ interface:
   short_description: "Safe inpainting, annotations & bounded revisions"
   icon_small: "./assets/small-logo.svg"
   icon_large: "./assets/large-logo.svg"
-  brand_color: "#111111"
+  brand_color: "#F97316"
   default_prompt: "Sanitize this image edit into one bounded mutation, resolve annotations, and protect all non-target content."
 policy:
   allow_implicit_invocation: true

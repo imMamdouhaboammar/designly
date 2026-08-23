@@ -1,9 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M236 280C250 240 290 230 310 260"/>
-    <circle cx="310" cy="260" r="6" fill="#111111"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#C2410C" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- Narrative Arc & Open Story Scroll -->
+          <path d="M120 340C180 340 220 180 280 180C340 180 360 300 410 300" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" fill="none"/>
+          <circle cx="120" cy="340" r="20" fill="#FEF08A"/>
+          <circle cx="280" cy="180" r="28" fill="#FFFFFF"/>
+          <circle cx="410" cy="300" r="20" fill="#FEF08A"/>
+          <path d="M256 130L266 150L286 160L266 170L256 190L246 170L226 160L246 150Z" fill="#FFFFFF"/>
+          <path d="M150 370H370" stroke="#FED7AA" stroke-width="10" stroke-linecap="round" stroke-dasharray="16 12"/>
+        
 </svg>

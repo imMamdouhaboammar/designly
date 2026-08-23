@@ -3,7 +3,7 @@ interface:
   short_description: "Cannes-calibrated ideation, SIT/TRIZ & campaign canon"
   icon_small: "./assets/small-logo.svg"
   icon_large: "./assets/large-logo.svg"
-  brand_color: "#111111"
+  brand_color: "#D97706"
   default_prompt: "Generate high-impact creative concepts using structural methodologies and Cannes calibration."
 policy:
   allow_implicit_invocation: true

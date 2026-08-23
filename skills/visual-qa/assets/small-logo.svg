@@ -1,9 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="272" cy="256" r="32"/>
-    <path d="M250 258L266 274L296 238" stroke-width="12"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9D174D" />
+      <stop offset="100%" stop-color="#500724" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- Quality Gate Loupe & Release Seal -->
+          <circle cx="236" cy="236" r="95" fill="#500724" stroke="#FFFFFF" stroke-width="14"/>
+          <path d="M305 305L385 385" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round"/>
+          <path d="M195 235L225 265L285 200" stroke="#34D399" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="340" cy="170" r="28" fill="#FDE047" stroke="#FFFFFF" stroke-width="6"/>
+          <path d="M340 156V184M326 170H354" stroke="#831843" stroke-width="6" stroke-linecap="round"/>
+        
 </svg>

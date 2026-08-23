@@ -3,7 +3,7 @@ interface:
   short_description: "Brand rules, logo clearspace & product fidelity"
   icon_small: "./assets/small-logo.svg"
   icon_large: "./assets/large-logo.svg"
-  brand_color: "#111111"
+  brand_color: "#1D4ED8"
   default_prompt: "Audit this visual against documented brand rules, logo clearspace, product fidelity, and Brand-Off specificity."
 policy:
   allow_implicit_invocation: true

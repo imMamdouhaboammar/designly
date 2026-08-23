@@ -3,7 +3,7 @@ interface:
   short_description: "Camera logic, 3-point lighting & surface physics"
   icon_small: "./assets/small-logo.svg"
   icon_large: "./assets/large-logo.svg"
-  brand_color: "#111111"
+  brand_color: "#C2410C"
   default_prompt: "Direct camera logic, depth of field, lighting, material response, and shadow behavior for this visual."
 policy:
   allow_implicit_invocation: true

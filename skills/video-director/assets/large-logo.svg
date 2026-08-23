@@ -1,9 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="10" stroke-linecap="round">
-    <rect x="236" y="222" width="72" height="68" rx="10"/>
-    <path d="M272 222V290M236 256H308"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#3730A3" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- Director Clapperboard & Motion Slate -->
+          <path d="M120 190H392V365C392 376 383 385 372 385H140C129 385 120 376 120 365V190Z" fill="#1E1B4B" stroke="#FFFFFF" stroke-width="12"/>
+          <polygon points="230,250 230,330 300,290" fill="#FBBF24"/>
+          <!-- Slanted Clapper Top -->
+          <g transform="rotate(-12 120 190)">
+            <rect x="120" y="125" width="272" height="60" rx="10" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="6"/>
+            <polygon points="150,125 180,125 140,185 110,185" fill="#4F46E5"/>
+            <polygon points="210,125 240,125 200,185 170,185" fill="#4F46E5"/>
+            <polygon points="270,125 300,125 260,185 230,185" fill="#4F46E5"/>
+            <polygon points="330,125 360,125 320,185 290,185" fill="#4F46E5"/>
+          </g>
+        
 </svg>

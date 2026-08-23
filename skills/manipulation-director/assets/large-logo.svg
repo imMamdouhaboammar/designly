@@ -1,9 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="10" stroke-linejoin="round">
-    <rect x="236" y="228" width="54" height="54" rx="9"/>
-    <circle cx="292" cy="260" r="26" fill="#FFFFFF"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- 3D Layer Compositing Planes -->
+          <polygon points="256,120 375,180 256,240 137,180" fill="#D1FAE5" stroke="#FFFFFF" stroke-width="8" stroke-linejoin="round"/>
+          <polygon points="256,190 375,250 256,310 137,250" fill="#34D399" stroke="#FFFFFF" stroke-width="8" stroke-linejoin="round"/>
+          <polygon points="256,260 375,320 256,380 137,320" fill="#065F46" stroke="#FFFFFF" stroke-width="8" stroke-linejoin="round"/>
+        
 </svg>

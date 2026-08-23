@@ -1,10 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="9" stroke-linejoin="round">
-    <rect x="230" y="232" width="24" height="48" rx="6"/>
-    <rect x="262" y="224" width="24" height="64" rx="6"/>
-    <rect x="294" y="232" width="24" height="48" rx="6"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="100%" stop-color="#BE123C" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- Multi-Asset DNA Helix -->
+          <path d="M160 140C220 200 292 312 352 372M352 140C292 200 220 312 160 372" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+          <path d="M185 165H327M210 215H302M235 256H277M210 297H302M185 347H327" stroke="#FDE047" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="160" cy="140" r="18" fill="#FFFFFF"/>
+          <circle cx="352" cy="140" r="18" fill="#FDE047"/>
+          <circle cx="160" cy="372" r="18" fill="#FDE047"/>
+          <circle cx="352" cy="372" r="18" fill="#FFFFFF"/>
+        
 </svg>

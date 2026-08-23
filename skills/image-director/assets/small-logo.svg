@@ -1,9 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="10" stroke-linecap="round">
-    <rect x="236" y="222" width="72" height="68" rx="10"/>
-    <path d="M272 222V290M236 256H308"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D946EF" />
+      <stop offset="100%" stop-color="#A21CAF" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- Multi-Panel Canvas Grid & Aperture -->
+          <rect x="130" y="130" width="115" height="115" rx="16" fill="#FAE8FF" stroke="#FFFFFF" stroke-width="8"/>
+          <rect x="267" y="130" width="115" height="115" rx="16" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="8"/>
+          <rect x="130" y="267" width="115" height="115" rx="16" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="8"/>
+          <rect x="267" y="267" width="115" height="115" rx="16" fill="#F5D0FE" stroke="#FFFFFF" stroke-width="8"/>
+          <circle cx="256" cy="256" r="42" fill="#FDE047" stroke="#C026D3" stroke-width="8"/>
+          <path d="M256 230V282M230 256H282" stroke="#701A75" stroke-width="8" stroke-linecap="round"/>
+        
 </svg>

@@ -3,7 +3,7 @@ interface:
   short_description: "Type hierarchy, measure & exact-copy preservation"
   icon_small: "./assets/small-logo.svg"
   icon_large: "./assets/large-logo.svg"
-  brand_color: "#111111"
+  brand_color: "#475569"
   default_prompt: "Set type hierarchy, scale, measure, line breaks, exact-copy locks, text zones, and legibility constraints."
 policy:
   allow_implicit_invocation: true

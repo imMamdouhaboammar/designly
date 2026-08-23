@@ -1,9 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M236 224L270 256L236 288"/>
-    <path d="M270 256H312"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- Strategy Target & Upward Vector -->
+          <circle cx="256" cy="256" r="130" stroke="#93C5FD" stroke-width="10" fill="none" opacity="0.4"/>
+          <circle cx="256" cy="256" r="85" stroke="#FFFFFF" stroke-width="12" fill="none"/>
+          <circle cx="256" cy="256" r="32" fill="#FFFFFF"/>
+          <path d="M140 372L340 172M340 172H240M340 172V272" stroke="#FEF08A" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+        
 </svg>

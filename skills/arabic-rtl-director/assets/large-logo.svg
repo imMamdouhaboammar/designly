@@ -1,9 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M304 228H248M304 256H264M304 284H238"/>
-    <path d="M246 244L234 256L246 268"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#064E3B" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- Arabic Diacritic / Calligraphic Nuqta & RTL Flow -->
+          <path d="M370 230C350 160 270 160 220 200C170 240 140 310 200 350C260 390 340 350 360 280H160" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <!-- Calligraphic Diamond Nuqtas (Dots) -->
+          <polygon points="280,120 305,145 280,170 255,145" fill="#FDE047"/>
+          <polygon points="330,120 355,145 330,170 305,145" fill="#FDE047"/>
+          <!-- RTL Directional Arrow -->
+          <path d="M380 390H130M130 390L170 360M130 390L170 420" stroke="#FDE047" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        
 </svg>

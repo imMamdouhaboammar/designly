@@ -1,9 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 512 512" fill="none">
-  <rect x="72" y="72" width="368" height="368" rx="42" fill="#FFFFFF" stroke="#111111" stroke-width="12"/>
-  <path d="M176 160V352H236C307 352 348 314 348 256C348 198 307 160 236 160H176Z" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M382 132H412V162" stroke="#111111" stroke-width="10" stroke-linecap="square"/>
-  <g stroke="#111111" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="260" cy="256" r="28"/>
-    <path d="M280 276L308 304"/>
-  </g>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#6D28D9" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="92" fill="url(#bgGrad)" stroke="#FFFFFF" stroke-width="10"/>
+  
+          <!-- Tension Mining Gem & Radiance -->
+          <polygon points="256,120 370,195 325,365 187,365 142,195" fill="#DDD6FE" stroke="#FFFFFF" stroke-width="12" stroke-linejoin="round"/>
+          <polygon points="256,170 320,215 295,320 217,320 192,215" fill="#6D28D9"/>
+          <circle cx="256" cy="256" r="24" fill="#FBBF24"/>
+          <path d="M256 80V105M400 170L380 185M370 400L350 380M142 400L162 380M112 170L132 185" stroke="#EDE9FE" stroke-width="10" stroke-linecap="round"/>
+        
 </svg>

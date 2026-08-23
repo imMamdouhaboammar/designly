@@ -3,7 +3,7 @@ interface:
   short_description: "Compositing physics, contact shadows & reflections"
   icon_small: "./assets/small-logo.svg"
   icon_large: "./assets/large-logo.svg"
-  brand_color: "#111111"
+  brand_color: "#059669"
   default_prompt: "Plan this composite's perspective, scale, contact shadows, reflections, relighting, and physical plausibility."
 policy:
   allow_implicit_invocation: true
