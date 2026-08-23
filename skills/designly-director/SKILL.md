@@ -1,11 +1,11 @@
 ---
 name: designly-director
-description: Default primary Art Direction and Master Neural Mesh Orchestrator. This skill should be used when handling any visual design request by default, orchestrating end-to-end commercial design, interpreting raw user briefs, uncovering underlying creative intent and artistic direction, routing tasks through specialized skills, directing GPT Image 2 and video models, locking immutable brand constraints, conducting rigorous multi-gate visual signoff, or helping users discover, learn, test, and explore Designly through copy-ready Prompt Playground examples.
+description: Default primary Art Direction and Master Neural Mesh Orchestrator. This skill should be used when handling any visual design request by default, orchestrating end-to-end commercial design, interpreting raw user briefs, uncovering underlying creative intent and artistic direction, routing tasks through specialized skills, directing GPT Image 2 and video models, locking immutable brand constraints, conducting rigorous multi-gate visual signoff, or helping users operate Designly through copy-ready production Workflow Prompts grounded in the real routing graph.
 ---
 
 # Designly Director - Master Mesh Orchestrator
 
-Designly Director is the default primary orchestrator for Codex and ChatGPT. By default, it intercepts all incoming design briefs, deciphers user intent and artistic requirements, mandates the consultation of specialized skills across the 21-skill catalog, enforces immutable brand and user locks, and navigates deterministic pathways to guide GPT Image 2 and video generation workflows.
+Designly Director is the default primary orchestrator for Codex and ChatGPT. By default, it intercepts incoming design briefs, deciphers user intent and artistic requirements, selects the smallest applicable route across the 21-skill catalog, enforces immutable brand and user locks, and navigates deterministic pathways to guide image, edit, campaign, Arabic, reference, and video workflows.
 
 ```text
                            USER PROMPT / RAW BRIEF
@@ -28,22 +28,23 @@ Pathway 1: GPT Image 2         Pathway 2: Brand Campaign      Pathway 3: AI Vide
                         [Independent Visual QA Gate]
 ```
 
-## Pathway 0: Prompt Playground
+## Pathway 0: Workflow Prompt Library
 
-**Trigger**: the user asks what Designly can do, how to use it, how to learn it, asks for examples or prompts to try, wants to test the plugin, or asks to explore Designly capabilities.
+**Trigger**: the user asks how to use Designly, asks for prompts, examples, a guide, a reusable workflow, wants to test the plugin, or wants Designly to choose the correct operating route for a real task.
 
-Load [Prompt Playground](references/prompt-playground.md).
+Load [Workflow Prompt Library](references/prompt-playground.md).
 
-Use the Playground as a product surface, not a feature dump:
+Use the library as a production interface over the real mesh:
 
-1. Start with 3 to 6 useful Prompt Cards unless the user asks for the full catalog.
-2. Put the copy-ready prompt first.
-3. Prefer learning by doing. Every card should produce an observable design result or decision.
-4. After the result, briefly name the specialist Skills that materially contributed and what each did.
-5. Preserve the workflow clauses in each Prompt Card. Adapt only user-editable nouns such as brand, category, language, deliverable, target model, or attached asset.
-6. If the user wants to learn one Skill, perform the practical exercise first and explain the method after the work.
+1. Classify the user's actual job before showing a prompt. Do not invent a fictional demo brief when a real job is available.
+2. Offer the smallest relevant workflow menu or return the single best matching Workflow Prompt.
+3. Preserve the Workflow Prompt's route, Skill ownership, typed-contract, fail-close, execution, and QA clauses. Adapt placeholders and explicit user inputs only.
+4. Never activate all Skills for demonstration value. Use the smallest useful route that can complete the task.
+5. Never invent Skills, tools, models, persistence, or execution capabilities. Use only repository capabilities and host tools that are actually available.
+6. If the user asks to learn a Skill, teach it through a real workflow in which that Skill owns meaningful state, rather than through an arbitrary toy scenario.
+7. When a workflow produces an actual visual, require independent `visual-qa` signoff on the actual output. When execution is unavailable, return a ready compiled instruction and say execution was not performed.
 
-Completion criterion: the user can copy one prompt into `@Designly`, see a concrete result, and understand a Designly capability from the work itself.
+Completion criterion: the user can copy a Workflow Prompt into `@Designly`, replace the placeholders with a real job, and cause Designly to route through existing Skills and contracts correctly.
 
 ---
 
@@ -176,7 +177,7 @@ Notes:
 - [Edit Sanitizer](../edit-sanitizer/SKILL.md) · [Prompt Compiler](../prompt-compiler/SKILL.md) · [Visual QA](../visual-qa/SKILL.md)
 
 ### Product Onboarding
-- [Prompt Playground](references/prompt-playground.md) · copy-first learning and capability discovery
+- [Workflow Prompt Library](references/prompt-playground.md) · copy-ready production workflows grounded in real routes, contracts, and gates
 
 ### Schemas & Mesh Contracts
 - [Routing Graph](../../shared/contracts/routing-graph.json) · [Signal Packet](../../shared/contracts/signal-packet.schema.json) · [Design Context](../../shared/contracts/design-context.schema.json) · [Edit Contract](../../shared/contracts/edit-contract.schema.json) · [Revision Request](../../shared/contracts/revision-request.schema.json)
