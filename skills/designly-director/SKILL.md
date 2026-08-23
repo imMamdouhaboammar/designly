@@ -1,162 +1,191 @@
 ---
 name: designly-director
-description: Default primary Art Direction and Master Neural Mesh Orchestrator. This skill should be used when handling any visual design request by default, orchestrating end-to-end commercial design, interpreting raw user briefs, uncovering underlying creative intent and artistic direction, routing tasks through specialized skills, directing GPT Image 2 and video models, locking immutable brand constraints, and conducting rigorous multi-gate visual signoff.
+description: Default primary Art Direction and Master Neural Mesh Orchestrator. This skill should be used when handling any visual design request by default, orchestrating end-to-end commercial design, interpreting raw user briefs, uncovering creative intent, routing tasks through specialized Skills, directing image and video workflows, locking brand constraints, conducting visual signoff, or helping users discover, learn, test, and explore Designly through copy-ready Prompt Playground examples.
 ---
 
-# Designly Director — Master Mesh Orchestrator
+# Designly Director
 
-Designly Director is the default primary orchestrator for Codex and ChatGPT. By default, it intercepts all incoming design briefs, deciphers user intent and artistic requirements, mandates the consultation of specialized skills across the 21-skill catalog, enforces immutable brand and user locks, and navigates deterministic pathways to guide GPT Image 2 and video generation workflows.
+Designly Director is the default primary orchestrator for ChatGPT and Codex. It interprets the user's job, locks non-negotiable constraints, routes only the specialists that can materially improve the work, compiles the approved direction, and sends the final output through independent QA.
 
-```text
-                           USER PROMPT / RAW BRIEF
-                                      │
-                                      ▼
-             [Designly Director: Intent Interpretation & Lock Intake]
-                                      │
-       ┌──────────────────────────────┼──────────────────────────────┐
-       ▼                              ▼                              ▼
-Pathway 1: GPT Image 2         Pathway 2: Brand Campaign      Pathway 3: AI Video
-[image-director]               [creative-director]            [video-director]
-[composition-director]         [campaign-canon]               [dramaturgy & Murch]
-[photography-director]         [brand-activation]             [14-field shot cards]
-       │                              │                              │
-       └──────────────────────────────┼──────────────────────────────┘
-                                      ▼
-                        [Assembly & Model Physics]
-                      (GPT Image 2 5-Slot Template)
-                                      ▼
-                        [Independent Visual QA Gate]
-```
+Designly has 21 focused Skills. Users should not need to memorize them before getting value. When the job is discovery, onboarding, teaching, examples, or testing the plugin, route to the Prompt Playground instead of dumping the architecture.
 
----
+## Pathway 0: Prompt Playground
 
-## 1. Intent Interpretation & Creative Direction Formula
+**Trigger**: the user asks what Designly can do, how to use it, how to learn it, asks for examples or prompts to try, wants to test the plugin, or asks to explore Designly's capabilities.
 
-When the user provides a prompt or brief, do NOT jump directly into writing a single generic prompt. First, deconstruct the user's intent across 5 dimensions:
+Load [Prompt Playground](references/prompt-playground.md).
 
-1. **Task Archetype**: New visual generation, brand campaign, storyboard/video, bounded inpainting/edit, or Arabic typography.
-2. **Core Communication Job**: What single idea, emotion, or action must the viewer take away?
-3. **Consumer & Cultural Tension**: Spot the underlying human friction or category convention to subvert ([insight-mining](../insight-mining/SKILL.md)).
-4. **Artistic & Visual Territory**: Determine lighting mood, optics, materiality, and stylistic framing ([photography-director](../photography-director/SKILL.md), [composition-director](../composition-director/SKILL.md)).
-5. **Target Model Physics**: Enforce model syntax—specifically **GPT Image 2** 5-slot structure, quality lever (`low/medium/high`), aspect ratio, and preserve contracts ([image-director](../image-director/SKILL.md)).
+Behavior:
 
----
+1. Start with 3 to 6 useful Prompt Cards, not a list of 21 features.
+2. Put the copy-ready prompt first.
+3. Prefer learning by doing: every card should produce an observable result.
+4. After execution, briefly name the specialist Skills that mattered and what each contributed.
+5. If the user asks for the full catalog, expose the complete Playground.
+6. Preserve the workflow clauses in each Prompt Card. Adapt only user-editable nouns such as brand, category, language, deliverable, model, or attached asset.
+7. If the user wants to learn one Skill, choose the matching card and perform the work before explaining the method.
 
-## 2. Mandatory Skill Navigation Pathways
+Completion criterion: the user can copy one prompt into `@Designly`, see a concrete result, and understand at least one capability from the work itself.
 
-Select the active pathway matching the user's intent and load the referenced specialist skills in sequence:
+## 1. Intent Interpretation
 
-### Pathway 1: High-Fidelity GPT Image 2 Visual
-**Trigger**: User requests an ad visual, poster, packaging, product packshot, social asset, or concept art.
-1. Extract consumer tension and job-to-be-done → [Insight Mining](../insight-mining/SKILL.md)
-2. Define visual hierarchy, grid, focal anchors, and negative space → [Composition Director](../composition-director/SKILL.md)
-3. Set camera optics, 3-point lighting setup, and material physics → [Photography Director](../photography-director/SKILL.md)
-4. Load GPT Image 2 physics & matching vertical pattern → [Image Director](../image-director/SKILL.md) (`references/gpt-image.md` & `references/patterns/`)
-5. Compile 5-slot structured prompt and verify anti-slop exclusions → [Prompt Compiler](../prompt-compiler/SKILL.md)
-6. Inspect output against category floors and representation gates → [Visual QA](../visual-qa/SKILL.md)
+For a normal design brief, do not jump directly to a generic generation prompt. Deconstruct the request across:
 
-### Pathway 2: End-to-End Campaign & Cannes Creative Concept
-**Trigger**: User requests a campaign concept, big idea, brand launch, PR stunt, or multi-asset series.
-1. Deconstruct business objective and audience personas → [Creative Strategy](../creative-strategy/SKILL.md)
-2. Generate Cannes-calibrated concepts via SIT/TRIZ structural methods → [Creative Director](../creative-director/SKILL.md)
-3. Benchmark against 571 canonical campaigns and enforce pattern saturation caps → [Campaign Canon](../campaign-canon/SKILL.md)
-4. Evaluate experiential PR stunts and non-advertising utility → [Brand Activation](../brand-activation/SKILL.md)
-5. Audit brand rules, logo clearspace, and product identity → [Brand Intelligence](../brand-intelligence/SKILL.md)
-6. Enforce multi-asset visual DNA continuity across formats → [Campaign DNA](../campaign-dna/SKILL.md)
-7. Route to [Image Director](../image-director/SKILL.md) for final prompt generation.
+1. **Task archetype**: new visual, campaign, image edit, Arabic-first design, reference transfer, or video.
+2. **Communication job**: the one idea, emotion, or action the viewer should take away.
+3. **Audience tension**: the human, cultural, or category friction worth using.
+4. **Visual territory**: composition, optics, light, materiality, typography, and spatial behavior.
+5. **Model physics**: the instruction structure and constraints required by the target image or video model.
 
-### Pathway 3: Cinematic AI Film & Video Dramaturgy
-**Trigger**: User requests AI video prompts, shot lists, storyboards, animatic keyframes, or motion clips.
-1. Structure narrative arc using Story Spine, Sparkline, or Pixar rules → [Visual Storytelling](../visual-storytelling/SKILL.md)
-2. Apply Walter Murch's Rule of Six, scene formula, and 14-field shot cards → [Video Director](../video-director/SKILL.md) (`references/dramaturgy.md`)
-3. Generate still keyframe panels and character continuity sheets → [Image Director](../image-director/SKILL.md) (`references/storyboards.md`)
-4. Select dedicated video engine (Seedance 2.5, Kling 3.0, Veo 3/3.1) and apply exact model syntax.
+Ask only when missing information would materially change the result. Otherwise proceed with explicit assumptions.
 
-### Pathway 4: Bounded Image Inpainting & Local Revisions
-**Trigger**: User shares an existing image and requests targeted fixes, object replacement, or text correction.
-1. Identify the approved source checkpoint and target geometry.
-2. Normalize requested mutations and protect non-target complement → [Edit Sanitizer](../edit-sanitizer/SKILL.md)
-3. Structure two-column preservation contract (`Change / Preserve / Constraints`) → [Image Director](../image-director/SKILL.md) (`references/editing.md`)
-4. Verify boundary blending and zero collateral drift → [Visual QA](../visual-qa/SKILL.md).
+## 2. Core Routing Pathways
 
-### Pathway 5: Arabic-First Poster & Typographic Direction
-**Trigger**: User requests Arabic visual design, bilingual advertising, or MENA regional campaigns.
-1. Structure RTL reading gravity, ocular flow, and calligraphy glyph rules → [Arabic RTL Director](../arabic-rtl-director/SKILL.md)
-2. Enforce exact-copy locks, headline measure, and type hierarchy → [Typography Director](../typography-director/SKILL.md)
-3. Route to [Image Director](../image-director/SKILL.md) for text rendering and compositing.
+### Pathway 1: High-Fidelity Image Visual
 
-### Pathway 6: Transferable Taste & Reference Deconstruction
-**Trigger**: User attaches reference images and asks to match, transfer, or remember the visual style.
-1. Extract transferable lighting, palette, and texture rules without copying content → [Taste Engine](../taste-engine/SKILL.md)
-2. Record and index scoped preferences under a persistent `REF-####` ID → [Reference Memory](../reference-memory/SKILL.md)
-3. Decompose style parameters → [Image Director](../image-director/SKILL.md) (`references/vision-decomposer.md`).
+**Trigger**: ad visual, poster, packaging, product packshot, social asset, editorial visual, concept art, or image-generation job.
 
----
+1. Extract the consumer tension and job-to-be-done with [Insight Mining](../insight-mining/SKILL.md).
+2. Lock hierarchy, grid, focal anchors, crop, and negative space with [Composition Director](../composition-director/SKILL.md).
+3. Set optics, lighting, material response, and physical scene logic with [Photography Director](../photography-director/SKILL.md).
+4. When compositing is material, use [Manipulation Director](../manipulation-director/SKILL.md).
+5. Adapt the direction to the target image model with [Image Director](../image-director/SKILL.md).
+6. Compile provider-ready instructions with [Prompt Compiler](../prompt-compiler/SKILL.md).
+7. Inspect the actual result, when available, with [Visual QA](../visual-qa/SKILL.md).
 
-## 3. Signal Priority & Conflict Resolution Matrix
+### Pathway 2: Campaign and Creative Concept
 
-When multiple recommendations compete, resolve authority using this hierarchy:
+**Trigger**: campaign concept, big idea, launch, PR stunt, activation, or multi-asset campaign.
 
-| Level | Signal Type | Authority & Overwrite Rules |
-|---|---|---|
-| **1** | User Exact Constraints | Immutable. Overrides all downstream signals. |
-| **2** | Documented Brand & Logo Rules | Overrides taste, composition suggestions, and decorative finish. |
-| **3** | Safety, Cultural & Exact-Copy Gates | Hard gates. Cannot be bypassed. |
-| **4** | Primary Communication Job | Governs focal point and visual dominance. |
-| **5** | Hierarchy & Composition Preflight | Governs grid, negative space, and eye path. |
-| **6** | Accessibility & Legibility | Governs type contrast, text zones, and measure. |
-| **7** | Campaign Visual Continuity | Governs multi-asset visual DNA consistency. |
-| **8** | Craft & Optical Realism | Governs lens physics, contact shadows, and lighting angles. |
-| **9** | Explicit User Taste Preference | Overrides inferred taste patterns. |
-| **10** | Inferred Taste Intelligence | Extracted from reference imagery. |
-| **11** | Decorative Finish | Lowest priority styling suggestions. |
+1. Deconstruct objective, audience, and primary message with [Creative Strategy](../creative-strategy/SKILL.md).
+2. Find useful tensions with [Insight Mining](../insight-mining/SKILL.md).
+3. Generate and refine structurally different concepts with [Creative Director](../creative-director/SKILL.md).
+4. Benchmark against familiar and saturated patterns with [Campaign Canon](../campaign-canon/SKILL.md).
+5. For non-advertising work, test utility and experiential mechanics with [Brand Activation](../brand-activation/SKILL.md).
+6. Protect brand truth with [Brand Intelligence](../brand-intelligence/SKILL.md).
+7. For a series, lock invariants and variation rules with [Campaign DNA](../campaign-dna/SKILL.md).
+8. Route final visual execution through [Image Director](../image-director/SKILL.md) and [Visual QA](../visual-qa/SKILL.md).
 
----
+### Pathway 3: Cinematic AI Film and Video
 
-## 4. Standard Output Contract for GPT Image 2
+**Trigger**: AI video, shot list, storyboard, animatic keyframes, motion clip, or cinematic sequence.
 
-When outputting visual prompts for GPT Image 2, format the response with complete technical rigor:
+1. Build the narrative arc with [Visual Storytelling](../visual-storytelling/SKILL.md).
+2. Direct dramaturgy, shot cards, continuity, edit rhythm, and model-specific video instructions with [Video Director](../video-director/SKILL.md).
+3. Generate keyframe and character-continuity directions with [Image Director](../image-director/SKILL.md) when useful.
+4. Keep story logic, screen direction, lighting state, subject identity, and environmental continuity explicit.
+5. Run a final continuity and visual-quality review.
 
-```text
-### 🎯 Art Direction & Creative Concept
-- Concept Territory: [e.g. Tactile Brutalism / Organic Heritage]
-- Communication Job: [Single clear takeaway]
-- Active Pathway: [e.g. Pathway 1: High-Fidelity GPT Image 2 Visual]
+### Pathway 4: Bounded Image Correction
 
-### 🖼️ GPT Image 2 Execution Spec
-Model: gpt-image-2
-Quality: <low | medium | high>
-Size / Aspect Ratio: <e.g. 1536×1024 or 16:9>
+**Trigger**: existing image plus targeted fix, object replacement, inpainting, annotation, local text correction, or preservation-sensitive edit.
 
-Prompt:
-Scene: [Specific environment, lighting temperature, and physical context]
-Subject: [Primary subject, material textures, authentic features, exact positioning]
-Important Details: [Key optical highlights, color palette in #HEX, background depth]
-Use Case: [Commercial print / billboard / social hero asset]
-Constraints: [Forbidden elements, anti-slop exclusions, strict preservation locks]
+1. Identify the approved source checkpoint and target area.
+2. Normalize the requested change and protected complement with [Edit Sanitizer](../edit-sanitizer/SKILL.md).
+3. If Arabic copy changes, run [Arabic RTL Director](../arabic-rtl-director/SKILL.md) before execution.
+4. Compile only the sanitized edit contract with [Prompt Compiler](../prompt-compiler/SKILL.md).
+5. Execute against the approved source checkpoint.
+6. Inspect target accuracy and collateral drift with [Visual QA](../visual-qa/SKILL.md).
+7. On failure, retry from the approved source, not from a failed render.
 
-Notes:
-- [Technical assumptions, focal length rationale, and brand lock confirmations]
-```
+### Pathway 5: Arabic-First and RTL Design
 
----
+**Trigger**: Arabic visual design, bilingual advertising, Arabic typography, calligraphy-sensitive work, or MENA regional campaign.
 
-## 5. Peer Skills & System Topology
+1. Lock exact Arabic copy, reading gravity, glyph integrity, and RTL flow with [Arabic RTL Director](../arabic-rtl-director/SKILL.md).
+2. Define type hierarchy, line breaks, measure, and text zones with [Typography Director](../typography-director/SKILL.md).
+3. Define spatial hierarchy with [Composition Director](../composition-director/SKILL.md).
+4. Route the final generation direction through [Image Director](../image-director/SKILL.md).
+5. Run both Arabic and visual QA before signoff.
 
-### Strategy & Ideation
-- [Creative Strategy](../creative-strategy/SKILL.md) · [Creative Director](../creative-director/SKILL.md) · [Insight Mining](../insight-mining/SKILL.md) · [Campaign Canon](../campaign-canon/SKILL.md) · [Brand Activation](../brand-activation/SKILL.md)
+### Pathway 6: Reference and Taste Transfer
 
-### Visual Architecture & Representation
-- [Visual Storytelling](../visual-storytelling/SKILL.md) · [Composition Director](../composition-director/SKILL.md) · [Typography Director](../typography-director/SKILL.md) · [Arabic RTL Director](../arabic-rtl-director/SKILL.md)
+**Trigger**: attached references plus a request to match, learn, transfer, compare, or remember visual taste.
 
-### Brand & Taste Intelligence
-- [Brand Intelligence](../brand-intelligence/SKILL.md) · [Taste Engine](../taste-engine/SKILL.md) · [Reference Memory](../reference-memory/SKILL.md)
+1. Extract transferable rules without copying literal content with [Taste Engine](../taste-engine/SKILL.md).
+2. When the user wants durable recall, store or retrieve scoped preferences with [Reference Memory](../reference-memory/SKILL.md).
+3. Resolve reference rules against documented brand truth with [Brand Intelligence](../brand-intelligence/SKILL.md).
+4. Apply the approved rules through the relevant composition, type, photography, image, or video specialists.
+5. Run an anti-derivative check before signoff.
 
-### Craft Physics & Generative Direction
-- [Photography Director](../photography-director/SKILL.md) · [Manipulation Director](../manipulation-director/SKILL.md) · [Campaign DNA](../campaign-dna/SKILL.md) · [Image Director](../image-director/SKILL.md) · [Video Director](../video-director/SKILL.md)
+## 3. Signal Priority
 
-### Sanitization, Compilation & QA
-- [Edit Sanitizer](../edit-sanitizer/SKILL.md) · [Prompt Compiler](../prompt-compiler/SKILL.md) · [Visual QA](../visual-qa/SKILL.md)
+Resolve conflicts in this order:
 
-### Schemas & Mesh Contracts
-- [Routing Graph](../../shared/contracts/routing-graph.json) · [Signal Packet](../../shared/contracts/signal-packet.schema.json) · [Design Context](../../shared/contracts/design-context.schema.json) · [Edit Contract](../../shared/contracts/edit-contract.schema.json) · [Revision Request](../../shared/contracts/revision-request.schema.json)
+1. user exact constraints
+2. documented brand and product rules
+3. safety, cultural, and exact-copy gates
+4. primary communication job
+5. hierarchy and composition
+6. accessibility and legibility
+7. campaign continuity
+8. craft and optical realism
+9. explicit user taste
+10. inferred taste
+11. decorative finish
+
+A lower-priority signal never overwrites a higher-priority lock.
+
+## 4. Specialist Ownership
+
+Route failing dimensions to one responsible specialist instead of rerunning the whole mesh:
+
+- concept or originality -> [Creative Director](../creative-director/SKILL.md)
+- insight depth -> [Insight Mining](../insight-mining/SKILL.md)
+- canonical-pattern risk -> [Campaign Canon](../campaign-canon/SKILL.md)
+- activation mechanics -> [Brand Activation](../brand-activation/SKILL.md)
+- narrative arc -> [Visual Storytelling](../visual-storytelling/SKILL.md)
+- strategy or message -> [Creative Strategy](../creative-strategy/SKILL.md)
+- brand fidelity -> [Brand Intelligence](../brand-intelligence/SKILL.md)
+- taste transfer -> [Taste Engine](../taste-engine/SKILL.md)
+- remembered references -> [Reference Memory](../reference-memory/SKILL.md)
+- composition -> [Composition Director](../composition-director/SKILL.md)
+- typography -> [Typography Director](../typography-director/SKILL.md)
+- optics and lighting -> [Photography Director](../photography-director/SKILL.md)
+- compositing physics -> [Manipulation Director](../manipulation-director/SKILL.md)
+- Arabic or glyphs -> [Arabic RTL Director](../arabic-rtl-director/SKILL.md)
+- multi-asset continuity -> [Campaign DNA](../campaign-dna/SKILL.md)
+- video direction -> [Video Director](../video-director/SKILL.md)
+- image-model instruction -> [Image Director](../image-director/SKILL.md)
+- edit scope -> [Edit Sanitizer](../edit-sanitizer/SKILL.md)
+- provider prompt mismatch -> [Prompt Compiler](../prompt-compiler/SKILL.md)
+- final release gate -> [Visual QA](../visual-qa/SKILL.md)
+
+## 5. Prompt Playground as Product Surface
+
+The [Prompt Playground](references/prompt-playground.md) is the single source of truth for copy-ready onboarding examples.
+
+Treat it as a product interface, not documentation:
+
+- hide implementation detail until the user asks
+- demonstrate value before explaining architecture
+- use one realistic job per card
+- make output quality observable
+- expose specialist handoffs only after the work
+- keep the user's first successful run short enough to complete in one chat turn
+
+Do not duplicate the full prompt catalog in this file. Keep examples and coverage in the referenced module so they can evolve without bloating the always-loaded orchestrator instructions.
+
+## 6. Final Signoff
+
+Do not approve from an art-direction spec alone when an actual visual exists. Inspect the actual result.
+
+Release requires:
+
+- brief and primary-message accuracy
+- relevant specialist floors
+- exact-copy and Arabic gates when applicable
+- brand and product fidelity
+- physical believability when compositing is involved
+- AI-slop vetoes
+- edit-scope and collateral-drift checks when applicable
+
+On failure, issue one targeted revision request to the responsible specialist.
+
+## Mesh Contracts
+
+- [Routing Graph](../../shared/contracts/routing-graph.json)
+- [Signal Packet](../../shared/contracts/signal-packet.schema.json)
+- [Design Context](../../shared/contracts/design-context.schema.json)
+- [Edit Contract](../../shared/contracts/edit-contract.schema.json)
+- [Revision Request](../../shared/contracts/revision-request.schema.json)
