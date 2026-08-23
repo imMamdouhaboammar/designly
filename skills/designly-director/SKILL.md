@@ -1,9 +1,9 @@
 ---
 name: designly-director
-description: Default primary Art Direction and Master Neural Mesh Orchestrator. This skill should be used when handling any visual design request by default, orchestrating end-to-end commercial design, interpreting raw user briefs, uncovering underlying creative intent and artistic direction, routing tasks through specialized skills, directing GPT Image 2 and video models, locking immutable brand constraints, and conducting rigorous multi-gate visual signoff.
+description: Default primary Art Direction and Master Neural Mesh Orchestrator. This skill should be used when handling any visual design request by default, orchestrating end-to-end commercial design, interpreting raw user briefs, uncovering underlying creative intent and artistic direction, routing tasks through specialized skills, directing GPT Image 2 and video models, locking immutable brand constraints, conducting rigorous multi-gate visual signoff, or helping users discover, learn, test, and explore Designly through copy-ready Prompt Playground examples.
 ---
 
-# Designly Director — Master Mesh Orchestrator
+# Designly Director - Master Mesh Orchestrator
 
 Designly Director is the default primary orchestrator for Codex and ChatGPT. By default, it intercepts all incoming design briefs, deciphers user intent and artistic requirements, mandates the consultation of specialized skills across the 21-skill catalog, enforces immutable brand and user locks, and navigates deterministic pathways to guide GPT Image 2 and video generation workflows.
 
@@ -28,6 +28,23 @@ Pathway 1: GPT Image 2         Pathway 2: Brand Campaign      Pathway 3: AI Vide
                         [Independent Visual QA Gate]
 ```
 
+## Pathway 0: Prompt Playground
+
+**Trigger**: the user asks what Designly can do, how to use it, how to learn it, asks for examples or prompts to try, wants to test the plugin, or asks to explore Designly capabilities.
+
+Load [Prompt Playground](references/prompt-playground.md).
+
+Use the Playground as a product surface, not a feature dump:
+
+1. Start with 3 to 6 useful Prompt Cards unless the user asks for the full catalog.
+2. Put the copy-ready prompt first.
+3. Prefer learning by doing. Every card should produce an observable design result or decision.
+4. After the result, briefly name the specialist Skills that materially contributed and what each did.
+5. Preserve the workflow clauses in each Prompt Card. Adapt only user-editable nouns such as brand, category, language, deliverable, target model, or attached asset.
+6. If the user wants to learn one Skill, perform the practical exercise first and explain the method after the work.
+
+Completion criterion: the user can copy one prompt into `@Designly`, see a concrete result, and understand a Designly capability from the work itself.
+
 ---
 
 ## 1. Intent Interpretation & Creative Direction Formula
@@ -38,7 +55,7 @@ When the user provides a prompt or brief, do NOT jump directly into writing a si
 2. **Core Communication Job**: What single idea, emotion, or action must the viewer take away?
 3. **Consumer & Cultural Tension**: Spot the underlying human friction or category convention to subvert ([insight-mining](../insight-mining/SKILL.md)).
 4. **Artistic & Visual Territory**: Determine lighting mood, optics, materiality, and stylistic framing ([photography-director](../photography-director/SKILL.md), [composition-director](../composition-director/SKILL.md)).
-5. **Target Model Physics**: Enforce model syntax—specifically **GPT Image 2** 5-slot structure, quality lever (`low/medium/high`), aspect ratio, and preserve contracts ([image-director](../image-director/SKILL.md)).
+5. **Target Model Physics**: Enforce model syntax, specifically **GPT Image 2** 5-slot structure, quality lever (`low/medium/high`), aspect ratio, and preserve contracts ([image-director](../image-director/SKILL.md)).
 
 ---
 
@@ -118,12 +135,12 @@ When multiple recommendations compete, resolve authority using this hierarchy:
 When outputting visual prompts for GPT Image 2, format the response with complete technical rigor:
 
 ```text
-### 🎯 Art Direction & Creative Concept
+### Art Direction & Creative Concept
 - Concept Territory: [e.g. Tactile Brutalism / Organic Heritage]
 - Communication Job: [Single clear takeaway]
 - Active Pathway: [e.g. Pathway 1: High-Fidelity GPT Image 2 Visual]
 
-### 🖼️ GPT Image 2 Execution Spec
+### GPT Image 2 Execution Spec
 Model: gpt-image-2
 Quality: <low | medium | high>
 Size / Aspect Ratio: <e.g. 1536×1024 or 16:9>
@@ -157,6 +174,9 @@ Notes:
 
 ### Sanitization, Compilation & QA
 - [Edit Sanitizer](../edit-sanitizer/SKILL.md) · [Prompt Compiler](../prompt-compiler/SKILL.md) · [Visual QA](../visual-qa/SKILL.md)
+
+### Product Onboarding
+- [Prompt Playground](references/prompt-playground.md) · copy-first learning and capability discovery
 
 ### Schemas & Mesh Contracts
 - [Routing Graph](../../shared/contracts/routing-graph.json) · [Signal Packet](../../shared/contracts/signal-packet.schema.json) · [Design Context](../../shared/contracts/design-context.schema.json) · [Edit Contract](../../shared/contracts/edit-contract.schema.json) · [Revision Request](../../shared/contracts/revision-request.schema.json)
