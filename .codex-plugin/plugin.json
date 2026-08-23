@@ -2,7 +2,7 @@
   "author": {
     "name": "Mamdouh Abo Ammar"
   },
-  "description": "Designly is a commercial Art Direction and Design Neural Mesh plugin with 21 focused Skills, 16 custom Codex agents, a copy-first Prompt Playground, Cannes-calibrated Creative Direction, 571 Legendary Campaign Canon, dramaturgy-first AI Video Direction, model-physics Image Direction, Insight Mining, Brand Activation, Visual Storytelling, Taste Engine, Reference Memory, bounded-edit sanitization, Arabic RTL direction, and independent Visual QA.",
+  "description": "Designly is a commercial Art Direction and Design Neural Mesh plugin with 21 focused Skills, 16 custom Codex agents, a copy-first Prompt Playground, Cannes-calibrated Creative Direction, 571 Legendary Campaign Canon, dramaturgy-first AI Video Direction (Seedance 2.5, Kling 3.0, Veo), model-physics Image Direction (Nano Banana 2/Pro, GPT Image 2), Insight Mining, Brand Activation, Visual Storytelling, Taste Engine, Reference Memory, bounded-edit sanitization, Arabic RTL direction, and independent Visual QA.",
   "interface": {
     "brandColor": "#111111",
     "brandColorDark": "#F2F2F2",
@@ -44,7 +44,7 @@
     "developerName": "Mamdouh Abo Ammar",
     "displayName": "Designly",
     "logo": "./.codex-plugin/assets/logo.svg",
-    "longDescription": "Designly turns a brief, idea, or reference into polished visual work for ads, social campaigns, brand content, and cinematic AI films\n\nThe Prompt Playground gives users copy-ready experiments that demonstrate Designly by doing real creative jobs instead of reading a feature list\n\nDesignly shapes creative concepts, dramaturgy, composition, typography, optics, and model physics, reviews outputs critically, routes targeted revisions, handles Arabic and RTL layouts, protects bounded edits, and maintains visual continuity across campaigns",
+    "longDescription": "Designly turns a brief, idea, or reference into polished visual work for ads, social campaigns, brand content, and cinematic AI films\n\nThe Prompt Playground gives users copy-ready experiments that demonstrate Designly through real creative jobs instead of a feature list\n\nIt shapes creative concepts, dramaturgy, composition, typography, optics, and model physics (Seedance, Kling, Veo, Nano Banana, GPT Image 2), reviews every output critically, and routes targeted revisions\n\nYou can also sanitize annotation-guided inpainting, follow brand guidelines, handle Arabic and RTL layouts, and maintain visual continuity across multi-asset campaigns",
     "privacyPolicyURL": "https://app.prepilot-system-agency.space/privacy",
     "shortDescription": "Learn and art-direct visuals",
     "supportURL": "https://app.prepilot-system-agency.space/support",
