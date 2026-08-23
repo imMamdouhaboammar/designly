@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="148" height="24" viewBox="0 0 148 24" role="img" aria-label="Prompt Playground">
+  <rect x="0.5" y="0.5" width="147" height="23" rx="7.5" fill="#111111" stroke="#111111"/>
+  <circle cx="12" cy="12" r="3" fill="#F2F2F2"/>
+  <text x="21" y="15.2" fill="#F2F2F2" font-family="ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10.5" font-weight="600" letter-spacing=".15">PROMPT PLAYGROUND</text>
+</svg>
