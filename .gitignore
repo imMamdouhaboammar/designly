@@ -57,3 +57,7 @@ Thumbs.db
 # Reference Memory local data (user-specific, not tracked)
 skills/reference-memory/data/
 *.reference-memory.json
+
+# Graphify AST cache
+graphify-out/cache/
+graphify-out/2026-*/

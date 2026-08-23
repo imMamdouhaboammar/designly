@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 AGENTS_DIR = ROOT / ".codex/agents"
 CONFIG_FILE = ROOT / ".codex/config.toml"
 READ_ONLY_AGENTS = [
-    "strategy-planner", "brand-guardian", "taste-analyst", "structure-critic",
+    "strategy-planner", "creative-director", "brand-guardian", "taste-analyst", "structure-critic",
     "craft-director", "arabic-visual-director", "edit-sanitizer", "visual-reviewer"
 ]
 
@@ -31,11 +31,11 @@ def main() -> int:
         print("PASS max_concurrent_agents is 6")
 
     present = [p.stem for p in AGENTS_DIR.glob("*.toml")]
-    if len(present) != 9:
+    if len(present) != 10:
         failures += 1
-        print(f"FAIL expected 9 agents, found {len(present)}")
+        print(f"FAIL expected 10 agents, found {len(present)}")
     else:
-        print("PASS exactly 9 agents present")
+        print("PASS exactly 10 agents present")
 
     for name in READ_ONLY_AGENTS:
         p = AGENTS_DIR / f"{name}.toml"

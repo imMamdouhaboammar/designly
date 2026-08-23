@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Parity test for Designly v4.1 against the preserved v3.2.1 capabilities."""
+"""Parity test for Designly v4.2 against the preserved v3.2.1 capabilities."""
 from __future__ import annotations
 import json
 from pathlib import Path
@@ -38,7 +38,7 @@ def main() -> int:
         print(f"\nParity check: FAIL ({len(failures)} missing components)")
         for f in failures: print(f" - {f}")
         return 1
-    print("\nParity check: PASS (14 skills, 9 agents, 6 shared contracts present; v3.2.1 behavior retained)")
+    print("\nParity check: PASS (15 skills, 10 agents, 6 shared contracts present; v3.2.1 behavior retained)")
     return 0
 
 

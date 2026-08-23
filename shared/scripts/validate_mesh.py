@@ -44,9 +44,10 @@ def validate_routing_graph(errors: list[str]):
     try:
         graph = json.loads(ROUTING_GRAPH.read_text(encoding="utf-8"))
         nodes = graph.get("nodes", {})
-        check(len(nodes) == 14, f"routing graph defines exactly 14 nodes (found {len(nodes)})", errors)
+        check(len(nodes) == 15, f"routing graph defines exactly 15 nodes (found {len(nodes)})", errors)
         check(graph.get("primary_orchestrator") == "designly-director", "primary_orchestrator is designly-director", errors)
         check("edit-sanitizer" in nodes, "edit-sanitizer node exists", errors)
+        check("creative-director" in nodes, "creative-director node exists", errors)
         for node_name, node_data in nodes.items():
             check(isinstance(node_data.get("type"), str), f"node {node_name} has type", errors)
             check(isinstance(node_data.get("agent"), str), f"node {node_name} has agent", errors)
@@ -59,6 +60,8 @@ def validate_routing_graph(errors: list[str]):
             check(target in nodes, f"revision route '{dim}' targets valid node '{target}'", errors)
         for dim in ("edit_scope", "annotation_mapping", "collateral_change"):
             check(routes.get(dim) == "edit-sanitizer", f"{dim} routes to edit-sanitizer", errors)
+        for dim in ("concept_originality", "creative_ideation", "insight_depth"):
+            check(routes.get(dim) == "creative-director", f"{dim} routes to creative-director", errors)
         priorities = graph.get("signal_priorities", [])
         check(len(priorities) == 11, f"signal priorities count is 11 (found {len(priorities)})", errors)
         for idx, prio in enumerate(priorities, start=1):

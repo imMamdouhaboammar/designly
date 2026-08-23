@@ -1,21 +1,16 @@
 {
-  "name": "designly",
-  "version": "4.1.0",
-  "description": "Designly is a commercial Art Direction and Design Neural Mesh plugin with 14 focused Skills, 9 custom Codex agents, Taste Engine, Reference Memory, bounded-edit sanitization, Arabic RTL direction, and independent Visual QA.",
-  "author": {"name": "Mamdouh Abo Ammar"},
-  "keywords": [
-    "art-direction", "design-neural-mesh", "image-generation", "image-editing", "inpainting",
-    "reference-memory", "taste-engine", "brand-design", "typography", "arabic-rtl", "campaign-dna", "visual-qa"
-  ],
-  "skills": "./skills/",
+  "author": {
+    "name": "Mamdouh Abo Ammar"
+  },
+  "description": "Designly is a commercial Art Direction and Design Neural Mesh plugin with 15 focused Skills, 10 custom Codex agents, Cannes-calibrated Creative Direction, 571 Legendary Campaign Canon, Taste Engine, Reference Memory, bounded-edit sanitization, Arabic RTL direction, and independent Visual QA.",
   "interface": {
-    "displayName": "Designly",
-    "shortDescription": "Senior art direction mesh",
-    "longDescription": "Designly v4.1.0 turns commercial art direction into a network of 14 focused Skills and 9 bounded Codex agents led by Designly Director. It combines creative strategy, brand intelligence, evidence-backed Taste Engine analysis, local-first Reference Memory, composition and typography preflight, photography and manipulation craft, Arabic RTL direction, campaign DNA, provider-aware prompt compilation, and independent Visual QA. The Edit Sanitizer converts annotation-guided inpainting and local correction notes into typed bounded EditContracts before execution, rejects ambiguous targets or global-restyle leakage, protects approved source checkpoints, and routes collateral-change failures back to the smallest responsible node.",
-    "developerName": "Mamdouh Abo Ammar",
-    "category": "Creativity",
+    "brandColor": "#111111",
+    "brandColorDark": "#F2F2F2",
     "capabilities": [
       "Art Direction Orchestration",
+      "Cannes-Calibrated Creative Direction",
+      "Structural Ideation & SIT/TRIZ",
+      "571 Legendary Campaign Canon",
       "Creative Brief Strategy",
       "Brand Rule & Logo Audit",
       "Transferable Taste Extraction",
@@ -30,14 +25,40 @@
       "Model Prompt Compilation",
       "Visual QA & Targeted Revision"
     ],
+    "category": "Creativity",
+    "composerIcon": "./.codex-plugin/assets/composer-icon.svg",
     "defaultPrompt": [
       "Art-direct this campaign end-to-end, using specialist review and strict design gates.",
       "Sanitize these annotation notes before editing the image and protect non-target content.",
       "Review this visual critically and route only the smallest necessary correction."
     ],
-    "brandColor": "#111111",
-    "brandColorDark": "#F2F2F2",
-    "composerIcon": "./assets/icon.svg",
-    "logo": "./assets/logo.svg"
-  }
+    "developerName": "Mamdouh Abo Ammar",
+    "displayName": "Designly",
+    "logo": "./.codex-plugin/assets/logo.svg",
+    "longDescription": "Designly helps you turn a brief, idea, or reference into polished visual work for ads, social posts, campaigns, and brand content\n\nIt helps shape the concept, composition, typography, imagery, and overall art direction, then reviews the result and guides precise revisions when something feels off\n\nYou can also use Designly to improve existing images without changing everything else, follow brand guidelines, handle Arabic and RTL layouts, and keep a consistent visual style across multiple assets",
+    "privacyPolicyURL": "https://app.prepilot-system-agency.space/privacy",
+    "shortDescription": "Create better visual designs",
+    "supportURL": "https://app.prepilot-system-agency.space/support",
+    "termsOfServiceURL": "https://app.prepilot-system-agency.space/terms",
+    "websiteURL": "https://app.prepilot-system-agency.space/"
+  },
+  "keywords": [
+    "art-direction",
+    "creative-direction",
+    "cannes-calibration",
+    "design-neural-mesh",
+    "image-generation",
+    "image-editing",
+    "inpainting",
+    "reference-memory",
+    "taste-engine",
+    "brand-design",
+    "typography",
+    "arabic-rtl",
+    "campaign-dna",
+    "visual-qa"
+  ],
+  "name": "designly",
+  "skills": "./skills/",
+  "version": "4.2.0"
 }

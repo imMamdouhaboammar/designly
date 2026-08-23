@@ -1,10 +1,12 @@
 {
-  "version": "3.2.1+v4.1-hardening",
+  "version": "3.2.1+v4.2-hardening",
   "capabilities": {
-    "total_routing_scenarios": 21,
+    "total_routing_scenarios": 22,
     "total_design_preflight_cases": 7,
     "total_release_gate_cases": 15,
     "total_prompt_lint_cases": 4,
+    "creative_direction_supported": true,
+    "cannes_calibration_supported": true,
     "taste_engine_supported": true,
     "reference_memory_supported": true,
     "arabic_rtl_supported": true,
@@ -12,12 +14,12 @@
     "local_edit_sanitizer_required": true
   },
   "required_v4_skill_slugs": [
-    "designly-director", "creative-strategy", "brand-intelligence", "taste-engine", "reference-memory",
+    "designly-director", "creative-strategy", "creative-director", "brand-intelligence", "taste-engine", "reference-memory",
     "composition-director", "typography-director", "photography-director", "manipulation-director",
     "arabic-rtl-director", "campaign-dna", "edit-sanitizer", "prompt-compiler", "visual-qa"
   ],
   "required_v4_agent_slugs": [
-    "designly-director", "strategy-planner", "brand-guardian", "taste-analyst", "structure-critic",
+    "designly-director", "strategy-planner", "creative-director", "brand-guardian", "taste-analyst", "structure-critic",
     "craft-director", "arabic-visual-director", "edit-sanitizer", "visual-reviewer"
   ],
   "hard_gates": {

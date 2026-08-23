@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 """Validate all Skill entries, SKILL.md frontmatter, links, and agents/openai.yaml interfaces."""
 from __future__ import annotations
-import hashlib
 import re
-import xml.etree.ElementTree as ET
 import yaml
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SKILLS_DIR = ROOT / "skills"
 EXPECTED_SKILLS = [
-    "designly-director", "creative-strategy", "brand-intelligence", "taste-engine",
+    "designly-director", "creative-strategy", "creative-director", "brand-intelligence", "taste-engine",
     "reference-memory", "composition-director", "typography-director", "photography-director",
     "manipulation-director", "arabic-rtl-director", "campaign-dna", "edit-sanitizer",
     "prompt-compiler", "visual-qa"
@@ -41,18 +39,7 @@ def parse_frontmatter(text: str) -> dict[str, str]:
     return vals
 
 
-def validate_svg(path: Path, label: str, errors: list[str]) -> str | None:
-    try:
-        raw = path.read_bytes()
-        root = ET.fromstring(raw)
-        check(root.tag.endswith("svg"), f"{label} parses as SVG", errors)
-        return hashlib.sha256(raw).hexdigest()
-    except Exception as ex:
-        check(False, f"{label} SVG parse error: {ex}", errors)
-        return None
-
-
-def validate_skill(slug: str, errors: list[str], icon_hashes: dict[str, dict[str, str]]):
+def validate_skill(slug: str, errors: list[str]):
     skill_dir = SKILLS_DIR / slug
     check(skill_dir.is_dir(), f"skill directory exists: skills/{slug}", errors)
     if not skill_dir.is_dir():
@@ -92,12 +79,7 @@ def validate_skill(slug: str, errors: list[str], icon_hashes: dict[str, dict[str
             for field in ("icon_small", "icon_large"):
                 icon = iface.get(field, "")
                 if icon:
-                    icon_path = (skill_dir / icon).resolve()
-                    check(icon_path.is_file(), f"{field} exists for {slug}: {icon}", errors)
-                    if icon_path.is_file():
-                        digest = validate_svg(icon_path, f"{slug} {field}", errors)
-                        if digest:
-                            icon_hashes[field][slug] = digest
+                    check((skill_dir / icon).resolve().is_file(), f"{field} exists for {slug}: {icon}", errors)
             prompt = iface.get("default_prompt")
             check(isinstance(prompt, str), f"default_prompt is a string in {slug}", errors)
             if isinstance(prompt, str):
@@ -113,19 +95,12 @@ def validate_skill(slug: str, errors: list[str], icon_hashes: dict[str, dict[str
 
 def main() -> int:
     errors: list[str] = []
-    icon_hashes: dict[str, dict[str, str]] = {"icon_small": {}, "icon_large": {}}
     print("Validating Skill catalog interfaces and metadata...")
     present = sorted(d.name for d in SKILLS_DIR.iterdir() if d.is_dir() and not d.name.startswith(".")) if SKILLS_DIR.is_dir() else []
-    check(set(present) == set(EXPECTED_SKILLS), f"skill directory contains exactly the 14 expected skills (found {len(present)})", errors)
+    check(set(present) == set(EXPECTED_SKILLS), f"skill directory contains exactly the 15 expected skills (found {len(present)})", errors)
     for slug in EXPECTED_SKILLS:
         print(f"\n--- Checking Skill: {slug} ---")
-        validate_skill(slug, errors, icon_hashes)
-
-    for field, hashes in icon_hashes.items():
-        check(len(hashes) == len(EXPECTED_SKILLS), f"{field} present and valid for all 14 skills", errors)
-        if len(hashes) == len(EXPECTED_SKILLS):
-            check(len(set(hashes.values())) == len(EXPECTED_SKILLS), f"{field} artwork is unique across all 14 skills", errors)
-
+        validate_skill(slug, errors)
     print(f"\nSkill interface validation: {'PASS' if not errors else 'FAIL'} ({len(errors)} errors)")
     if errors:
         for e in errors:

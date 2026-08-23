@@ -13,6 +13,7 @@ USER BRIEF / FEEDBACK
     v
 [designly-director]
     |
+    +--> [creative-director] (Cannes-calibrated ideation, SIT/TRIZ, 571 canon)
     +--> [creative-strategy]
     +--> [brand-intelligence]
     +--> [taste-engine] <--> [reference-memory]
@@ -47,7 +48,7 @@ IMAGE EXECUTION
 3. Delegate independent read-heavy analysis when the host supports subagents
 4. Fall back to the same Skills sequentially when subagents are unavailable
 5. Merge signals by authority rather than by confidence alone
-6. Refuse specialist usurpation: use the dedicated Skill for composition, type, craft, editing safety or QA
+6. Refuse specialist usurpation: use the dedicated Skill for ideation, composition, type, craft, editing safety or QA
 7. On edits, preserve source lineage and route raw correction notes through `edit-sanitizer` before `prompt-compiler`
 8. On QA failure, rerun only the responsible node unless the concept itself failed
 
@@ -85,7 +86,7 @@ Ask a question only when the unresolved detail materially changes the result or 
 
 ## Generation path
 
-1. Strategy and brand/taste analysis
+1. Creative direction (Cannes calibration, tension mining, SIT/TRIZ ideation), strategy and brand/taste analysis
 2. Structural composition
 3. Typography/Arabic and craft specialists as applicable
 4. Campaign DNA for multi-asset work
@@ -112,7 +113,8 @@ Do not treat correction notes as a normal generation prompt
 
 ## Revision routing
 
-- concept/message -> `creative-strategy`
+- concept/originality/ideation -> `creative-director`
+- strategy/audience/brief -> `creative-strategy`
 - hierarchy/composition -> `composition-director`
 - typography -> `typography-director`
 - Arabic/glyphs -> `arabic-rtl-director`

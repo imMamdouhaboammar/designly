@@ -61,6 +61,17 @@ jobs:
       - name: Visual release gates
         run: python skills/visual-qa/scripts/test_gates.py
 
+      - name: Creative Director unit tests
+        run: python skills/creative-director/scripts/test_creative_director.py
+
+      - name: Reference Memory CRUD tests
+        run: python skills/reference-memory/scripts/test_taste_memory.py
+
+      - name: Taste Engine regressions
+        run: |
+          python skills/taste-engine/scripts/test_taste_lint.py
+          python skills/taste-engine/scripts/test_taste_merge.py
+
       - name: Public plugin preflight
         run: python tools/validate_public_plugin.py .
 
