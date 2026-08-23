@@ -2,6 +2,7 @@
 """Validate the copy-first Designly Prompt Playground product surface."""
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -51,6 +52,8 @@ def main() -> int:
     director = DIRECTOR.read_text(encoding="utf-8")
     plugin = PLUGIN.read_text(encoding="utf-8")
 
+    cards = re.findall(r"^###\s+\d+\.", text, flags=re.MULTILINE)
+    check(len(cards) >= 20, "at least 20 numbered Prompt Cards", failures)
     check(text.count("@Designly") >= 20, "at least 20 copy-ready @Designly prompt examples", failures)
     check(text.count("**Copy prompt**") >= 6, "starter cards expose explicit copy prompts", failures)
     check("## Coverage map" in text, "coverage map is present", failures)
@@ -58,6 +61,8 @@ def main() -> int:
 
     missing = sorted(slug for slug in EXPECTED_SKILLS if f"`{slug}`" not in text)
     check(not missing, f"all 21 Skills are covered by the Playground{': ' + ', '.join(missing) if missing else ''}", failures)
+    check("REF-####" in text and "Reference Memory" in text, "Reference Memory is demonstrated with a stable REF workflow", failures)
+    check("right to left" in text and "Arabic glyph" in text, "Arabic-first RTL behavior is demonstrated", failures)
 
     check("Pathway 0: Prompt Playground" in director, "Designly Director routes discovery to Pathway 0", failures)
     check("references/prompt-playground.md" in director, "Director points to the Playground source of truth", failures)
