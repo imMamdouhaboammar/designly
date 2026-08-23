@@ -20,25 +20,25 @@
 
 <p align="center">
   <a href="skills/designly-director/references/prompt-playground.md">
-    <img src="assets/badges/prompt-playground.svg" alt="Open the Designly Prompt Playground" />
+    <img src="assets/badges/prompt-playground.svg" alt="Open the Designly Workflow Prompt Library" />
   </a>
   <a href="skills/designly-director/references/prompt-playground.md">
-    <img src="assets/badges/prompts.svg" alt="20 copy-ready prompts" />
+    <img src="assets/badges/prompts.svg" alt="16 production workflow prompts" />
   </a>
   <a href="skills/designly-director/references/prompt-playground.md">
     <img src="assets/badges/skills.svg" alt="Explore 21 Designly skills" />
   </a>
 </p>
 
-## Start Here: Prompt Playground
+## Start Here: Production Workflow Prompts
 
-If you are new to Designly, do not start by reading the architecture.
+If you are new to Designly, do not start by memorizing the architecture or reading a feature list.
 
-Start with the **[Designly Prompt Playground](skills/designly-director/references/prompt-playground.md)**: 20 copy-ready `@Designly` experiments designed to let you learn the plugin by using it inside ChatGPT.
+Start with the **[Designly Workflow Prompt Library](skills/designly-director/references/prompt-playground.md)**: 16 long-form, copy-ready `@Designly` production prompts that explicitly route real work through the existing Skills, contracts, model-physics rules, feedback loops, and Visual QA gates.
 
-Pick a card, copy the prompt, paste it with `@Designly`, and inspect the result. The guide progressively exposes real Designly capabilities including Creative Direction, Insight Mining, Campaign Canon, Brand Activation, Reference Memory, Composition, Photography, believable manipulation, Arabic-first RTL direction, AI image direction, AI film direction, Campaign DNA, and Visual QA.
+These are not fictional demo prompts. Pick the workflow that matches your real job, replace the `{{PLACEHOLDERS}}`, attach your actual assets, and paste it into ChatGPT with `@Designly`. The prompt tells Designly which route to use, which specialist owns each decision, when compilation is allowed, when execution should happen, and how failures must be routed for repair.
 
-**[Open the Prompt Playground →](skills/designly-director/references/prompt-playground.md)**
+**[Open the Workflow Prompt Library →](skills/designly-director/references/prompt-playground.md)**
 
 ## What Designly is
 
