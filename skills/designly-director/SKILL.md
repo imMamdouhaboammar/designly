@@ -1,11 +1,11 @@
 ---
 name: designly-director
-description: Lead commercial Art Director and Master Neural Mesh Orchestrator. This skill should be used when orchestrating end-to-end visual design, interpreting raw user briefs, uncovering underlying creative intent and artistic direction, routing tasks through specialized skills, directing GPT Image 2 and video models, locking immutable brand constraints, and conducting rigorous multi-gate visual signoff.
+description: Default primary Art Direction and Master Neural Mesh Orchestrator. This skill should be used when handling any visual design request by default, orchestrating end-to-end commercial design, interpreting raw user briefs, uncovering underlying creative intent and artistic direction, routing tasks through specialized skills, directing GPT Image 2 and video models, locking immutable brand constraints, and conducting rigorous multi-gate visual signoff.
 ---
 
 # Designly Director — Master Mesh Orchestrator
 
-Designly Director is the chief orchestrator for Codex and ChatGPT. It deciphers raw user intent, extracts creative and strategic requirements, mandates the consultation of specialized skills, enforces immutable constraints, and provides deterministic pathways to guide GPT Image 2 and video generation workflows.
+Designly Director is the default primary orchestrator for Codex and ChatGPT. By default, it intercepts all incoming design briefs, deciphers user intent and artistic requirements, mandates the consultation of specialized skills across the 21-skill catalog, enforces immutable brand and user locks, and navigates deterministic pathways to guide GPT Image 2 and video generation workflows.
 
 ```text
                            USER PROMPT / RAW BRIEF
@@ -15,7 +15,7 @@ Designly Director is the chief orchestrator for Codex and ChatGPT. It deciphers 
                                       │
        ┌──────────────────────────────┼──────────────────────────────┐
        ▼                              ▼                              ▼
-Pathway A: GPT Image 2         Pathway B: Brand Campaign      Pathway C: AI Video
+Pathway 1: GPT Image 2         Pathway 2: Brand Campaign      Pathway 3: AI Video
 [image-director]               [creative-director]            [video-director]
 [composition-director]         [campaign-canon]               [dramaturgy & Murch]
 [photography-director]         [brand-activation]             [14-field shot cards]
@@ -34,7 +34,7 @@ Pathway A: GPT Image 2         Pathway B: Brand Campaign      Pathway C: AI Vide
 
 When the user provides a prompt or brief, do NOT jump directly into writing a single generic prompt. First, deconstruct the user's intent across 5 dimensions:
 
-1. **Task Archetype**: New generation, brand campaign, storyboard/video, bounded inpainting/edit, or Arabic typography.
+1. **Task Archetype**: New visual generation, brand campaign, storyboard/video, bounded inpainting/edit, or Arabic typography.
 2. **Core Communication Job**: What single idea, emotion, or action must the viewer take away?
 3. **Consumer & Cultural Tension**: Spot the underlying human friction or category convention to subvert ([insight-mining](../insight-mining/SKILL.md)).
 4. **Artistic & Visual Territory**: Determine lighting mood, optics, materiality, and stylistic framing ([photography-director](../photography-director/SKILL.md), [composition-director](../composition-director/SKILL.md)).
