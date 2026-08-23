@@ -18,6 +18,28 @@
   <img src="https://img.shields.io/badge/Arabic_RTL-native-111111?style=flat-square" alt="Arabic RTL" />
 </p>
 
+<p align="center">
+  <a href="skills/designly-director/references/prompt-playground.md">
+    <img src="assets/badges/prompt-playground.svg" alt="Open the Designly Prompt Playground" />
+  </a>
+  <a href="skills/designly-director/references/prompt-playground.md">
+    <img src="assets/badges/prompts.svg" alt="20 copy-ready prompts" />
+  </a>
+  <a href="skills/designly-director/references/prompt-playground.md">
+    <img src="assets/badges/skills.svg" alt="Explore 21 Designly skills" />
+  </a>
+</p>
+
+## Start Here: Prompt Playground
+
+If you are new to Designly, do not start by reading the architecture.
+
+Start with the **[Designly Prompt Playground](skills/designly-director/references/prompt-playground.md)**: 20 copy-ready `@Designly` experiments designed to let you learn the plugin by using it inside ChatGPT.
+
+Pick a card, copy the prompt, paste it with `@Designly`, and inspect the result. The guide progressively exposes real Designly capabilities including Creative Direction, Insight Mining, Campaign Canon, Brand Activation, Reference Memory, Composition, Photography, believable manipulation, Arabic-first RTL direction, AI image direction, AI film direction, Campaign DNA, and Visual QA.
+
+**[Open the Prompt Playground →](skills/designly-director/references/prompt-playground.md)**
+
 ## What Designly is
 
 Designly is a skills-only ChatGPT and Codex plugin for commercial art direction, creative ideation, consumer insight mining, brand activation, narrative design, AI video directing, model-physics image prompting, brand visual systems, product advertising, bounded image manipulation, Arabic-first design, and rigorous visual QA.

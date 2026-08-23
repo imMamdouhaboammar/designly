@@ -9,6 +9,8 @@ ROOT = Path(__file__).resolve().parents[2]
 PLAYGROUND = ROOT / "skills" / "designly-director" / "references" / "prompt-playground.md"
 DIRECTOR = ROOT / "skills" / "designly-director" / "SKILL.md"
 PLUGIN = ROOT / ".codex-plugin" / "plugin.json"
+README = ROOT / "README.md"
+BADGES = ROOT / "assets" / "badges"
 
 EXPECTED_SKILLS = {
     "designly-director",
@@ -34,6 +36,16 @@ EXPECTED_SKILLS = {
     "visual-qa",
 }
 
+SECTION_BADGES = {
+    "section-start.svg": "#start-here",
+    "section-learn.svg": "#learn-one-capability-by-doing-it",
+    "section-advanced.svg": "#advanced-combinations",
+    "section-chatgpt.svg": "#prompt-card-behavior-in-chatgpt",
+    "section-coverage.svg": "#coverage-map",
+}
+
+GUIDE_PATH = "skills/designly-director/references/prompt-playground.md"
+
 
 def check(condition: bool, message: str, failures: list[str]) -> None:
     print(("PASS " if condition else "FAIL ") + message)
@@ -45,12 +57,14 @@ def main() -> int:
     failures: list[str] = []
 
     check(PLAYGROUND.is_file(), "Prompt Playground reference exists", failures)
-    if not PLAYGROUND.is_file():
+    check(README.is_file(), "README exists", failures)
+    if not PLAYGROUND.is_file() or not README.is_file():
         return 1
 
     text = PLAYGROUND.read_text(encoding="utf-8")
     director = DIRECTOR.read_text(encoding="utf-8")
     plugin = PLUGIN.read_text(encoding="utf-8")
+    readme = README.read_text(encoding="utf-8")
 
     cards = re.findall(r"^###\s+\d+\.", text, flags=re.MULTILINE)
     check(len(cards) >= 20, "at least 20 numbered Prompt Cards", failures)
@@ -64,9 +78,17 @@ def main() -> int:
     check("REF-####" in text and "Reference Memory" in text, "Reference Memory is demonstrated with a stable REF workflow", failures)
     check("right to left" in text and "Arabic glyph" in text, "Arabic-first RTL behavior is demonstrated", failures)
 
+    for filename, anchor in SECTION_BADGES.items():
+        check((BADGES / filename).is_file(), f"section badge exists: {filename}", failures)
+        check(filename in text and anchor in text, f"Playground navigation links {filename} to {anchor}", failures)
+
     check("Pathway 0: Prompt Playground" in director, "Designly Director routes discovery to Pathway 0", failures)
     check("references/prompt-playground.md" in director, "Director points to the Playground source of truth", failures)
     check("Prompt Playground" in plugin, "plugin marketplace interface surfaces the Playground", failures)
+
+    check(GUIDE_PATH in readme, "README links directly to the Prompt Playground guide", failures)
+    check("Start Here: Prompt Playground" in readme, "README exposes a Start Here product entrypoint", failures)
+    check("assets/badges/prompt-playground.svg" in readme, "README surfaces the clickable Playground badge", failures)
 
     forbidden_feature_dump = "list all 21 skills first"
     check(forbidden_feature_dump not in text.lower(), "Playground is not framed as a feature dump", failures)

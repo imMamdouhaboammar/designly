@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="122" height="24" viewBox="0 0 122 24" role="img" aria-label="Learn by Doing">
+  <rect x="0.5" y="0.5" width="121" height="23" rx="7.5" fill="#FFFFFF" stroke="#CFCFCF"/>
+  <rect x="8.5" y="8.5" width="3" height="3" rx="0.75" fill="#111111"/>
+  <rect x="12.5" y="12.5" width="3" height="3" rx="0.75" fill="#111111"/>
+  <text x="22" y="15.2" fill="#111111" font-family="ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10.5" font-weight="600" letter-spacing=".15">LEARN BY DOING</text>
+</svg>
