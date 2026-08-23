@@ -32,10 +32,10 @@ When presenting cards in chat, show 3 to 6 cards at a time unless the user expli
 **Copy prompt**
 
 ```text
-@Designly Analyze the reference image I attached. Do not copy the subject or layout literally. Extract the transferable taste rules: composition, lighting, material feel, palette behavior, typography relationship, negative space, visual tension, and what makes the reference feel expensive or distinctive. Then use those rules to create a completely new visual direction for a different brand category. Finish by showing me what came from Taste Engine versus Composition, Photography, and Brand Intelligence.
+@Designly Analyze the reference image I attached. Do not copy the subject or layout literally. Extract the transferable taste rules: composition, lighting, material feel, palette behavior, typography relationship, negative space, visual tension, and what makes the reference feel expensive or distinctive. Save those reusable rules in Reference Memory under a stable REF-#### ID and show me the ID plus a one-line prompt I could use in a later chat to recall it. Then use the saved rules to create a completely new visual direction for a different brand category. Finish by showing me what came from Taste Engine, Reference Memory, Composition, Photography, and Brand Intelligence.
 ```
 
-**Shows**: taste engine, reference deconstruction, composition, photography, brand intelligence.
+**Shows**: taste engine, reference memory, reference deconstruction, composition, photography, brand intelligence.
 
 ### 3. Build a campaign key visual from a raw brief
 
@@ -209,7 +209,7 @@ The Playground should collectively expose all 21 Skills across its cards:
 - `visual-storytelling`: 6, 19, 20
 - `brand-intelligence`: 2, 18, 20
 - `taste-engine`: 2, 17, 20
-- `reference-memory`: 2, 17
+- `reference-memory`: 2
 - `composition-director`: 1, 3, 4, 5, 11, 20
 - `typography-director`: 4, 11, 18, 20
 - `photography-director`: 2, 5, 12, 20
