@@ -36,15 +36,90 @@ EXPECTED_SKILLS = {
     "visual-qa",
 }
 
-ROLE_AWARE_PIPELINES = {
-    "new_commercial_campaign",
-    "brand_activation_stunt",
-    "arabic_first_poster",
-    "narrative_storyboard",
-    "bounded_image_edit",
-    "cinematic_video_spot",
-    "multi_panel_visual_campaign",
+PIPELINE_ROUTES = {
+    "new_commercial_campaign": [
+        "designly-director",
+        "creative-strategy",
+        "insight-mining",
+        "creative-director",
+        "campaign-canon",
+        "brand-intelligence",
+        "taste-engine",
+        "composition-director",
+        "typography-director",
+        "photography-director",
+        "image-director",
+        "prompt-compiler",
+        "visual-qa",
+    ],
+    "brand_activation_stunt": [
+        "designly-director",
+        "insight-mining",
+        "brand-activation",
+        "campaign-canon",
+        "brand-intelligence",
+        "manipulation-director",
+        "prompt-compiler",
+        "visual-qa",
+    ],
+    "arabic_first_poster": [
+        "designly-director",
+        "creative-strategy",
+        "insight-mining",
+        "creative-director",
+        "brand-intelligence",
+        "composition-director",
+        "arabic-rtl-director",
+        "typography-director",
+        "photography-director",
+        "prompt-compiler",
+        "visual-qa",
+    ],
+    "narrative_storyboard": [
+        "designly-director",
+        "creative-strategy",
+        "insight-mining",
+        "visual-storytelling",
+        "campaign-dna",
+        "composition-director",
+        "photography-director",
+        "image-director",
+        "prompt-compiler",
+        "visual-qa",
+    ],
+    "bounded_image_edit": [
+        "designly-director",
+        "edit-sanitizer",
+        "arabic-rtl-director",
+        "image-director",
+        "prompt-compiler",
+        "visual-qa",
+    ],
+    "cinematic_video_spot": [
+        "designly-director",
+        "creative-strategy",
+        "insight-mining",
+        "creative-director",
+        "visual-storytelling",
+        "image-director",
+        "video-director",
+        "prompt-compiler",
+        "visual-qa",
+    ],
+    "multi_panel_visual_campaign": [
+        "designly-director",
+        "creative-strategy",
+        "brand-intelligence",
+        "taste-engine",
+        "image-director",
+        "composition-director",
+        "typography-director",
+        "prompt-compiler",
+        "visual-qa",
+    ],
 }
+
+ROLE_AWARE_PIPELINES = set(PIPELINE_ROUTES)
 
 SECTION_BADGES = {
     "section-start.svg": "#core-orchestration-workflows",
@@ -63,6 +138,15 @@ def check(condition: bool, message: str, failures: list[str]) -> None:
         failures.append(message)
 
 
+def route_preserves_order(route_line: str, expected_skills: list[str]) -> bool:
+    cursor = -1
+    for skill in expected_skills:
+        cursor = route_line.find(f"`{skill}`", cursor + 1)
+        if cursor < 0:
+            return False
+    return True
+
+
 def main() -> int:
     failures: list[str] = []
 
@@ -77,14 +161,35 @@ def main() -> int:
     readme = README.read_text(encoding="utf-8")
 
     workflows = re.findall(r"^###\s+WF-\d{2}\b", text, flags=re.MULTILINE)
+    route_lines = [line for line in text.splitlines() if line.startswith("**Route:**")]
+
     check(len(workflows) >= 16, "at least 16 production Workflow Prompts", failures)
     check(text.count("@Designly") >= 16, "at least 16 copy-ready @Designly workflow prompts", failures)
-    check(text.count("**Route:**") >= 16, "every workflow declares its Designly route", failures)
+    check(text.count("**Copy prompt**") >= 16, "every production workflow exposes a copy prompt", failures)
+    check(len(route_lines) >= 16, "every workflow declares its Designly route", failures)
     check(text.count("**Use when:**") >= 16, "every workflow declares when to use it", failures)
     check(text.count("**Required inputs:**") >= 16, "every workflow declares required inputs", failures)
 
-    for pipeline in sorted(ROLE_AWARE_PIPELINES):
-        check(pipeline in text, f"role-aware pipeline is productized: {pipeline}", failures)
+    for pipeline, expected_route in PIPELINE_ROUTES.items():
+        matches = [line for line in route_lines if f"`{pipeline}`" in line]
+        check(len(matches) == 1, f"role-aware pipeline has one declared workflow route: {pipeline}", failures)
+        if matches:
+            check(
+                route_preserves_order(matches[0], expected_route),
+                f"workflow preserves routing-graph Skill order: {pipeline}",
+                failures,
+            )
+
+    unknown_route_tokens: set[str] = set()
+    for line in route_lines:
+        for token in re.findall(r"`([^`]+)`", line):
+            if token not in EXPECTED_SKILLS and token not in ROLE_AWARE_PIPELINES:
+                unknown_route_tokens.add(token)
+    check(
+        not unknown_route_tokens,
+        f"route metadata invents no Skills or pipeline names{': ' + ', '.join(sorted(unknown_route_tokens)) if unknown_route_tokens else ''}",
+        failures,
+    )
 
     missing = sorted(slug for slug in EXPECTED_SKILLS if f"`{slug}`" not in text)
     check(not missing, f"all 21 Skills appear in grounded workflow coverage{': ' + ', '.join(missing) if missing else ''}", failures)
