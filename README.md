@@ -6,24 +6,24 @@
 
 <p align="center">
   <strong>Art direction for image-generation workflows that need judgment, not prompt decoration</strong><br/>
-  15 focused Skills, 10 bounded Codex agents, Cannes-calibrated Creative Direction, 571 Legendary Campaign Canon, typed handoffs, preflight, edit sanitization, and independent visual QA
+  19 focused Skills, 14 bounded Codex agents, Cannes-calibrated Creative Direction, 571 Legendary Campaign Canon, Insight Mining, Brand Activation, Visual Storytelling, typed handoffs, preflight, edit sanitization, and independent visual QA
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/v4.2.0-production-111111?style=flat-square" alt="version 4.2.0" />
-  <img src="https://img.shields.io/badge/15_Skills-modular-111111?style=flat-square" alt="15 skills" />
-  <img src="https://img.shields.io/badge/10_Agents-bounded-111111?style=flat-square" alt="10 agents" />
+  <img src="https://img.shields.io/badge/v4.3.0-production-111111?style=flat-square" alt="version 4.3.0" />
+  <img src="https://img.shields.io/badge/19_Skills-modular-111111?style=flat-square" alt="19 skills" />
+  <img src="https://img.shields.io/badge/14_Agents-bounded-111111?style=flat-square" alt="14 agents" />
   <img src="https://img.shields.io/badge/571_Campaigns-canonical-111111?style=flat-square" alt="571 campaigns" />
   <img src="https://img.shields.io/badge/Arabic_RTL-native-111111?style=flat-square" alt="Arabic RTL" />
 </p>
 
 ## What Designly is
 
-Designly is a skills-only ChatGPT/Codex plugin for commercial art direction, creative ideation, brand visual work, campaign imagery, product advertising, image manipulation, Arabic-first design, and visual review.
+Designly is a skills-only ChatGPT/Codex plugin for commercial art direction, creative ideation, consumer insight mining, brand activation, campaign narrative design, brand visual work, product advertising, image manipulation, Arabic-first design, and visual review.
 
 It does not treat image generation as a single-prompt task.
 
-The Director locks the brief, delegates bounded specialist jobs (including Cannes-calibrated ideation and anti-derivative checks against 571 legendary campaigns), merges typed recommendations, compiles approved visual direction, and submits the actual output to independent QA.
+The Director locks the brief, delegates bounded specialist jobs (including Cannes-calibrated ideation, consumer tension mining, non-advertising activation diagnostics, and anti-derivative checks against 571 legendary campaigns), merges typed recommendations, compiles approved visual direction, and submits the actual output to independent QA.
 
 For existing-image corrections, Designly has a dedicated Edit Sanitizer so annotation notes and inpainting requests cannot flow directly into execution without scope checks.
 
@@ -35,10 +35,14 @@ Brief
   v
 Designly Director
   |
-  +--> Creative Director (Cannes/D&AD scoring, SIT/TRIZ, 571 campaign canon)
-  +--> Creative Strategy
-  +--> Brand Intelligence
-  +--> Taste Engine <--> Reference Memory
+  +--> Creative Director (Cannes/D&AD scoring, SIT/TRIZ structural methods)
+  +--> Insight Mining (Tension spotting, JTBD & Mark Pollard 4-points)
+  +--> Campaign Canon (571 canonical campaigns & P01-P18 pattern benchmark)
+  +--> Brand Activation (PR stunts, brand utility, experiential diagnostics)
+  +--> Visual Storytelling (Narrative arcs, Story Spine, Sparkline, Pixar rules)
+  +--> Creative Strategy (Brief deconstruction, message hierarchy)
+  +--> Brand Intelligence (Brand rules, product identity, logo behavior)
+  +--> Taste Engine <--> Reference Memory (Transferable rules & REF IDs)
   |
   v
 Composition Director
@@ -68,12 +72,16 @@ Visual QA
   +--> FAIL: RevisionRequest to the smallest responsible specialist
 ```
 
-## 15 Skills
+## 19 Skills
 
 | Skill | Responsibility |
 |---|---|
 | `designly-director` | Intake, locks, orchestration, conflict resolution, final signoff |
-| `creative-director` | Cannes/HumanKind calibration, structural ideation (SIT/TRIZ), 571 campaign canon |
+| `creative-director` | Cannes/HumanKind calibration, structural ideation (SIT/TRIZ), recursive refinement |
+| `insight-mining` | Consumer tension spotting (cultural, category, human), JTBD, Pollard 4-points |
+| `campaign-canon` | 571 canonical campaigns, P01-P18 pattern map, anti-derivative benchmarking |
+| `brand-activation` | Experiential stunts, brand utility, ambient media, non-advertising diagnostics |
+| `visual-storytelling` | 6 narrative frameworks (Story Spine, Sparkline, Freytag, Monroe), emotional tiers |
 | `creative-strategy` | Objective, audience, primary message, concept territory |
 | `brand-intelligence` | Brand rules, product identity, logo behavior, brand-off test |
 | `taste-engine` | Evidence-backed transferable rules from references |
@@ -88,14 +96,18 @@ Visual QA
 | `prompt-compiler` | Approved direction or EditContract to host/model instructions |
 | `visual-qa` | Independent scoring, hard gates, slop veto, revision routing |
 
-Every Skill has its own `agents/openai.yaml` interface configuration.
+Every Skill has its own `agents/openai.yaml` interface configuration and specialized SVG logo.
 
-## 10 Codex agents
+## 14 Codex agents
 
 | Agent | Boundary |
 |---|---|
 | `designly-director` | Orchestration and state ownership |
 | `creative-director` | Read-only structural ideation & Cannes scoring calibration |
+| `insight-miner` | Read-only consumer tension spotting & insight formulation |
+| `canon-analyst` | Read-only 571 campaign canon & pattern saturation analysis |
+| `activation-strategist` | Read-only experiential activations & non-advertising diagnostics |
+| `story-architect` | Read-only narrative arcs & storytelling frameworks |
 | `strategy-planner` | Read-only strategy analysis |
 | `brand-guardian` | Read-only brand/product audit and vetoes |
 | `taste-analyst` | Read-only reference/taste analysis |
@@ -114,6 +126,9 @@ Designly deliberately rejects attractive-looking output when the communication o
 Applicable gates include:
 - brief and primary-message accuracy
 - insight depth and concept originality
+- pattern saturation threshold enforcement (caps on P09, P11, P16)
+- non-advertising intrinsic utility validation
+- narrative coherence and emotional tier specificity
 - hierarchy and composition floors
 - typography and exact-copy checks
 - Arabic glyph and RTL checks
@@ -147,6 +162,10 @@ python3 evals/run_mesh_evals.py
 python3 skills/prompt-compiler/scripts/test_prompt_lint.py
 python3 skills/visual-qa/scripts/test_gates.py
 python3 skills/creative-director/scripts/test_creative_director.py
+python3 skills/insight-mining/scripts/test_insight_mining.py
+python3 skills/campaign-canon/scripts/test_campaign_canon.py
+python3 skills/brand-activation/scripts/test_brand_activation.py
+python3 skills/visual-storytelling/scripts/test_visual_storytelling.py
 python3 tools/validate_public_plugin.py .
 ```
 
@@ -169,14 +188,18 @@ designly/
 ├── .codex-plugin/plugin.json
 ├── .codex/
 │   ├── config.toml
-│   └── agents/                  10 custom Codex agents
+│   └── agents/                  14 custom Codex agents
 ├── .github/workflows/ci.yml
 ├── shared/
 │   ├── contracts/
 │   ├── references/
 │   └── scripts/
-├── skills/                      15 discoverable Skills
-│   ├── creative-director/       SIT/TRIZ + 571-case campaign canon
+├── skills/                      19 discoverable Skills
+│   ├── creative-director/       SIT/TRIZ + Cannes scoring
+│   ├── insight-mining/          Tension spotting & JTBD
+│   ├── campaign-canon/          571-case campaign canon + MOCs
+│   ├── brand-activation/        PR stunts & brand utility
+│   ├── visual-storytelling/     Narrative frameworks & storyboards
 │   └── ...
 ├── evals/
 ├── assets/

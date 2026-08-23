@@ -13,7 +13,11 @@ USER BRIEF / FEEDBACK
     v
 [designly-director]
     |
-    +--> [creative-director] (Cannes-calibrated ideation, SIT/TRIZ, 571 canon)
+    +--> [creative-director] (Cannes/HumanKind calibration, SIT/TRIZ)
+    +--> [insight-mining] (Tension spotting & Pollard 4-points)
+    +--> [campaign-canon] (571 legendary campaigns & pattern benchmarking)
+    +--> [brand-activation] (PR stunts, brand utility, experiential)
+    +--> [visual-storytelling] (Narrative arcs, Story Spine, Sparkline)
     +--> [creative-strategy]
     +--> [brand-intelligence]
     +--> [taste-engine] <--> [reference-memory]
@@ -86,7 +90,7 @@ Ask a question only when the unresolved detail materially changes the result or 
 
 ## Generation path
 
-1. Creative direction (Cannes calibration, tension mining, SIT/TRIZ ideation), strategy and brand/taste analysis
+1. Creative direction (Cannes calibration, tension mining, SIT/TRIZ ideation, canon benchmarking), strategy and brand/taste analysis
 2. Structural composition
 3. Typography/Arabic and craft specialists as applicable
 4. Campaign DNA for multi-asset work
@@ -114,6 +118,10 @@ Do not treat correction notes as a normal generation prompt
 ## Revision routing
 
 - concept/originality/ideation -> `creative-director`
+- insight depth/tensions -> `insight-mining`
+- pattern saturation/canon -> `campaign-canon`
+- activation mechanics -> `brand-activation`
+- narrative arc/storyboard -> `visual-storytelling`
 - strategy/audience/brief -> `creative-strategy`
 - hierarchy/composition -> `composition-director`
 - typography -> `typography-director`

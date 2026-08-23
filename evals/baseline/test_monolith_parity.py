@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Parity test for Designly v4.2 against the preserved v3.2.1 capabilities."""
+"""Parity test for Designly v4.3 against the preserved v3.2.1 capabilities."""
 from __future__ import annotations
 import json
 from pathlib import Path
@@ -17,13 +17,17 @@ def main() -> int:
 
     for slug in spec.get("required_v4_skill_slugs", []):
         for rel in (f"skills/{slug}/SKILL.md", f"skills/{slug}/agents/openai.yaml"):
-            if not (ROOT / rel).is_file(): failures.append(f"Missing {rel}")
-            else: print(f"PASS {rel}")
+            if not (ROOT / rel).is_file():
+                failures.append(f"Missing {rel}")
+            else:
+                print(f"PASS {rel}")
 
     for slug in spec.get("required_v4_agent_slugs", []):
         rel = f".codex/agents/{slug}.toml"
-        if not (ROOT / rel).is_file(): failures.append(f"Missing {rel}")
-        else: print(f"PASS {rel}")
+        if not (ROOT / rel).is_file():
+            failures.append(f"Missing {rel}")
+        else:
+            print(f"PASS {rel}")
 
     required_contracts = [
         "design-context.schema.json", "signal-packet.schema.json", "design-lock.schema.json",
@@ -31,14 +35,17 @@ def main() -> int:
     ]
     for name in required_contracts:
         rel = f"shared/contracts/{name}"
-        if not (ROOT / rel).is_file(): failures.append(f"Missing {rel}")
-        else: print(f"PASS {rel}")
+        if not (ROOT / rel).is_file():
+            failures.append(f"Missing {rel}")
+        else:
+            print(f"PASS {rel}")
 
     if failures:
         print(f"\nParity check: FAIL ({len(failures)} missing components)")
-        for f in failures: print(f" - {f}")
+        for f in failures:
+            print(f" - {f}")
         return 1
-    print("\nParity check: PASS (15 skills, 10 agents, 6 shared contracts present; v3.2.1 behavior retained)")
+    print(f"\nParity check: PASS ({len(spec.get('required_v4_skill_slugs', []))} skills, {len(spec.get('required_v4_agent_slugs', []))} agents, {len(required_contracts)} shared contracts present; v3.2.1 behavior retained)")
     return 0
 
 

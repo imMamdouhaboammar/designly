@@ -8,7 +8,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 SKILLS_DIR = ROOT / "skills"
 EXPECTED_SKILLS = [
-    "designly-director", "creative-strategy", "creative-director", "brand-intelligence", "taste-engine",
+    "designly-director", "creative-strategy", "creative-director", "insight-mining", "campaign-canon",
+    "brand-activation", "visual-storytelling", "brand-intelligence", "taste-engine",
     "reference-memory", "composition-director", "typography-director", "photography-director",
     "manipulation-director", "arabic-rtl-director", "campaign-dna", "edit-sanitizer",
     "prompt-compiler", "visual-qa"
@@ -97,7 +98,7 @@ def main() -> int:
     errors: list[str] = []
     print("Validating Skill catalog interfaces and metadata...")
     present = sorted(d.name for d in SKILLS_DIR.iterdir() if d.is_dir() and not d.name.startswith(".")) if SKILLS_DIR.is_dir() else []
-    check(set(present) == set(EXPECTED_SKILLS), f"skill directory contains exactly the 15 expected skills (found {len(present)})", errors)
+    check(set(present) == set(EXPECTED_SKILLS), f"skill directory contains exactly the 19 expected skills (found {len(present)})", errors)
     for slug in EXPECTED_SKILLS:
         print(f"\n--- Checking Skill: {slug} ---")
         validate_skill(slug, errors)

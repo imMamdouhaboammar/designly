@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Verify 15 Skill catalog triggers and focused discovery."""
+"""Verify 19 Skill catalog triggers and focused discovery."""
 from __future__ import annotations
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SKILLS_DIR = ROOT / "skills"
 EXPECTED_SKILLS = [
-    "designly-director", "creative-strategy", "creative-director", "brand-intelligence", "taste-engine",
+    "designly-director", "creative-strategy", "creative-director", "insight-mining", "campaign-canon",
+    "brand-activation", "visual-storytelling", "brand-intelligence", "taste-engine",
     "reference-memory", "composition-director", "typography-director", "photography-director",
     "manipulation-director", "arabic-rtl-director", "campaign-dna", "edit-sanitizer",
     "prompt-compiler", "visual-qa"
@@ -14,7 +15,11 @@ EXPECTED_SKILLS = [
 ROUTING_PROMPTS = [
     ("Art-direct this launch campaign end-to-end with full team orchestration", "designly-director"),
     ("Define the marketing objective, target audience persona, and primary message hierarchy", "creative-strategy"),
-    ("Brainstorm Cannes-calibrated creative concepts using SIT/TRIZ lateral ideation and anti-derivative case checks", "creative-director"),
+    ("Brainstorm Cannes-calibrated creative concepts using SIT/TRIZ lateral ideation", "creative-director"),
+    ("Mine the consumer tension, analyze JTBD, and apply Mark Pollard 4-points", "insight-mining"),
+    ("Lookup 571 campaign canon, check P01-P18 patterns, and check pattern saturation", "campaign-canon"),
+    ("Design a PR stunt, brand utility, or experiential activation and apply non-advertising test", "brand-activation"),
+    ("Structure a narrative arc using Story Spine, Sparkline, or Pixar storytelling rules", "visual-storytelling"),
     ("Audit this design against documented brand guidelines and verify logo clearspace", "brand-intelligence"),
     ("Extract reusable taste rules and lighting patterns from these reference images", "taste-engine"),
     ("Recall my saved reference REF-1042 and show its recorded design jobs", "reference-memory"),
@@ -42,7 +47,15 @@ def classify_prompt(prompt: str) -> str:
         return "taste-engine"
     if any(k in p for k in ["brand guidelines", "brand rules", "logo clearspace", "brand fidelity"]):
         return "brand-intelligence"
-    if any(k in p for k in ["cannes", "triz", "sit/triz", "lateral ideation", "anti-derivative", "creative-director", "humankind"]):
+    if any(k in p for k in ["mine the consumer", "tension", "jtbd", "pollard", "insight-mining"]):
+        return "insight-mining"
+    if any(k in p for k in ["571 campaign", "campaign canon", "p01-p18", "pattern saturation"]):
+        return "campaign-canon"
+    if any(k in p for k in ["pr stunt", "brand utility", "experiential activation", "non-advertising"]):
+        return "brand-activation"
+    if any(k in p for k in ["narrative arc", "story spine", "sparkline", "pixar storytelling", "freytag"]):
+        return "visual-storytelling"
+    if any(k in p for k in ["cannes", "triz", "sit/triz", "lateral ideation", "creative-director", "humankind"]):
         return "creative-director"
     if any(k in p for k in ["objective", "target audience", "message hierarchy", "concept territory"]):
         return "creative-strategy"

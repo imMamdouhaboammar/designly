@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Deterministic plugin ZIP packager for Designly v4.0.0.
+Deterministic plugin ZIP packager for Designly.
 """
 from __future__ import annotations
 import hashlib
@@ -11,13 +11,13 @@ import zipfile
 from pathlib import Path
 
 FIXED_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
-EXCLUDE_DIRS = {".git", ".superpowers", ".planning", "__pycache__", ".pytest_cache", ".ruff_cache"}
-EXCLUDE_EXTS = {".pyc", ".pyo", ".tmp"}
+EXCLUDE_DIRS = {".git", ".superpowers", ".planning", "__pycache__", ".pytest_cache", ".ruff_cache", "dist", "build"}
+EXCLUDE_EXTS = {".pyc", ".pyo", ".tmp", ".zip", ".tar.gz"}
 EXCLUDE_FILES = {".DS_Store", ".gitignore", "Designly-Multi-Skill-Neural-Mesh-Implementation-Plan.md"}
 
 def main() -> int:
     root = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
-    out = Path(sys.argv[2] if len(sys.argv) > 2 else "dist/designly-v4.0.0.zip").resolve()
+    out = Path(sys.argv[2] if len(sys.argv) > 2 else "dist/designly-v4.3.0.zip").resolve()
     out.parent.mkdir(parents=True, exist_ok=True)
     
     dirs = set()

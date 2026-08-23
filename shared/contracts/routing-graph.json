@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "4.2.0",
+  "version": "4.3.0",
   "name": "Design Neural Mesh Routing Graph",
   "primary_orchestrator": "designly-director",
   "nodes": {
@@ -21,9 +21,37 @@
     "creative-director": {
       "type": "specialist",
       "agent": "creative-director",
-      "description": "Cannes-calibrated ideation, structural concept generation (SIT/TRIZ/Bisociation), 7-level idea taxonomy, and campaign canon anti-derivative preflight.",
+      "description": "Cannes-calibrated ideation, structural concept generation (SIT/TRIZ/Bisociation), 7-level idea taxonomy, and multi-round recursive refinement.",
       "reads": ["objective", "audience", "platform", "cultural_context", "brand_state"],
       "writes": ["strategy_state", "primary_message", "desired_action"]
+    },
+    "insight-mining": {
+      "type": "specialist",
+      "agent": "insight-miner",
+      "description": "Consumer tension spotting (cultural, category, human), JTBD, Mark Pollard Four Points, and insight synthesis.",
+      "reads": ["brief", "audience", "cultural_context"],
+      "writes": ["strategy_state.insight", "primary_message"]
+    },
+    "campaign-canon": {
+      "type": "specialist",
+      "agent": "canon-analyst",
+      "description": "571 canonical advertising campaigns, P01-P18 pattern taxonomy, anti-derivative benchmarking, and saturation caps.",
+      "reads": ["strategy_state", "brief", "brand_state"],
+      "writes": ["strategy_state.canon_benchmark"]
+    },
+    "brand-activation": {
+      "type": "specialist",
+      "agent": "activation-strategist",
+      "description": "Experiential campaigns, PR stunts, brand utility, cultural objects, and non-advertising diagnostics.",
+      "reads": ["strategy_state", "brand_state", "brief"],
+      "writes": ["strategy_state.activation"]
+    },
+    "visual-storytelling": {
+      "type": "specialist",
+      "agent": "story-architect",
+      "description": "Narrative architecture, 6 storytelling frameworks (Story Spine, Sparkline, Freytag, Monroe), and emotional tiers.",
+      "reads": ["strategy_state", "composition_state", "brief"],
+      "writes": ["strategy_state.narrative_arc"]
     },
     "brand-intelligence": {
       "type": "specialist",
@@ -127,7 +155,10 @@
     "strategy": "creative-strategy",
     "concept_originality": "creative-director",
     "creative_ideation": "creative-director",
-    "insight_depth": "creative-director",
+    "insight_depth": "insight-mining",
+    "pattern_saturation": "campaign-canon",
+    "activation_mechanic": "brand-activation",
+    "narrative_arc": "visual-storytelling",
     "hierarchy": "composition-director",
     "composition": "composition-director",
     "typography": "typography-director",

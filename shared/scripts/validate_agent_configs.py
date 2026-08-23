@@ -14,7 +14,8 @@ ROOT = Path(__file__).resolve().parents[2]
 AGENTS_DIR = ROOT / ".codex/agents"
 CONFIG_FILE = ROOT / ".codex/config.toml"
 EXPECTED_AGENTS = [
-    "designly-director", "strategy-planner", "creative-director", "brand-guardian", "taste-analyst",
+    "designly-director", "strategy-planner", "creative-director", "insight-miner", "canon-analyst",
+    "activation-strategist", "story-architect", "brand-guardian", "taste-analyst",
     "structure-critic", "craft-director", "arabic-visual-director", "edit-sanitizer",
     "visual-reviewer"
 ]
@@ -65,7 +66,7 @@ def main() -> int:
     print("Validating Codex configuration and custom agents...")
     validate_config(errors)
     present = [p.stem for p in AGENTS_DIR.glob("*.toml")] if AGENTS_DIR.is_dir() else []
-    check(set(present) == set(EXPECTED_AGENTS), f"exactly 10 expected agents present (found {len(present)})", errors)
+    check(set(present) == set(EXPECTED_AGENTS), f"exactly 14 expected agents present (found {len(present)})", errors)
     for slug in EXPECTED_AGENTS:
         print(f"\n--- Checking Agent: {slug} ---")
         validate_agent(slug, errors)

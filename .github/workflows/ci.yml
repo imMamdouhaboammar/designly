@@ -64,6 +64,18 @@ jobs:
       - name: Creative Director unit tests
         run: python skills/creative-director/scripts/test_creative_director.py
 
+      - name: Insight Mining unit tests
+        run: python skills/insight-mining/scripts/test_insight_mining.py
+
+      - name: Campaign Canon unit tests
+        run: python skills/campaign-canon/scripts/test_campaign_canon.py
+
+      - name: Brand Activation unit tests
+        run: python skills/brand-activation/scripts/test_brand_activation.py
+
+      - name: Visual Storytelling unit tests
+        run: python skills/visual-storytelling/scripts/test_visual_storytelling.py
+
       - name: Reference Memory CRUD tests
         run: python skills/reference-memory/scripts/test_taste_memory.py
 

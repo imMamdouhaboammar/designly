@@ -1,12 +1,16 @@
 {
-  "version": "3.2.1+v4.2-hardening",
+  "version": "3.2.1+v4.3-expanded",
   "capabilities": {
-    "total_routing_scenarios": 22,
+    "total_routing_scenarios": 26,
     "total_design_preflight_cases": 7,
     "total_release_gate_cases": 15,
     "total_prompt_lint_cases": 4,
     "creative_direction_supported": true,
     "cannes_calibration_supported": true,
+    "insight_mining_supported": true,
+    "campaign_canon_supported": true,
+    "brand_activation_supported": true,
+    "visual_storytelling_supported": true,
     "taste_engine_supported": true,
     "reference_memory_supported": true,
     "arabic_rtl_supported": true,
@@ -14,12 +18,14 @@
     "local_edit_sanitizer_required": true
   },
   "required_v4_skill_slugs": [
-    "designly-director", "creative-strategy", "creative-director", "brand-intelligence", "taste-engine", "reference-memory",
+    "designly-director", "creative-strategy", "creative-director", "insight-mining", "campaign-canon",
+    "brand-activation", "visual-storytelling", "brand-intelligence", "taste-engine", "reference-memory",
     "composition-director", "typography-director", "photography-director", "manipulation-director",
     "arabic-rtl-director", "campaign-dna", "edit-sanitizer", "prompt-compiler", "visual-qa"
   ],
   "required_v4_agent_slugs": [
-    "designly-director", "strategy-planner", "creative-director", "brand-guardian", "taste-analyst", "structure-critic",
+    "designly-director", "strategy-planner", "creative-director", "insight-miner", "canon-analyst",
+    "activation-strategist", "story-architect", "brand-guardian", "taste-analyst", "structure-critic",
     "craft-director", "arabic-visual-director", "edit-sanitizer", "visual-reviewer"
   ],
   "hard_gates": {
