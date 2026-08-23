@@ -13,6 +13,14 @@ A copy-first onboarding surface for learning Designly by using it.
 
 The Playground does not explain the 21 Skills as a catalog first. It turns capabilities into small, observable jobs. Each card gives the user a prompt they can paste into ChatGPT with `@Designly`, a concrete result to inspect, and the specialist Skills that should become visible through the work.
 
+<p>
+  <a href="#start-here"><img src="../../../assets/badges/section-start.svg" alt="Start Here" /></a>
+  <a href="#learn-one-capability-by-doing-it"><img src="../../../assets/badges/section-learn.svg" alt="Learn by Doing" /></a>
+  <a href="#advanced-combinations"><img src="../../../assets/badges/section-advanced.svg" alt="Advanced" /></a>
+  <a href="#prompt-card-behavior-in-chatgpt"><img src="../../../assets/badges/section-chatgpt.svg" alt="ChatGPT Behavior" /></a>
+  <a href="#coverage-map"><img src="../../../assets/badges/section-coverage.svg" alt="Coverage Map" /></a>
+</p>
+
 ## Product rule
 
 Every card must pass four checks:

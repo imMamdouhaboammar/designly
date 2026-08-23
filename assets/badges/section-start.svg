@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="92" height="24" viewBox="0 0 92 24" role="img" aria-label="Start Here">
+  <rect x="0.5" y="0.5" width="91" height="23" rx="7.5" fill="#111111" stroke="#111111"/>
+  <path d="M10 8.5 15.5 12 10 15.5Z" fill="#F2F2F2"/>
+  <text x="22" y="15.2" fill="#F2F2F2" font-family="ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="10.5" font-weight="600" letter-spacing=".15">START HERE</text>
+</svg>
