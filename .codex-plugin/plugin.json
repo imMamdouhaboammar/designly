@@ -39,15 +39,14 @@
     "defaultPrompt": [
       "Show me the Designly Prompt Playground and give me 5 copy-ready experiments to try.",
       "Art-direct this campaign end-to-end, using specialist review and strict design gates.",
-      "Direct a 15-second cinematic video sequence for Kling or Seedance with 14-field shot cards.",
-      "Sanitize these annotation notes before editing the image and protect non-target content."
+      "Direct a 15-second cinematic video sequence for Kling or Seedance with 14-field shot cards."
     ],
     "developerName": "Mamdouh Abo Ammar",
     "displayName": "Designly",
     "logo": "./.codex-plugin/assets/logo.svg",
     "longDescription": "Designly turns a brief, idea, or reference into polished visual work for ads, social campaigns, brand content, and cinematic AI films\n\nThe Prompt Playground gives users copy-ready experiments that demonstrate Designly by doing real creative jobs instead of reading a feature list\n\nDesignly shapes creative concepts, dramaturgy, composition, typography, optics, and model physics, reviews outputs critically, routes targeted revisions, handles Arabic and RTL layouts, protects bounded edits, and maintains visual continuity across campaigns",
     "privacyPolicyURL": "https://app.prepilot-system-agency.space/privacy",
-    "shortDescription": "Art-direct, learn, and test visual ideas",
+    "shortDescription": "Learn and art-direct visuals",
     "supportURL": "https://app.prepilot-system-agency.space/support",
     "termsOfServiceURL": "https://app.prepilot-system-agency.space/terms",
     "websiteURL": "https://app.prepilot-system-agency.space/"
