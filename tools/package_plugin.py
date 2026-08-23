@@ -17,7 +17,7 @@ EXCLUDE_FILES = {".DS_Store", ".gitignore", "Designly-Multi-Skill-Neural-Mesh-Im
 
 def main() -> int:
     root = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
-    out = Path(sys.argv[2] if len(sys.argv) > 2 else "dist/designly-v4.3.0.zip").resolve()
+    out = Path(sys.argv[2] if len(sys.argv) > 2 else "dist/designly-v4.4.0.zip").resolve()
     out.parent.mkdir(parents=True, exist_ok=True)
     
     dirs = set()

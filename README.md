@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/v4.3.0-production-111111?style=flat-square" alt="version 4.3.0" />
+  <img src="https://img.shields.io/badge/v4.4.0-production-111111?style=flat-square" alt="version 4.4.0" />
   <img src="https://img.shields.io/badge/19_Skills-modular-111111?style=flat-square" alt="19 skills" />
   <img src="https://img.shields.io/badge/14_Agents-bounded-111111?style=flat-square" alt="14 agents" />
   <img src="https://img.shields.io/badge/571_Campaigns-canonical-111111?style=flat-square" alt="571 campaigns" />
