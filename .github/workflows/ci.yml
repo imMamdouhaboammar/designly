@@ -40,6 +40,9 @@ jobs:
       - name: Skill routing
         run: python evals/routing/test_skill_catalog.py
 
+      - name: Prompt Playground product surface
+        run: python evals/product/test_prompt_playground.py
+
       - name: Typed handoff contracts
         run: python evals/handoffs/test_contracts.py
 
