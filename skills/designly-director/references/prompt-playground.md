@@ -1,5 +1,14 @@
 # Designly Prompt Playground
 
+<p>
+  <img src="../../../assets/badges/prompt-playground.svg" alt="Prompt Playground" />
+  <img src="../../../assets/badges/prompts.svg" alt="20 Prompt Cards" />
+  <img src="../../../assets/badges/skills.svg" alt="21 Skills" />
+  <img src="../../../assets/badges/arabic-rtl.svg" alt="Arabic RTL" />
+  <img src="../../../assets/badges/ai-film.svg" alt="AI Film" />
+  <img src="../../../assets/badges/visual-qa.svg" alt="Visual QA" />
+</p>
+
 A copy-first onboarding surface for learning Designly by using it.
 
 The Playground does not explain the 21 Skills as a catalog first. It turns capabilities into small, observable jobs. Each card gives the user a prompt they can paste into ChatGPT with `@Designly`, a concrete result to inspect, and the specialist Skills that should become visible through the work.
