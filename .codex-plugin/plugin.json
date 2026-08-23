@@ -2,12 +2,12 @@
   "author": {
     "name": "Mamdouh Abo Ammar"
   },
-  "description": "Designly is a commercial Art Direction and Design Neural Mesh plugin with 21 focused Skills, 16 custom Codex agents, a copy-first Prompt Playground, Cannes-calibrated Creative Direction, 571 Legendary Campaign Canon, dramaturgy-first AI Video Direction (Seedance 2.5, Kling 3.0, Veo), model-physics Image Direction (Nano Banana 2/Pro, GPT Image 2), Insight Mining, Brand Activation, Visual Storytelling, Taste Engine, Reference Memory, bounded-edit sanitization, Arabic RTL direction, and independent Visual QA.",
+  "description": "Designly is a commercial Art Direction and Design Neural Mesh plugin with 21 focused Skills, 16 custom Codex agents, a production Workflow Prompt Library grounded in the real routing graph, Cannes-calibrated Creative Direction, 571 Legendary Campaign Canon, dramaturgy-first AI Video Direction (Seedance 2.5, Kling 3.0, Veo), model-physics Image Direction (Nano Banana 2/Pro, GPT Image 2), Insight Mining, Brand Activation, Visual Storytelling, Taste Engine, Reference Memory, bounded-edit sanitization, Arabic RTL direction, and independent Visual QA.",
   "interface": {
     "brandColor": "#111111",
     "brandColorDark": "#F2F2F2",
     "capabilities": [
-      "Prompt Playground & Learning by Doing",
+      "Workflow Prompt Library & Guided Routing",
       "Art Direction Orchestration",
       "Cannes-Calibrated Creative Direction",
       "Structural Ideation & SIT/TRIZ",
@@ -37,23 +37,24 @@
     "category": "Creativity",
     "composerIcon": "./.codex-plugin/assets/composer-icon.svg",
     "defaultPrompt": [
-      "Show me the Designly Prompt Playground and give me 5 copy-ready experiments to try.",
-      "Art-direct this campaign end-to-end, using specialist review and strict design gates.",
-      "Direct a 15-second cinematic video sequence for Kling or Seedance with 14-field shot cards."
+      "Open the Designly Workflow Prompt Library and route my real design job through the correct Skills.",
+      "Art-direct this campaign end-to-end, using specialist handoffs and strict release gates.",
+      "Direct a cinematic AI video sequence using the correct Designly video pipeline and model physics."
     ],
     "developerName": "Mamdouh Abo Ammar",
     "displayName": "Designly",
     "logo": "./.codex-plugin/assets/logo.svg",
-    "longDescription": "Designly turns a brief, idea, or reference into polished visual work for ads, social campaigns, brand content, and cinematic AI films\n\nThe Prompt Playground gives users copy-ready experiments that demonstrate Designly through real creative jobs instead of a feature list\n\nIt shapes creative concepts, dramaturgy, composition, typography, optics, and model physics (Seedance, Kling, Veo, Nano Banana, GPT Image 2), reviews every output critically, and routes targeted revisions\n\nYou can also sanitize annotation-guided inpainting, follow brand guidelines, handle Arabic and RTL layouts, and maintain visual continuity across multi-asset campaigns",
+    "longDescription": "Designly turns a real brief, approved idea, reference set, edit request, or campaign into production-ready visual work through explicit specialist routing\n\nThe Workflow Prompt Library provides long-form copy-ready prompts that activate Designly's existing Skills, typed handoffs, fail-close edit contracts, model physics, and Visual QA instead of using toy demo scenarios\n\nIt shapes creative concepts, dramaturgy, composition, typography, optics, and model physics (Seedance, Kling, Veo, Nano Banana, GPT Image 2), executes through compatible host tools when available, and routes targeted revisions when outputs fail\n\nYou can also sanitize annotation-guided inpainting, follow brand guidelines, handle Arabic and RTL layouts, preserve reference taste without imitation, and maintain visual continuity across multi-asset campaigns",
     "privacyPolicyURL": "https://app.prepilot-system-agency.space/privacy",
-    "shortDescription": "Learn and art-direct visuals",
+    "shortDescription": "Route and art-direct visuals",
     "supportURL": "https://app.prepilot-system-agency.space/support",
     "termsOfServiceURL": "https://app.prepilot-system-agency.space/terms",
     "websiteURL": "https://app.prepilot-system-agency.space/"
   },
   "keywords": [
+    "workflow-prompts",
+    "guided-routing",
     "prompt-playground",
-    "design-learning",
     "art-direction",
     "creative-direction",
     "video-director",
