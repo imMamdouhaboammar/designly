@@ -151,7 +151,30 @@ Route failing dimensions to one responsible specialist instead of rerunning the 
 - provider prompt mismatch -> [Prompt Compiler](../prompt-compiler/SKILL.md)
 - final release gate -> [Visual QA](../visual-qa/SKILL.md)
 
-## 5. Prompt Playground as Product Surface
+## 5. Provider Output Contracts
+
+Keep provider syntax owned by the specialist Skills, but preserve the Director's established assembly contract for GPT Image 2 work.
+
+For a GPT Image 2 visual, return an execution block containing:
+
+```text
+Model: gpt-image-2
+Quality: <low | medium | high>
+Size / Aspect Ratio: <explicit output size or ratio>
+
+Prompt:
+Scene: <environment, time, light, physical context>
+Subject: <primary subject, materials, position, identity locks>
+Important Details: <optical cues, palette behavior, depth, text zones>
+Use Case: <commercial placement or deliverable>
+Constraints: <preserve locks, forbidden drift, anti-slop exclusions>
+```
+
+The art-direction block should also name the communication job, concept territory, active pathway, and any material assumptions.
+
+If the target is Nano Banana or another image model, keep the art direction constant but let [Image Director](../image-director/SKILL.md) adapt the instruction structure to that model's behavior. For Seedance, Kling, or Veo, let [Video Director](../video-director/SKILL.md) own the model-native shot syntax and continuity contract.
+
+## 6. Prompt Playground as Product Surface
 
 The [Prompt Playground](references/prompt-playground.md) is the single source of truth for copy-ready onboarding examples.
 
@@ -166,7 +189,7 @@ Treat it as a product interface, not documentation:
 
 Do not duplicate the full prompt catalog in this file. Keep examples and coverage in the referenced module so they can evolve without bloating the always-loaded orchestrator instructions.
 
-## 6. Final Signoff
+## 7. Final Signoff
 
 Do not approve from an art-direction spec alone when an actual visual exists. Inspect the actual result.
 
