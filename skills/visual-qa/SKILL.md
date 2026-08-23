@@ -5,11 +5,11 @@ description: Independent visual quality assurance, hard-gate auditor, and target
 
 # Visual QA
 
-Review the actual visual independently. Do not defend upstream decisions and do not approve an uninspected hypothetical output
+Review the actual visual independently. Do not defend upstream decisions and do not approve an uninspected hypothetical output.
 
 ## Core review
 
-Evaluate applicable categories including
+Evaluate applicable categories including:
 
 - brief accuracy and primary message
 - concept strength
@@ -20,7 +20,7 @@ Evaluate applicable categories including
 - brand fidelity
 - product fidelity
 - physical believability
-- cultural/platform fit
+- cultural/platform fit and inclusive representation
 - overall craft
 - AI slop
 
@@ -28,13 +28,13 @@ Weighted score must meet the configured threshold and every applicable category 
 
 ## Hard gates
 
-Fail regardless of average when applicable
+Fail regardless of average when applicable:
 
 - required copy is wrong
 - Arabic glyphs/connections or RTL behavior are malformed
 - official logo/mark is malformed
 - supplied product identity/proportions materially drift
-- focal anatomy or physical interaction has a critical defect
+- focal anatomy, human dignity, or physical interaction has a critical defect
 - protected edit content changes materially outside what boundary blending requires
 - local edit changes crop, canvas, camera, layout, lighting, text, identity or style that the EditContract locked
 - annotation was applied to the wrong semantic target
@@ -42,29 +42,9 @@ Fail regardless of average when applicable
 
 ## Bounded-edit review
 
-When `edit_state` exists, compare output to the approved `source_checkpoint`, not to a previous failed edit
-
-Evaluate three separate dimensions
-
-### Target accuracy
-
-Did the intended target receive exactly the requested mutation
-
-### Edit-scope accuracy
-
-Did any unrequested object, text, crop, layout, camera, lighting, brand, product, or style property change materially
-
-### Collateral change
-
-Allow minimal transition/blending immediately around the edited boundary when needed for believable integration. Do not call that a failure by itself
-
-Fail when drift is material, unrelated to target integration, or violates an identity/geometry/style lock
-
-Do not claim generative editing guarantees literal pixel identity. If the host provides deterministic masks/pixel-preservation guarantees, use those stronger checks explicitly
+When `edit_state` exists, compare output to the approved `source_checkpoint`, not to a previous failed edit. Evaluate target accuracy, edit-scope accuracy, and collateral change.
 
 ## Perception checks
-
-Use the smallest relevant set
 
 - one-second hierarchy test
 - thumbnail test
@@ -72,6 +52,7 @@ Use the smallest relevant set
 - grayscale hierarchy test
 - edge/tangency/crop test
 - brand-off specificity test
+- 7-point inclusive representation review
 - effect-subtraction test
 - physics pass
 - character-by-character copy pass
@@ -79,8 +60,7 @@ Use the smallest relevant set
 
 ## AI slop veto
 
-Block on
-
+Block on:
 - any critical finding
 - 2+ major findings
 - 4+ minor findings
@@ -88,9 +68,13 @@ Block on
 
 ## Revision routing
 
-Return one `RevisionRequest` to the smallest responsible node
-
-- concept/message -> `creative-strategy`
+Return one `RevisionRequest` to the smallest responsible node:
+- concept/originality -> `creative-director`
+- insight depth -> `insight-mining`
+- pattern saturation -> `campaign-canon`
+- activation mechanic -> `brand-activation`
+- narrative arc -> `visual-storytelling`
+- strategy/message -> `creative-strategy`
 - hierarchy/composition -> `composition-director`
 - typography -> `typography-director`
 - Arabic -> `arabic-rtl-director`
@@ -99,32 +83,24 @@ Return one `RevisionRequest` to the smallest responsible node
 - wrong annotation target -> `edit-sanitizer` with `annotation_mapping`
 - over-broad edit scope -> `edit-sanitizer` with `edit_scope`
 - collateral drift -> `edit-sanitizer` with `collateral_change`
-- provider instruction mismatch after a valid contract -> `prompt-compiler`
+- provider instruction mismatch -> `prompt-compiler`
 
-For failed bounded edits, require retry from the approved source checkpoint. Never repair a drifted failure by chaining another edit onto it
+---
 
-## Output
+## Cross-Skill Neural Connections & References
 
-Return
+### Peer & Specialist Skills
+- [Designly Director](../designly-director/SKILL.md) — Lead orchestrator and final signoff authority
+- [Composition Director](../composition-director/SKILL.md) — Hierarchy & spatial layout revisions
+- [Brand Intelligence](../brand-intelligence/SKILL.md) — Brand guidelines & product fidelity revisions
+- [Edit Sanitizer](../edit-sanitizer/SKILL.md) — Bounded edit scope & annotation corrections
+- [Prompt Compiler](../prompt-compiler/SKILL.md) — Provider prompt adjustments
 
-- `qa_state`
-- scores and applicable floors
-- hard-gate verdicts
-- slop findings
-- for edits: target accuracy, edit-scope accuracy, collateral-change evidence
-- `RevisionRequest` only when failed
-
-## Tools
-
-```bash
-python3 scripts/score_review.py assets/visual-review.template.json
-python3 scripts/test_gates.py
-```
-
-## References
-
-- [Visual Review Schema](schemas/visual-review.schema.json)
-- [Revision Request](../../shared/contracts/revision-request.schema.json)
-- [Edit Contract](../../shared/contracts/edit-contract.schema.json)
-- [Visual QA & Revisions](../../shared/references/visual-qa-and-revisions.md)
-- [AI Slop Taxonomy](../../shared/references/ai-slop-taxonomy.md)
+### Schemas & References
+- [Visual Review Schema](schemas/visual-review.schema.json) — Local review schema
+- [Revision Request](../../shared/contracts/revision-request.schema.json) — Mesh revision contract
+- [Edit Contract](../../shared/contracts/edit-contract.schema.json) — Bounded edit contract
+- [Visual QA & Revisions](../../shared/references/visual-qa-and-revisions.md) — Review methodology
+- [AI Slop Taxonomy](../../shared/references/ai-slop-taxonomy.md) — Slop families & severity criteria
+- [Inclusive Representation](../../shared/references/inclusive-representation-and-ethics.md) — 7-point representation checklist
+- [Software Architecture](../../shared/references/software-architecture-and-contracts.md) — Bounded contexts & lock hierarchy

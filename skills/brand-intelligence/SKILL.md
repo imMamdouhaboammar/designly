@@ -39,8 +39,18 @@ Brand Intelligence enforces brand integrity, logo clearspace, color formulas, an
 
 ---
 
-## 3. References & Schemas
+## 3. Cross-Skill Neural Connections & References
 
-- Shared Contract: [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json)
-- Shared Reference: [Brand Intelligence Guide](../../shared/references/brand-intelligence.md)
-- Shared Reference: [Design Principles](../../shared/references/design-principles.md)
+### Peer & Downstream Skills
+- [Creative Strategy](../creative-strategy/SKILL.md) — Strategic territory alignment & brand mission
+- [Taste Engine](../taste-engine/SKILL.md) — Reconciling brand locks with reference aesthetics
+- [Typography Director](../typography-director/SKILL.md) — Corporate typeface rules and font hierarchy
+- [Campaign DNA](../campaign-dna/SKILL.md) — Multi-asset brand continuity across channels
+- [Visual QA](../visual-qa/SKILL.md) — Brand fidelity floor & logo gate verification
+- [Designly Director](../designly-director/SKILL.md) — Lead orchestrator and lock enforcement
+
+### Schemas & References
+- [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json) — Neural Mesh handoff
+- [Brand Intelligence Guide](../../shared/references/brand-intelligence.md) — Brand analysis rules
+- [Design Principles](../../shared/references/design-principles.md) — Core principles
+- [Software Architecture](../../shared/references/software-architecture-and-contracts.md) — Priority hierarchy

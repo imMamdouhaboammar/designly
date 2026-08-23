@@ -1,81 +1,100 @@
-# Routing and State
+# Routing, State & Orchestration Architecture
 
-Use when a request spans more than one visual job or execution mode is unclear
+This reference defines the multi-tier Orchestration Graph, role-aware execution pipelines, recursive feedback loops, and verification gates of the Designly Art Direction Neural Mesh.
 
-## Lifecycle
+---
 
-`INTAKE -> CONTEXT_LOCK -> MARKETING_LOCK -> ROUTE -> CONCEPT -> STRUCTURE -> CRAFT_SPEC -> PREFLIGHT -> EXECUTE -> VISUAL_QA -> REVISION -> APPROVED`
+## 1. Multi-Tier Architecture
 
-Return to the smallest state that owns the defect
+The Neural Mesh organizes 19 specialist Skills into 6 distinct cognitive layers:
 
-- wrong business/message priority -> `MARKETING_LOCK`
-- weak idea -> `CONCEPT`
-- weak hierarchy/crop/grid -> `STRUCTURE`
-- weak type/color/light/material plan -> `CRAFT_SPEC`
-- generation drift -> `EXECUTE` with tighter locks
-- one local defect -> `REVISION` with local-edit or visual-polish
-- wrong brand fact -> `CONTEXT_LOCK`
-- wrong exact copy -> `CONTEXT_LOCK` then copy-correction
+```text
++-------------------------------------------------------------------------------+
+| Tier 1: Strategy & Ideation                                                  |
+| [creative-strategy] [insight-mining] [creative-director]                     |
+| [campaign-canon]    [brand-activation]                                        |
++-------------------------------------------------------------------------------+
+                                      |
+                                      v
++-------------------------------------------------------------------------------+
+| Tier 2: Visual Architecture & Representation                                 |
+| [visual-storytelling] [composition-director] [typography-director]           |
+| [arabic-rtl-director] (Inclusive Representation & Anti-Bias Standards)       |
++-------------------------------------------------------------------------------+
+                                      |
+                                      v
++-------------------------------------------------------------------------------+
+| Tier 3: Brand Identity & Taste Intelligence                                  |
+| [brand-intelligence] [taste-engine] [reference-memory]                       |
++-------------------------------------------------------------------------------+
+                                      |
+                                      v
++-------------------------------------------------------------------------------+
+| Tier 4: Craft Physics & Optics                                               |
+| [photography-director] [manipulation-director] [campaign-dna]                |
++-------------------------------------------------------------------------------+
+                                      |
+                                      v
++-------------------------------------------------------------------------------+
+| Tier 5: Sanitization & Model Compilation                                     |
+| [edit-sanitizer] [prompt-compiler]                                           |
++-------------------------------------------------------------------------------+
+                                      |
+                                      v
++-------------------------------------------------------------------------------+
+| Tier 6: Verification & QA Release Gates                                      |
+| [visual-qa]                                                                   |
++-------------------------------------------------------------------------------+
+```
 
-## Task classifier
+---
 
-Prefer evidence over keywords
+## 2. Role-Aware Execution Pipelines
 
-### generate
-No source image must be preserved and the primary job is a new visual
+Depending on the classified task, the orchestrator invokes a specialized sequence:
 
-### edit
-The source image is part of the required final result and unaffected areas should remain stable
+### A. New Commercial Campaign (`new_commercial_campaign`)
+`designly-director` $\rightarrow$ `creative-strategy` $\rightarrow$ `insight-mining` $\rightarrow$ `creative-director` $\rightarrow$ `campaign-canon` $\rightarrow$ `brand-intelligence` $\rightarrow$ `taste-engine` $\rightarrow$ `composition-director` $\rightarrow$ `typography-director` $\rightarrow$ `photography-director` $\rightarrow$ `prompt-compiler` $\rightarrow$ `visual-qa`
 
-### manipulation
-The core act is physical integration, insertion, replacement, scale change, relighting, or impossible-but-believable interaction
+### B. Brand Activation / PR Stunt (`brand_activation_stunt`)
+`designly-director` $\rightarrow$ `insight-mining` $\rightarrow$ `brand-activation` $\rightarrow$ `campaign-canon` $\rightarrow$ `brand-intelligence` $\rightarrow$ `manipulation-director` $\rightarrow$ `prompt-compiler` $\rightarrow$ `visual-qa`
 
-### reference
-References are primarily used to learn composition, treatment, visual grammar, or mood
+### C. Arabic-First Poster / MENA Campaign (`arabic_first_poster`)
+`designly-director` $\rightarrow$ `creative-strategy` $\rightarrow$ `insight-mining` $\rightarrow$ `creative-director` $\rightarrow$ `brand-intelligence` $\rightarrow$ `composition-director` $\rightarrow$ `arabic-rtl-director` $\rightarrow$ `typography-director` $\rightarrow$ `photography-director` $\rightarrow$ `prompt-compiler` $\rightarrow$ `visual-qa`
 
-### campaign
-Several outputs need shared visual DNA
+### D. Bounded Image Edit (`bounded_image_edit`)
+`designly-director` $\rightarrow$ `edit-sanitizer` $\rightarrow$ `arabic-rtl-director` (if text changes) $\rightarrow$ `prompt-compiler` $\rightarrow$ `visual-qa`
 
-### typography-heavy
-Text hierarchy, exact spelling, or layout carries a large share of communication
+---
 
-### review
-The existing artifact is the thing being judged or repaired
+## 3. Recursive Feedback Loops
 
-## Deliverable precedence
+When a stage fails quality criteria, it triggers an explicit feedback loop:
 
-Explicit user choice wins
+1. **Cannes Ideation Refinement Loop**:
+   - *Condition*: `concept_score < 9.0` or `humankind_score < 7`.
+   - *Loop*: Rotate ideation methods in `methods-catalog` (SIT $\rightarrow$ Bisociation $\rightarrow$ Inversion), re-mine tensions with `insight-mining`, re-score (up to 5 passes).
+2. **Craft Physics Alignment Loop**:
+   - *Condition*: Horizon, perspective, or lighting mismatch between composite element and background plate.
+   - *Loop*: `manipulation-director` $\leftrightarrow$ `photography-director` realign vanishing points and Kelvin color temperatures.
+3. **Bounded Edit Containment Loop**:
+   - *Condition*: Collateral drift detected or wrong target mutated in output.
+   - *Loop*: `visual-qa` rejects output, resets to approved source checkpoint, shrinks mutation polygon via `edit-sanitizer`, and re-issues `EditContract`.
+4. **Arabic Glyph Integrity Loop**:
+   - *Condition*: Arabic ligature corruption, disconnected glyphs, or reversed RTL flow.
+   - *Loop*: `visual-qa` $\rightarrow$ `arabic-rtl-director` issues hard veto, extracts exact Unicode, and passes strict negative constraints to `prompt-compiler`.
+5. **Anti-Bias Representation Loop**:
+   - *Condition*: Clone faces or stereotypical tokenism detected in group visuals.
+   - *Loop*: `visual-qa` $\rightarrow$ `prompt-compiler` injects explicit facial bone structure variance, melanin-calibrated lighting, and negative stock-photo constraints.
 
-Otherwise
+---
 
-1. source image plus bounded change -> `edit`
-2. campaign or series -> `campaign`
-3. compositing/insertion -> `manipulation`
-4. reference-led recreation -> `reference-replication`
-5. several structurally distinct routes -> `exploration`
-6. prompt-only -> `quick`
-7. default -> `director`
+## 4. Multi-Stage Verification Gates
 
-## Decision-critical questions
-
-Ask only when unresolved input can cause a materially different output
-
-Examples
-
-- required exact headline or legal copy is missing
-- ratio/placement is contractually fixed but unknown
-- supplied product identity is ambiguous
-- local edit target is not identifiable
-- official brand documents conflict on a required rule
-
-Do not ask about normal taste choices a senior Art Director can decide
-
-## Tool decision
-
-If an image tool exists and the user asks for an image, use it
-
-If the user asks for a prompt only, do not generate unless they also request generation
-
-If no image tool exists, compile an approved direction and prompt without pretending generation occurred
-
-If an image exists after execution, route to VISUAL_QA automatically
+- **GATE-0 (Intake & Brief Invariants)**: Brief lock, objective, primary message, deliverables.
+- **GATE-1 (Ideation & Originality)**: Cannes score $\ge 8.5$, Pollard taxonomy match, pattern saturation cap $\le 6.0$ for P09/P11/P16 without structural novelty.
+- **GATE-2 (Representation & Inclusivity)**: 7-point representation checklist, no clone faces, melanin-calibrated lighting, no gibberish cultural symbols.
+- **GATE-3 (Spatial & Typographic Preflight)**: 1-second thumbnail test, grayscale value mass, exact copy locked, Arabic glyphs shaped.
+- **GATE-4 (Craft Realism & Physics)**: Consistent horizon, ambient occlusion contact shadows, directional reflections, and physical light wrap.
+- **GATE-5 (Bounded-Edit Containment)**: Mutation budget = 1, protected complement locked, approved source checkpoint verified.
+- **GATE-6 (Post-Generation Visual Signoff)**: Weighted score $\ge 92$, all applicable category floors met, AI-slop veto clear, collateral drift zero.

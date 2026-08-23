@@ -49,7 +49,14 @@ python3 scripts/reference_memory.py feedback REF-1001 --like "lighting.soft_dire
 
 ---
 
-## 3. Schemas & References
+## 3. Cross-Skill Neural Connections & References
 
-- Local Schema: [Reference Memory Schema](schemas/reference-memory.schema.json)
-- Shared Reference: [Reference Memory Guide](../../shared/references/reference-memory.md)
+### Peer & Downstream Skills
+- [Taste Engine](../taste-engine/SKILL.md) — Extracting transferable rules from recalled references
+- [Brand Intelligence](../brand-intelligence/SKILL.md) — Auditing reference tags against brand constraints
+- [Designly Director](../designly-director/SKILL.md) — Lead orchestrator and memory state manager
+
+### Schemas & References
+- [Reference Memory Schema](schemas/reference-memory.schema.json) — Local schema
+- [Reference Memory Guide](../../shared/references/reference-memory.md) — Usage rules
+- [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json) — Neural Mesh handoff

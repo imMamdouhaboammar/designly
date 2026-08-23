@@ -36,6 +36,7 @@ If these are missing, route to `edit-sanitizer`. Do not compile a best-effort lo
 5. Include only likely failure exclusions for the current task
 6. Keep provider-specific syntax modular and subordinate to the Art Direction Spec
 7. When the host has a native image tool, use its supported interface instead of inventing API parameters
+8. Apply inclusive visual representation rules: eliminate clone faces, mandate authentic ethnic features and melanin-calibrated lighting
 
 ## Bounded edit compilation
 
@@ -86,9 +87,20 @@ Return `generation_state` with
 - acceptance checks
 - likely failure exclusions
 
-## References
+---
 
-- [Prompt Compiler Guide](../../shared/references/prompt-compiler.md)
-- [Model Guides](../../shared/references/model-guides.md)
-- [Edit Contract](../../shared/contracts/edit-contract.schema.json)
-- [Signal Packet](../../shared/contracts/signal-packet.schema.json)
+## Cross-Skill Neural Connections & References
+
+### Peer & Downstream Skills
+- [Edit Sanitizer](../edit-sanitizer/SKILL.md) — Upstream sanitized EditContract provider
+- [Photography Director](../photography-director/SKILL.md) — Optical parameters and lighting models
+- [Manipulation Director](../manipulation-director/SKILL.md) — Compositing physics and boundary blending rules
+- [Visual QA](../visual-qa/SKILL.md) — Downstream independent visual verification gate
+- [Designly Director](../designly-director/SKILL.md) — Orchestrator and state owner
+
+### Schemas & References
+- [Prompt Compiler Guide](../../shared/references/prompt-compiler.md) — Model prompt translation rules
+- [Model Guides](../../shared/references/model-guides.md) — Provider-specific nuances
+- [Inclusive Representation](../../shared/references/inclusive-representation-and-ethics.md) — Anti-bias prompting rules
+- [Edit Contract](../../shared/contracts/edit-contract.schema.json) — Local edit schema
+- [Signal Packet](../../shared/contracts/signal-packet.schema.json) — Neural Mesh handoff

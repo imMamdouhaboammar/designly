@@ -45,11 +45,21 @@ Composition Director establishes the mathematical and perceptual skeleton of the
 
 ---
 
-## 3. Schemas & References
+## 3. Cross-Skill Neural Connections & References
 
-- Local Schema: [Art Direction Schema](schemas/art-direction.schema.json)
-- Local Schema: [Creative Brief Schema](schemas/creative-brief.schema.json)
-- Shared Reference: [Layout, Grid, and Spacing](../../shared/references/layout-grid-and-spacing.md)
-- Shared Reference: [Composition and Photography](../../shared/references/composition-and-photography.md)
-- Shared Reference: [Design Preflight](../../shared/references/design-preflight.md)
-- Shared Reference: [Gestalt and Perception](../../shared/references/gestalt-and-perception.md)
+### Peer & Specialist Skills
+- [Typography Director](../typography-director/SKILL.md) — Text zone planning & typographic hierarchy
+- [Arabic RTL Director](../arabic-rtl-director/SKILL.md) — Inverted RTL reading paths & Arabic layout balance
+- [Photography Director](../photography-director/SKILL.md) — Camera focal length, perspective & lighting depth
+- [Manipulation Director](../manipulation-director/SKILL.md) — Compositing scale, contact shadows & occlusion
+- [Visual Storytelling](../visual-storytelling/SKILL.md) — Narrative storyboard arcs and eye path pacing
+- [Designly Director](../designly-director/SKILL.md) — Lead orchestrator and lock manager
+
+### Schemas & References
+- [Art Direction Schema](schemas/art-direction.schema.json) — Local spec schema
+- [Creative Brief Schema](schemas/creative-brief.schema.json) — Local brief schema
+- [Layout, Grid, and Spacing](../../shared/references/layout-grid-and-spacing.md) — Spatial rules
+- [Composition and Photography](../../shared/references/composition-and-photography.md) — Perceptual mechanics
+- [Design Preflight](../../shared/references/design-preflight.md) — Thumbnail and contrast checks
+- [Gestalt and Perception](../../shared/references/gestalt-and-perception.md) — Visual grouping principles
+- [Inclusive Representation](../../shared/references/inclusive-representation-and-ethics.md) — Anti-bias composition

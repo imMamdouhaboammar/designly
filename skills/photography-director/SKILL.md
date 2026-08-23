@@ -28,16 +28,26 @@ Photography Director specifies realistic photographic optics, camera physics, st
    - **Rim / Kicker Light**: Edge illumination separating dark subjects from dark backgrounds.
    - **Color Temperature**: Specify Kelvin values (e.g. 3200K warm tungsten, 5600K clean daylight, 6500K cool overcast).
 
-4. **Surface Material Physics**:
+4. **Surface Material Physics & Inclusive Lighting**:
    - Specify material response accurately: diffuse reflection, specular roughness, anisotropy (brushed aluminum), translucency (subsurface scattering on skin/liquids), and index of refraction (glass/water).
+   - Melanin-accurate color grading: avoid ashen undertones or blown-out highlights on deeper complexions.
 
 5. **Output Contract**:
    - Return structured `craft_state.photography` inside `DesignSignalPacket`.
 
 ---
 
-## 2. References & Schemas
+## 2. Cross-Skill Neural Connections & References
 
-- Shared Contract: [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json)
-- Shared Reference: [Composition and Photography](../../shared/references/composition-and-photography.md)
-- Shared Reference: [Color and Contrast](../../shared/references/color-and-contrast.md)
+### Peer & Downstream Skills
+- [Composition Director](../composition-director/SKILL.md) — Spatial framing, focal anchors, and scale relationships
+- [Manipulation Director](../manipulation-director/SKILL.md) — Environmental lighting alignment in composites
+- [Taste Engine](../taste-engine/SKILL.md) — Reference lighting extraction and aesthetic rules
+- [Prompt Compiler](../prompt-compiler/SKILL.md) — Translation into provider optical syntax
+- [Designly Director](../designly-director/SKILL.md) — Lead orchestrator and lock manager
+
+### Schemas & References
+- [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json) — Signal handoff contract
+- [Composition and Photography](../../shared/references/composition-and-photography.md) — Photographic mechanics
+- [Color and Contrast](../../shared/references/color-and-contrast.md) — Value contrast & color temperature
+- [Inclusive Representation](../../shared/references/inclusive-representation-and-ethics.md) — Skin tone lighting & anti-bias

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate Design Neural Mesh contracts, routes, and lock precedence."""
+"""Validate Design Neural Mesh contracts, orchestration graph, routes, loops, and gates."""
 from __future__ import annotations
 import json
 from pathlib import Path
@@ -48,12 +48,41 @@ def validate_routing_graph(errors: list[str]):
         check(graph.get("primary_orchestrator") == "designly-director", "primary_orchestrator is designly-director", errors)
         for expected_node in ("edit-sanitizer", "creative-director", "insight-mining", "campaign-canon", "brand-activation", "visual-storytelling"):
             check(expected_node in nodes, f"{expected_node} node exists", errors)
+        
+        # Validate Architecture Layers
+        layers = graph.get("architecture_layers", [])
+        check(len(layers) == 6, f"architecture defines 6 cognitive tiers (found {len(layers)})", errors)
+        
+        # Validate Role-Aware Pipelines
+        pipelines = graph.get("role_aware_pipelines", {})
+        check(len(pipelines) >= 5, f"at least 5 role-aware pipelines defined (found {len(pipelines)})", errors)
+        for pipe_name, steps in pipelines.items():
+            check(isinstance(steps, list) and len(steps) > 0, f"pipeline '{pipe_name}' has valid step sequence", errors)
+            for step in steps:
+                check(step in nodes, f"pipeline step '{step}' in '{pipe_name}' is a valid node", errors)
+                
+        # Validate Feedback Loops
+        loops = graph.get("feedback_loops", [])
+        check(len(loops) >= 5, f"at least 5 recursive feedback loops defined (found {len(loops)})", errors)
+        for loop in loops:
+            check(loop.get("source") in nodes, f"feedback loop source '{loop.get('source')}' valid", errors)
+            check(loop.get("target") in nodes, f"feedback loop target '{loop.get('target')}' valid", errors)
+            check(loop.get("max_iterations", 0) >= 1, f"feedback loop '{loop.get('name')}' has max_iterations", errors)
+            
+        # Validate Verification Gates
+        gates = graph.get("verification_gates", [])
+        check(len(gates) == 7, f"exactly 7 verification gates (GATE-0 to GATE-6) defined (found {len(gates)})", errors)
+        for gate in gates:
+            check(bool(gate.get("gate_id")), f"gate has ID: {gate.get('gate_id')}", errors)
+            check(gate.get("owner") in nodes, f"gate owner '{gate.get('owner')}' is valid node", errors)
+
         for node_name, node_data in nodes.items():
             check(isinstance(node_data.get("type"), str), f"node {node_name} has type", errors)
             check(isinstance(node_data.get("agent"), str), f"node {node_name} has agent", errors)
             check(isinstance(node_data.get("description"), str), f"node {node_name} has description", errors)
             check(isinstance(node_data.get("reads"), list), f"node {node_name} has reads list", errors)
             check(isinstance(node_data.get("writes"), list), f"node {node_name} has writes list", errors)
+            
         routes = graph.get("revision_routes", {})
         check(bool(routes), "revision routes defined", errors)
         for dim, target in routes.items():
@@ -66,6 +95,7 @@ def validate_routing_graph(errors: list[str]):
         check(routes.get("pattern_saturation") == "campaign-canon", "pattern_saturation routes to campaign-canon", errors)
         check(routes.get("activation_mechanic") == "brand-activation", "activation_mechanic routes to brand-activation", errors)
         check(routes.get("narrative_arc") == "visual-storytelling", "narrative_arc routes to visual-storytelling", errors)
+        
         priorities = graph.get("signal_priorities", [])
         check(len(priorities) == 11, f"signal priorities count is 11 (found {len(priorities)})", errors)
         for idx, prio in enumerate(priorities, start=1):
@@ -84,7 +114,7 @@ def validate_lock_precedence():
 
 def main() -> int:
     errors: list[str] = []
-    print("Validating Design Neural Mesh contracts and routing graph...")
+    print("Validating Design Neural Mesh orchestration graph, layers, loops, and gates...")
     validate_schemas(errors)
     validate_routing_graph(errors)
     try:

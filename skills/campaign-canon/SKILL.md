@@ -41,14 +41,22 @@ Every canonical campaign is categorized by its primary mechanic:
 1. **Empirical Saturation Cap**:
    - If a proposed concept matches a saturated pattern (`P09`, `P11`, `P16`) with 50+ canonical cases, cap originality score at **6.0 / 10** unless a structurally distinct variant mechanic is introduced.
 2. **Cross-Category Borrowing**:
-   - Recombining proven mechanics from distant categories (e.g. applying a `P04` utility mechanic from automotive into luxury fashion) is encouraged and creates high-originality work.
+   - Recombining proven mechanics from distant categories is encouraged and creates high-originality work.
 3. **Pre-Mortem Calibration**:
    - Before signing off on a concept, compare it against 3–5 canonical cases in the same pattern to identify failure modes before launch.
 
 ---
 
-## 3. MOC Navigation Matrix & References
+## 3. Cross-Skill Neural Connections & References
 
+### Peer & Downstream Skills
+- [Creative Director](../creative-director/SKILL.md) — Cannes scoring & recursive ideation
+- [Brand Activation](../brand-activation/SKILL.md) — PR stunts, ambient & brand utility mechanics
+- [Creative Strategy](../creative-strategy/SKILL.md) — Strategic territory & message hierarchy
+- [Taste Engine](../taste-engine/SKILL.md) — Visual reference deconstruction & rule extraction
+- [Visual QA](../visual-qa/SKILL.md) — Hard gates & anti-slop release evaluation
+
+### MOC Navigation Matrix & References
 - [Master Index (MOC-index)](references/legendary-campaigns/MOC-index.md) — Complete case library navigation
 - [Pattern Index (MOC-pattern)](references/legendary-campaigns/MOC-pattern.md) — Lookup by P01–P18 mechanics
 - [Industry Index (MOC-industry)](references/legendary-campaigns/MOC-industry.md) — Lookup by market sector
@@ -57,3 +65,4 @@ Every canonical campaign is categorized by its primary mechanic:
 - [Format Index (MOC-format)](references/legendary-campaigns/MOC-format.md) — Lookup by media channel
 - [Tag Schema Contract](references/tag-schema.md) — 17-axis metadata schema
 - [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json) — Neural Mesh signal handoff
+- [Design Context Schema](../../shared/contracts/design-context.schema.json) — Shared state context

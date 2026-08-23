@@ -36,8 +36,18 @@ Campaign DNA defines the visual genome for multi-asset commercial campaigns. It 
 
 ---
 
-## 2. References & Schemas
+## 2. Cross-Skill Neural Connections & References
 
-- Local Schema: [Visual DNA Schema](schemas/visual-dna.schema.json)
-- Shared Reference: [Campaign Visual DNA](../../shared/references/campaign-visual-dna.md)
-- Shared Reference: [Platform and Format Guide](../../shared/references/platform-and-format.md)
+### Peer & Downstream Skills
+- [Creative Strategy](../creative-strategy/SKILL.md) — Campaign objectives, message hierarchy & audience
+- [Visual Storytelling](../visual-storytelling/SKILL.md) — Multi-frame narrative arc continuity
+- [Composition Director](../composition-director/SKILL.md) — Aspect ratio adaptations and safe zones
+- [Brand Intelligence](../brand-intelligence/SKILL.md) — Brand guidelines and multi-asset consistency
+- [Prompt Compiler](../prompt-compiler/SKILL.md) — Batch prompt generation with shared visual DNA
+- [Designly Director](../designly-director/SKILL.md) — Multi-asset campaign orchestration
+
+### Schemas & References
+- [Visual DNA Schema](schemas/visual-dna.schema.json) — Local DNA schema
+- [Campaign Visual DNA](../../shared/references/campaign-visual-dna.md) — Continuity guide
+- [Platform and Format Guide](../../shared/references/platform-and-format.md) — Safe zones & aspect ratios
+- [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json) — Neural Mesh handoff

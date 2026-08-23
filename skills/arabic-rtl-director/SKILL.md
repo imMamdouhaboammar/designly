@@ -38,8 +38,16 @@ Arabic RTL Director enforces native Arabic visual architecture, natural Right-to
 
 ---
 
-## 2. References & Schemas
+## 2. Cross-Skill Neural Connections & References
 
-- Shared Contract: [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json)
-- Shared Reference: [Arabic RTL & Cultural Guide](../../shared/references/arabic-rtl-and-cultural.md)
-- Shared Reference: [Typography Guide](../../shared/references/typography.md)
+### Peer & Specialist Skills
+- [Typography Director](../typography-director/SKILL.md) — Font pairing, typographic measure, and line spacing
+- [Composition Director](../composition-director/SKILL.md) — Grid architecture, focal balance, and RTL margins
+- [Visual QA](../visual-qa/SKILL.md) — Arabic hard release gate & glyph verification
+- [Designly Director](../designly-director/SKILL.md) — Lead orchestrator and lock manager
+
+### Schemas & References
+- [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json) — Signal handoff contract
+- [Arabic RTL & Cultural Guide](../../shared/references/arabic-rtl-and-cultural.md) — Regional design rules
+- [Typography Guide](../../shared/references/typography.md) — Typographic hierarchy
+- [Inclusive Representation](../../shared/references/inclusive-representation-and-ethics.md) — Cultural authenticity standards

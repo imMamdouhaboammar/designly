@@ -39,7 +39,7 @@ If data is insufficient, ask 3-5 precise questions. Not "tell me about the TA," 
 Determine the required idea level using the **Pollard 7-level taxonomy** (full reference: [Idea Taxonomy](references/idea-taxonomy.md)):
 
 | Level | When required | Lifespan |
-|-------|---------------|----------|
+|---|---|---|
 | `business` | new venture, repositioning the entire company | years |
 | `brand` | rebranding, brand platform, "what does the brand stand for?" | 5-10+ years |
 | `tagline` | short phrase that crystallizes brand idea | 5-10+ years |
@@ -125,7 +125,7 @@ Before evaluation, verify: does the level of generated ideas match the `idea_typ
 **Axis 2: Idea Strength (6 weighted criteria)**
 
 | Criterion | Weight | What is evaluated |
-|-----------|--------|-------------------|
+|---|---|---|
 | Originality | 0.25 | Unexpected? Empirical check in [MOC Pattern](references/legendary-campaigns/MOC-pattern.md). Saturated patterns capped at 6 unless structurally new. |
 | Strategic fit | 0.20 | Solves brief objective and hits target audience. |
 | Emotional response | 0.20 | Specificity via [Emotion Hierarchy](references/emotion-hierarchy.md) (Tier 1/2/3). Score 9+ requires Tier 3. |
@@ -170,20 +170,29 @@ When acting within the Designly Neural Mesh, Creative Director outputs a typed `
 
 ---
 
-## References & Schemas
+## Cross-Skill Neural Connections & References
 
+### Peer & Specialized Skills
+- [Insight Mining](../insight-mining/SKILL.md) — Upstream consumer tension spotting & JTBD
+- [Campaign Canon](../campaign-canon/SKILL.md) — 571 canonical campaigns & P01-P18 saturation analysis
+- [Brand Activation](../brand-activation/SKILL.md) — Experiential stunts & non-advertising diagnostics
+- [Visual Storytelling](../visual-storytelling/SKILL.md) — Narrative frameworks & storyboard pacing
+- [Designly Director](../designly-director/SKILL.md) — Lead orchestrator and conflict resolver
+
+### Domain Standards & Contracts
 - [Methods Catalog](references/methods-catalog.md) — 20+ creative ideation methods (SIT, TRIZ, SCAMPER, Bisociation)
 - [Method Selection Matrix](references/method-selection-matrix.md) — Method selection and rotation matrix
 - [Scoring Calibration](references/scoring-calibration.md) — Cannes, D&AD, HumanKind, and Grey calibration rubrics
 - [Creative Constitution](references/creative-constitution.md) — 3-layer critique constitution and diagnostic questions
 - [Storytelling Frameworks](references/storytelling-frameworks.md) — 6 narrative frameworks (Story Spine, Sparkline, Pixar)
-- [Insight Mining](references/insight-mining.md) — Pollard Four Points, JTBD, Tension Spotting, Abstraction Laddering
+- [Insight Mining Guide](references/insight-mining.md) — Pollard Four Points, JTBD, Tension Spotting, Abstraction Laddering
 - [Idea Taxonomy](references/idea-taxonomy.md) — Pollard 7-level taxonomy and activation diagnostic
 - [Emotion Hierarchy](references/emotion-hierarchy.md) — Tier 1/2/3 emotional specificity hierarchy
 - [Activation Toolkit](references/activation-toolkit.md) — 9 activation formats and execution diagnostics
 - [Legendary Patterns](references/legendary-patterns.md) — P01-P18 pattern map and pre-mortem calibration
 - [Legendary Campaigns Canon Index](references/legendary-campaigns/MOC-index.md) — 571 verified canonical campaigns
 - [Output Templates](assets/output-templates.md) — Presentation templates and one-pagers
+- [Inclusive Representation](../../shared/references/inclusive-representation-and-ethics.md) — Anti-bias standards
 - [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json) — Neural Mesh signal contract
 - [Design Context Schema](../../shared/contracts/design-context.schema.json) — Shared state context
 

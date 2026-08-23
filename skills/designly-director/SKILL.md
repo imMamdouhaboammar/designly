@@ -5,7 +5,7 @@ description: Lead commercial Art Director and Design Neural Mesh orchestrator. T
 
 # Designly Director
 
-Designly Director is the primary entry point for Designly. Coordinate specialist Skills and custom agents through typed handoffs, enforce immutable locks, and route only the failing dimension during revision.
+Designly Director is the primary orchestrator for Designly. It coordinates 19 specialist Skills and 14 custom Codex agents through typed handoffs, enforces immutable locks, and routes failing dimensions during revision.
 
 ```text
 USER BRIEF / FEEDBACK
@@ -18,9 +18,9 @@ USER BRIEF / FEEDBACK
     +--> [campaign-canon] (571 legendary campaigns & pattern benchmarking)
     +--> [brand-activation] (PR stunts, brand utility, experiential)
     +--> [visual-storytelling] (Narrative arcs, Story Spine, Sparkline)
-    +--> [creative-strategy]
-    +--> [brand-intelligence]
-    +--> [taste-engine] <--> [reference-memory]
+    +--> [creative-strategy] (Brief deconstruction, message hierarchy)
+    +--> [brand-intelligence] (Brand rules & logo audit)
+    +--> [taste-engine] <--> [reference-memory] (Transferable rules & REF IDs)
     |
     v
 [composition-director]
@@ -133,17 +133,36 @@ Do not treat correction notes as a normal generation prompt
 
 ## Final signoff
 
-Never approve from an Art Direction Spec alone when an actual visual exists. Inspect the actual output
+Never approve from an Art Direction Spec alone when an actual visual exists. Inspect the actual output. Approval requires weighted QA threshold, applicable category floors, hard gates, slop veto, and for edits a passed edit-scope/collateral-change review.
 
-Approval requires weighted QA threshold, applicable category floors, hard gates, slop veto, and for edits a passed edit-scope/collateral-change review
+---
 
-## Contracts
+## Cross-Skill Neural Connections & References
 
-- [DesignContext](../../shared/contracts/design-context.schema.json)
-- [DesignSignalPacket](../../shared/contracts/signal-packet.schema.json)
-- [DesignLock](../../shared/contracts/design-lock.schema.json)
-- [RevisionRequest](../../shared/contracts/revision-request.schema.json)
-- [EditContract](../../shared/contracts/edit-contract.schema.json)
-- [Routing Graph](../../shared/contracts/routing-graph.json)
-- [Design Principles](../../shared/references/design-principles.md)
-- [Anti-Slop Taxonomy](../../shared/references/anti-slop-taxonomy.md)
+### Strategic & Ideation Upstream
+- [Creative Director](../creative-director/SKILL.md) — Cannes/D&AD calibration and recursive ideation
+- [Insight Mining](../insight-mining/SKILL.md) — Consumer tensions, JTBD, and Pollard 4-points
+- [Campaign Canon](../campaign-canon/SKILL.md) — 571 canonical campaigns & P01-P18 pattern taxonomy
+- [Brand Activation](../brand-activation/SKILL.md) — Experiential stunts & non-advertising diagnostics
+- [Visual Storytelling](../visual-storytelling/SKILL.md) — Narrative frameworks & emotional tiers
+- [Creative Strategy](../creative-strategy/SKILL.md) — Audience personas and communication objectives
+- [Brand Intelligence](../brand-intelligence/SKILL.md) — Brand guidelines and product fidelity
+- [Taste Engine](../taste-engine/SKILL.md) — Reference deconstruction and transferable rules
+
+### Craft & Downstream Execution
+- [Composition Director](../composition-director/SKILL.md) — Layout, grid, hierarchy, negative space
+- [Typography Director](../typography-director/SKILL.md) — Type hierarchy, measure, line breaks
+- [Arabic RTL Director](../arabic-rtl-director/SKILL.md) — RTL visual flow and calligraphy glyph checks
+- [Photography Director](../photography-director/SKILL.md) — Camera optics, lighting, and materials
+- [Manipulation Director](../manipulation-director/SKILL.md) — Compositing physics and realism
+- [Campaign DNA](../campaign-dna/SKILL.md) — Multi-asset visual family continuity
+- [Edit Sanitizer](../edit-sanitizer/SKILL.md) — Bounded edit and inpainting protection
+- [Prompt Compiler](../prompt-compiler/SKILL.md) — Provider-ready generation and edit instructions
+- [Visual QA](../visual-qa/SKILL.md) — Independent visual review, floors, and revision routing
+
+### Contracts & Standards
+- [Software Architecture](../../shared/references/software-architecture-and-contracts.md) — Bounded contexts & lock precedence
+- [Inclusive Representation](../../shared/references/inclusive-representation-and-ethics.md) — Anti-bias & authentic human representation
+- [Design Context Schema](../../shared/contracts/design-context.schema.json) — Neural Mesh shared state
+- [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json) — Specialist signal handoff
+- [Routing Graph](../../shared/contracts/routing-graph.json) — Complete mesh topology

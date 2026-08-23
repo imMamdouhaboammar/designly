@@ -38,8 +38,18 @@ Creative Strategy deconstructs commercial marketing briefs into sharp communicat
 
 ---
 
-## 3. References & Schemas
+## 3. Cross-Skill Neural Connections & References
 
-- Shared Contract: [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json)
-- Shared Reference: [Marketing Brief Guide](../../shared/references/marketing-brief.md)
-- Shared Reference: [Design Principles](../../shared/references/design-principles.md)
+### Peer & Downstream Skills
+- [Insight Mining](../insight-mining/SKILL.md) — Unearthing underlying consumer tensions & JTBD
+- [Creative Director](../creative-director/SKILL.md) — Structural ideation (SIT/TRIZ) & Cannes scoring
+- [Campaign Canon](../campaign-canon/SKILL.md) — Benchmarking against 571 canonical campaigns
+- [Brand Intelligence](../brand-intelligence/SKILL.md) — Aligning strategic territories with brand identity
+- [Composition Director](../composition-director/SKILL.md) — Translating message hierarchy into layout structure
+- [Designly Director](../designly-director/SKILL.md) — Orchestrator and lock manager
+
+### Schemas & References
+- [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json) — Neural Mesh handoff
+- [Marketing Brief Guide](../../shared/references/marketing-brief.md) — Brief intake rules
+- [Design Principles](../../shared/references/design-principles.md) — Core principles
+- [Inclusive Representation](../../shared/references/inclusive-representation-and-ethics.md) — Anti-stereotype audience modeling

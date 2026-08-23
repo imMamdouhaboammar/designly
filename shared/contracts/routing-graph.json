@@ -1,8 +1,189 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "4.3.0",
-  "name": "Design Neural Mesh Routing Graph",
+  "version": "4.4.0",
+  "name": "Design Neural Mesh Orchestration Graph",
   "primary_orchestrator": "designly-director",
+  "architecture_layers": [
+    {
+      "tier": 1,
+      "name": "Strategy & Ideation",
+      "description": "Deconstructs business problem, unearths consumer tensions, benchmarks against 571 campaigns, and generates Cannes-calibrated concepts.",
+      "skills": ["creative-strategy", "insight-mining", "creative-director", "campaign-canon", "brand-activation"]
+    },
+    {
+      "tier": 2,
+      "name": "Visual Architecture & Representation",
+      "description": "Establishes narrative arcs, spatial hierarchy, typography, native RTL eye flow, and anti-bias human representation.",
+      "skills": ["visual-storytelling", "composition-director", "typography-director", "arabic-rtl-director"]
+    },
+    {
+      "tier": 3,
+      "name": "Brand Identity & Taste Intelligence",
+      "description": "Audits brand assets, enforces logo clearspace, and extracts evidence-backed transferable aesthetic rules.",
+      "skills": ["brand-intelligence", "taste-engine", "reference-memory"]
+    },
+    {
+      "tier": 4,
+      "name": "Craft Physics & Optics",
+      "description": "Directs camera focal length, 3-point lighting systems, melanin-accurate color grading, and compositing contact physics.",
+      "skills": ["photography-director", "manipulation-director", "campaign-dna"]
+    },
+    {
+      "tier": 5,
+      "name": "Sanitization & Model Compilation",
+      "description": "Normalizes annotation-guided edits into bounded contracts and compiles approved art direction into provider instructions.",
+      "skills": ["edit-sanitizer", "prompt-compiler"]
+    },
+    {
+      "tier": 6,
+      "name": "Verification & QA Release Gates",
+      "description": "Independent release gate enforcing category floors, 7-point representation review, AI-slop vetoes, and targeted revision routing.",
+      "skills": ["visual-qa"]
+    }
+  ],
+  "role_aware_pipelines": {
+    "new_commercial_campaign": [
+      "designly-director",
+      "creative-strategy",
+      "insight-mining",
+      "creative-director",
+      "campaign-canon",
+      "brand-intelligence",
+      "taste-engine",
+      "composition-director",
+      "typography-director",
+      "photography-director",
+      "prompt-compiler",
+      "visual-qa"
+    ],
+    "brand_activation_stunt": [
+      "designly-director",
+      "insight-mining",
+      "brand-activation",
+      "campaign-canon",
+      "brand-intelligence",
+      "manipulation-director",
+      "prompt-compiler",
+      "visual-qa"
+    ],
+    "arabic_first_poster": [
+      "designly-director",
+      "creative-strategy",
+      "insight-mining",
+      "creative-director",
+      "brand-intelligence",
+      "composition-director",
+      "arabic-rtl-director",
+      "typography-director",
+      "photography-director",
+      "prompt-compiler",
+      "visual-qa"
+    ],
+    "narrative_storyboard": [
+      "designly-director",
+      "creative-strategy",
+      "insight-mining",
+      "visual-storytelling",
+      "campaign-dna",
+      "composition-director",
+      "photography-director",
+      "prompt-compiler",
+      "visual-qa"
+    ],
+    "bounded_image_edit": [
+      "designly-director",
+      "edit-sanitizer",
+      "arabic-rtl-director",
+      "prompt-compiler",
+      "visual-qa"
+    ]
+  },
+  "feedback_loops": [
+    {
+      "name": "cannes_ideation_refinement_loop",
+      "source": "creative-director",
+      "target": "insight-mining",
+      "condition": "concept_score < 9.0 or humankind_score < 7",
+      "action": "Rotate structural method in methods-catalog (SIT -> Bisociation -> Inversion), refine underlying tension, and re-score (up to 5 passes).",
+      "max_iterations": 5
+    },
+    {
+      "name": "craft_physics_alignment_loop",
+      "source": "manipulation-director",
+      "target": "photography-director",
+      "condition": "perspective_or_lighting_mismatch_detected",
+      "action": "Realign horizon lines, key light angles, and color temperatures between composite elements and background plate.",
+      "max_iterations": 3
+    },
+    {
+      "name": "bounded_edit_containment_loop",
+      "source": "visual-qa",
+      "target": "edit-sanitizer",
+      "condition": "collateral_drift > 0 or wrong_target_mutated",
+      "action": "Reject output, reset to approved source checkpoint, shrink mutation polygon, and reissue EditContract.",
+      "max_iterations": 3
+    },
+    {
+      "name": "arabic_glyph_integrity_loop",
+      "source": "visual-qa",
+      "target": "arabic-rtl-director",
+      "condition": "arabic_glyph_error or rtl_flow_reversed",
+      "action": "Issue hard veto, extract exact Unicode string, verify ligature shaping, and inject strict typographic constraints into prompt-compiler.",
+      "max_iterations": 2
+    },
+    {
+      "name": "anti_bias_representation_loop",
+      "source": "visual-qa",
+      "target": "prompt-compiler",
+      "condition": "clone_faces_detected or stereotypical_trope_found",
+      "action": "Inject explicit facial bone structure variance, melanin-calibrated lighting spec, and negative constraints against generic stock archetypes.",
+      "max_iterations": 2
+    }
+  ],
+  "verification_gates": [
+    {
+      "gate_id": "GATE-0",
+      "name": "Intake & Brief Invariants",
+      "owner": "designly-director",
+      "criteria": "Task type, primary communication job, deliverables, and immutable client locks established."
+    },
+    {
+      "gate_id": "GATE-1",
+      "name": "Ideation & Originality",
+      "owner": "creative-director",
+      "criteria": "Cannes weighted score >= 8.5, Pollard taxonomy matched, pattern saturation capped at 6.0 for P09/P11/P16 without structural novelty."
+    },
+    {
+      "gate_id": "GATE-2",
+      "name": "Representation & Inclusivity",
+      "owner": "visual-qa",
+      "criteria": "Passes 7-point representation checklist, no clone faces, melanin-calibrated lighting, no gibberish cultural symbols."
+    },
+    {
+      "gate_id": "GATE-3",
+      "name": "Spatial & Typographic Preflight",
+      "owner": "composition-director",
+      "criteria": "1-second thumbnail test passes, grayscale value mass clear, exact copy locked, Arabic glyphs shaped."
+    },
+    {
+      "gate_id": "GATE-4",
+      "name": "Craft Realism & Physics",
+      "owner": "manipulation-director",
+      "criteria": "Consistent horizon, ambient occlusion contact shadows, directional reflections, and physical light wrap."
+    },
+    {
+      "gate_id": "GATE-5",
+      "name": "Bounded-Edit Containment",
+      "owner": "edit-sanitizer",
+      "criteria": "Mutation budget = 1, protected complement locked, approved source checkpoint verified."
+    },
+    {
+      "gate_id": "GATE-6",
+      "name": "Post-Generation Visual Signoff",
+      "owner": "visual-qa",
+      "criteria": "Weighted score >= 92, all applicable category floors met, AI-slop veto clear, collateral drift zero."
+    }
+  ],
   "nodes": {
     "designly-director": {
       "type": "orchestrator",

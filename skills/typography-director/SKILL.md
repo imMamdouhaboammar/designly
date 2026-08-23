@@ -36,8 +36,16 @@ Typography Director governs typographic hierarchy, measure, line length, kerning
 
 ---
 
-## 2. References & Schemas
+## 2. Cross-Skill Neural Connections & References
 
-- Shared Contract: [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json)
-- Shared Reference: [Typography Guide](../../shared/references/typography.md)
-- Shared Reference: [Design Principles](../../shared/references/design-principles.md)
+### Peer & Downstream Skills
+- [Arabic RTL Director](../arabic-rtl-director/SKILL.md) — RTL typography, glyph shaping & calligraphy fidelity
+- [Composition Director](../composition-director/SKILL.md) — Grid placement, margins, and spatial hierarchy
+- [Brand Intelligence](../brand-intelligence/SKILL.md) — Corporate typeface rules and brand lock alignment
+- [Prompt Compiler](../prompt-compiler/SKILL.md) — Text zone protection in image generation instructions
+- [Designly Director](../designly-director/SKILL.md) — Orchestrator and exact-copy lock manager
+
+### Schemas & References
+- [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json) — Neural Mesh handoff
+- [Typography Guide](../../shared/references/typography.md) — Typographic hierarchy and measure
+- [Design Principles](../../shared/references/design-principles.md) — Core visual design rules

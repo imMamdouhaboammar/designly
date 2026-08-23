@@ -36,9 +36,18 @@ Great storytelling avoids generic "positive/happy" states and targets distinct T
 
 ---
 
-## 3. Schemas & References
+## 3. Cross-Skill Neural Connections & References
 
+### Peer & Downstream Skills
+- [Insight Mining](../insight-mining/SKILL.md) — Upstream emotional tensions & human truth
+- [Composition Director](../composition-director/SKILL.md) — Visual pacing, focal paths, and frame hierarchy
+- [Campaign DNA](../campaign-dna/SKILL.md) — Multi-frame continuity and sequential narrative rules
+- [Creative Director](../creative-director/SKILL.md) — High-concept ideation & Cannes scoring
+- [Designly Director](../designly-director/SKILL.md) — Lead orchestrator
+
+### Domain References & Contracts
 - [Storytelling Frameworks Guide](references/storytelling-frameworks.md) — 6 implementation cards and storyboard patterns
 - [Emotion Hierarchy](references/emotion-hierarchy.md) — Tier 1/2/3 emotional register taxonomy
+- [Inclusive Representation](../../shared/references/inclusive-representation-and-ethics.md) — Anti-stereotype character design
 - [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json) — Neural Mesh signal handoff
 - [Design Context Schema](../../shared/contracts/design-context.schema.json) — Shared state context

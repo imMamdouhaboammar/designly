@@ -36,8 +36,17 @@ Manipulation Director governs the physical plausibility and visual integration o
 
 ---
 
-## 2. References & Schemas
+## 2. Cross-Skill Neural Connections & References
 
-- Shared Contract: [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json)
-- Shared Reference: [Advertising Manipulation](../../shared/references/advertising-manipulation.md)
-- Shared Reference: [Image Editing Guide](../../shared/references/image-editing.md)
+### Peer & Downstream Skills
+- [Photography Director](../photography-director/SKILL.md) — Lighting angles, color temperature, and camera focal lengths
+- [Edit Sanitizer](../edit-sanitizer/SKILL.md) — Inpainting boundaries, polygon geometry, and protected areas
+- [Composition Director](../composition-director/SKILL.md) — Spatial balance, scale relationships, and grid anchors
+- [Brand Activation](../brand-activation/SKILL.md) — Public ambient stunts and physical mockups
+- [Visual QA](../visual-qa/SKILL.md) — Physical believability floor & artifact inspection
+- [Designly Director](../designly-director/SKILL.md) — Lead orchestrator and lock manager
+
+### Schemas & References
+- [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json) — Signal handoff contract
+- [Advertising Manipulation](../../shared/references/advertising-manipulation.md) — Compositing physics & realism
+- [Image Editing Guide](../../shared/references/image-editing.md) — Editing methods & source protection

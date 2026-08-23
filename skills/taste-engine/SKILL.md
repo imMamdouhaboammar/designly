@@ -48,9 +48,18 @@ Taste Engine converts raw reference images into evidence-backed, transferable de
 
 ---
 
-## 3. Schemas & References
+## 3. Cross-Skill Neural Connections & References
 
-- Local Schema: [Taste Profile Schema](schemas/taste-profile.schema.json)
-- Local Schema: [Taste Mix Schema](schemas/taste-mix.schema.json)
-- Shared Reference: [Taste Engine Guide](../../shared/references/taste-engine.md)
-- Shared Reference: [Reference Analysis](../../shared/references/reference-analysis.md)
+### Peer & Downstream Skills
+- [Reference Memory](../reference-memory/SKILL.md) — Persistent REF-ID lookup and taste history
+- [Brand Intelligence](../brand-intelligence/SKILL.md) — Checking reference rules against brand locks
+- [Composition Director](../composition-director/SKILL.md) — Applying reference geometric anchors to grid
+- [Photography Director](../photography-director/SKILL.md) — Translating lighting extractions into optics
+- [Campaign Canon](../campaign-canon/SKILL.md) — Cross-referencing visual style with canon cases
+- [Designly Director](../designly-director/SKILL.md) — Orchestrator and conflict resolver
+
+### Schemas & References
+- [Taste Profile Schema](schemas/taste-profile.schema.json) — Local profile schema
+- [Taste Mix Schema](schemas/taste-mix.schema.json) — Mixing contract schema
+- [Taste Engine Guide](../../shared/references/taste-engine.md) — Extraction principles
+- [Reference Analysis](../../shared/references/reference-analysis.md) — Analytical steps

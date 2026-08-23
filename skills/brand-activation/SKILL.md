@@ -41,9 +41,18 @@ Before approving an activation concept, apply the diagnostic test:
 
 ---
 
-## 4. Schemas & References
+## 4. Cross-Skill Neural Connections & References
 
+### Peer & Specialized Skills
+- [Campaign Canon](../campaign-canon/SKILL.md) — Canonical activation case benchmarks & P04/P07 patterns
+- [Creative Director](../creative-director/SKILL.md) — Cannes scoring & recursive ideation
+- [Brand Intelligence](../brand-intelligence/SKILL.md) — Brand guidelines, purpose & brand-off test
+- [Manipulation Director](../manipulation-director/SKILL.md) — Real-world physical plausibility and lighting
+- [Designly Director](../designly-director/SKILL.md) — Lead orchestrator
+
+### Domain References & Contracts
 - [Activation Toolkit](references/activation-toolkit.md) — Comprehensive format matrix and mechanics
 - [Idea Taxonomy](references/idea-taxonomy.md) — 7-level taxonomy and activation diagnostics
+- [Inclusive Representation](../../shared/references/inclusive-representation-and-ethics.md) — Anti-bias & ethical standards
 - [Signal Packet Schema](../../shared/contracts/signal-packet.schema.json) — Neural Mesh signal handoff
 - [Design Context Schema](../../shared/contracts/design-context.schema.json) — Shared state context
