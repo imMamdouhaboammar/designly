@@ -28,7 +28,7 @@ Pathway 1: GPT Image 2         Pathway 2: Brand Campaign      Pathway 3: AI Vide
                         [Independent Visual QA Gate]
 ```
 
-## 0. Prompt Playground
+## Pathway 0: Prompt Playground
 
 **Trigger**: the user asks what Designly can do, how to use it, how to learn it, asks for examples or prompts to try, wants to test the plugin, or asks to explore Designly capabilities.
 
