@@ -1,24 +1,56 @@
 <p align="center">
-  <img src="assets/logo.svg" width="80" height="80" alt="Designly" />
+  <img src="assets/social-preview.svg" width="100%" alt="Designly - Commercial Art Direction &amp; Design Neural Mesh" />
 </p>
 
 <h1 align="center">Designly</h1>
 
 <p align="center">
   <strong>Commercial Art Direction & Design Neural Mesh Plugin</strong><br/>
-  21 focused Skills, 16 bounded Codex agents, Cannes-calibrated Creative Direction, 571 Legendary Campaign Canon, dramaturgy-first AI Video Direction (Seedance 2.5, Kling 3.0, Veo), model-physics Image Direction (Nano Banana, GPT Image 2), Insight Mining, Brand Activation, Visual Storytelling, typed handoffs, preflight, bounded edit sanitization, and independent visual QA
+  21 focused Skills, 16 bounded Codex agents, Cannes-calibrated Creative Direction, 571 Legendary Campaign Canon, dramaturgy-first AI Video Direction (Seedance 2.5, Kling 3.0, Veo), model-physics Image & Design Direction (Gemini Nano Banana 2/Pro, MiniMax Design, Kimi Design, Claude Design, GPT Image 2), Insight Mining, Brand Activation, Visual Storytelling, typed handoffs, preflight, bounded edit sanitization, and independent visual QA
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/v5.0.0-production-111111?style=flat-square" alt="version 5.0.0" />
+  <a href="https://skills.sh/imMamdouhaboammar/designly"><img src="https://img.shields.io/badge/skills.sh-package-black?style=flat-square&logo=vercel" alt="skills.sh" /></a>
+  <a href="https://www.npmjs.com/package/designly"><img src="https://img.shields.io/badge/npm-v5.0.0-CB3837?style=flat-square&logo=npm" alt="npm package" /></a>
+  <a href="Formula/designly.rb"><img src="https://img.shields.io/badge/homebrew-tap-FBB040?style=flat-square&logo=homebrew" alt="Homebrew" /></a>
   <img src="https://img.shields.io/badge/21_Skills-modular-111111?style=flat-square" alt="21 skills" />
+  <img src="https://img.shields.io/badge/8_Adapters-typed-111111?style=flat-square" alt="8 adapters" />
   <img src="https://img.shields.io/badge/16_Agents-bounded-111111?style=flat-square" alt="16 agents" />
   <img src="https://img.shields.io/badge/571_Campaigns-canonical-111111?style=flat-square" alt="571 campaigns" />
-  <img src="https://img.shields.io/badge/Dramaturgy-Walter_Murch-111111?style=flat-square" alt="Dramaturgy" />
   <img src="https://img.shields.io/badge/Arabic_RTL-native-111111?style=flat-square" alt="Arabic RTL" />
   <a href="skills/designly-director/references/prompt-playground.md"><img src="https://img.shields.io/badge/Workflow_Library-production-111111?style=flat-square" alt="Workflow Library" /></a>
-  <a href="skills/designly-director/references/prompt-playground.md"><img src="https://img.shields.io/badge/16_Workflows-copy--ready-111111?style=flat-square" alt="16 copy-ready workflows" /></a>
 </p>
+
+---
+
+## ⚡ Quick Install
+
+### 1. via skills.sh (Vercel)
+Install the complete 21-skill pack directly into your agent environment:
+```bash
+npx skills add imMamdouhaboammar/designly
+```
+
+### 2. via Homebrew (macOS / Linux)
+```bash
+brew tap imMamdouhaboammar/designly
+brew install designly
+```
+
+### 3. via npm / Bun
+```bash
+# Global CLI installation
+npm install -g designly
+# or
+bun add -g designly
+
+# Or run directly without installing
+npx designly compile --model gemini-nano-banana --input spec.json
+```
+
+👉 See the complete **[Installation & Adapters Guide](docs/INSTALLATION.md)** for Codex, Claude Code, Cursor, Antigravity, and Python API setups.
+
+---
 
 ## Start Here: Production Workflow Prompts
 
@@ -30,15 +62,19 @@ These are not fictional demo prompts. Pick the workflow that matches your real j
 
 **[Open the Workflow Prompt Library →](skills/designly-director/references/prompt-playground.md)**
 
+---
+
 ## What Designly is
 
-Designly is a skills-only ChatGPT and Codex plugin for commercial art direction, creative ideation, consumer insight mining, brand activation, narrative design, AI video directing, model-physics image prompting, brand visual systems, product advertising, bounded image manipulation, Arabic-first design, and rigorous visual QA.
+Designly is a skills-only ChatGPT, Codex, and Claude/Agent plugin for commercial art direction, creative ideation, consumer insight mining, brand activation, narrative design, AI video directing, model-physics image prompting, brand visual systems, product advertising, bounded image manipulation, Arabic-first design, and rigorous visual QA.
 
 It does not treat visual creation as a single-prompt guessing game.
 
-The Director locks the brief, delegates bounded specialist jobs (including Cannes-calibrated ideation, consumer tension mining, non-advertising activation diagnostics, 571 legendary campaigns, dramaturgy-first video directing with Walter Murch's Rule of Six, and model-physics prompt synthesis for Nano Banana, GPT Image 2, Seedance 2.5, and Kling 3.0), merges typed recommendations, compiles approved visual direction, and submits the output to independent QA.
+The Director locks the brief, delegates bounded specialist jobs (including Cannes-calibrated ideation, consumer tension mining, non-advertising activation diagnostics, 571 legendary campaigns, dramaturgy-first video directing with Walter Murch's Rule of Six, and model-physics prompt synthesis for Gemini Nano Banana, MiniMax Design, Kimi Design, Claude Design, Seedance 2.5, and Kling 3.0), merges typed recommendations, compiles approved visual direction, and submits the output to independent QA.
 
 For existing-image corrections, Designly enforces a dedicated Edit Sanitizer so annotation notes and inpainting requests cannot flow directly into execution without strict scope and preservation checks.
+
+---
 
 ## Neural Mesh Architecture
 
@@ -67,8 +103,8 @@ Composition & Spatial Preflight
   │
   ▼
 Generative Direction & Model Physics
-  ├──► Image Director (Nano Banana 2/Pro, GPT Image 2 5-slot templates, multi-panel grids)
-  ├──► Video Director (Seedance 2.5, Kling 3.0, Veo 3/3.1, 14-field shot cards, Murch montage)
+  ├──► Image Director (Gemini Nano Banana 2/Pro, MiniMax Design, Kimi Design, Claude Design, GPT Image 2)
+  ├──► Video Director (Seedance 2.5, Kling 3.0, MiniMax Video, Veo 3/3.1, 14-field shot cards, Murch montage)
   │
   ├──► Existing-Image Bounded Correction
   │      Edit Sanitizer (Annotation mapping, source checkpoint, protected regions)
@@ -77,13 +113,30 @@ Generative Direction & Model Physics
 Prompt Compiler (Assembly into provider-native parameters)
   │
   ▼
-Host Image / Video Generator
+Host Image / Video / Design Generator
   │
   ▼
 Visual QA (Independent Reviewer & Release Gates)
   ├──► PASS: final signoff
   └──► FAIL: RevisionRequest routed to the single responsible specialist
 ```
+
+---
+
+## Supported Model Adapters
+
+| Model Adapter | Provider | Output Grammar | Key Capabilities |
+|---|---|---|---|
+| `gemini-nano-banana` | Google DeepMind | Descriptive Prose & Spatial JSON | Real-world grounding, 1:8 to 8:1 ratios, thinking mode, 14 references, zero camera dumps |
+| `minimax-design` | MiniMax / Hailuo | Cinematic Physics & Bilingual | Volumetric lighting, camera vectors (`pan`, `tilt`, `zoom`, `dolly`, `orbit`), intensity 1-10 |
+| `kimi-design` | Moonshot AI | Coordinate Zoning & Token Contracts | `[ZONE_TOP]`, `[ZONE_HERO]`, `#HEX` palettes, exact copy bounding box locks, paired SVG/HTML |
+| `claude-design` | Anthropic 3.7 | Token Contracts & Vector SVG | Anti-slop finish gate, Tailwind tokens, precision `<viewBox>` with zero clipping, state machines |
+| `seedance` | ByteDance | 30s Multi-Shot Timeline | 50-slot reference kit, `{ dialogue }` lip-sync, 3D blockout coordinates |
+| `kling` | Kuaishou | Multi-Character Binding & Motion Brush | `[Character: ]` tags, 6-region motion brush vectors, native negative prompt, 6-axis camera matrix |
+| `gpt-image-2` | OpenAI | 5-Slot Template & 2-Column Edit | `quality: low/medium/high`, two-column preservation contract (`Change/Preserve/Constraints`) |
+| `veo` | Google DeepMind | JSON Schema | Native JSON prompt structure, synchronized dialogue and ambient sound cues |
+
+---
 
 ## 21 Modular Skills
 
@@ -95,8 +148,8 @@ Visual QA (Independent Reviewer & Release Gates)
 | `campaign-canon` | 571 canonical campaigns, P01-P18 pattern map, anti-derivative benchmarking |
 | `brand-activation` | Experiential stunts, brand utility, ambient media, non-advertising diagnostics |
 | `visual-storytelling` | 6 narrative frameworks (Story Spine, Sparkline, Freytag, Monroe), emotional tiers |
-| `video-director` | AI film director, dramaturgy, Murch Rule of Six, 14-field shot cards, Seedance 2.5 / Kling 3.0 / Veo |
-| `image-director` | AI art director, model physics, 5-slot templates, multi-panel grids, Nano Banana 2/Pro & GPT Image 2 |
+| `video-director` | AI film director, dramaturgy, Murch Rule of Six, 14-field shot cards, Seedance 2.5 / Kling 3.0 / MiniMax / Veo |
+| `image-director` | AI art director, model physics, Gemini Nano Banana 2/Pro, MiniMax Design, Kimi Design, Claude Design, GPT Image 2 |
 | `creative-strategy` | Objective, audience, primary message, concept territory |
 | `brand-intelligence` | Brand rules, product identity, logo behavior, brand-off test |
 | `taste-engine` | Evidence-backed transferable rules from references |
@@ -111,7 +164,7 @@ Visual QA (Independent Reviewer & Release Gates)
 | `prompt-compiler` | Approved direction or EditContract to host/model instructions |
 | `visual-qa` | Independent scoring, hard gates, slop veto, revision routing |
 
-Every Skill has its own `agents/openai.yaml` interface configuration and dedicated SVG logo.
+---
 
 ## 16 Codex Custom Agents
 
@@ -134,69 +187,36 @@ Every Skill has its own `agents/openai.yaml` interface configuration and dedicat
 | `edit-sanitizer` | Read-only bounded-edit normalization and vetoes |
 | `visual-reviewer` | Read-only independent release gate |
 
-## Design Quality Gates
+---
 
-Designly deliberately rejects attractive-looking output when the communication, dramaturgy, or craft is flawed.
+## Testing & Quality Assurance
 
-Applicable gates include:
-- brief and primary-message accuracy
-- insight depth and concept originality
-- pattern saturation threshold enforcement (caps on P09, P11, P16)
-- non-advertising intrinsic utility validation
-- narrative coherence and emotional tier specificity
-- dramaturgy scene formula and three-detail audit on every shot
-- model-physics syntax compliance (GPT Image 5-slot vs Nano Banana prose)
-- hierarchy and composition floors
-- typography and exact-copy checks
-- Arabic glyph and RTL checks
-- brand and product fidelity
-- physical believability for composites
-- AI-slop vetoes
-- bounded-edit target/scope/collateral checks
-
-## Install and Test
+Designly enforces strict unit and integration testing conforming to `test-guard` rules and `api-security-best-practices`:
 
 ```bash
-git clone https://github.com/imMamdouhaboammar/designly.git
-cd designly
-python3 -m pip install pyyaml jsonschema
+# 1. Run Bun unit test suite (TypeScript & CLI binary)
+bun test
 
-# Core validation scripts
-python3 shared/scripts/validate_mesh.py
-python3 shared/scripts/validate_skill_interfaces.py
-python3 shared/scripts/validate_agent_configs.py
+# 2. Run supply chain security audit
+python3 evals/supply_chain/test_supply_chain.py
 
-# Evals and unit test suites
-python3 evals/baseline/test_monolith_parity.py
-python3 evals/routing/test_skill_catalog.py
-python3 evals/handoffs/test_contracts.py
-python3 evals/handoffs/test_agents.py
-python3 evals/edit/test_edit_sanitizer.py
-python3 evals/visual/test_revision_router.py
+# 3. Run Homebrew formula tests
+python3 evals/homebrew/test_homebrew.py
+
+# 4. Run skills.sh registry validation
+python3 tools/publish_skills_sh.py --check
+
+# 5. Run Model Adapters test suite
+python3 evals/adapters/test_adapters.py
+
+# 6. Run Neural Mesh conflict & integration tests
 python3 evals/run_mesh_evals.py
 
-# Skill-specific tests
-python3 skills/prompt-compiler/scripts/test_prompt_lint.py
-python3 skills/visual-qa/scripts/test_gates.py
-python3 skills/creative-director/scripts/test_creative_director.py
-python3 skills/insight-mining/scripts/test_insight_mining.py
-python3 skills/campaign-canon/scripts/test_campaign_canon.py
-python3 skills/brand-activation/scripts/test_brand_activation.py
-python3 skills/visual-storytelling/scripts/test_visual_storytelling.py
-python3 skills/video-director/scripts/test_video_director.py
-python3 skills/image-director/scripts/test_image_director.py
-
-# Public plugin validation
+# 7. Validate OpenAI Codex public plugin
 python3 tools/validate_public_plugin.py .
 ```
 
-## Deterministic Packaging
-
-```bash
-python3 tools/package_plugin.py . /tmp/designly-a.zip
-python3 tools/package_plugin.py . /tmp/designly-b.zip
-cmp /tmp/designly-a.zip /tmp/designly-b.zip
-```
+---
 
 ## Third-Party Attribution
 

@@ -1,72 +1,45 @@
-# Model Selection — Nano Banana vs GPT Image 2
+# Model Selection — Gemini Nano Banana, MiniMax, Kimi, Claude & GPT Image 2
 
-Skill пишет промпты под две семьи моделей. Они мыслят по-разному — выбор модели меняет структуру промпта.
+Designly provides typed prompt adapters tailored to the exact physics, parameters, and aesthetics of each generator.
 
-## TL;DR
+## Comparison Matrix
 
-| Задача | Модель |
-|--------|--------|
-| Реальное место/объект (с грунтингом) | **Nano Banana** (NB2/NBP) |
-| Сложная сцена с физикой/композицией | **Nano Banana Pro** |
-| Длинные горизонтальные/вертикальные форматы (1:8, 8:1, 4:1) | **Nano Banana** (только NB поддерживает экстрим) |
-| Дешёвая массовая генерация | **Nano Banana 2 Lite** или **gpt-image-1-mini** |
-| Фотореализм с тонкой типографикой/UI | **GPT Image 2** |
-| Точное editing с preservation (try-on, swap, weather) | **GPT Image 2** (в editing у него лучшая identity-preservation) |
-| Маленький плотный текст в кадре | **GPT Image 2** (`quality: high`) |
-| Брендовая полиграфия / постеры с EXACT TEXT | **GPT Image 2** |
-| Сториборды, комиксы (последовательность) | **Nano Banana** (extreme ratios + thinking) |
-| Storyboard с фокусом на типографике | **GPT Image 2** |
-| Style transfer без упоминаемых референс-картинок | **GPT Image 2** (concrete visual targets) |
-| Рендер из 14+ референсов | **Nano Banana Pro** (до 14) или **GPT Image 2** (до 16) |
-
-## Когда что выигрывает
-
-### Nano Banana выигрывает в
-- **Image grounding.** NB2 ищет реальные изображения в интернете перед генерацией — точная архитектура конкретного храма, моста, площади; конкретные виды животных, растений. GPT Image 2 этого не делает.
-- **Экстремальные пропорции.** 1:8, 8:1, 1:4, 4:1 — баннеры, скроллы, комикс-стрипы. У GPT Image 2 max 3:1.
-- **«Thinking» режим.** Сложные инфографики со spatial logic.
-- **Цена/скорость.** NB2 = $0.04/img.
-
-### GPT Image 2 выигрывает в
-- **Identity preservation в edit.** Меняешь одежду / погоду / фон — лицо, поза, геометрия не плывут. Двухколоночная логика (change / preserve) работает как контракт.
-- **Тонкий текст в кадре.** Маленькие подписи, легенды, footnotes, multi-font layouts. На `quality: high` рендерит чётче.
-- **UI-моки и продуктовые скриншоты.** Иерархия, реальные интерфейс-элементы, читаемые лейблы.
-- **Структурированный 5-slot промпт.** Чёткое разделение Scene/Subject/Details/Use case/Constraints даёт предсказуемость.
-- **`quality` рычаг.** low/medium/high — осознанный trade-off скорости и точности.
-
-### Где обе модели одинаково хороши
-- Photorealistic портреты.
-- Product shots на нейтральном фоне.
-- Минималистичные постеры.
-- Editorial-фотография.
-
-## Различия в синтаксисе промпта
-
-| Аспект | Nano Banana | GPT Image 2 |
-|--------|-------------|-------------|
-| Стиль промпта | Натуральный язык, 1-2 параграфа | 5-slot с лейблами секций |
-| Камера/линза | **Не указывать** числа (50mm, f/2.8) — NB игнорит | Можно «50mm feel», но как high-level look |
-| «Stunning/epic/masterpiece» | Игнорит, не вредит | **Anti-slop**: вредит, делает результат хуже |
-| Text in image | `"..."` в кавычках, font + position | `"..."` или ALL CAPS + «no extra words / no duplicate text» |
-| Negative framing | Использовать позитив | Использовать позитив + явный preserve list |
-| Сложные сцены | JSON для 5+ элементов | 5-slot template со секциями |
-| Edit | «Keep X same, change Y» | «Change: X / Preserve: Y / Constraints: Z» — повторять preserve каждую итерацию |
-| Множественные референсы | До 14, индексировать | До 16, индексировать с ролью («Image 1: base», «Image 2: jacket reference») |
-
-## Стоимость (ориентир)
-
-| Модель | Цена | Заметки |
-|--------|------|---------|
-| Nano Banana 2 Lite | ~$0.034/img | Только 1K, ~4 сек. Черновики и массовые батчи |
-| Nano Banana 2 (Flash) | ~$0.04/img | Default для большинства задач |
-| Nano Banana Pro | ~$0.15/img | Сложные сцены, до 14 рефов |
-| GPT Image 2 (`low`) | дёшево | Latency-sensitive, превью |
-| GPT Image 2 (`medium`) | средне | Default для GPT Image |
-| GPT Image 2 (`high`) | дороже | Маленький текст, brand-sensitive, photorealism |
-| gpt-image-1-mini | дешёвый | Высокообъёмная exploratory-генерация |
-
-> Скилл сам не запускает генерацию — выдаёт промпт. Модель/quality указываем рядом с промптом как мета.
+| Use Case | Recommended Model Adapter | Model Strengths & Physics |
+|---|---|---|
+| Real places, architectural landmarks, biological grounding | **Gemini Nano Banana (NB2 / Pro)** | Web-grounded knowledge, descriptive paragraphs, 14 references |
+| Complex multi-element compositions (5+ subjects) | **Gemini Nano Banana Pro** | Thinking mode & spatial JSON coordinate structuring |
+| Extreme aspect ratios (`1:8`, `8:1`, `4:1`, `1:4`, `21:9`) | **Gemini Nano Banana** | Extreme ratio stability without edge warping |
+| High-dynamic lighting, volumetric atmosphere, cinematic momentum | **MiniMax Design (Hailuo)** | Physics simulation, bilingual English/Chinese parsing, motion vectors |
+| UI/UX design systems, poster layouts, typography bounding boxes | **Kimi Design (Moonshot)** | Layout coordinate zoning (`[Top-Bar]`, `[Hero]`, `[Cards]`), token contracts |
+| Clean vector SVG, interactive component states, anti-slop finish | **Claude Design (Anthropic 3.7)** | Anti-slop finish gate, Tailwind tokens, precision `<viewBox>` |
+| Micro-typography, brand polygraphy, two-column bounded edits | **GPT Image 2** | 5-slot template, `quality: high` text rendering, strict edit preservation |
 
 ---
 
-*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*
+## Model Syntax & Prompt Rules
+
+### 1. Gemini Nano Banana
+- **Style**: Natural language descriptive paragraphs.
+- **Optics**: Do NOT use numeric focal lengths (`50mm f/1.4`); describe depth and lighting relationships naturally.
+- **Extreme Ratios**: Supports `1:8`, `8:1`, `4:1`, `1:4`, `16:9`, `9:16`, `1:1`.
+- **Grounding**: Queries real-world references for authentic landmarks and cultural motifs.
+- **Reference Binding**: Up to 14 reference images with indexed roles (`[Ref 1: ...]`).
+
+### 2. MiniMax Design
+- **Style**: Direct sensory description with action mechanics and volumetric atmosphere.
+- **Camera Directives**: `Camera: pan_left / tilt_up / zoom_in / dolly_in / orbit / crane`.
+- **Negative Prompt**: Explicit negative exclusions field.
+
+### 3. Kimi Design
+- **Style**: Layout-first coordinate zoning + design token contracts.
+- **Structure**: `[ZONE_TOP]`, `[ZONE_HERO]`, `[ZONE_BODY]`, `[ZONE_FOOTER]`.
+- **Typography**: Exact copy locks with bounding box coordinates.
+
+### 4. Claude Design
+- **Style**: Component architecture contracts, design system tokens, and precision vector specs.
+- **Anti-Slop**: Zero generic purple gradients or non-functional floating blobs.
+- **Vectors**: Responsive SVG with clean `viewBox` and zero visual clipping.
+
+### 5. GPT Image 2
+- **Style**: 5-slot template (`Scene`, `Subject`, `Important Details`, `Use Case`, `Constraints`).
+- **Edit**: Two-column contract (`Change: X`, `Preserve: Y`, `Constraints: Z`).

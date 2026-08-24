@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07090E" />
+      <stop offset="50%" stop-color="#0C1019" />
+      <stop offset="100%" stop-color="#06080D" />
+    </linearGradient>
+    
+    <radialGradient id="blueGlow" cx="20%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0" />
+    </radialGradient>
+    
+    <radialGradient id="emeraldGlow" cx="80%" cy="80%" r="50%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="purpleGlow" cx="50%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.4" />
+    </linearGradient>
+
+    <linearGradient id="brandTextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+
+    <linearGradient id="pillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.25" />
+    </linearGradient>
+
+    <!-- Mesh Grid Pattern -->
+    <pattern id="meshGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.25" />
+    </pattern>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="1280" height="640" fill="url(#bgGrad)" />
+  <rect width="1280" height="640" fill="url(#meshGrid)" />
+
+  <!-- Ambient Glow Orbs -->
+  <circle cx="200" cy="150" r="350" fill="url(#blueGlow)" />
+  <circle cx="1080" cy="500" r="400" fill="url(#emeraldGlow)" />
+  <circle cx="640" cy="240" r="300" fill="url(#purpleGlow)" />
+
+  <!-- Outer Border Frame -->
+  <rect x="24" y="24" width="1232" height="592" rx="20" fill="none" stroke="#334155" stroke-width="1.5" stroke-opacity="0.4" />
+
+  <!-- Top Category Tag -->
+  <g transform="translate(640, 75)">
+    <rect x="-210" y="-16" width="420" height="32" rx="16" fill="url(#pillGrad)" stroke="#3B82F6" stroke-width="1" stroke-opacity="0.5" />
+    <text x="0" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="2.5" fill="#60A5FA" text-anchor="middle">COMMERCIAL ART DIRECTION &amp; NEURAL MESH</text>
+  </g>
+
+  <!-- Brand Header & Logo -->
+  <g transform="translate(640, 160)">
+    <!-- Logo Icon -->
+    <g transform="translate(-160, -32) scale(0.65)">
+      <rect x="0" y="0" width="96" height="96" rx="24" fill="#0F172A" stroke="#3B82F6" stroke-width="3" stroke-opacity="0.8" />
+      <path d="M 28 28 L 68 28 L 68 48 L 48 48 L 48 68 L 28 68 Z" fill="#3B82F6" />
+      <circle cx="60" cy="60" r="8" fill="#10B981" />
+    </g>
+    <!-- Title Text -->
+    <text x="-90" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="64" font-weight="900" letter-spacing="-1.5" fill="url(#brandTextGrad)">Designly</text>
+    <text x="185" y="-6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#10B981">v5.0.0</text>
+  </g>
+
+  <!-- Subtitle -->
+  <text x="640" y="235" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="400" fill="#94A3B8" text-anchor="middle" letter-spacing="0.2">
+    21 Modular Skills · 16 Custom Agents · Cannes Creative Direction · 571 Legendary Campaigns
+  </text>
+
+  <!-- Badges Row -->
+  <g transform="translate(640, 280)">
+    <!-- Badge 1 -->
+    <g transform="translate(-320, 0)">
+      <rect x="-70" y="-14" width="140" height="28" rx="14" fill="#1E293B" stroke="#475569" stroke-width="1" />
+      <text x="0" y="4" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#E2E8F0" text-anchor="middle">⚡ skills.sh (Vercel)</text>
+    </g>
+    <!-- Badge 2 -->
+    <g transform="translate(-160, 0)">
+      <rect x="-65" y="-14" width="130" height="28" rx="14" fill="#1E293B" stroke="#475569" stroke-width="1" />
+      <text x="0" y="4" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#E2E8F0" text-anchor="middle">🍺 Homebrew Tap</text>
+    </g>
+    <!-- Badge 3 -->
+    <g transform="translate(0, 0)">
+      <rect x="-65" y="-14" width="130" height="28" rx="14" fill="#1E293B" stroke="#475569" stroke-width="1" />
+      <text x="0" y="4" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#E2E8F0" text-anchor="middle">📦 npm / Bun CLI</text>
+    </g>
+    <!-- Badge 4 -->
+    <g transform="translate(160, 0)">
+      <rect x="-70" y="-14" width="140" height="28" rx="14" fill="#1E293B" stroke="#475569" stroke-width="1" />
+      <text x="0" y="4" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#E2E8F0" text-anchor="middle">🎬 Walter Murch Rule</text>
+    </g>
+    <!-- Badge 5 -->
+    <g transform="translate(320, 0)">
+      <rect x="-65" y="-14" width="130" height="28" rx="14" fill="#1E293B" stroke="#475569" stroke-width="1" />
+      <text x="0" y="4" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="600" fill="#E2E8F0" text-anchor="middle">🌍 Arabic RTL First</text>
+    </g>
+  </g>
+
+  <!-- 6 Model Adapters Cards Grid -->
+  <g transform="translate(80, 330)">
+    <!-- Card 1: Gemini Nano Banana -->
+    <g transform="translate(0, 0)">
+      <rect width="170" height="175" rx="14" fill="url(#cardGrad)" stroke="#3B82F6" stroke-width="1" stroke-opacity="0.4" />
+      <circle cx="28" cy="30" r="10" fill="#3B82F6" fill-opacity="0.3" />
+      <text x="28" y="34" font-family="sans-serif" font-size="11" font-weight="bold" fill="#60A5FA" text-anchor="middle">G</text>
+      <text x="46" y="34" font-family="sans-serif" font-size="12" font-weight="700" fill="#F8FAFC">Gemini Nano</text>
+      <text x="16" y="65" font-family="sans-serif" font-size="10" font-weight="600" fill="#93C5FD">NB2 / NB Pro</text>
+      <text x="16" y="85" font-family="sans-serif" font-size="9" fill="#94A3B8">• Real-world Grounding</text>
+      <text x="16" y="105" font-family="sans-serif" font-size="9" fill="#94A3B8">• Extreme 1:8 to 8:1</text>
+      <text x="16" y="125" font-family="sans-serif" font-size="9" fill="#94A3B8">• Spatial JSON Logic</text>
+      <text x="16" y="150" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="#3B82F6">14 References</text>
+    </g>
+
+    <!-- Card 2: MiniMax Design -->
+    <g transform="translate(190, 0)">
+      <rect width="170" height="175" rx="14" fill="url(#cardGrad)" stroke="#EC4899" stroke-width="1" stroke-opacity="0.4" />
+      <circle cx="28" cy="30" r="10" fill="#EC4899" fill-opacity="0.3" />
+      <text x="28" y="34" font-family="sans-serif" font-size="11" font-weight="bold" fill="#F472B6" text-anchor="middle">M</text>
+      <text x="46" y="34" font-family="sans-serif" font-size="12" font-weight="700" fill="#F8FAFC">MiniMax</text>
+      <text x="16" y="65" font-family="sans-serif" font-size="10" font-weight="600" fill="#F472B6">Hailuo Engine</text>
+      <text x="16" y="85" font-family="sans-serif" font-size="9" fill="#94A3B8">• Cinematic Physics</text>
+      <text x="16" y="105" font-family="sans-serif" font-size="9" fill="#94A3B8">• Camera 6-Axis Vectors</text>
+      <text x="16" y="125" font-family="sans-serif" font-size="9" fill="#94A3B8">• Bilingual Syntaxes</text>
+      <text x="16" y="150" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="#EC4899">Motion 1-10 Slider</text>
+    </g>
+
+    <!-- Card 3: Kimi Design -->
+    <g transform="translate(380, 0)">
+      <rect width="170" height="175" rx="14" fill="url(#cardGrad)" stroke="#10B981" stroke-width="1" stroke-opacity="0.4" />
+      <circle cx="28" cy="30" r="10" fill="#10B981" fill-opacity="0.3" />
+      <text x="28" y="34" font-family="sans-serif" font-size="11" font-weight="bold" fill="#34D399" text-anchor="middle">K</text>
+      <text x="46" y="34" font-family="sans-serif" font-size="12" font-weight="700" fill="#F8FAFC">Kimi Design</text>
+      <text x="16" y="65" font-family="sans-serif" font-size="10" font-weight="600" fill="#34D399">Moonshot Visual</text>
+      <text x="16" y="85" font-family="sans-serif" font-size="9" fill="#94A3B8">• Coordinate Zoning</text>
+      <text x="16" y="105" font-family="sans-serif" font-size="9" fill="#94A3B8">• Design Token Cards</text>
+      <text x="16" y="125" font-family="sans-serif" font-size="9" fill="#94A3B8">• Exact Copy Bounding</text>
+      <text x="16" y="150" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="#10B981">Paired SVG / CSS</text>
+    </g>
+
+    <!-- Card 4: Claude Design -->
+    <g transform="translate(570, 0)">
+      <rect width="170" height="175" rx="14" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="1" stroke-opacity="0.4" />
+      <circle cx="28" cy="30" r="10" fill="#F59E0B" fill-opacity="0.3" />
+      <text x="28" y="34" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FBBF24" text-anchor="middle">C</text>
+      <text x="46" y="34" font-family="sans-serif" font-size="12" font-weight="700" fill="#F8FAFC">Claude Design</text>
+      <text x="16" y="65" font-family="sans-serif" font-size="10" font-weight="600" fill="#FBBF24">Anthropic 3.7</text>
+      <text x="16" y="85" font-family="sans-serif" font-size="9" fill="#94A3B8">• Anti-Slop Finish Gate</text>
+      <text x="16" y="105" font-family="sans-serif" font-size="9" fill="#94A3B8">• Precision Vector SVG</text>
+      <text x="16" y="125" font-family="sans-serif" font-size="9" fill="#94A3B8">• UI State Machines</text>
+      <text x="16" y="150" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="#F59E0B">Tailwind Tokens</text>
+    </g>
+
+    <!-- Card 5: Seedance 2.5 -->
+    <g transform="translate(760, 0)">
+      <rect width="170" height="175" rx="14" fill="url(#cardGrad)" stroke="#8B5CF6" stroke-width="1" stroke-opacity="0.4" />
+      <circle cx="28" cy="30" r="10" fill="#8B5CF6" fill-opacity="0.3" />
+      <text x="28" y="34" font-family="sans-serif" font-size="11" font-weight="bold" fill="#A78BFA" text-anchor="middle">S</text>
+      <text x="46" y="34" font-family="sans-serif" font-size="12" font-weight="700" fill="#F8FAFC">Seedance 2.5</text>
+      <text x="16" y="65" font-family="sans-serif" font-size="10" font-weight="600" fill="#A78BFA">ByteDance Video</text>
+      <text x="16" y="85" font-family="sans-serif" font-size="9" fill="#94A3B8">• 30s Multi-Shot Pass</text>
+      <text x="16" y="105" font-family="sans-serif" font-size="9" fill="#94A3B8">• { Dialogue } Lip-Sync</text>
+      <text x="16" y="125" font-family="sans-serif" font-size="9" fill="#94A3B8">• 3D Spatial Blockout</text>
+      <text x="16" y="150" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="#8B5CF6">50-Slot Ref Kit</text>
+    </g>
+
+    <!-- Card 6: Kling 3.0 Pro -->
+    <g transform="translate(950, 0)">
+      <rect width="170" height="175" rx="14" fill="url(#cardGrad)" stroke="#06B6D4" stroke-width="1" stroke-opacity="0.4" />
+      <circle cx="28" cy="30" r="10" fill="#06B6D4" fill-opacity="0.3" />
+      <text x="28" y="34" font-family="sans-serif" font-size="11" font-weight="bold" fill="#22D3EE" text-anchor="middle">K</text>
+      <text x="46" y="34" font-family="sans-serif" font-size="12" font-weight="700" fill="#F8FAFC">Kling 3.0 Pro</text>
+      <text x="16" y="65" font-family="sans-serif" font-size="10" font-weight="600" fill="#22D3EE">Kuaishou Video</text>
+      <text x="16" y="85" font-family="sans-serif" font-size="9" fill="#94A3B8">• [Character: ] Binding</text>
+      <text x="16" y="105" font-family="sans-serif" font-size="9" fill="#94A3B8">• 6-Zone Motion Brush</text>
+      <text x="16" y="125" font-family="sans-serif" font-size="9" fill="#94A3B8">• Native Negative Field</text>
+      <text x="16" y="150" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="#06B6D4">6-Axis Trajectory</text>
+    </g>
+  </g>
+
+  <!-- Bottom Command Bar -->
+  <g transform="translate(640, 565)">
+    <rect x="-420" y="-18" width="840" height="36" rx="8" fill="#0B0F19" stroke="#334155" stroke-width="1" />
+    <text x="-400" y="5" font-family="monospace" font-size="12" fill="#38BDF8">$ npx skills add imMamdouhaboammar/designly</text>
+    <text x="140" y="5" font-family="monospace" font-size="12" fill="#94A3B8">|  brew install designly  |  npm i designly</text>
+  </g>
+</svg>

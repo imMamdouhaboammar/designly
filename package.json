@@ -1,0 +1,59 @@
+{
+  "name": "designly",
+  "version": "5.0.0",
+  "description": "Commercial Art Direction & Design Neural Mesh CLI with 21 modular skills & 8 model adapters",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "designly": "./bin/designly.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "skills",
+    "shared",
+    "skills.json",
+    "README.md",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "bun build ./src/index.ts --outfile ./dist/index.js --target node",
+    "test": "bun test && python3 evals/run_mesh_evals.py",
+    "check": "python3 tools/publish_skills_sh.py --check && python3 tools/homebrew_installer.py --check",
+    "lint": "python3 tools/validate_public_plugin.py ."
+  },
+  "keywords": [
+    "art-direction",
+    "creative-direction",
+    "design-mesh",
+    "ai-video",
+    "ai-image",
+    "gemini-nano-banana",
+    "minimax-design",
+    "kimi-design",
+    "claude-design",
+    "seedance",
+    "kling",
+    "skills-sh",
+    "homebrew"
+  ],
+  "author": {
+    "name": "Mamdouh Abo Ammar",
+    "url": "https://github.com/imMamdouhaboammar"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imMamdouhaboammar/designly.git"
+  },
+  "homepage": "https://github.com/imMamdouhaboammar/designly",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "bun": ">=1.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

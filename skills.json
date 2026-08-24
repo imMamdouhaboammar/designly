@@ -1,0 +1,189 @@
+{
+  "$schema": "https://skills.sh/schema/skills.json",
+  "name": "designly",
+  "version": "5.0.0",
+  "displayName": "Designly",
+  "description": "Commercial Art Direction, Creative Direction, and Design Neural Mesh with 21 modular skills, dramaturgy-first AI video directing (Seedance 2.5, Kling 3.0, Veo), and model-physics image & design direction (Gemini Nano Banana, MiniMax Design, Kimi Design, Claude Design, GPT Image 2).",
+  "author": {
+    "name": "Mamdouh Abo Ammar",
+    "url": "https://github.com/imMamdouhaboammar"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imMamdouhaboammar/designly.git"
+  },
+  "homepage": "https://skills.sh/imMamdouhaboammar/designly",
+  "license": "MIT",
+  "keywords": [
+    "art-direction",
+    "creative-direction",
+    "design",
+    "gemini-nano-banana",
+    "minimax-design",
+    "kimi-design",
+    "claude-design",
+    "seedance",
+    "kling",
+    "veo",
+    "gpt-image-2",
+    "ai-video",
+    "ai-image",
+    "dramaturgy",
+    "storytelling",
+    "brand-activation",
+    "insight-mining",
+    "campaign-canon",
+    "typography",
+    "arabic-rtl",
+    "visual-qa"
+  ],
+  "skills": [
+    {
+      "name": "designly-director",
+      "path": "skills/designly-director",
+      "entry": "skills/designly-director/SKILL.md",
+      "description": "Intake, locks, neural mesh orchestration, conflict resolution, and final signoff."
+    },
+    {
+      "name": "creative-director",
+      "path": "skills/creative-director",
+      "entry": "skills/creative-director/SKILL.md",
+      "description": "Cannes/HumanKind calibration, structural ideation (SIT/TRIZ), and recursive refinement."
+    },
+    {
+      "name": "insight-mining",
+      "path": "skills/insight-mining",
+      "entry": "skills/insight-mining/SKILL.md",
+      "description": "Consumer tension spotting (cultural, category, human), JTBD, and Pollard 4-points."
+    },
+    {
+      "name": "campaign-canon",
+      "path": "skills/campaign-canon",
+      "entry": "skills/campaign-canon/SKILL.md",
+      "description": "571 canonical campaigns, P01-P18 pattern map, and anti-derivative benchmarking."
+    },
+    {
+      "name": "brand-activation",
+      "path": "skills/brand-activation",
+      "entry": "skills/brand-activation/SKILL.md",
+      "description": "Experiential stunts, brand utility, ambient media, and non-advertising diagnostics."
+    },
+    {
+      "name": "visual-storytelling",
+      "path": "skills/visual-storytelling",
+      "entry": "skills/visual-storytelling/SKILL.md",
+      "description": "6 narrative frameworks (Story Spine, Sparkline, Freytag, Monroe), and emotional tiers."
+    },
+    {
+      "name": "video-director",
+      "path": "skills/video-director",
+      "entry": "skills/video-director/SKILL.md",
+      "description": "AI film director, dramaturgy, Murch Rule of Six, 14-field shot cards, Seedance 2.5, Kling 3.0, MiniMax, Veo."
+    },
+    {
+      "name": "image-director",
+      "path": "skills/image-director",
+      "entry": "skills/image-director/SKILL.md",
+      "description": "AI art director, model physics, multi-panel grids, Gemini Nano Banana 2/Pro, MiniMax Design, Kimi Design, Claude Design, GPT Image 2."
+    },
+    {
+      "name": "creative-strategy",
+      "path": "skills/creative-strategy",
+      "entry": "skills/creative-strategy/SKILL.md",
+      "description": "Marketing objective, target audience, primary message, and concept territory."
+    },
+    {
+      "name": "brand-intelligence",
+      "path": "skills/brand-intelligence",
+      "entry": "skills/brand-intelligence/SKILL.md",
+      "description": "Brand rules, product identity, logo behavior, and brand-off test."
+    },
+    {
+      "name": "taste-engine",
+      "path": "skills/taste-engine",
+      "entry": "skills/taste-engine/SKILL.md",
+      "description": "Evidence-backed transferable rules extracted from visual references."
+    },
+    {
+      "name": "reference-memory",
+      "path": "skills/reference-memory",
+      "entry": "skills/reference-memory/SKILL.md",
+      "description": "Local-first REF-#### records and scoped preference feedback."
+    },
+    {
+      "name": "composition-director",
+      "path": "skills/composition-director",
+      "entry": "skills/composition-director/SKILL.md",
+      "description": "Grid, hierarchy, focal structure, negative space, and crop preflight."
+    },
+    {
+      "name": "typography-director",
+      "path": "skills/typography-director",
+      "entry": "skills/typography-director/SKILL.md",
+      "description": "Type hierarchy, measure, line breaks, and text zones."
+    },
+    {
+      "name": "photography-director",
+      "path": "skills/photography-director",
+      "entry": "skills/photography-director/SKILL.md",
+      "description": "Camera optics, 3-point lighting geometry, materials, and subject treatment."
+    },
+    {
+      "name": "manipulation-director",
+      "path": "skills/manipulation-director",
+      "entry": "skills/manipulation-director/SKILL.md",
+      "description": "Compositing, perspective, contact shadows, reflections, and occlusion physics."
+    },
+    {
+      "name": "arabic-rtl-director",
+      "path": "skills/arabic-rtl-director",
+      "entry": "skills/arabic-rtl-director/SKILL.md",
+      "description": "Arabic-first visual flow, exact Arabic copy, RTL, and glyph preflight."
+    },
+    {
+      "name": "campaign-dna",
+      "path": "skills/campaign-dna",
+      "entry": "skills/campaign-dna/SKILL.md",
+      "description": "Multi-asset continuity with deliberate variations across media formats."
+    },
+    {
+      "name": "edit-sanitizer",
+      "path": "skills/edit-sanitizer",
+      "entry": "skills/edit-sanitizer/SKILL.md",
+      "description": "Annotation/inpainting scope, EditContract, and drift prevention."
+    },
+    {
+      "name": "prompt-compiler",
+      "path": "skills/prompt-compiler",
+      "entry": "skills/prompt-compiler/SKILL.md",
+      "description": "Approved direction to host/model instructions for Gemini, MiniMax, Kimi, Claude, Seedance, Kling, GPT Image."
+    },
+    {
+      "name": "visual-qa",
+      "path": "skills/visual-qa",
+      "entry": "skills/visual-qa/SKILL.md",
+      "description": "Independent scoring, hard gates, AI-slop veto, and revision routing."
+    }
+  ],
+  "adapters": {
+    "image": [
+      "gemini-nano-banana",
+      "gemini-nano-banana-pro",
+      "minimax-design",
+      "kimi-design",
+      "claude-design",
+      "gpt-image-2"
+    ],
+    "video": [
+      "seedance-2.5",
+      "kling-3.0",
+      "kling-2.6",
+      "minimax-video",
+      "veo-3.1"
+    ]
+  },
+  "install": {
+    "all": "npx skills add imMamdouhaboammar/designly",
+    "single": "npx skills add imMamdouhaboammar/designly --skill <skill-name>"
+  }
+}

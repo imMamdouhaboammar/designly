@@ -1,0 +1,28 @@
+# Version control
+.git
+.gitignore
+.github
+
+# Internal Planning & Evals
+.planning
+.superpowers
+.agent-kernel
+evals
+__pycache__
+*.pyc
+*.pyo
+
+# Cache and local artifacts
+.DS_Store
+*.tmp
+*.log
+.pytest_cache
+.ruff_cache
+
+# Private files / secrets
+.env*
+auth.json
+secrets*
+credentials*
+*.pem
+*.key

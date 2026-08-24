@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
-Test runner for Design Neural Mesh conflict resolution, adversarial scenarios, and fallback behaviors.
+Master test runner for Design Neural Mesh conflict resolution, model adapters, skills.sh publishing, Homebrew, npm, and supply chain security.
+Conforms to test-guard & api-security-best-practices.
 """
 from __future__ import annotations
 import json
 import jsonschema
+import subprocess
 import sys
 from pathlib import Path
 
@@ -21,7 +23,7 @@ def check(cond: bool, msg: str, errors: list[str]):
     if not cond:
         errors.append(msg)
 
-def run_conflict_evals() -> int:
+def run_all_evals() -> int:
     errors = []
     router = MeshRouter()
     packet_schema = json.loads((CONTRACTS_DIR / "signal-packet.schema.json").read_text(encoding="utf-8"))
@@ -65,12 +67,46 @@ def run_conflict_evals() -> int:
         # Scenario 11: Concurrent write collision
         elif s_id == "CNF-011":
             decisions = data.get("incoming_decisions", [])
-            # Highest priority (lowest integer level) wins
             winner = min(decisions, key=lambda d: d.get("priority", 11))
             check(winner["agent"] == data["expected_outcome"]["winning_agent"], f"brand_guardian wins priority collision over taste_analyst in {s_id}", errors)
             check(winner["value"] == data["expected_outcome"]["winning_value"], f"winning value preserved in {s_id}", errors)
 
-    print(f"\nConflict & Mesh Evals: {'PASS' if not errors else 'FAIL'} ({len(errors)} errors)")
+    # 1. Run Adapter Evals
+    print("\n--- Running Model Adapters Evals ---")
+    proc_adapters = subprocess.run([sys.executable, str(ROOT / "evals/adapters/test_adapters.py")], capture_output=True, text=True)
+    print(proc_adapters.stdout)
+    if proc_adapters.returncode != 0:
+        errors.append("Model Adapters evals failed")
+
+    # 2. Run skills.sh Evals
+    print("--- Running skills.sh Evals ---")
+    proc_skills_sh = subprocess.run([sys.executable, str(ROOT / "evals/skills_sh/test_skills_sh.py")], capture_output=True, text=True)
+    print(proc_skills_sh.stdout)
+    if proc_skills_sh.returncode != 0:
+        errors.append("skills.sh evals failed")
+
+    # 3. Run Homebrew Evals
+    print("--- Running Homebrew Evals ---")
+    proc_brew = subprocess.run([sys.executable, str(ROOT / "evals/homebrew/test_homebrew.py")], capture_output=True, text=True)
+    print(proc_brew.stdout)
+    if proc_brew.returncode != 0:
+        errors.append("Homebrew evals failed")
+
+    # 4. Run Supply Chain Evals
+    print("--- Running Supply Chain Evals ---")
+    proc_sc = subprocess.run([sys.executable, str(ROOT / "evals/supply_chain/test_supply_chain.py")], capture_output=True, text=True)
+    print(proc_sc.stdout)
+    if proc_sc.returncode != 0:
+        errors.append("Supply chain evals failed")
+
+    # 5. Run Bun Test Suite
+    print("--- Running Bun TypeScript CLI Tests ---")
+    proc_bun = subprocess.run(["bun", "test"], capture_output=True, text=True)
+    print(proc_bun.stdout)
+    if proc_bun.returncode != 0:
+        errors.append("Bun test suite failed")
+
+    print(f"\nConflict, Adapters, skills.sh, Homebrew & Supply Chain Evals: {'PASS' if not errors else 'FAIL'} ({len(errors)} errors)")
     if errors:
         for e in errors:
             print(f" - {e}")
@@ -78,7 +114,7 @@ def run_conflict_evals() -> int:
     return 0
 
 def main() -> int:
-    return run_conflict_evals()
+    return run_all_evals()
 
 if __name__ == "__main__":
     raise SystemExit(main())

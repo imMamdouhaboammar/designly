@@ -19,11 +19,30 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install test dependencies
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install Python test dependencies
         run: python -m pip install --disable-pip-version-check pyyaml jsonschema
 
       - name: Compile Python
         run: python -m compileall -q shared skills evals tools
+
+      - name: Bun TypeScript Build & Tests
+        run: |
+          bun run build
+          bun test
+
+      - name: Supply Chain & Package Integrity Evals
+        run: |
+          python evals/supply_chain/test_supply_chain.py
+          python tools/publish_skills_sh.py --check
+          python tools/homebrew_installer.py --check
+          python evals/homebrew/test_homebrew.py
+
+      - name: Model Adapters Unit & Integration Tests
+        run: python evals/adapters/test_adapters.py
 
       - name: Validate Design Neural Mesh
         run: python shared/scripts/validate_mesh.py
@@ -58,41 +77,6 @@ jobs:
       - name: Mesh adversarial evals
         run: python evals/run_mesh_evals.py
 
-      - name: Prompt anti-slop regressions
-        run: python skills/prompt-compiler/scripts/test_prompt_lint.py
-
-      - name: Visual release gates
-        run: python skills/visual-qa/scripts/test_gates.py
-
-      - name: Creative Director unit tests
-        run: python skills/creative-director/scripts/test_creative_director.py
-
-      - name: Insight Mining unit tests
-        run: python skills/insight-mining/scripts/test_insight_mining.py
-
-      - name: Campaign Canon unit tests
-        run: python skills/campaign-canon/scripts/test_campaign_canon.py
-
-      - name: Brand Activation unit tests
-        run: python skills/brand-activation/scripts/test_brand_activation.py
-
-      - name: Visual Storytelling unit tests
-        run: python skills/visual-storytelling/scripts/test_visual_storytelling.py
-
-      - name: Video Director unit tests
-        run: python skills/video-director/scripts/test_video_director.py
-
-      - name: Image Director unit tests
-        run: python skills/image-director/scripts/test_image_director.py
-
-      - name: Reference Memory CRUD tests
-        run: python skills/reference-memory/scripts/test_taste_memory.py
-
-      - name: Taste Engine regressions
-        run: |
-          python skills/taste-engine/scripts/test_taste_lint.py
-          python skills/taste-engine/scripts/test_taste_merge.py
-
       - name: Public plugin preflight
         run: python tools/validate_public_plugin.py .
 
@@ -102,4 +86,3 @@ jobs:
           python tools/package_plugin.py . /tmp/designly-pack/a.zip
           python tools/package_plugin.py . /tmp/designly-pack/b.zip
           cmp /tmp/designly-pack/a.zip /tmp/designly-pack/b.zip
-          unzip -l /tmp/designly-pack/a.zip | head -40

@@ -1,6 +1,6 @@
 ---
 name: video-director
-description: Dramaturgy-first AI video directing, shot lists, pacing, and multi-model video prompting. This skill should be used when creating, auditing, or splitting prompts for AI video generators (Seedance 2.5, Kling 3.0, Veo 3/3.1, Runway Gen-4, Luma, Pika, Sora), building 14-field shot cards, Murch's Rule of Six montage cuts, animatic keyframes, race/speed sequences, or fixing broken video prompts.
+description: Dramaturgy-first AI video directing, shot lists, pacing, and multi-model video prompting. This skill should be used when creating, auditing, or splitting prompts for AI video generators (Seedance 2.5, Kling 3.0, MiniMax Hailuo Video, Veo 3/3.1, Runway Gen-4, Luma, Pika, Sora), building 14-field shot cards, Murch's Rule of Six montage cuts, animatic keyframes, race/speed sequences, or fixing broken video prompts.
 ---
 
 # AI Video Director, Screenwriter & Editor
@@ -25,6 +25,7 @@ Do not write a prompt from memory. Each model has its own physics; load these re
 ### 3. Model Physics Selection (Read Exactly One)
 - **Seedance 2.5 / Doubao** → [seedance.md](references/seedance.md) & [seedance-25.md](references/seedance-25.md): 30s single-pass, 50-slot reference kits, dialogue markers `{ }`, video editing, 3D blockout.
 - **Kling 3.0 / 2.6 Pro** → [kling.md](references/kling.md): `[Character A: ...]` labels, native dialogue + lip-sync, Element Binding, Motion Brush, negative prompt field.
+- **MiniMax Video (Hailuo)** → [minimax-video.md](references/minimax-video.md): Volumetric physics, motion intensity `1-10`, camera vectors (`pan`, `tilt`, `zoom`, `dolly`, `orbit`), and bilingual tags.
 - **Veo 3 / 3.1** → [veo.md](references/veo.md): JSON prompts, dialogue / synchronized SFX, commercial polish with voiceover.
 - Other engines (Runway Gen-4, Luma, Pika, Sora) follow [universal-rules.md](references/universal-rules.md).
 
@@ -63,7 +64,7 @@ Before outputting any prompt or shot list, execute:
 - [Image Director](../image-director/SKILL.md) — Keyframes, character sheets, and still panels
 - [Creative Director](../creative-director/SKILL.md) — Upstream Big Idea and commercial script
 - [Visual Storytelling](../visual-storytelling/SKILL.md) — Narrative arcs and story structures
-- [Prompt Compiler](../prompt-compiler/SKILL.md) — Provider prompt compilation
+- [Prompt Compiler](../prompt-compiler/SKILL.md) — Multi-model prompt compilation
 - [Visual QA](../visual-qa/SKILL.md) — Motion critique and dramaturgy gate
 - [Designly Director](../designly-director/SKILL.md) — Orchestrator and state owner
 
