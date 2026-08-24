@@ -130,6 +130,7 @@ SECTION_BADGES = {
 }
 
 GUIDE_PATH = "skills/designly-director/references/prompt-playground.md"
+README_SHIELD_STYLE = "style=flat-square"
 
 
 def check(condition: bool, message: str, failures: list[str]) -> None:
@@ -236,7 +237,10 @@ def main() -> int:
 
     check(GUIDE_PATH in readme, "README links directly to the workflow guide", failures)
     check("Production Workflow Prompts" in readme, "README exposes the production workflow entrypoint", failures)
-    check("assets/badges/prompt-playground.svg" in readme, "README surfaces the clickable Playground badge", failures)
+    check("img.shields.io/badge/Workflow_Library-production-111111" in readme, "README surfaces Workflow Library with the established shields theme", failures)
+    check("img.shields.io/badge/16_Workflows-copy--ready-111111" in readme, "README surfaces workflow count with the established shields theme", failures)
+    check(readme.count(README_SHIELD_STYLE) >= 8, "README workflow badges use the same flat-square style as existing badges", failures)
+    check("assets/badges/prompt-playground.svg" not in readme, "README no longer mixes rounded local badges with shields.io badges", failures)
 
     print(f"\nWorkflow Prompt Playground tests: {'PASS' if not failures else 'FAIL'} ({len(failures)} failures)")
     return 1 if failures else 0
