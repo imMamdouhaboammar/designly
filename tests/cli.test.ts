@@ -57,10 +57,10 @@ describe("Designly Core Library Exports", () => {
 });
 
 describe("Designly CLI Binary Execution", () => {
-  it("test_cli_version_flag_returns_semver_5_0_0", () => {
+  it("test_cli_version_flag_returns_semver_5_0_1", () => {
     const res = spawnSync("bun", ["./bin/designly.js", "--version"], { encoding: "utf-8" });
     expect(res.status).toBe(0);
-    expect(res.stdout.trim()).toBe("designly v5.0.0");
+    expect(res.stdout.trim()).toBe("designly v5.0.1");
   });
 
   it("test_cli_list_models_returns_all_adapters", () => {

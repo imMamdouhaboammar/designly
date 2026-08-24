@@ -12,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT_DIR = resolve(__dirname, "..");
 
-const VERSION = "5.0.0";
+const VERSION = "5.0.1";
 
 const HELP_TEXT = `
   Designly CLI v${VERSION}

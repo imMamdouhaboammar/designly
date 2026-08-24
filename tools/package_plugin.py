@@ -4,6 +4,7 @@ Deterministic plugin ZIP packager for Designly.
 """
 from __future__ import annotations
 import hashlib
+import json
 import os
 import stat
 import sys
@@ -15,9 +16,19 @@ EXCLUDE_DIRS = {".git", ".superpowers", ".planning", "__pycache__", ".pytest_cac
 EXCLUDE_EXTS = {".pyc", ".pyo", ".tmp", ".zip", ".tar.gz"}
 EXCLUDE_FILES = {".DS_Store", ".gitignore", "Designly-Multi-Skill-Neural-Mesh-Implementation-Plan.md"}
 
+def get_current_version(root: Path) -> str:
+    pkg = root / "package.json"
+    if pkg.is_file():
+        try:
+            return json.loads(pkg.read_text(encoding="utf-8")).get("version", "5.0.1")
+        except Exception:
+            pass
+    return "5.0.1"
+
 def main() -> int:
     root = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
-    out = Path(sys.argv[2] if len(sys.argv) > 2 else "dist/designly-v5.0.0.zip").resolve()
+    ver = get_current_version(root)
+    out = Path(sys.argv[2] if len(sys.argv) > 2 else f"dist/designly-v{ver}.zip").resolve()
     out.parent.mkdir(parents=True, exist_ok=True)
     
     dirs = set()

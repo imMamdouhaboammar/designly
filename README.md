@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://skills.sh/imMamdouhaboammar/designly"><img src="https://img.shields.io/badge/skills.sh-package-black?style=flat-square&logo=vercel" alt="skills.sh" /></a>
-  <a href="https://www.npmjs.com/package/designly"><img src="https://img.shields.io/badge/npm-v5.0.0-CB3837?style=flat-square&logo=npm" alt="npm package" /></a>
+  <a href="https://www.npmjs.com/package/designly"><img src="https://img.shields.io/badge/npm-v5.0.1-CB3837?style=flat-square&logo=npm" alt="npm package" /></a>
   <a href="Formula/designly.rb"><img src="https://img.shields.io/badge/homebrew-tap-FBB040?style=flat-square&logo=homebrew" alt="Homebrew" /></a>
   <img src="https://img.shields.io/badge/21_Skills-modular-111111?style=flat-square" alt="21 skills" />
   <img src="https://img.shields.io/badge/8_Adapters-typed-111111?style=flat-square" alt="8 adapters" />

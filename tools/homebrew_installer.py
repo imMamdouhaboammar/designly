@@ -5,6 +5,7 @@ Homebrew Formula Generator, Validator, and Installer Adapter for Designly.
 from __future__ import annotations
 import argparse
 import hashlib
+import json
 import os
 import re
 import subprocess
@@ -21,7 +22,18 @@ def check(cond: bool, msg: str, errors: list[str]):
     if not cond:
         errors.append(msg)
 
-def generate_release_tarball(version: str = "5.0.0") -> Path:
+def get_current_version() -> str:
+    pkg = ROOT / "package.json"
+    if pkg.is_file():
+        try:
+            return json.loads(pkg.read_text(encoding="utf-8")).get("version", "5.0.1")
+        except Exception:
+            pass
+    return "5.0.1"
+
+def generate_release_tarball(version: str | None = None) -> Path:
+    if version is None:
+        version = get_current_version()
     DIST_DIR.mkdir(parents=True, exist_ok=True)
     tar_path = DIST_DIR / f"designly-{version}.tar.gz"
     
@@ -74,12 +86,14 @@ def main() -> int:
     print("=== Designly Homebrew Formula & Installer Adapter ===\n")
 
     if args.tarball:
-        tar_path = generate_release_tarball()
+        ver = get_current_version()
+        tar_path = generate_release_tarball(ver)
         sha256 = hashlib.sha256(tar_path.read_bytes()).hexdigest()
         content = FORMULA_PATH.read_text(encoding="utf-8")
-        updated = re.sub(r'sha256 "[0-9a-fA-F]{64}"', f'sha256 "{sha256}"', content)
+        updated = re.sub(r'archive/refs/tags/v\d+\.\d+\.\d+\.tar\.gz', f'archive/refs/tags/v{ver}.tar.gz', content)
+        updated = re.sub(r'sha256 "[0-9a-fA-F]{64}"', f'sha256 "{sha256}"', updated)
         FORMULA_PATH.write_text(updated, encoding="utf-8")
-        print(f"Updated Formula/designly.rb with SHA256: {sha256}\n")
+        print(f"Updated Formula/designly.rb with version v{ver} and SHA256: {sha256}\n")
 
     validate_formula(errors)
 

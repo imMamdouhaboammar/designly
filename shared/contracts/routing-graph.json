@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "name": "Design Neural Mesh Orchestration Graph",
   "primary_orchestrator": "designly-director",
   "architecture_layers": [

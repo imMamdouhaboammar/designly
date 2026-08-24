@@ -1,7 +1,7 @@
 {
   "$schema": "https://skills.sh/schema/skills.json",
   "name": "designly",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "displayName": "Designly",
   "description": "Commercial Art Direction, Creative Direction, and Design Neural Mesh with 21 modular skills, dramaturgy-first AI video directing (Seedance 2.5, Kling 3.0, Veo), and model-physics image & design direction (Gemini Nano Banana, MiniMax Design, Kimi Design, Claude Design, GPT Image 2).",
   "author": {

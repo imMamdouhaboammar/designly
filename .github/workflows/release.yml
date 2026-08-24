@@ -27,15 +27,15 @@ jobs:
         run: |
           bun run build
           python3 tools/homebrew_installer.py --tarball
-          python3 tools/package_plugin.py . dist/designly-v5.0.0.zip
+          python3 tools/package_plugin.py .
           python3 tools/publish_skills_sh.py --build
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            dist/designly-v5.0.0.zip
-            dist/designly-5.0.0.tar.gz
+            dist/*.zip
+            dist/*.tar.gz
             dist/skills-sh/skills-manifest.json
             assets/social-preview.png
             assets/social-preview.svg
