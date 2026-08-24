@@ -20,10 +20,10 @@ def get_current_version(root: Path) -> str:
     pkg = root / "package.json"
     if pkg.is_file():
         try:
-            return json.loads(pkg.read_text(encoding="utf-8")).get("version", "5.0.1")
+            return json.loads(pkg.read_text(encoding="utf-8")).get("version", "5.0.2")
         except Exception:
             pass
-    return "5.0.1"
+    return "5.0.2"
 
 def main() -> int:
     root = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()

@@ -6,8 +6,8 @@
 class Designly < Formula
   desc "Commercial Art Direction & Design Neural Mesh with 21 modular skills & 8 model adapters"
   homepage "https://github.com/imMamdouhaboammar/designly"
-  url "https://github.com/imMamdouhaboammar/designly/archive/refs/tags/v5.0.1.tar.gz"
-  sha256 "b15838da8a21eb66613592065b220caead1eff3583d647d54010663687202c5d"
+  url "https://github.com/imMamdouhaboammar/designly/archive/refs/tags/v5.0.2.tar.gz"
+  sha256 "ea49bf1b39493bace44d2884fc71e1aa4a53b2537313a185ca38a2939a10f302"
   license "MIT"
   head "https://github.com/imMamdouhaboammar/designly.git", branch: "main"
 

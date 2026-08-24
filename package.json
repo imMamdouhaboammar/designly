@@ -1,6 +1,6 @@
 {
   "name": "designly",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Commercial Art Direction & Design Neural Mesh CLI with 21 modular skills & 8 model adapters",
   "type": "module",
   "main": "./dist/index.js",

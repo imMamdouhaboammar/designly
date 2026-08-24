@@ -174,7 +174,7 @@ describe("Designly CLI Binary Execution", () => {
   it("test_cli_version_flag_returns_semver_5_0_1", () => {
     const res = spawnSync("bun", ["./bin/designly.js", "--version"], { encoding: "utf-8" });
     expect(res.status).toBe(0);
-    expect(res.stdout.trim()).toBe("designly v5.0.1");
+    expect(res.stdout.trim()).toBe("designly v5.0.2");
   });
 
   it("test_cli_help_flag_displays_usage_guide", () => {

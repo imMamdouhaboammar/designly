@@ -1,6 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "5.0.1",
+  "$schema": "./routing-graph.schema.json",
+  "version": "5.0.2",
   "name": "Design Neural Mesh Orchestration Graph",
   "primary_orchestrator": "designly-director",
   "architecture_layers": [

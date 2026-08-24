@@ -26,10 +26,10 @@ def get_current_version() -> str:
     pkg = ROOT / "package.json"
     if pkg.is_file():
         try:
-            return json.loads(pkg.read_text(encoding="utf-8")).get("version", "5.0.1")
+            return json.loads(pkg.read_text(encoding="utf-8")).get("version", "5.0.2")
         except Exception:
             pass
-    return "5.0.1"
+    return "5.0.2"
 
 def generate_release_tarball(version: str | None = None) -> Path:
     if version is None:
