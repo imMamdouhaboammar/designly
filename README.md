@@ -16,18 +16,8 @@
   <img src="https://img.shields.io/badge/571_Campaigns-canonical-111111?style=flat-square" alt="571 campaigns" />
   <img src="https://img.shields.io/badge/Dramaturgy-Walter_Murch-111111?style=flat-square" alt="Dramaturgy" />
   <img src="https://img.shields.io/badge/Arabic_RTL-native-111111?style=flat-square" alt="Arabic RTL" />
-</p>
-
-<p align="center">
-  <a href="skills/designly-director/references/prompt-playground.md">
-    <img src="assets/badges/prompt-playground.svg" alt="Open the Designly Workflow Prompt Library" />
-  </a>
-  <a href="skills/designly-director/references/prompt-playground.md">
-    <img src="assets/badges/prompts.svg" alt="16 production workflow prompts" />
-  </a>
-  <a href="skills/designly-director/references/prompt-playground.md">
-    <img src="assets/badges/skills.svg" alt="Explore 21 Designly skills" />
-  </a>
+  <a href="skills/designly-director/references/prompt-playground.md"><img src="https://img.shields.io/badge/Workflow_Library-production-111111?style=flat-square" alt="Workflow Library" /></a>
+  <a href="skills/designly-director/references/prompt-playground.md"><img src="https://img.shields.io/badge/16_Workflows-copy--ready-111111?style=flat-square" alt="16 copy-ready workflows" /></a>
 </p>
 
 ## Start Here: Production Workflow Prompts
