@@ -23,12 +23,14 @@ from adapters import (
     VeoAdapter
 )
 
-def check(cond: bool, msg: str, errors: list[str]):
+def check(cond: bool, msg: str, errors: list[str] | None = None):
     print(("PASS " if cond else "FAIL ") + msg)
     if not cond:
-        errors.append(msg)
+        if errors is not None:
+            errors.append(msg)
+        assert cond, msg
 
-def test_gemini_nano_banana(errors: list[str]):
+def test_gemini_nano_banana(errors: list[str] | None = None):
     print("\n--- Testing Gemini Nano Banana Adapter ---")
     adapter = GeminiNanoBananaAdapter()
     
@@ -68,7 +70,7 @@ def test_gemini_nano_banana(errors: list[str]):
     check("Keep bottle body, label, lighting" in res_edit.prompt, "edit preservation intact", errors)
     check("Change only the bottle cap" in res_edit.prompt, "atomic mutation enforced", errors)
 
-def test_minimax_design(errors: list[str]):
+def test_minimax_design(errors: list[str] | None = None):
     print("\n--- Testing MiniMax Design Adapter ---")
     adapter = MiniMaxDesignAdapter()
     
@@ -92,7 +94,7 @@ def test_minimax_design(errors: list[str]):
     errs = adapter.validate(invalid_spec)
     check(len(errs) > 0, "invalid camera motion rejected", errors)
 
-def test_kimi_design(errors: list[str]):
+def test_kimi_design(errors: list[str] | None = None):
     print("\n--- Testing Kimi Design Adapter ---")
     adapter = KimiDesignAdapter()
     
@@ -113,7 +115,7 @@ def test_kimi_design(errors: list[str]):
     check("#10B981" in res.prompt, "design token palette present", errors)
     check('"BALANCE: $42,500.00"' in res.prompt, "exact copy lock present", errors)
 
-def test_claude_design(errors: list[str]):
+def test_claude_design(errors: list[str] | None = None):
     print("\n--- Testing Claude Design Adapter ---")
     adapter = ClaudeDesignAdapter()
     
@@ -131,7 +133,7 @@ def test_claude_design(errors: list[str]):
     check("Interactive State Machine Matrix" in res_svg.prompt, "interactive state matrix present", errors)
     check('"99.99% UPTIME"' in res_svg.prompt, "verbatim copy lock present", errors)
 
-def test_seedance(errors: list[str]):
+def test_seedance(errors: list[str] | None = None):
     print("\n--- Testing Seedance Adapter ---")
     adapter = SeedanceAdapter()
     
@@ -152,7 +154,7 @@ def test_seedance(errors: list[str]):
     check('{ Marcus: "I know you\'re in here." }' in res.prompt, "dialogue lip-sync markers formatted", errors)
     check("[Shot 3: 00:20-00:30" in res.prompt, "30s multi-shot timeline present", errors)
 
-def test_kling(errors: list[str]):
+def test_kling(errors: list[str] | None = None):
     print("\n--- Testing Kling Adapter ---")
     adapter = KlingAdapter()
     
@@ -174,7 +176,7 @@ def test_kling(errors: list[str]):
     check("Motion Brush" in res.prompt or "MOTION BRUSH" in res.prompt, "motion brush vectors present", errors)
     check(res.negative_prompt is not None and "distorted limbs" in res.negative_prompt, "negative prompt present", errors)
 
-def test_registry(errors: list[str]):
+def test_registry(errors: list[str] | None = None):
     print("\n--- Testing Adapter Registry ---")
     all_adapters = registry.list_all()
     check(len(all_adapters) >= 8, f"at least 8 adapters registered (found {len(all_adapters)})", errors)

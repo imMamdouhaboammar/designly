@@ -19,12 +19,14 @@ FORBIDDEN_FILES = [
     "credentials.json", "private.key", "id_rsa"
 ]
 
-def check(cond: bool, msg: str, errors: list[str]):
+def check(cond: bool, msg: str, errors: list[str] | None = None):
     print(("PASS " if cond else "FAIL ") + msg)
     if not cond:
-        errors.append(msg)
+        if errors is not None:
+            errors.append(msg)
+        assert cond, msg
 
-def test_package_json_supply_chain(errors: list[str]):
+def test_package_json_supply_chain(errors: list[str] | None = None):
     print("\n--- Testing package.json Supply Chain Integrity ---")
     check(PACKAGE_JSON.is_file(), "package.json exists", errors)
     data = json.loads(PACKAGE_JSON.read_text(encoding="utf-8"))
@@ -50,7 +52,7 @@ def test_package_json_supply_chain(errors: list[str]):
     deps = data.get("dependencies", {})
     check(len(deps) == 0, f"runtime dependencies zero-bloat ({len(deps)} dependencies)", errors)
 
-def test_npmignore_secrets_prevention(errors: list[str]):
+def test_npmignore_secrets_prevention(errors: list[str] | None = None):
     print("\n--- Testing .npmignore Secrets & Artifacts Exclusion ---")
     check(NPMIGNORE.is_file(), ".npmignore exists", errors)
     content = NPMIGNORE.read_text(encoding="utf-8")
@@ -60,7 +62,7 @@ def test_npmignore_secrets_prevention(errors: list[str]):
     check("evals" in content, "evals ignored in npmignore", errors)
     check(".git" in content, ".git ignored in npmignore", errors)
 
-def test_no_secrets_in_repo(errors: list[str]):
+def test_no_secrets_in_repo(errors: list[str] | None = None):
     print("\n--- Auditing Repository for Leaked Credentials / Secrets ---")
     for root_dir, _, files in os.walk(ROOT):
         for f in files:

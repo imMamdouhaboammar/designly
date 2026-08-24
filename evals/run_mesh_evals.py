@@ -99,14 +99,75 @@ def run_all_evals() -> int:
     if proc_sc.returncode != 0:
         errors.append("Supply chain evals failed")
 
-    # 5. Run Bun Test Suite
+    # 5. Run Monolith Parity Evals
+    print("--- Running Monolith Parity Evals ---")
+    proc_parity = subprocess.run([sys.executable, str(ROOT / "evals/baseline/test_monolith_parity.py")], capture_output=True, text=True)
+    print(proc_parity.stdout)
+    if proc_parity.returncode != 0:
+        errors.append("Monolith parity evals failed")
+
+    # 6. Run Prompt Playground & Workflow Evals
+    print("--- Running Prompt Playground Evals ---")
+    proc_pg = subprocess.run([sys.executable, str(ROOT / "evals/product/test_prompt_playground.py")], capture_output=True, text=True)
+    print(proc_pg.stdout)
+    if proc_pg.returncode != 0:
+        errors.append("Prompt playground evals failed")
+
+    # 7. Run Edit Sanitizer Evals
+    print("--- Running Edit Sanitizer Evals ---")
+    proc_edit = subprocess.run([sys.executable, str(ROOT / "evals/edit/test_edit_sanitizer.py")], capture_output=True, text=True)
+    print(proc_edit.stdout)
+    if proc_edit.returncode != 0:
+        errors.append("Edit sanitizer evals failed")
+
+    # 8. Run Skill Catalog Routing Evals
+    print("--- Running Skill Catalog Routing Evals ---")
+    proc_cat = subprocess.run([sys.executable, str(ROOT / "evals/routing/test_skill_catalog.py")], capture_output=True, text=True)
+    print(proc_cat.stdout)
+    if proc_cat.returncode != 0:
+        errors.append("Skill catalog routing evals failed")
+
+    # 9. Run Shared Contracts & Agent Bounds Evals
+    print("--- Running Contracts & Agent Bounds Evals ---")
+    proc_con = subprocess.run([sys.executable, str(ROOT / "evals/handoffs/test_contracts.py")], capture_output=True, text=True)
+    print(proc_con.stdout)
+    if proc_con.returncode != 0:
+        errors.append("Contracts evals failed")
+
+    proc_ag = subprocess.run([sys.executable, str(ROOT / "evals/handoffs/test_agents.py")], capture_output=True, text=True)
+    print(proc_ag.stdout)
+    if proc_ag.returncode != 0:
+        errors.append("Agents evals failed")
+
+    # 10. Run Visual Revision Router Evals
+    print("--- Running Visual Revision Router Evals ---")
+    proc_rev = subprocess.run([sys.executable, str(ROOT / "evals/visual/test_revision_router.py")], capture_output=True, text=True)
+    print(proc_rev.stdout)
+    if proc_rev.returncode != 0:
+        errors.append("Visual revision router evals failed")
+
+    # 11. Run Skill Unit Tests
+    print("--- Running Skill Scripts Unit Tests ---")
+    for script_rel in [
+        "skills/composition-director/scripts/test_design_lint.py",
+        "skills/prompt-compiler/scripts/test_prompt_lint.py",
+        "skills/taste-engine/scripts/test_taste_lint.py",
+        "skills/taste-engine/scripts/test_taste_merge.py",
+        "skills/visual-qa/scripts/test_gates.py"
+    ]:
+        proc_s = subprocess.run([sys.executable, str(ROOT / script_rel)], capture_output=True, text=True)
+        print(proc_s.stdout)
+        if proc_s.returncode != 0:
+            errors.append(f"{script_rel} failed: {proc_s.stderr}")
+
+    # 12. Run Bun TypeScript & CLI Test Suite
     print("--- Running Bun TypeScript CLI Tests ---")
     proc_bun = subprocess.run(["bun", "test"], capture_output=True, text=True)
     print(proc_bun.stdout)
     if proc_bun.returncode != 0:
         errors.append("Bun test suite failed")
 
-    print(f"\nConflict, Adapters, skills.sh, Homebrew & Supply Chain Evals: {'PASS' if not errors else 'FAIL'} ({len(errors)} errors)")
+    print(f"\nAll Neural Mesh & Package Evals: {'PASS' if not errors else 'FAIL'} ({len(errors)} errors)")
     if errors:
         for e in errors:
             print(f" - {e}")

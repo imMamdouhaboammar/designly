@@ -27,11 +27,17 @@ case("four-minor-slop-blocks",lambda x:x["slop_findings"].extend([{"family":str(
 case("pressure-six-blocks",lambda x:x["slop_findings"].extend([{"family":"effects","severity":"major","evidence":"stack"}]+[{"family":str(i),"severity":"minor","evidence":"noise"} for i in range(3)]),False)
 case("weighted-below-92-blocks",lambda x:[x["scores"].__setitem__(k,91) for k in x["scores"]],False)
 
-failed=0
-for name,data,expected in cases:
-    got=mod.evaluate(data)["approved"]
-    if got==expected: print(f"PASS {name}")
-    else:
-        failed+=1; print(f"FAIL {name}: got {got}, expected {expected}")
-print(f"\n{len(cases)-failed} passed, {failed} failed")
-raise SystemExit(1 if failed else 0)
+def main() -> int:
+    failed = 0
+    for name, data, expected in cases:
+        got = mod.evaluate(data)["approved"]
+        if got == expected:
+            print(f"PASS {name}")
+        else:
+            failed += 1
+            print(f"FAIL {name}: got {got}, expected {expected}")
+    print(f"\n{len(cases)-failed} passed, {failed} failed")
+    return 1 if failed else 0
+
+if __name__ == "__main__":
+    raise SystemExit(main())

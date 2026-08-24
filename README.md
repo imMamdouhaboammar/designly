@@ -19,6 +19,7 @@
   <img src="https://img.shields.io/badge/571_Campaigns-canonical-111111?style=flat-square" alt="571 campaigns" />
   <img src="https://img.shields.io/badge/Arabic_RTL-native-111111?style=flat-square" alt="Arabic RTL" />
   <a href="skills/designly-director/references/prompt-playground.md"><img src="https://img.shields.io/badge/Workflow_Library-production-111111?style=flat-square" alt="Workflow Library" /></a>
+  <a href="skills/designly-director/references/prompt-playground.md"><img src="https://img.shields.io/badge/16_Workflows-copy--ready-111111?style=flat-square" alt="16 Workflows" /></a>
 </p>
 
 ---

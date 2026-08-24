@@ -18,17 +18,26 @@ class KimiDesignAdapter(BaseAdapter):
         model_name = "kimi-k1.5-design"
         notes = []
 
-        tokens = {
-            "colors": spec.get("colors", ["#0F172A", "#F8FAFC", "#3B82F6", "#64748B"]),
-            "typography": spec.get("typography", {
-                "headline_font": "Inter / Geist Display",
-                "body_font": "Inter",
-                "arabic_font": "IBM Plex Sans Arabic / Noto Sans Arabic"
-            }),
-            "spacing_scale": spec.get("spacing_scale", [4, 8, 12, 16, 24, 32, 48, 64]),
-            "radii": spec.get("radii", "12px"),
-            "shadows": spec.get("shadows", "0 4px 6px -1px rgb(0 0 0 / 0.1)")
-        }
+        raw_typo = spec.get("typography", {})
+        if isinstance(raw_typo, dict):
+            headline_font = raw_typo.get("headline_font") or raw_typo.get("headline") or "Inter / Geist Display"
+            body_font = raw_typo.get("body_font") or raw_typo.get("body") or "Inter"
+            arabic_font = raw_typo.get("arabic_font") or raw_typo.get("arabic") or "IBM Plex Sans Arabic / Noto Sans Arabic"
+        elif isinstance(raw_typo, str):
+            headline_font = raw_typo
+            body_font = raw_typo
+            arabic_font = "IBM Plex Sans Arabic"
+        else:
+            headline_font = "Inter / Geist Display"
+            body_font = "Inter"
+            arabic_font = "IBM Plex Sans Arabic / Noto Sans Arabic"
+
+        raw_colors = spec.get("colors", ["#0F172A", "#F8FAFC", "#3B82F6", "#64748B"])
+        colors_str = ", ".join(raw_colors) if isinstance(raw_colors, list) else str(raw_colors)
+
+        spacing_scale = spec.get("spacing_scale", [4, 8, 12, 16, 24, 32, 48, 64])
+        radii = spec.get("radii", "12px")
+        shadows = spec.get("shadows", "0 4px 6px -1px rgb(0 0 0 / 0.1)")
 
         # Layout Coordinate Zones
         layout_zones = spec.get("layout_zones", {
@@ -48,17 +57,21 @@ class KimiDesignAdapter(BaseAdapter):
             "[2. SPATIAL & COORDINATE GRID ZONING]"
         ]
 
-        for z_name, z_desc in layout_zones.items():
-            sections.append(f"- {z_name.upper()}: {z_desc}")
+        if isinstance(layout_zones, dict):
+            for z_name, z_desc in layout_zones.items():
+                sections.append(f"- {z_name.upper()}: {z_desc}")
+        elif isinstance(layout_zones, list):
+            for i, zone in enumerate(layout_zones):
+                sections.append(f"- ZONE_{i+1}: {zone}")
 
         sections.extend([
             "",
             "[3. DESIGN TOKENS & SYSTEM CONTRACT]",
-            f"- Palette: {', '.join(tokens['colors'])}",
-            f"- Typography Hierarchy: Headline ({tokens['typography']['headline_font']}), Body ({tokens['typography']['body_font']}), RTL/Arabic ({tokens['typography']['arabic_font']})",
-            f"- Spacing Grid: {tokens['spacing_scale']} px standard",
-            f"- Corner Radius: {tokens['radii']}",
-            f"- Elevation: {tokens['shadows']}",
+            f"- Palette: {colors_str}",
+            f"- Typography Hierarchy: Headline ({headline_font}), Body ({body_font}), RTL/Arabic ({arabic_font})",
+            f"- Spacing Grid: {spacing_scale} px standard",
+            f"- Corner Radius: {radii}",
+            f"- Elevation: {shadows}",
             "",
             "[4. EXACT COPY LOCKS & TYPOGRAPHIC BOUNDS]"
         ])
@@ -76,6 +89,18 @@ class KimiDesignAdapter(BaseAdapter):
             "[5. PAIRED SVG / HTML SPECIFICATION]",
             "Render clean, modern, semantic container tags, responsive layout tokens, and zero visual slop."
         ])
+
+        tokens = {
+            "colors": raw_colors,
+            "typography": {
+                "headline_font": headline_font,
+                "body_font": body_font,
+                "arabic_font": arabic_font
+            },
+            "spacing_scale": spacing_scale,
+            "radii": radii,
+            "shadows": shadows
+        }
 
         prompt = "\n".join(sections)
         notes.append("Kimi Design: layout-first coordinate zoning + design token contract paired.")
