@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/social-preview.svg" width="100%" alt="Designly - Commercial Art Direction &amp; Design Neural Mesh" />
+  <img src="assets/logo.svg" width="128" height="128" alt="Designly Logo" />
 </p>
 
 <h1 align="center">Designly</h1>
