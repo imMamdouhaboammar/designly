@@ -10,7 +10,9 @@
   },
   "files": [
     "bin",
-    "dist",
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/skills-sh",
     "skills",
     "shared",
     "skills.json",

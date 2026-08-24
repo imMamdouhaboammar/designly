@@ -1,28 +1,15 @@
-# Version control
+dist/*.zip
+dist/*.tar.gz
+**/__pycache__
+**/*.pyc
+**/*.pyo
 .git
-.gitignore
 .github
-
-# Internal Planning & Evals
-.planning
-.superpowers
-.agent-kernel
+.codex
+.codex-plugin
+tests
 evals
-__pycache__
-*.pyc
-*.pyo
-
-# Cache and local artifacts
-.DS_Store
+tools
+Formula
+SHA256SUMS
 *.tmp
-*.log
-.pytest_cache
-.ruff_cache
-
-# Private files / secrets
-.env*
-auth.json
-secrets*
-credentials*
-*.pem
-*.key
