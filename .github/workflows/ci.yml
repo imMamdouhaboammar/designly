@@ -9,16 +9,64 @@ permissions:
   contents: read
 
 jobs:
-  quality:
+  core-cli:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Install locked development dependencies
+        run: bun install --frozen-lockfile
+      - name: Build JS and TypeScript declarations
+        run: bun run build
+      - name: Bun core library and CLI regression tests
+        run: bun test
+      - name: Published TypeScript consumer contract
+        run: bun run test:types
+      - name: Compiler file, inline JSON, and stdin input contracts
+        run: python -m unittest discover -s evals/cli -p 'test_*.py' -v
 
+  supply-chain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Install locked development dependencies
+        run: bun install --frozen-lockfile
+      - name: Build npm artifacts
+        run: bun run build
+      - name: Supply chain, whitelist, and packed npm entry points
+        run: |
+          python evals/supply_chain/test_supply_chain.py
+          python -m unittest discover -s evals/supply_chain -p 'test_*.py' -v
+      - name: Skills and Homebrew distribution checks
+        run: |
+          python tools/publish_skills_sh.py --check
+          python tools/homebrew_installer.py --check
+          python evals/homebrew/test_homebrew.py
+
+  python-mesh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
@@ -28,18 +76,6 @@ jobs:
 
       - name: Compile Python
         run: python -m compileall -q shared skills evals tools
-
-      - name: Bun TypeScript Build & Tests
-        run: |
-          bun run build
-          bun test
-
-      - name: Supply Chain & Package Integrity Evals
-        run: |
-          python evals/supply_chain/test_supply_chain.py
-          python tools/publish_skills_sh.py --check
-          python tools/homebrew_installer.py --check
-          python evals/homebrew/test_homebrew.py
 
       - name: Model Adapters Unit & Integration Tests
         run: python evals/adapters/test_adapters.py

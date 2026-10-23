@@ -53,6 +53,41 @@ npx designly compile --model gemini-nano-banana --input spec.json
 
 ---
 
+## From a creative brief to model-ready instructions
+
+Designly also exposes a typed JavaScript/TypeScript API. It compiles an approved creative specification into model-specific instructions; image and video generation still happens in your chosen host.
+
+```bash
+npm install designly
+```
+
+```ts
+import { compilePrompt } from "designly";
+
+const brief = {
+  subject: "An amber perfume bottle on wet volcanic stone",
+  lighting: "Warm rim light, soft reflections",
+  aspect_ratio: "9:16",
+  copy: "AFTER RAIN"
+};
+
+const imageInstructions = await compilePrompt({
+  model: "gpt-image-2",
+  spec: brief
+});
+
+const videoInstructions = await compilePrompt({
+  model: "veo",
+  spec: { ...brief, duration: 6, camera_motion: "Slow dolly in" }
+});
+```
+
+The library invokes the Python prompt compiler locally, so **Python 3 must be available on `PATH`**. Structured specs are streamed over `stdin` instead of passed as command-line arguments, including large multi-shot briefs. The build ships the declared TypeScript types and CI checks the actual npm package contents.
+
+Run the same quality gates locally with `bun install --frozen-lockfile`, `bun run build`, `bun test`, `bun run test:types`, and `bun run check:package`.
+
+---
+
 ## Start Here: Production Workflow Prompts
 
 If you are new to Designly, do not start by memorizing the architecture or reading a feature list.

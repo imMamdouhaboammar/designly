@@ -122,7 +122,8 @@ export const SUPPORTED_ADAPTERS: ModelAdapterInfo[] = [
 export async function compilePrompt(options: CompileOptions): Promise<string> {
   const compilerScript = resolve(ROOT_DIR, "skills/prompt-compiler/scripts/compile_prompt.py");
   const specJson = JSON.stringify(options.spec || {});
-  const args = ["-m", options.model || "gemini-nano-banana", "-f", options.format || "text", "-i", specJson];
+  // JSON belongs on stdin, not argv: large creative briefs can exceed OS arg limits.
+  const args = ["-m", options.model || "gemini-nano-banana", "-f", options.format || "text"];
 
   return new Promise((resolvePromise, rejectPromise) => {
     const child = spawn("python3", [compilerScript, ...args], {
@@ -142,6 +143,12 @@ export async function compilePrompt(options: CompileOptions): Promise<string> {
     child.on("error", (err) => {
       rejectPromise(err);
     });
+
+    child.stdin.on("error", (err) => {
+      rejectPromise(err);
+    });
+
+    child.stdin.end(specJson);
 
     child.on("close", (code) => {
       if (code === 0) {

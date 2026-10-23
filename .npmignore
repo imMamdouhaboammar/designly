@@ -7,6 +7,12 @@ dist/*.tar.gz
 .github
 .codex
 .codex-plugin
+.env*
+**/.env*
+**/auth.json
+**/secrets*
+**/credentials.json
+**/*.key
 tests
 evals
 tools

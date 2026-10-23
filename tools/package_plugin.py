@@ -12,7 +12,7 @@ import zipfile
 from pathlib import Path
 
 FIXED_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
-EXCLUDE_DIRS = {".git", ".superpowers", ".planning", "__pycache__", ".pytest_cache", ".ruff_cache", "dist", "build"}
+EXCLUDE_DIRS = {".git", ".superpowers", ".planning", "__pycache__", ".pytest_cache", ".ruff_cache", "node_modules", "dist", "build"}
 EXCLUDE_EXTS = {".pyc", ".pyo", ".tmp", ".zip", ".tar.gz"}
 EXCLUDE_FILES = {".DS_Store", ".gitignore", "Designly-Multi-Skill-Neural-Mesh-Implementation-Plan.md"}
 
