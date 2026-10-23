@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Commercial Art Direction & Design Neural Mesh Plugin</strong><br/>
-  21 focused Skills, 16 bounded Codex agents, Cannes-calibrated Creative Direction, 571 Legendary Campaign Canon, dramaturgy-first AI Video Direction (Seedance 2.5, Kling 3.0, Veo), model-physics Image & Design Direction (Gemini Nano Banana 2/Pro, MiniMax Design, Kimi Design, Claude Design, GPT Image 2), Insight Mining, Brand Activation, Visual Storytelling, typed handoffs, preflight, bounded edit sanitization, and independent visual QA
+  21 focused Skills, 16 bounded Codex agents, a typed Creative Intent Engine, Cannes-calibrated Creative Direction, 571 Legendary Campaign Canon, dramaturgy-first AI Video Direction (Seedance 2.5, Kling 3.0, Veo), model-physics Image & Design Direction (Gemini Nano Banana 2/Pro, MiniMax Design, Kimi Design, Claude Design, GPT Image 2), Insight Mining, Brand Activation, Visual Storytelling, typed handoffs, preflight, bounded edit sanitization, and independent visual QA
 </p>
 
 <p align="center">
@@ -15,6 +15,7 @@
   <a href="Formula/designly.rb"><img src="https://img.shields.io/badge/homebrew-tap-FBB040?style=flat-square&logo=homebrew" alt="Homebrew" /></a>
   <img src="https://img.shields.io/badge/21_Skills-modular-111111?style=flat-square" alt="21 skills" />
   <img src="https://img.shields.io/badge/8_Adapters-typed-111111?style=flat-square" alt="8 adapters" />
+  <a href="docs/CREATIVE_INTENT_ENGINE.md"><img src="https://img.shields.io/badge/Creative_Intent-typed_API-111111?style=flat-square" alt="Creative Intent Engine architecture" /></a>
   <img src="https://img.shields.io/badge/16_Agents-bounded-111111?style=flat-square" alt="16 agents" />
   <img src="https://img.shields.io/badge/571_Campaigns-canonical-111111?style=flat-square" alt="571 campaigns" />
   <img src="https://img.shields.io/badge/Arabic_RTL-native-111111?style=flat-square" alt="Arabic RTL" />
@@ -85,6 +86,20 @@ const videoInstructions = await compilePrompt({
 The library invokes the Python prompt compiler locally, so **Python 3 must be available on `PATH`**. Structured specs are streamed over `stdin` instead of passed as command-line arguments, including large multi-shot briefs. The build ships the declared TypeScript types and CI checks the actual npm package contents.
 
 Run the same quality gates locally with `bun install --frozen-lockfile`, `bun run build`, `bun test`, `bun run test:types`, and `bun run check:package`.
+
+---
+
+## Creative Intent Engine: one brief, shared identity, multiple models
+
+Designly can now build a deterministic **Creative Intent Plan** before any image or video generation happens. Brand identity, the campaign message, exact copy, and visual anchors become explicit locks shared across model adapters.
+
+The source API follows three separate decisions: `createCreativeIntentPlan(brief)` builds a reviewable plan; `compileCreativeIntentPlan(plan, approval)` produces model-specific text instructions; `evaluateCreativeIntent(plan, observations)` reports whether supplied QA evidence covers each requirement. Missing evidence stays **unverified**. No image or video generation is claimed.
+
+```bash
+bun examples/creative-intent-demo.ts
+```
+
+Read the [architecture and evidence contract](docs/CREATIVE_INTENT_ENGINE.md) for the data model, editorial approval boundary, honest QA statuses, and integration options. The demo runs from the repository source; a new npm release is required before downstream installs receive this API.
 
 ---
 
