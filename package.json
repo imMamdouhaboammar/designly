@@ -20,7 +20,9 @@
     "NOTICE"
   ],
   "scripts": {
-    "build": "bun build ./src/index.ts --outfile ./dist/index.js --target node",
+    "build": "bun build ./src/index.ts --outfile ./dist/index.js --target node && tsc --project tsconfig.types.json",
+    "test:types": "tsc --noEmit --target ES2022 --module NodeNext --moduleResolution NodeNext --strict --skipLibCheck tests/package-consumer.ts",
+    "check:package": "python3 -m unittest discover -s evals/supply_chain -p 'test_*.py' -v",
     "test": "bun test && python3 evals/run_mesh_evals.py",
     "check": "python3 tools/publish_skills_sh.py --check && python3 tools/homebrew_installer.py --check",
     "lint": "python3 tools/validate_public_plugin.py ."
@@ -57,5 +59,9 @@
   "publishConfig": {
     "access": "public",
     "provenance": true
+  },
+  "devDependencies": {
+    "@types/node": "^18",
+    "typescript": "^7.0.2"
   }
 }

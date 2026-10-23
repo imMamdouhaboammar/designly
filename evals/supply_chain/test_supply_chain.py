@@ -19,6 +19,27 @@ FORBIDDEN_FILES = [
     "credentials.json", "private.key", "id_rsa"
 ]
 
+ALLOWED_PACKAGE_FILES = frozenset({
+    "bin", "dist/index.js", "dist/index.d.ts", "dist/skills-sh",
+    "skills", "shared", "skills.json", "README.md", "NOTICE",
+})
+
+
+def validate_package_files(files: object) -> list[str]:
+    """Reject missing, extra, broad, or duplicated publish paths."""
+    if not isinstance(files, list) or not all(isinstance(item, str) for item in files):
+        return ["files must be an array of paths"]
+    issues = []
+    if len(files) != len(set(files)):
+        issues.append("duplicate entries in package files whitelist")
+    missing = ALLOWED_PACKAGE_FILES - set(files)
+    extra = set(files) - ALLOWED_PACKAGE_FILES
+    if missing:
+        issues.append(f"missing publish paths: {', '.join(sorted(missing))}")
+    if extra:
+        issues.append(f"unapproved publish paths: {', '.join(sorted(extra))}")
+    return issues
+
 def check(cond: bool, msg: str, errors: list[str] | None = None):
     print(("PASS " if cond else "FAIL ") + msg)
     if not cond:
@@ -41,12 +62,8 @@ def test_package_json_supply_chain(errors: list[str] | None = None):
 
     # Check strict file whitelist
     files_whitelist = data.get("files", [])
-    check(isinstance(files_whitelist, list) and len(files_whitelist) > 0, "files whitelist defined", errors)
-    check("bin" in files_whitelist, "bin in whitelist", errors)
-    check("dist" in files_whitelist, "dist in whitelist", errors)
-    check("skills" in files_whitelist, "skills in whitelist", errors)
-    check("evals" not in files_whitelist, "evals excluded from publish whitelist", errors)
-    check(".planning" not in files_whitelist, "planning excluded from publish whitelist", errors)
+    whitelist_issues = validate_package_files(files_whitelist)
+    check(not whitelist_issues, "granular publish whitelist: " + "; ".join(whitelist_issues), errors)
 
     # Check dependencies are zero or clean
     deps = data.get("dependencies", {})

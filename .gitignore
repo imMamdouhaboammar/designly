@@ -50,6 +50,7 @@ Thumbs.db
 .cursor/
 
 # Build artifacts / dist
+node_modules/
 /tmp/
 *.zip
 *.tar.gz

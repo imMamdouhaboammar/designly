@@ -10,6 +10,13 @@ def ok(m): print('PASS '+m)
 def check(c,m,e): ok(m) if c else err(e,m)
 def svg_size(p):
     r=ET.fromstring(p.read_text()); vb=r.attrib.get('viewBox') or r.attrib.get('viewbox'); a=[float(x) for x in re.split(r'[\s,]+',vb.strip())] if vb else [0,0,float(r.attrib['width']),float(r.attrib['height'])]; return a[2],a[3]
+def plugin_files(root):
+    """Inspect project files, never installed local dependencies or git metadata."""
+    excluded={'.git','node_modules','__pycache__','.pytest_cache','.ruff_cache'}
+    for cur,dirs,files in os.walk(root):
+        dirs[:]=[d for d in dirs if d not in excluded]
+        for name in files:
+            yield Path(cur)/name
 def main():
     root=Path(sys.argv[1] if len(sys.argv)>1 else '.').resolve(); e=[]; mp=root/'.codex-plugin/plugin.json'
     check(mp.is_file(),'manifest exists',e)
@@ -29,13 +36,11 @@ def main():
             try: w,h=svg_size(p) if p.suffix.lower()=='.svg' else (0,1); check(w==h and w>=48,f'{f} square >=48',e)
             except Exception as ex: err(e,f'{f} readable: {ex}')
     count=0; total=0
-    for cur,dirs,files in os.walk(root):
-        dirs[:]=[d for d in dirs if d!='__pycache__']
-        for name in files:
-            p=Path(cur)/name; rel=p.relative_to(root); count+=1; total+=p.stat().st_size
-            if p.is_symlink(): err(e,f'symlink not allowed: {rel}')
-            if SECRET.match(name): err(e,f'secret-shaped file: {rel}')
-            if name.endswith(('.pyc','.pyo')): err(e,f'bytecode not allowed: {rel}')
+    for p in plugin_files(root):
+        rel=p.relative_to(root); name=p.name; count+=1; total+=p.stat().st_size
+        if p.is_symlink(): err(e,f'symlink not allowed: {rel}')
+        if SECRET.match(name): err(e,f'secret-shaped file: {rel}')
+        if name.endswith(('.pyc','.pyo')): err(e,f'bytecode not allowed: {rel}')
     check(count<5000,'entry count below 5000',e); check(total<512*1024*1024,'uncompressed size below 512 MiB',e)
     print('\nPublic plugin validation: '+('PASS' if not e else 'FAIL'))
     return 1 if e else 0

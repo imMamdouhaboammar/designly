@@ -32,13 +32,19 @@ def main() -> int:
 
     spec = None
     if args.input:
-        in_path = Path(args.input)
-        if in_path.is_file():
-            spec = json.loads(in_path.read_text(encoding="utf-8"))
-        else:
+        # Parse inline JSON before probing the filesystem. Long specs are not paths,
+        # and passing them to Path.is_file() can raise ENAMETOOLONG.
+        try:
+            spec = json.loads(args.input)
+        except json.JSONDecodeError:
             try:
-                spec = json.loads(args.input)
-            except Exception:
+                in_path = Path(args.input)
+                is_file = in_path.is_file()
+            except (OSError, ValueError):
+                is_file = False
+            if is_file:
+                spec = json.loads(in_path.read_text(encoding="utf-8"))
+            else:
                 spec = {"subject": args.input}
 
     if spec is None:

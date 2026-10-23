@@ -44,6 +44,17 @@ describe("Designly Core Library Exports", () => {
     expect(output).toContain('"HOROLOGY"');
   });
 
+  it("test_compile_prompt_accepts_large_specs_without_os_argument_limits", async () => {
+    const subject = "Studio film of a glass sculpture " + "x".repeat(160_000);
+    const output = await compilePrompt({
+      model: "gemini-nano-banana",
+      spec: { subject },
+      format: "json"
+    });
+
+    expect(output).toContain(subject);
+  });
+
   it("test_compile_prompt_generates_valid_kling_lip_sync", async () => {
     const output = await compilePrompt({
       model: "kling",
